@@ -1,32 +1,50 @@
-Massively by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# 🗳️ Elezioni101
 
+**Quando si vota. Per cosa si vota. Dove si vota.**  
+Un sito informativo indipendente, pensato per aiutare chi si "sveglia" solo quando arriva il momento di votare.
 
-This is Massively, a text-heavy, article-oriented design built around a huge background
-image (with a new parallax implementation I'm testing) and scroll effects (powered by
-Scrollex). A *slight* departure from all the one-pagers I've been doing lately, but one
-that fulfills a few user requests and makes use of some new techniques I've been wanting
-to try out. Enjoy it :)
+👉 https://gianm4rco.github.io/elezioni101/
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+---
 
-(* = not included)
+## 📌 Cos'è questo progetto?
 
-AJ
-aj@lkn.io | @ajlkn
+**Elezioni101** è una mini piattaforma civica pensata per:
+- Capire cosa si vota (quesiti, candidati, date)
+- Ricevere informazioni semplici e imparziali
+- Non perdere appuntamenti elettorali importanti
 
+🎯 Target principale: chi normalmente non segue la politica, ma vuole sapere cosa vota.
 
-Credits:
+---
 
-	Demo Images:
-		Unsplash (unsplash.com)
+## 🛠️ Contenuto
 
-	Icons:
-		Font Awesome (fontawesome.io)
+- ✅ Home con riepilogo delle votazioni
+- ✅ Referendum 8–9 giugno 2025 spiegato in modo chiaro
+- ✅ Verifica se nella tua regione si vota per le regionali
+- 🗺️ Mappa elettorale interattiva (in sviluppo)
+- 📩 Calendario scaricabile (in sviluppo)
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+---
+
+## 🚀 Come contribuire
+
+Al momento il progetto è in fase di sviluppo iniziale. Se vuoi contribuire con segnalazioni, correzioni o idee:
+
+- Fai una pull request
+- Oppure apri una issue
+
+---
+
+## 📄 Licenza e template
+
+Il sito è costruito usando il template **[Massively](https://html5up.net/massively)** di HTML5 UP, rilasciato sotto licenza [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+
+---
+
+## 🧑‍💻 Autore
+
+Realizzato da [@Gianm4rco](https://github.com/Gianm4rco)  
+Per passione civica e divulgativa 🇮🇹
+
