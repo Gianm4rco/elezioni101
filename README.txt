@@ -1,50 +1,37 @@
-# 🗳️ Elezioni101
+Story by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-**Quando si vota. Per cosa si vota. Dove si vota.**  
-Un sito informativo indipendente, pensato per aiutare chi si "sveglia" solo quando arriva il momento di votare.
 
-👉 https://gianm4rco.github.io/elezioni101/
+Say hello to Story, a brand new responsive one-pager for HTML5 UP! Inspired by my work
+on Carrd*, Story is built to be extremely modular and tweakable, and as such is entirely
+built on reusable, insanely customizable elements (like "spotlight" and "gallery") that
+can be endlessly duplicated and tweaked into whatever you need to tell your story --
+without, in many cases, touching *any* CSS. Check out index-demo.html for an interactive
+demo, and index.html for the actual template. Enjoy!
 
----
+Demo images** courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
+you can use for pretty much whatever.
 
-## 📌 Cos'è questo progetto?
+PS: Delete index-demo.html and assets/js/demo.js when you're done messing with the demo
+as neither are needed in production :)
 
-**Elezioni101** è una mini piattaforma civica pensata per:
-- Capire cosa si vota (quesiti, candidati, date)
-- Ricevere informazioni semplici e imparziali
-- Non perdere appuntamenti elettorali importanti
+(* = my other side project -- carrd.co)
+(** = not included)
 
-🎯 Target principale: chi normalmente non segue la politica, ma vuole sapere cosa vota.
+AJ
+aj@lkn.io | @ajlkn
 
----
 
-## 🛠️ Contenuto
+Credits:
 
-- ✅ Home con riepilogo delle votazioni
-- ✅ Referendum 8–9 giugno 2025 spiegato in modo chiaro
-- ✅ Verifica se nella tua regione si vota per le regionali
-- 🗺️ Mappa elettorale interattiva (in sviluppo)
-- 📩 Calendario scaricabile (in sviluppo)
+	Demo Images:
+		Unsplash (unsplash.com)
 
----
+	Icons:
+		Font Awesome (fontawesome.io)
 
-## 🚀 Come contribuire
-
-Al momento il progetto è in fase di sviluppo iniziale. Se vuoi contribuire con segnalazioni, correzioni o idee:
-
-- Fai una pull request
-- Oppure apri una issue
-
----
-
-## 📄 Licenza e template
-
-Il sito è costruito usando il template **[Massively](https://html5up.net/massively)** di HTML5 UP, rilasciato sotto licenza [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
-
----
-
-## 🧑‍💻 Autore
-
-Realizzato da [@Gianm4rco](https://github.com/Gianm4rco)  
-Per passione civica e divulgativa 🇮🇹
-
+	Other:
+		jQuery (jquery.com)
+		Scrollex (github.com/ajlkn/jquery.scrollex)
+		Responsive Tools (github.com/ajlkn/responsive-tools)

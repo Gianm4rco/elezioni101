@@ -4,402 +4,511 @@
   <meta charset="UTF-8" />
   <title>Referendum 2025 – Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<meta name="description" content="Scopri in modo semplice i 5 quesiti del referendum abrogativo 2025. Quando si vota, cosa significa votare SÌ o NO, e come funziona il voto.">
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+    /* Sticky nav */
+    #nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      padding: 0.8em 1.5em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #444;
+    }
+
+    /* Sommario migliorato */
+    .mini-sommario {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 1.5em;
+      margin: 2em 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .mini-sommario ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2em;
+    }
+
+    .mini-sommario li {
+      flex: 1 1 250px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1em;
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .mini-sommario li:hover {
+      border-color: #0078d4;
+    }
+
+    .mini-sommario a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      display: block;
+    }
+
+    .mini-sommario strong {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3em;
+    }
+  </style>
 </head>
 <body class="is-preload">
-  <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html" class="logo">Elezioni101</a>
-    </header>
-
-    <!-- Main -->
-    <div id="main" class="alt">
-      <section class="post">
-        <header class="major">
-          <h1>🗳️ Referendum abrogativi 8–9 giugno 2025</h1>
-          <p>In questa pagina trovi spiegati in modo semplice i 5 quesiti su cui si voterà in tutta Italia.</p>
-
-
-<!-- INFO UTILI -->
-<section style="background: #f0f0f0; padding: 1em 1.5em; border-radius: 10px; margin-top: 1.5em;">
-  <h2 style="margin-top: 0;">ℹ️ Info utili sul referendum</h2>
-  <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-    <li style="margin-bottom: 0.7em;">🗓️ <strong>Quando si vota:</strong> Domenica 8 giugno e lunedì 9 giugno 2025.</li>
-    <li style="margin-bottom: 0.7em;">🕘 <strong>Orari:</strong> Domenica dalle 7:00 alle 23:00, lunedì dalle 7:00 alle 15:00.</li>
-    <li style="margin-bottom: 0.7em;">🪪 <strong>Cosa portare:</strong> Tessera elettorale e un documento d'identità valido (carta d'identità o patente).</li>
-    <li style="margin-bottom: 0.7em;">
-      📘 <strong>Cos’è un referendum abrogativo?</strong> È uno strumento con cui i cittadini possono cancellare (abrogare) una legge esistente o parte di essa.  Se vince il <strong>SÌ</strong>, la norma viene cancellata. Se vince il <strong>NO</strong>, resta in vigore.<br>
-      Per essere valido, deve votare almeno il <strong>50% degli aventi diritto</strong>.
-    </li>
-    <li>
-      👉 <strong>Come si vota?</strong> Sulla scheda troverai la domanda del quesito e due opzioni: SÌ e NO. Devi barrare una sola casella.
-    </li>
-  </ul>
+<!-- Hero / Banner -->
+<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+  <div class="content">
+    <h1>🗳️ Referendum 8–9 giugno 2025</h1>
+    <p class="major">Scopri in modo semplice, imparziale e visivo i 5 quesiti su cui si voterà. Quando si vota, cosa significa SÌ o NO, e perché conta partecipare.</p>
+    <ul class="actions stacked">
+      <li><a href="#sommario-quesiti" class="button big wide smooth-scroll-middle">Vai ai quesiti</a></li>
+    </ul>
+  </div>
+  <div class="image">
+    <img src="images/voto.jpg" alt="Referendum 2025" />
+  </div>
 </section>
 
-
-<!-- MINI SOMMARIO DEI QUESITI -->
-<nav style="margin-top: 2em;">
-  <p><strong>📋 I quesiti in breve:</strong></p>
-  <ul style="list-style-type: none; padding-left: 0;">
-    <li><a href="#quesito1">1. Disciplina dei licenziamenti illegittimi</a></li>
-    <li><a href="#quesito2">2. Licenziamenti e tutele nelle piccole imprese</a></li>
-    <li><a href="#quesito3">3. Contratti a tempo determinato</a></li>
-    <li><a href="#quesito4">4. Appalti e responsabilità del committente</a></li>
-    <li><a href="#quesito5">5. Cittadinanza italiana</a></li>
+<!-- Sticky Menu -->
+<nav id="nav">
+  <ul>
+    <li><a href="#quesito1">Quesito 1</a></li>
+    <li><a href="#quesito2">Quesito 2</a></li>
+    <li><a href="#quesito3">Quesito 3</a></li>
+    <li><a href="#quesito4">Quesito 4</a></li>
+    <li><a href="#quesito5">Quesito 5</a></li>
   </ul>
 </nav>
 
-        </header>
-
-        <hr />
-
-<article class="post" id="quesito1">
-
-  <header class="major">
-    <h2>Quesito 1 – Disciplina dei licenziamenti illegittimi</h2>
-<p><strong>Di cosa si tratta?</strong><br>
-Il referendum propone di cancellare una parte del <strong>Jobs Act</strong> che, dal 2015, ha cambiato le regole sui licenziamenti per chi è stato assunto con un contratto a tutele crescenti.<br>
-Oggi, se un lavoratore assunto dopo il 7 marzo 2015 viene <strong>licenziato senza un motivo valido</strong>, <strong>non può tornare al suo posto di lavoro</strong>: riceve solo un risarcimento in denaro. Il referendum vuole <strong>ripristinare la possibilità di essere riassunto</strong> nei casi più gravi.
-</p>
-
-<p style="margin-top: 1em;">
-  🔎 <strong>Vuoi capire meglio le leggi coinvolte?</strong><br>
-  Leggi <a href="approfondimento-norme-quesito1.html">la spiegazione semplice delle leggi prima e dopo il Jobs Act</a>.
-</p>
 
 
-  </header>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-    <div style="flex: 1; min-width: 250px; background: #e0f7e9; padding: 1em; border-radius: 8px;">
-      <strong>✅ Se voti SÌ:</strong>
-<p>Vuoi cancellare la norma attuale del Jobs Act e permettere al giudice, nei casi più gravi di licenziamento ingiusto, di <strong>far tornare al lavoro il dipendente</strong>.
-</p>
-
-
-      <ul>
-        <li><a href="perche-si-1.html">📘 Perché votare SÌ</a></li>
-        <li><a href="sostenitori-si-1.html">👥 Chi sostiene il SÌ</a></li>
-      </ul>
-    </div>
-    <div style="flex: 1; min-width: 250px; background: #fde0e0; padding: 1em; border-radius: 8px;">
-      <strong>❌ Se voti NO:</strong>
- <p>Vuoi mantenere la legge attuale, che prevede <strong>un risarcimento in denaro</strong> per chi viene licenziato ingiustamente, senza la possibilità di venire riassunto.
-</p>
-      <ul>
-        <li><a href="perche-no-1.html">📕 Perché votare NO</a></li>
-        <li><a href="sostenitori-no-1.html">👥 Chi sostiene il NO</a></li>
-      </ul>
-    </div>
+<!-- COME FUNZIONA IL REFERENDUM -->
+<section class="spotlight" style="background: #f7f7f7; padding: 2em; border-radius: 10px; margin-top: 2em;">
+  <div class="content">
+    <h2 style="margin-top: 0;">ℹ️ Come funziona il referendum?</h2>
+    <p style="font-size: 1.1em; line-height: 1.6;">
+      Il <strong>referendum abrogativo</strong> permette ai cittadini di <strong>cancellare una legge esistente</strong> (o parte di essa). Se vince il <strong>SÌ</strong>: la norma viene <strong>abrogata</strong> e quindi non sarà più in vigore. Se vince il <strong>NO</strong>: la legge resta <strong>completamente valida</strong>. Per essere valido, deve votare almeno il <strong>50% degli aventi diritto </strong>.
+    </p>
   </div>
 
-  <p style="margin-top: 1.5em;"><strong>📄 Questo è un fac-simile della scheda elettorale:</strong></p>
-  <div style="text-align: center;">
+
+
+    <!-- Info utili -->
+    <div class="mini-sommario" >
+      <h2 style="margin-top: 0;">📌 Info pratiche</h2>
+      <ul>
+        <li><strong>🗓️ Quando si vota:</strong><br>Domenica 8 giugno e lunedì 9 giugno 2025</li>
+        <li><strong>🕘 Orari:</strong><br>Domenica 7:00–23:00, lunedì 7:00–15:00</li>
+        <li><strong>🪪 Documenti:</strong><br>Tessera elettorale + documento d'identità valido (carta di indentità o patente)</li>
+        <li><strong>🗳️ Come si vota:</strong><br>Barra una sola casella (SÌ o NO) per ogni scheda</li>
+      </ul>
+<p style="margin-top: 1em; text-align: center;">
+  ❓ Hai dubbi su come votare o su cosa serve? <a href="#faq"><strong>Leggi le FAQ</strong></a>
+</p>
+
+    </div>
+
+</section>
+    <!-- Sommario quesiti -->
+    <div class="mini-sommario" id="sommario-quesiti">
+      <h2 style="margin-top: 0;">📋 I 5 quesiti in breve</h2>
+      <ul>
+        <li><a href="#quesito1"><strong>1. Disciplina dei licenziamenti illegittimi</strong> Reinserire il reintegro nei casi gravi</a></li>
+        <li><a href="#quesito2"><strong>2. Licenziamenti e tutele nelle piccole imprese</strong> Eliminare limiti all’indennizzo</a></li>
+        <li><a href="#quesito3"><strong>3. Contratti a termine</strong> Rendere obbligatoria la causale</a></li>
+        <li><a href="#quesito4"><strong>4. Appalti e responsabilità</strong> Estendere la responsabilità del committente</a></li>
+        <li><a href="#quesito5"><strong>5. Cittadinanza italiana</strong> Dimezzare i tempi per farne richiesta</a></li>
+      </ul>
+    </div>
+
+<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="quesito1">
+  <div class="content">
+    <h2>Quesito 1 – Licenziamenti illegittimi</h2>
+
+    <p>
+      Questo quesito propone di abrogare una parte del <strong>Jobs Act</strong> del 2015, che ha cambiato le regole per i licenziamenti nelle assunzioni a tutele crescenti. Oggi, chi viene <strong>licenziato ingiustamente</strong> dopo il 7 marzo 2015 ha diritto solo a un <strong>risarcimento economico</strong>, ma <strong>non può essere reintegrato</strong> nel posto di lavoro. 
+      <br><br>
+      Il referendum mira a <strong>ripristinare la possibilità di reintegro</strong> nei casi più gravi. Votando <strong>SÌ</strong> si abroga la norma attuale e si torna alla possibilità di reintegro. Votando <strong>NO</strong> si mantiene la legge così com'è, con il solo indennizzo.
+    </p>
+
+    <p style="margin-top: 1em;">
+      🔎 <strong>Approfondisci le norme coinvolte:</strong><br>
+      <a href="approfondimento-norme-quesito1.html">Leggi la spiegazione semplice delle leggi prima e dopo il Jobs Act</a>
+    </p>
+
+<div style="margin-top: 1em; display: flex; gap: 2em; flex-wrap: wrap; justify-content: center;">
+
+  <!-- Blocco SÌ -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-si-1.html"
+       class="button icon solid fa-check"
+       style="background: #2e7d32; color: white !important; border: none;"
+       onmouseover="this.style.background='#239026'" onmouseout="this.style.background='#2e7d32'">
+      Perché votare SÌ
+    </a>
+    <a href="sostenitori-si-1.html" style="color: #2e7d32; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il SÌ
+    </a>
+  </div>
+
+  <!-- Blocco NO -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-no-1.html"
+       class="button icon solid fa-times"
+       style="background: #c62828; color: white !important; border: none;"
+       onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
+      Perché votare NO
+    </a>
+    <a href="sostenitori-no-1.html" style="color: #c62828; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il NO
+    </a>
+  </div>
+</div>
+</p>
+  </div>
+  <div class="image">
     <a href="images/quesito1.png" target="_blank">
-      <img src="images/quesito1.png" alt="Fac-simile della scheda del quesito 1: licenziamento e reintegro" style="max-width: 90%; margin: 1em auto; border: 1px solid #ccc;" />
+      <img src="images/quesito1.png" alt="Scheda elettorale Quesito 1 – Licenziamenti illegittimi" />
     </a>
   </div>
-
-</article>
-
-
-
+</section>
         <hr />
 
-<article class="post" id="quesito2">
 
-  <header class="major">
-    <h2>Quesito 2 – Licenziamenti e tutele nelle piccole imprese</h2>
-    <p><strong>Di cosa si tratta?</strong><br>
-      Questo referendum riguarda una norma che stabilisce <strong>quanta indennità economica</strong> spetta a un lavoratore licenziato senza giusta causa da una <strong>piccola impresa</strong> (meno di 15 dipendenti).<br>
-      Oggi l’indennizzo è fissato tra <strong>2,5 e 6 mensilità</strong> di stipendio, con possibilità di arrivare fino a <strong>14 mensilità</strong> per i lavoratori con maggiore anzianità. Il referendum propone di <strong>cancellare questi limiti</strong>, lasciando al giudice la libertà di stabilire l’importo.
+<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="quesito2">
+  <div class="content">
+    <h2>Quesito 2 – Licenziamenti e tuele nelle piccole imprese</h2>
+
+    <p>
+      Questo quesito riguarda una norma che stabilisce <strong>quanta indennità economica</strong> spetta a un lavoratore licenziato senza giusta causa da una <strong>piccola impresa</strong> (meno di 15 dipendenti).<br>
+      Oggi l’indennizzo è fissato tra <strong>2,5 e 6 mensilità</strong> di stipendio, con possibilità di arrivare fino a <strong>14 mensilità</strong> per i lavoratori con maggiore anzianità. Il referendum propone di <strong>cancellare questi limiti</strong>, lasciando al giudice la libertà di stabilire l’importo. Votando Sì, Vuoi <strong>cancellare le soglie minime e massime</strong> oggi previste per l’indennità. Il giudice potrà decidere caso per caso l'importo del risarcimento economico, anche superiore o inferiore ai limiti attuali. Votando No, Vuoi <strong>mantenere l’indennizzo stabilito per legge</strong>, con un minimo e un massimo predefiniti. Il giudice continuerà a decidere l’importo entro i limiti oggi in vigore.
     </p>
 
     <p style="margin-top: 1em;">
-      🔎 <strong>Vuoi capire meglio le leggi coinvolte?</strong><br>
-      Leggi <a href="approfondimento-norme-quesito2.html">la spiegazione semplice della norma e delle tutele nelle piccole imprese</a>.
+      🔎 <strong>Approfondisci le norme coinvolte:</strong><br>
+      <a href="approfondimento-norme-quesito2.html">Leggi la spiegazione semplice della norma e delle tutele nelle piccole imprese</a>
     </p>
-  </header>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-    <div style="flex: 1; min-width: 250px; background: #e0f7e9; padding: 1em; border-radius: 8px;">
-      <strong>✅ Se voti SÌ:</strong>
-      <p>Vuoi <strong>cancellare le soglie minime e massime</strong> oggi previste per l’indennità. Il giudice potrà decidere caso per caso l'importo del risarcimento economico, anche superiore o inferiore ai limiti attuali.</p>
-      <ul>
-        <li><a href="perche-si-2.html">📘 Perché votare SÌ</a></li>
-        <li><a href="sostenitori-si-2.html">👥 Chi sostiene il SÌ</a></li>
-      </ul>
-    </div>
-    <div style="flex: 1; min-width: 250px; background: #fde0e0; padding: 1em; border-radius: 8px;">
-      <strong>❌ Se voti NO:</strong>
-      <p>Vuoi <strong>mantenere l’indennizzo stabilito per legge</strong>, con un minimo e un massimo predefiniti. Il giudice continuerà a decidere l’importo entro i limiti oggi in vigore.</p>
-      <ul>
-        <li><a href="perche-no-2.html">📕 Perché votare NO</a></li>
-        <li><a href="sostenitori-no-2.html">👥 Chi sostiene il NO</a></li>
-      </ul>
-    </div>
+<div style="margin-top: 1em; display: flex; gap: 2em; flex-wrap: wrap; justify-content: center;">
+
+  <!-- Blocco SÌ -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-si-2.html"
+       class="button icon solid fa-check"
+       style="background: #2e7d32; color: white !important; border: none;"
+       onmouseover="this.style.background='#239026'" onmouseout="this.style.background='#2e7d32'">
+      Perché votare SÌ
+    </a>
+    <a href="sostenitori-si-2.html" style="color: #2e7d32; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il SÌ
+    </a>
   </div>
 
-  <p style="margin-top: 1.5em;"><strong>📄 Questo è un fac-simile della scheda elettorale:</strong></p>
-  <div style="text-align: center;">
+  <!-- Blocco NO -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-no-2.html"
+       class="button icon solid fa-times"
+       style="background: #c62828; color: white !important; border: none;"
+       onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
+      Perché votare NO
+    </a>
+    <a href="sostenitori-no-2.html" style="color: #c62828; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il NO
+    </a>
+  </div>
+
+</div>
+</p>
+  </div>
+
+  <div class="image">
     <a href="images/quesito2.png" target="_blank">
-      <img src="images/quesito2.png" alt="Fac-simile della scheda del quesito 2: licenziamenti nelle piccole imprese" style="max-width: 90%; margin: 1em auto; border: 1px solid #ccc;" />
+      <img src="images/quesito2.png" alt="Scheda elettorale Quesito 2 – Licenziamenti e tutele nelle piccole imprese" />
     </a>
   </div>
-
-</article>
-
-
-
-
+</section>
         <hr />
 
-<article class="post" id="quesito3">
-  <header class="major">
+
+<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="quesito3">
+  <div class="content">
     <h2>Quesito&nbsp;3 – Contratti a tempo determinato</h2>
-    <p><strong>Di cosa si tratta?</strong><br/>
-      Oggi le aziende possono assumere o rinnovare un contratto a termine <strong>fino a 12&nbsp;mesi senza indicare alcuna causale</strong>. Il referendum chiede di <strong>abrogare questa deroga</strong>: se vince il <strong>SÌ</strong> la causale diventa obbligatoria fin dal primo giorno; con il <strong>NO</strong> la regola resta com’è.
+<p>
+      Oggi le aziende possono assumere o rinnovare un contratto a termine <strong>fino a 12 mesi senza indicare alcuna causale</strong>. Il referendum chiede di <strong>abrogare questa deroga</strong>. Se voti SÌ, vuoi <strong>eliminare</strong> la possibilità di stipulare o rinnovare contratti a termine senza causale, e il datore dovrà <strong>sempre</strong> indicare un motivo scritto per ricorrere al tempo determinato. Se voti NO, Vuoi <strong>mantenere</strong> la deroga dei 12 mesi senza causale. Le aziende potranno continuare a usare il contratto a termine senza motivo scritto nei primi 12 mesi.
+
+
     </p>
 
     <p style="margin-top: 1em;">
-      🔎 <strong>Vuoi capire meglio le norme coinvolte?</strong><br/>
-      Leggi <a href="approfondimento-norme-quesito3.html">la spiegazione semplice delle regole sui contratti a termine prima e dopo il referendum</a>.
+      🔎 <strong>Approfondisci le norme coinvolte:</strong><br/>
+      <a href="approfondimento-norme-quesito3.html"> Leggi la spiegazione semplice delle regole sui contratti a termine prima e dopo il referendum</a>.
     </p>
-  </header>
 
-  <div style="display:flex;flex-wrap:wrap;gap:1em;">
-    <div style="flex:1;min-width:250px;background:#e0f7e9;padding:1em;border-radius:8px;">
-      <strong>✅ Se voti SÌ:</strong>
-      <p>
-        Vuoi <strong>eliminare</strong> la possibilità di stipulare o rinnovare contratti a termine senza causale.<br/>
-        👉 Il datore dovrà <strong>sempre</strong> indicare un motivo scritto per ricorrere al tempo determinato.
-      </p>
-      <ul>
-        <li><a href="perche-si-3.html">📘 Perché votare SÌ</a></li>
-        <li><a href="sostenitori-si-3.html">👥 Chi sostiene il SÌ</a></li>
-      </ul>
-    </div>
 
-    <div style="flex:1;min-width:250px;background:#fde0e0;padding:1em;border-radius:8px;">
-      <strong>❌ Se voti NO:</strong>
-      <p>
-        Vuoi <strong>mantenere</strong> la deroga dei 12&nbsp;mesi senza causale.<br/>
-        👉 Le aziende potranno continuare a usare il contratto a termine senza motivo scritto nei primi 12&nbsp;mesi.
-      </p>
-      <ul>
-        <li><a href="perche-no-3.html">📕 Perché votare NO</a></li>
-        <li><a href="sostenitori-no-3.html">👥 Chi sostiene il NO</a></li>
-      </ul>
-    </div>
-  </div>
+<div style="margin-top: 1em; display: flex; gap: 2em; flex-wrap: wrap; justify-content: center;">
 
-  <p style="margin-top:1.5em;"><strong>📄 Fac‑simile della scheda:</strong></p>
-  <div style="text-align:center;">
-    <a href="images/quesito3.png" target="_blank">
-      <img src="images/quesito3.png" alt="Fac‑simile della scheda del quesito&nbsp;3" style="max-width:90%;margin:1em auto;border:1px solid #ccc;"/>
+  <!-- Blocco SÌ -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-si-3.html"
+       class="button icon solid fa-check"
+       style="background: #2e7d32; color: white !important; border: none;"
+       onmouseover="this.style.background='#239026'" onmouseout="this.style.background='#2e7d32'">
+      Perché votare SÌ
+    </a>
+    <a href="sostenitori-si-3.html" style="color: #2e7d32; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il SÌ
     </a>
   </div>
-</article>
 
+  <!-- Blocco NO -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-no-3.html"
+       class="button icon solid fa-times"
+       style="background: #c62828; color: white !important; border: none;"
+       onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
+      Perché votare NO
+    </a>
+    <a href="sostenitori-no-3.html" style="color: #c62828; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il NO
+    </a>
+  </div>
+</div>
+</p>
+  </div>
+  <div class="image">
+    <a href="images/quesito3.png" target="_blank">
+      <img src="images/quesito3.png" alt="Scheda elettorale Quesito 3 – Contratti a tempo determinato" />
+    </a>
+  </div>
+</section>
 
 
         <hr />
-<article class="post" id="quesito4">
-  <header class="major">
+
+<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="quesito4">
+  <div class="content">
     <h2>Quesito 4 – Responsabilità del committente negli appalti</h2>
-    <p><strong>Di cosa si tratta?</strong><br>
-      Quando un’azienda affida dei lavori a un’altra (cioè fa un appalto o subappalto), la legge stabilisce che è responsabile anche per la sicurezza dei lavoratori dell’azienda appaltatrice.<br><br>
-      Tuttavia, oggi c’è un’eccezione: <strong>il committente non è responsabile se l’infortunio dipende da rischi specifici del lavoro svolto dall’appaltatore</strong> (cioè rischi tipici di quella mansione).<br><br>
-      Il referendum propone di cancellare questa eccezione.
+<p>
+      Quando un’azienda affida dei lavori a un’altra (cioè fa un appalto o subappalto), la legge stabilisce che è responsabile anche per la sicurezza dei lavoratori dell’azienda appaltatrice. Tuttavia, oggi c’è un’eccezione: <strong>il committente non è responsabile se l’infortunio dipende da rischi specifici del lavoro svolto dall’appaltatore</strong> (cioè rischi tipici di quella mansione).<br><br>
+
+Votando SÌ, vuoi che <strong>l’azienda committente sia sempre responsabile</strong> anche quando l’infortunio è causato da rischi specifici dell’attività dell’appaltatore. Si estenderebbe quindi la responsabilità del committente nei casi di infortunio sul lavoro. Votando NO,   vuoi <strong>mantenere la regola attuale</strong>: il committente <strong>non è responsabile</strong> per infortuni causati da rischi tipici del lavoro affidato all’appaltatore.
+
     </p>
 
     <p style="margin-top: 1em;">
       🔎 <strong>Vuoi capire meglio le norme coinvolte?</strong><br>
       Leggi <a href="approfondimento-norme-quesito4.html">la spiegazione semplice della responsabilità negli appalti</a>.
     </p>
-  </header>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-    <div style="flex: 1; min-width: 250px; background: #e0f7e9; padding: 1em; border-radius: 8px;">
-      <strong>✅ Se voti SÌ:</strong>
-      <p>
-        Vuoi che <strong>l’azienda committente sia sempre responsabile</strong> anche quando l’infortunio è causato da rischi specifici dell’attività dell’appaltatore.<br/>
-        👉 Si estenderebbe la responsabilità del committente nei casi di infortunio sul lavoro.
-      </p>
-      <ul>
-        <li><a href="perche-si-4.html">📘 Perché votare SÌ</a></li>
-        <li><a href="sostenitori-si-4.html">👥 Chi sostiene il SÌ</a></li>
-      </ul>
-    </div>
-
-    <div style="flex: 1; min-width: 250px; background: #fde0e0; padding: 1em; border-radius: 8px;">
-      <strong>❌ Se voti NO:</strong>
-      <p>
-        Vuoi <strong>mantenere la regola attuale</strong>:<br/>
-        👉 Il committente <strong>non è responsabile</strong> per infortuni causati da rischi tipici del lavoro affidato all’appaltatore.
-      </p>
-      <ul>
-        <li><a href="perche-no-4.html">📕 Perché votare NO</a></li>
-        <li><a href="sostenitori-no-4.html">👥 Chi sostiene il NO</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <p style="margin-top: 1.5em;"><strong>📄 Fac‑simile della scheda:</strong></p>
-  <div style="text-align: center;">
-    <a href="images/quesito4.png" target="_blank">
-      <img src="images/quesito4.png" alt="Fac‑simile della scheda del quesito 4" style="max-width: 90%; margin: 1em auto; border: 1px solid #ccc;" />
+<div style="margin-top: 1em; display: flex; gap: 2em; flex-wrap: wrap; justify-content: center;">
+<!-- Blocco SÌ -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-si-4.html"
+       class="button icon solid fa-check"
+       style="background: #2e7d32; color: white !important; border: none;"
+       onmouseover="this.style.background='#239026'" onmouseout="this.style.background='#2e7d32'">
+      Perché votare SÌ
+    </a>
+    <a href="sostenitori-si-4.html" style="color: #2e7d32; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il SÌ
     </a>
   </div>
-</article>
+
+  <!-- Blocco NO -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-no-4.html"
+       class="button icon solid fa-times"
+       style="background: #c62828; color: white !important; border: none;"
+       onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
+      Perché votare NO
+    </a>
+    <a href="sostenitori-no-4.html" style="color: #c62828; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il NO
+    </a>
+  </div>
+
+</div>
+</p>
+  </div>
+
+  <div class="image">
+    <a href="images/quesito4.png" target="_blank">
+      <img src="images/quesito4.png" alt="Scheda elettorale Quesito 4 – Responsabilità del committente negli appalti" />
+    </a>
+  </div>
+</section>
+
 
         <hr />
-<article class="post" id="quesito5">
-  <header class="major">
+<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="quesito5">
+  <div class="content">
     <h2>Quesito 5 – Cittadinanza italiana</h2>
-    <p><strong>Di cosa si tratta?</strong><br>
-    Oggi, uno straniero maggiorenne che proviene da un Paese extra-UE può chiedere la cittadinanza italiana solo dopo <strong>10 anni di residenza legale e continuativa</strong> in Italia.<br><br>
-    Il referendum propone di <strong>ridurre questo periodo a 5 anni</strong>, cioè di dimezzare il tempo minimo richiesto per presentare la domanda.
+<p>
+    Oggi, uno straniero maggiorenne che proviene da un Paese extra-UE può chiedere la cittadinanza italiana solo dopo <strong>10 anni di residenza legale e continuativa</strong> in Italia. Il referendum propone di <strong>ridurre questo periodo a 5 anni</strong>, cioè di dimezzare il tempo minimo richiesto per presentare la domanda. Se voti SÌ, Vuoi <strong>ridurre a 5 anni</strong> il periodo di residenza necessario per fare richiesta di cittadinanza italiana. Gli altri requisiti non cambiano: servono comunque conoscenza dell’italiano, reddito minimo e buona condotta. Votando NO, vuoi <strong>mantenere il requisito attuale</strong>: la cittadinanza può essere richiesta <strong>solo dopo 10 anni di residenza legale</strong> in Italia da parte di stranieri extra-UE.
     </p>
 
     <p style="margin-top: 1em;">
       🔎 <strong>Vuoi capire meglio cosa prevede la legge?</strong><br>
       Leggi <a href="approfondimento-norme-quesito5.html">l'approfondimento sulla cittadinanza per stranieri</a>.
     </p>
-  </header>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-    <div style="flex: 1; min-width: 250px; background: #e0f7e9; padding: 1em; border-radius: 8px;">
-      <strong>✅ Se voti SÌ:</strong>
-      <p>Vuoi <strong>ridurre a 5 anni</strong> il periodo di residenza necessario per fare richiesta di cittadinanza italiana.<br>
-      👉 Gli altri requisiti non cambiano: servono comunque conoscenza dell’italiano, reddito minimo e buona condotta.</p>
-      <ul>
-        <li><a href="perche-si-5.html">📘 Perché votare SÌ</a></li>
-        <li><a href="sostenitori-si-5.html">👥 Chi sostiene il SÌ</a></li>
-      </ul>
-    </div>
 
-    <div style="flex: 1; min-width: 250px; background: #fde0e0; padding: 1em; border-radius: 8px;">
-      <strong>❌ Se voti NO:</strong>
-      <p>Vuoi <strong>mantenere il requisito attuale</strong>: la cittadinanza può essere richiesta <strong>solo dopo 10 anni di residenza legale</strong> in Italia da parte di stranieri extra-UE.</p>
-      <ul>
-        <li><a href="perche-no-5.html">📕 Perché votare NO</a></li>
-        <li><a href="sostenitori-no-5.html">👥 Chi sostiene il NO</a></li>
-      </ul>
-    </div>
-  </div>
 
-  <p style="margin-top: 1.5em;"><strong>📄 Questo è un fac-simile della scheda elettorale:</strong></p>
-  <div style="text-align: center;">
-    <a href="images/quesito5.png" target="_blank">
-      <img src="images/quesito5.png" alt="Fac-simile Quesito 5" style="max-width: 90%; margin: 1em auto; border: 1px solid #ccc;" />
+
+<div style="margin-top: 1em; display: flex; gap: 2em; flex-wrap: wrap; justify-content: center;">
+
+  <!-- Blocco SÌ -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-si-5.html"
+       class="button icon solid fa-check"
+       style="background: #2e7d32; color: white !important; border: none;"
+       onmouseover="this.style.background='#239026'" onmouseout="this.style.background='#2e7d32'">
+      Perché votare SÌ
+    </a>
+    <a href="sostenitori-si-5.html" style="color: #2e7d32; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il SÌ
     </a>
   </div>
-</article>
 
-
-
-
-      </section>
-    </div>
+  <!-- Blocco NO -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+    <a href="perche-no-5.html"
+       class="button icon solid fa-times"
+       style="background: #c62828; color: white !important; border: none;"
+       onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
+      Perché votare NO
+    </a>
+    <a href="sostenitori-no-5.html" style="color: #c62828; font-weight: 600; text-decoration: none;">
+      👥 Vedi chi sostiene il NO
+    </a>
+  </div>
+</div>
+</p>
+  </div>
+  <div class="image">
+    <a href="images/quesito5.png" target="_blank">
+      <img src="images/quesito5.png" alt="Scheda elettorale Quesito 5 – Cittadinanza Italiana" />
+    </a>
+  </div>
+</section>
 
 <hr />
 
 
 
 
-    <!-- Footer -->
-<footer id="footer">
-  <section>
-    <h2>❓ Domande frequenti (FAQ)</h2>
+<!-- FAQ -->
+<div style="max-width: 900px; margin: 0 auto;">
+<section id="faq" style="margin-top: 4em;">
+  <h2>❓ Domande frequenti sul voto</h2>
 
-    <style>
-      details.faq-dark {
-        background: #2b2b2b;
-        color: #fff;
-        border: 1px solid #444;
-        border-radius: 6px;
-        padding: 0.75em 1em;
-        margin-bottom: 1em;
-      }
+  <style>
+    details.faq-block {
+      background: #fefefe;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1em 1.2em;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.3s ease;
+    }
 
-      /* Nasconde la freccia nativa del summary */
-      details.faq-dark summary::-webkit-details-marker {
-        display: none;
-      }
-      details.faq-dark summary::marker {
-        content: "";
-      }
+    details.faq-block[open] {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
 
-      details.faq-dark summary {
-        cursor: pointer;
-        font-size: 1.05em;
-        font-weight: 600;
-        color: #fff;
-        list-style: none;
-        display: flex;
-        align-items: center;
-      }
+    details.faq-block summary {
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
 
-      details.faq-dark[open] summary::before {
-        content: "− ";
-        font-weight: bold;
-        margin-right: 0.5em;
-      }
+    details.faq-block summary::before {
+      content: "+ ";
+      font-weight: bold;
+      margin-right: 0.5em;
+      color: #0078d4;
+    }
 
-      details.faq-dark summary::before {
-        content: "+ ";
-        font-weight: bold;
-        margin-right: 0.5em;
-        transition: all 0.3s ease;
-      }
+    details.faq-block[open] summary::before {
+      content: "− ";
+    }
 
-      details.faq-dark p {
-        margin-top: 0.5em;
-        line-height: 1.5em;
-      }
+    details.faq-block p {
+      margin-top: 0.6em;
+      line-height: 1.6;
+      font-size: 1em;
+    }
 
-      details.faq-dark a {
-        color: #99ccff;
-      }
-    </style>
+    details.faq-block a {
+      color: #0066cc;
+      font-weight: 500;
+    }
+  </style>
 
-    <details class="faq-dark">
-      <summary>Devo votare per forza?</summary>
-      <p>No, il voto è facoltativo. Ma se vuoi che il referendum sia valido, è importante partecipare: serve almeno il 50% di affluenza.</p>
-    </details>
+  <details class="faq-block">
+    <summary>📅 Devo votare per forza?</summary>
+    <p>No, il voto è facoltativo. Ma se vuoi rendere valido il referendum, è importante partecipare: serve almeno il 50% degli aventi diritto.</p>
+  </details>
 
-    <details class="faq-dark">
-      <summary>Posso votare solo per alcuni quesiti?</summary>
-      <p>Sì. Puoi scegliere di votare solo su uno o più quesiti e lasciare in bianco gli altri.</p>
-    </details>
+  <details class="faq-block">
+    <summary>🗳️ Posso votare solo per alcuni quesiti?</summary>
+    <p>Sì, puoi scegliere su quali quesiti esprimerti. Le schede lasciate in bianco non annullano le altre. Il presidente del seggio elettorale ti offrirà tutte le schede dei quesiti, puoi scegliere di prenderne solo una o più di una.</p>
+  </details>
 
-    <details class="faq-dark">
-      <summary>Se sbaglio a votare?</summary>
-      <p>Chiedi subito una nuova scheda al presidente di seggio prima di inserirla nell’urna.</p>
-    </details>
+  <details class="faq-block">
+    <summary>💳 Ho perso la tessera elettorale: posso votare?</summary>
+    <p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune, anche nei giorni del voto.</p>
+  </details>
 
-<details class="faq-dark">
-  <summary>Posso votare fuori sede se vivo in un altro comune?</summary>
-  <p>
-Sì. Se sei domiciliato da almeno 3 mesi in un comune di un'altra provincia, puoi votare lì per il referendum. Vale per motivi di studio, lavoro, salute o altri motivi documentabili.<br><br>
-    Devi inviare la domanda al tuo comune di domicilio entro il 5 maggio 2025.<br><br>
-    Se vivi all’estero (iscritto AIRE o fuori da almeno 3 mesi), puoi votare per corrispondenza con domanda entro il 7 maggio 2025.<br><br>
-    <a href="https://www.interno.gov.it/it/notizie/referendum-2025-ed-elettori-fuori-sede-modalita-voto-nel-comune-temporaneo-domicilio" target="_blank">
-      Vai alla pagina ufficiale del Ministero dell’Interno per il voto fuori sede
-    </a> <br>
- <a href="https://www.esteri.it/it/servizi-consolari-e-visti/italiani-all-estero/votoestero/elezionipolitiche/referendum-abrogativi-2025/">
-	Vai alla pagina ufficiale del Ministero degli Esteri per il voto all'estero
-	</a>
-  </p>
-</details>
+  <details class="faq-block">
+    <summary>🛂 Il mio documento è scaduto: posso votare?</summary>
+    <p>Sì. Puoi votare anche con un documento di identità scaduto, purché riconoscibile e con fotografia.</p>
+  </details>
 
-  </section>
+  <details class="faq-block">
+    <summary>🌍 Vivo in un'altra città o all’estero. Posso votare?</summary>
+    <p>
+      Sì, ma devi fare domanda. Se vivi in un altro comune da almeno 3 mesi (per studio, lavoro, salute) o se risiedi all’estero, puoi votare fuori sede o per corrispondenza. <br>
+      <a href="https://www.interno.gov.it/it/notizie/referendum-2025-ed-elettori-fuori-sede-modalita-voto-nel-comune-temporaneo-domicilio" target="_blank">Info per chi è in Italia</a> – 
+      <a href="https://www.esteri.it/it/servizi-consolari-e-visti/italiani-all-estero/votoestero/elezionipolitiche/referendum-abrogativi-2025/" target="_blank">Info per chi è all'estero</a>
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🖊️ Se sbaglio a votare?</summary>
+    <p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda al presidente di seggio.</p>
+  </details>
+</section>
+</div>
+
 
   <section>
     <p> Per dubbi scrivici a <a href="mailto:info@elezioni101.it">info@elezioni101.it</a></p>
@@ -409,19 +518,19 @@ Sì. Se sei domiciliato da almeno 3 mesi in un comune di un'altra provincia, puo
 
 
     <div id="copyright">
-      <ul><li>&copy; Elezioni101</li><li>Design: HTML5 UP</li></ul>
+      <p>&copy; Elezioni101</p> Design: HTML5 UP
     </div>
 
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 </body>
 </html>
