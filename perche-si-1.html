@@ -6,6 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --color-primario: #2e7d32;
+      --color-secondario: #d3f4dc;
+    }
+    h3 {
+      border-bottom: 2px solid var(--color-primario);
+      display: inline-block;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.6em;
+    }
+    .icon:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .party-entry {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.2em;
+      background-color: var(--color-secondario);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .party-entry img {
+      height: 50px;
+.contenuto-fluid {
+    max-width: none;
+    width: 100%;
+    padding: 2em 4em;
+  }
+  @media screen and (max-width: 768px) {
+    .contenuto-fluid {
+      padding: 1.5em 1em;
+    }
+  }
+    }
+  </style>
 </head>
 <body class="is-preload">
 
@@ -14,7 +53,7 @@
 
 <section class="wrapper style2 align-center" style="background: #eaf5eb;">
   <div class="inner">
-    <h2 style="color:#2e7d32;">✅ Perché votare SÌ – Quesito 1</h2>
+    <h2 style="color:var(--color-primario);">✅ Perché votare SÌ – Quesito 1</h2>
     <p style="font-size: 1.1em;">
       Votare SÌ significa modificare una parte del Jobs Act per ridare ai giudici la possibilità di disporre il reintegro nel posto di lavoro nei casi gravi di licenziamento ingiusto.
     </p>
@@ -22,54 +61,116 @@
 <li>
 <a href="#motivazioni-si"
    class="button big wide smooth-scroll-middle"
-   style="background: #2e7d32; color: white !important; border: none;"
+   style="background: var(--color-primario); color: white !important; border: none;"
    onmouseover="this.style.background='#239026'"
-   onmouseout="this.style.background='#2e7d32'">
+   onmouseout="this.style.background='var(--color-primario)'">
   Scopri le motivazioni
 </a>
-
+<li>
+<a href="#chi-sostiene-sì"
+   class="button big wide smooth-scroll-middle"
+   style="background: var(--color-primario); color: white !important; border: none;"
+   onmouseover="this.style.background='#239026'"
+   onmouseout="this.style.background='var(--color-primario)'">
+  Scopri chi sostiene il sì
+</a>
 </li>
-
     </ul>
   </div>
 </section>
 
-
-
 <div class="items style1 medium onscroll-fade-in" id="motivazioni-si">
-
   <section style="text-align: center;">
-    <span class="icon solid style2 major fa-gavel" style="color: #2e7d32;"></span>
+    <span class="icon solid style2 major fa-gavel" style="color: var(--color-primario);"></span>
     <h3>Più margine per i giudici</h3>
     <p>
       Oggi i giudici possono disporre il reintegro solo in pochissimi casi, come i licenziamenti discriminatori. 
-      <br>Con il SÌ si tornerebbe a una situazione in cui il magistrato ha maggiore libertà di valutazione, caso per caso, anche nei licenziamenti illegittimi per motivi disciplinari pretestuosi.
+      Con il Sì si tornerebbe a una situazione in cui il magistrato ha maggiore libertà di valutazione, caso per caso, anche nei licenziamenti illegittimi per motivi disciplinari pretestuosi.
     </p>
   </section>
 
   <section style="text-align: center;">
-    <span class="icon solid style2 major fa-users" style="color: #2e7d32;"></span>
+    <span class="icon solid style2 major fa-users" style="color: var(--color-primario);"></span>
     <h3>Tutele uguali per tutti</h3>
     <p>
       Il Jobs Act ha introdotto una distinzione tra lavoratori assunti prima e dopo il 7 marzo 2015. 
-      <br>Chi è stato assunto dopo quella data non può mai essere reintegrato. Il SÌ cancella questa disuguaglianza, riportando le stesse tutele a tutti i dipendenti.
+      Chi è stato assunto dopo quella data non può mai essere reintegrato. Il Sì cancella questa disuguaglianza, riportando le stesse tutele a tutti i dipendenti.
     </p>
   </section>
 
   <section style="text-align: center;">
-    <span class="icon solid style2 major fa-balance-scale" style="color: #2e7d32;"></span>
+    <span class="icon solid style2 major fa-balance-scale" style="color: var(--color-primario);"></span>
     <h3>Indennizzo più flessibile</h3>
     <p>
       Con la legge attuale, il risarcimento per licenziamento ingiusto è determinato quasi unicamente dall’anzianità di servizio. 
-      <br>Chi vota SÌ vuole dare al giudice il potere di valutare anche altri fattori: dimensioni dell’impresa, condizioni personali, danno subito.
+      Chi vota Sì vuole dare al giudice il potere di valutare anche altri fattori: dimensioni dell’impresa, condizioni personali, danno subito.
     </p>
   </section>
 </div>
-
 </section>
 
+<div class="items style1 medium onscroll-fade-in" id="chi-sostiene-sì">
+<section class="style3" style="width: 100%; padding: 3em 5vw;">
+<div class="contenuto-fluid">
+<h2><span class="icon solid fa-users" style="color: var(--color-primario); margin-right: 0.4em;"> Chi sostiene il Sì – Quesito 1</h2>
+    <p>Il quesito 1 riguarda le regole sui licenziamenti senza giusta causa. Ecco chi ha promosso il referendum, chi lo sostiene e perché.</p>
+  </div>
+
+
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-thumbtack" style="color: var(--color-primario); margin-right: 0.4em;"></span> I promotori</h3>
+    <p>
+      Il referendum è stato promosso dalla <strong>CGIL</strong>, con il supporto di diverse associazioni e movimenti che si occupano di lavoro e diritti sociali.
+      L'obiettivo è abrogare una parte del Jobs Act per ripristinare maggiori tutele contro i licenziamenti ingiustificati.
+    </p>
+  </div>
+
+
+  <section class="wrapper style1">
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-landmark" style="color: var(--color-primario); margin-right: 0.4em;"></span> I partiti che sostengono il Sì</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 1em;">
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-pd.png" alt="Logo PD" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Partito Democratico</strong><br><small>(con posizioni interne diverse)</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-m5s.png" alt="Logo M5S" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Movimento 5 Stelle</strong></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-avs.png" alt="Logo AVS" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Alleanza Verdi-Sinistra</strong></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-possibile.png" alt="Logo Possibile" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Possibile</strong></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-prc.png" alt="Logo Rifondazione" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Rifondazione Comunista</strong></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-psi.png" alt="Logo PSI" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Partito Socialista Italiano</strong></p>
+  </div>
+</div>
+
+</section>
+  </div>
+
+
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-question-circle" style="color: var(--color-primario); margin-right: 0.4em;"></span> Chi non prende posizione</h3>
+    <p>
+      Alcuni partiti non hanno espresso una posizione ufficiale sul quesito. Ad esempio, <strong>Forza Italia</strong> e <strong>Fratelli d’Italia</strong> hanno scelto di non partecipare attivamente al dibattito referendario. In alcuni casi hanno invitato all’astensione, senza schierarsi apertamente per il NO.
+    </p>
+  </div>
+</section>
+</div>
+
 <section class="wrapper style2 align-center">
-  <div class="inner">
+<div class="contenuto-fluid">
     <h3>🔎 Approfondimenti</h3>
     <p><a href="approfondimento-norme-quesito1.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
 
@@ -82,12 +183,11 @@
   </div>
 </section>
 
+<a href="#wrapper" class="button small" style="position: fixed; bottom: 20px; right: 20px; background: #2e7d32; color: white;">&uarr;</a>
 
-
-
-  <div id="copyright">
-    <ul>&copy; Elezioni101 <p>Design: HTML5 UP </p></ul>
-  </div>
+<div id="copyright">
+  <ul>&copy; Elezioni101 <p>Design: HTML5 UP </p></ul>
+</div>
 
 </div>
 

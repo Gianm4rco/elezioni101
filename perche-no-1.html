@@ -7,6 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+    :root {
+      --color-rosso: #c62828;
+      --color-secondario-rosso: #fde0e0;
+    }
+    h3 {
+      border-bottom: 2px solid var(--color-rosso);
+      display: inline-block;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.6em;
+    }
+    .icon:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .party-entry {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.2em;
+      background-color: var(--color-secondario-rosso);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .party-entry img {
+      height: 50px;
+.contenuto-fluid {
+    max-width: none;
+    width: 100%;
+    padding: 2em 4em;
+  }
+  @media screen and (max-width: 768px) {
+    .contenuto-fluid {
+      padding: 1.5em 1em;
+    }
+  }
+    }
+  </style>
 </head>
 <body class="is-preload">
 
@@ -17,7 +56,7 @@
     <div class="inner">
       <h2 style="color:#c62828;">❌ Perché votare NO – Quesito 1</h2>
       <p style="font-size: 1.1em;">
-        Chi vota NO vuole mantenere le attuali regole previste dal Jobs Act per i lavoratori assunti a tempo indeterminato dopo il 7 marzo 2015. 
+        <p> Chi vota NO vuole mantenere le attuali regole previste dal Jobs Act per i lavoratori assunti a tempo indeterminato dopo il 7 marzo 2015. 
         Secondo chi sostiene questa posizione, la normativa attuale garantisce comunque tutele e offre maggiore certezza sia per i lavoratori che per le imprese.
       </p>
       <ul class="actions stacked">
@@ -26,6 +65,14 @@
              onmouseover="this.style.background='#a71e1e'" onmouseout="this.style.background='#c62828'">
             Scopri le motivazioni
           </a>
+<li>
+<a href="#chi-sostiene-no"
+   class="button big wide smooth-scroll-middle"
+   style="background: var(--color-rosso); color: white !important; border: none;"
+   onmouseover="this.style.background='#a71e1e'"
+   onmouseout="this.style.background='var(--color-rosso)'">
+  Scopri chi sostiene il no
+</a>
         </li>
       </ul>
     </div>
@@ -56,19 +103,75 @@
             La norma attuale garantisce comunque un indennizzo proporzionato all’anzianità di servizio, offrendo un bilanciamento tra tutela del lavoratore e sostenibilità per il datore.
           </p>
         </section>
-
       </div>
   </section>
 
+<div class="items style1 medium onscroll-fade-in" id="chi-sostiene-no">
+<section class="style3" style="width: 100%; padding: 3em 5vw;">
+    <div class="contenuto-fluid">
+    <h2><span class="icon solid fa-users" style="color: var(--color-rosso); margin-right: 0.4em;"> Chi sostiene il NO – Quesito 1</h2>
+    <p>Il quesito 1 propone di abrogare parte del Jobs Act. Ecco chi si oppone a questa proposta e vuole mantenere la normativa attuale.</p>
+    </div>
+
+
+  <div style="padding: 2em;">
+    <h3><span class="icon solid fa-thumbtack" style="color: var(--color-rosso); margin-right: 0.4em;"></span> I principali contrari</h3>
+    <p>
+      Il fronte del NO include partiti e movimenti che ritengono che la riforma del 2015 abbia portato maggiore certezza nei rapporti di lavoro.
+      Secondo loro, reintrodurre la possibilità diffusa di reintegro creerebbe più contenziosi legali e incertezza per imprese e lavoratori.
+    </p>
+     </div>
+
+
+  <section class="wrapper style1">
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-landmark" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> I partiti che sostengono il NO</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 1em;">
+      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+        <img src="images/logo-italiaviva.png" alt="Logo Italia Viva" style="height: 50px; margin-bottom: 0.5em;">
+        <p><strong>Italia Viva</strong></p>
+      </div>
+      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+        <img src="images/logo-azione.svg" alt="Logo Azione" style="height: 30px; margin-bottom: 1.8em;">
+        <p><strong>Azione</strong></p>
+      </div>
+      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+        <img src="images/logo-piueuropa.png" alt="Logo Più Europa" style="height: 50px; margin-bottom: 0.5em;">
+        <p><strong>Più Europa</strong></p>
+      </div>
+      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+        <img src="images/logo-pd.png" alt="Logo PD" style="height: 50px; margin-bottom: 0.5em;">
+        <p><strong>Partito Democratico</strong><br><small>(alcune voci interne)</small></p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-chart-line" style="color: var(--color-rosso); margin-right: 0.4em;"></span>  Economisti e osservatori critici</h3>
+    <p>
+      Alcuni esperti di diritto del lavoro, osservatori indipendenti come <strong>Voce.info</strong> e realtà accademiche hanno espresso preoccupazione per l’eventuale ritorno al sistema precedente, ritenendo che aumenterebbe il rischio di contenziosi e instabilità contrattuale.
+    </p>
+    </div>
+
+
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-question-circle" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> Chi non prende posizione</h3>
+    <p>
+      Alcuni partiti di destra e centrodestra, come <strong>Fratelli d’Italia</strong> e <strong>Forza Italia</strong>, hanno scelto di non partecipare attivamente al dibattito referendario. In alcuni casi hanno invitato all’astensione, senza schierarsi apertamente per il NO.
+    </p>
+   </div>
+</section>
+</div>
+
 <section class="wrapper style2 align-center">
-  <div class="inner">
+<div class="contenuto-fluid">
     <h3>🔎 Approfondimenti</h3>
     <p><a href="approfondimento-norme-quesito1.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
 
   <!-- Fonti -->
-  <section class="wrapper style2 align-center">
-    <div class="inner">
-      <h3>🔎 Fonti e approfondimenti</h3>
+
+      <h3>📄 Fonti utili</h3>
       <ul class="actions stacked">
         <li><a href="https://www.ilfoglio.it/politica/2024/12/22/news/il-referendum-della-cgil-sul-lavoro-e-una-trappola-populista-6152851/" target="_blank" class="button icon solid fa-external-link-alt">Il Foglio – Critiche al referendum</a></li>
         <li><a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/" target="_blank" class="button icon solid fa-external-link-alt">Il Post – Guida completa</a></li>
@@ -77,6 +180,7 @@
     </div>
   </section>
 
+<a href="#wrapper" class="button small" style="position: fixed; bottom: 20px; right: 20px; background: var(--color-rosso); color: white;">&uarr;</a>
 
 
   <div id="copyright">
