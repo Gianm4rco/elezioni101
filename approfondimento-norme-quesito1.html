@@ -5,12 +5,109 @@
   <title>Referendum 2025 – Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --color-primario: #2e7d32;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 1.2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo a {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 2em;
+      margin-right: 0.4em;
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      background: #333;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      display: block;
+      border-radius: 2px;
+    }
+    nav.menu {
+      display: flex;
+      gap: 1.2em;
+    }
+    nav.menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+    nav.menu a i {
+      margin-right: 0.5em;
+      color: #333;
+    }
+    @media screen and (max-width: 1024px) {
+      .menu-icon {
+        display: flex !important;
+      }
+      nav.menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 1em 0;
+        text-align: center;
+      }
+      nav.menu.show {
+        display: flex !important;
+      }
+    }
+  </style>
 </head>
 <body class="is-preload">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="referendum2025.html">
+        <img src="images/logo.png" alt="Logo Elezioni101">
+        Referendum 8-9 giugno 2025
+      </a>
+    </div>
+    <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="menu">
+      <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+      <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+      <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+      <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+      <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+      <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+      <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+      <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+    </nav>
+  </div>
   <div id="wrapper">
-
-
 
     <!-- Main -->
     <div id="main" class="alt">
@@ -26,7 +123,7 @@
   <div class="inner">
     <h3>📜 Prima del 2015: l'articolo 18 dello Statuto dei lavoratori</h3>
     <p>Fino al 2015, in caso di licenziamento senza giusta causa, il giudice poteva <strong>ordinare il reintegro</strong> e un risarcimento economico (fino a un massimo di 12 mensilità, poi ridotte a 5 con la riforma Fornero del 2012).</p>
-    <p>La riforma Fornero ha inoltre ristretto i casi in cui il reintegro era possibile: è rimasto solo per situazioni gravi (come licenziamenti nulli o discriminatori). Negli altri casi, il giudice poteva stabilire solo un’indennità economica, variabile in base alla situazione.</p>
+    <p>La riforma Fornero ha inoltre ristretto i casi in cui il reintegro era possibile: è rimasto solo per situazioni gravi (come licenziamenti nulli o discriminatori). Negli altri casi, il giudice poteva stabilire solo un’indennità economica, variabile in base alla situazione tra le 12 e le 24 mensilità.</p>
   </div>
 </section>
 
@@ -38,7 +135,7 @@
     <p>Le principali novità introdotte da questa riforma sono:</p>
     <ul>
       <li>Il ritorno al lavoro è previsto <strong>solo in casi eccezionali</strong> (come i licenziamenti discriminatori).</li>
-      <li>Negli altri casi, il lavoratore ha diritto solo a un <strong>risarcimento economico</strong>, calcolato in base agli anni di servizio (da 6 a 36 mensilità).</li>
+      <li>Negli altri casi, il lavoratore ha diritto solo a un <strong>risarcimento economico</strong>, calcolato in base <a href="https://www.ilpost.it/2015/03/10/licenziamenti-jobs-act-articolo-18/">agli anni di servizio</a> (da 6 a 36 mensilità).</li>
     </ul>
   </div>
 </section>

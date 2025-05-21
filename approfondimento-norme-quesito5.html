@@ -5,9 +5,108 @@
   <title>Referendum 2025 – Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --color-primario: #2e7d32;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 1.2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo a {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 2em;
+      margin-right: 0.4em;
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      background: #333;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      display: block;
+      border-radius: 2px;
+    }
+    nav.menu {
+      display: flex;
+      gap: 1.2em;
+    }
+    nav.menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+    nav.menu a i {
+      margin-right: 0.5em;
+      color: #333;
+    }
+    @media screen and (max-width: 1024px) {
+      .menu-icon {
+        display: flex !important;
+      }
+      nav.menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 1em 0;
+        text-align: center;
+      }
+      nav.menu.show {
+        display: flex !important;
+      }
+    }
+  </style>
 </head>
 <body class="is-preload">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="referendum2025.html">
+        <img src="images/logo.png" alt="Logo Elezioni101">
+        Referendum 8-9 giugno 2025
+      </a>
+    </div>
+    <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="menu">
+      <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+      <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+      <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+      <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+      <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+      <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+      <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+      <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+    </nav>
+  </div>
   <div id="wrapper">
 
 
@@ -18,7 +117,7 @@
   <div class="inner">
     <h2>🧾 Approfondimento – Le norme sulla cittadinanza coinvolte dal Quesito 5</h2>
     <p>
-      Il Quesito 5 del referendum 2025 riguarda le condizioni con cui uno <strong>straniero maggiorenne extracomunitario</strong> può fare richiesta di cittadinanza italiana. In particolare, propone di modificare l’<strong>articolo 9 della legge n. 91 del 1992</strong>.
+      Il Quesito 5 del referendum 2025 riguarda le condizioni con cui uno <strong>straniero maggiorenne extracomunitario</strong> può fare richiesta di cittadinanza italiana. In particolare, propone di modificare l’<strong><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1992-02-05;91!vig">articolo 9 della legge n. 91 del 1992</a></strong>.
     </p>
   </div>
 </section>
@@ -28,13 +127,14 @@
   <h3>📜 La legge attuale</h3>
   <p>
     Secondo la normativa vigente, per richiedere la cittadinanza italiana uno straniero maggiorenne che non è cittadino dell’Unione Europea deve:
-  </p>
+
   <ul>
     <li>aver risieduto legalmente in Italia per <strong>almeno 10 anni continuativi</strong> (art. 9, comma 1, lettera f) della legge 91/1992);</li>
     <li>avere un reddito minimo e stabile;</li>
     <li>non avere precedenti penali;</li>
     <li>dimostrare una conoscenza base della lingua italiana (livello B1).</li>
-
+</ul>
+</p>
 
 <p>
   🔍 Per “<strong>residenza legale e continuativa</strong>” si intende:
@@ -43,7 +143,7 @@
 </p>
 
 
-  <p>I requisiti di reddito, precedenti legali e lingua non cambierebbero in caso di vittoria del Sì.</p>
+  <p><a href="https://web.archive.org/web/20250414181741/prefettura.interno.gov.it/it/prefetture/reggio-emilia/cittadinanza-residenza">I requisiti di reddito, precedenti legali e lingua</a> non cambierebbero in caso di vittoria del Sì.</p>
 </div>
 </section>
 
@@ -52,7 +152,7 @@
   <div class="inner">
     <h3>🗳️ Cosa propone il referendum</h3>
     <p>
-      Il referendum propone di abrogare:
+      Il referendum propone di abrogare (e quindi di eliminare):
       <ul>
         <li>nella <strong>lettera b)</strong> dell’articolo 9, le parole “<em>adottato da cittadino italiano</em>” e “<em>successivamente alla adozione</em>”;</li>
         <li>l’intera <strong>lettera f)</strong>, cioè la parte che oggi stabilisce il requisito dei 10 anni di residenza.</li>
@@ -79,17 +179,34 @@
 
 <section class="wrapper style2">
   <div class="inner">
-    <h3>📈 Alcuni numeri utili</h3>
-    <p>
-      Secondo i dati ISTAT, in Italia ci sono circa <strong>2,3 milioni</strong> di stranieri extracomunitari titolari di un permesso di soggiorno di lungo periodo, che potrebbero teoricamente beneficiare della riduzione del requisito.
-    </p>
+
+<h3>📈 Alcuni numeri utili: quante cittadinanze vengono concesse?</h3>
+<p>
+Secondo l’ISTAT, in Italia vivono circa <strong>2,3 milioni</strong> di cittadini extra-UE con un permesso di soggiorno di lungo periodo. Sono persone che, in teoria, potrebbero fare richiesta di cittadinanza se il requisito di residenza scendesse da 10 a 5 anni. 
+
+A livello europeo, il <em>Migration Integration Policy Index</em> (2019) ha posizionato l’Italia <strong>14ª su 27</strong> per facilità nell’accesso alla cittadinanza. L’<a href="https://osservatoriocpi.unicatt.it">Osservatorio sui conti pubblici italiani</a> segnala che, escludendo i Paesi dell’Europa orientale, l’Italia scende al <strong>13° posto su 16</strong> a causa dei requisiti più rigidi: certificazione linguistica, esame di educazione civica, anni di residenza richiesti e vincoli per i figli.
+</p>
+
+<p>
+Allo stesso tempo, come riportato da <a href="https://pagellapolitica.it/articoli/legge-cittadinanza-italiana-confronto-europa"><em>Pagella Politica</em></a>, l’Italia è il Paese europeo che in valore assoluto <strong>concede più cittadinanze</strong> ogni anno. Secondo <a href="https://ec.europa.eu/eurostat/databrowser/bookmark/334c78b1-f61d-46c8-8034-7c865266f4eb?lang=en">Eurostat</a>, nel 2022 l’Italia ne ha concesse <strong>214 mila</strong>, più di Spagna, Germania e Francia. 
+
+Se si guarda invece al rapporto con la popolazione residente, il dato italiano è di <strong>3,6 nuove cittadinanze ogni 1.000 abitanti</strong>: il quinto valore più alto in Europa, dopo Svezia, Lussemburgo, Belgio e Spagna.
+</p>
+
 
 
 
     <h3>⚖️ Un po’ di contesto giuridico</h3>
-    <p>
-      Fino al 1992, per ottenere la cittadinanza bastavano <strong>5 anni di residenza legale</strong>. La legge 91/1992 ha alzato il requisito a 10 anni per gli extracomunitari. Questa soglia è oggi tra le più alte in Europa. In <strong>Francia</strong> e <strong>Germania</strong> servono in media 5-8 anni; in <strong>Spagna</strong>, in certi casi, basta un solo anno.
-    </p>
+<p>
+Dal Codice Civile del 1865 fino al 1992, per ottenere la cittadinanza bastavano <strong>5 anni di residenza legale</strong>. La legge 91/1992 ha poi innalzato il requisito a <strong>10 anni</strong> per i cittadini extra-UE, una delle soglie più alte in Europa. 
+
+Come <a href="https://www.editorialedomani.it/politica/italia/litalia-e-la-chimera-della-cittadinanza-come-funziona-negli-altri-paesi-europei-g4eja88i" target="_blank">riporta Domani</a>, in <strong>Francia, Germania, Portogallo, Paesi Bassi</strong> e <strong>Svezia</strong> servono 5 anni di residenza per ottenere la cittadinanza per naturalizzazione. In <strong>Grecia</strong>, il limite è stato abbassato a 5 anni dal 2015, mentre in <strong>Spagna</strong> può bastare un solo anno, se si è nati nel Paese.
+
+In molti Stati esistono anche forme di cittadinanza agevolata per i figli di stranieri residenti: in <strong>Irlanda</strong>, ad esempio, un bambino può ottenerla se uno dei genitori risiede legalmente da almeno 3 anni; in <strong>Portogallo</strong> bastano 2 anni di residenza di un genitore. 
+
+Alcuni Paesi (come <strong>Francia, Lussemburgo, Paesi Bassi</strong> e <strong>Spagna</strong>) applicano forme di <em>doppio ius soli</em>, che riconoscono la cittadinanza ai nati nel Paese se almeno uno dei genitori è nato lì. In Francia, inoltre, un minore può chiedere la cittadinanza a partire dai 13 anni, se vive nel Paese da almeno 5.
+</p>
+
 </div>
   </section>
 
@@ -99,6 +216,8 @@
   <div class="inner">
     <h3>📄 Fonti e approfondimenti:</h3>
     <ul class="actions stacked">
+<li><a href="https://it.wikipedia.org/wiki/Referendum_abrogativi_in_Italia_del_2025#cite_note-:28-28"target="_blank" class="button icon solid fa-external-link-alt">Wikipedia - referendum 8-9 giugno 2025</a></li>
+<li><a href="https://www.editorialedomani.it/politica/italia/litalia-e-la-chimera-della-cittadinanza-come-funziona-negli-altri-paesi-europei-g4eja88i"target="_blank" class="button icon solid fa-external-link-alt">La cittadinanza in altri Paesi UE</a></li>
           <li><a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/"target="_blank" class="button icon solid fa-external-link-alt">Il Post – Guida al referendum</a></li>
           <li><a href="https://pagellapolitica.it/articoli/referendum-cittadinanza-ragioni-si-no-favorevoli-contrari" target="_blank" class="button icon solid fa-external-link-alt">Pagella Politica – Le ragioni del Sì e del No</a></li>
           <li><a href="https://www.cgil.it/referendum/referendum-lavoro-2025" target="_blank" class="button icon solid fa-external-link-alt">CGIL – Referendum Lavoro 2025</a></li>

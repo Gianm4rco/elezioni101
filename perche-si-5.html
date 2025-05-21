@@ -1,50 +1,171 @@
 <!DOCTYPE html>
 <html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <head>
   <meta charset="UTF-8" />
-  <title>Perché votare SÌ – Quesito 1 | Elezioni101</title>
+  <title>Perché votare SÌ – Quesito 5 | Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style>
-    :root {
-      --color-primario: #2e7d32;
-      --color-secondario: #d3f4dc;
+<style>
+  :root {
+    --color-primario: #2e7d32;
+    --color-secondario: #d3f4dc;
+  }
+
+  /* NAV BAR */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+display: block;
+    border-radius: 2px;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+  }
+
+  nav.menu a i {
+    margin-right: 0.5em;
+    color: #333;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 1024px) {
+    .menu-icon {
+      display: flex !important;
     }
-    h3 {
-      border-bottom: 2px solid var(--color-primario);
-      display: inline-block;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+
+    nav.menu {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1em 0;
+      text-align: center;
     }
-    .icon:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
+
+    nav.menu.show {
+      display: flex !important;
     }
-    .party-entry {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-      margin-bottom: 1.2em;
-      background-color: var(--color-secondario);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .party-entry img {
-      height: 50px;
-.contenuto-fluid {
+  }
+
+  /* GENERICI */
+  h3 {
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+footer a,
+#copyright a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer a:hover,
+#copyright a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+  .party-entry {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+    background-color: var(--color-secondario);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .party-entry img {
+    height: 50px;
+  }
+
+  .contenuto-fluid {
     max-width: none;
     width: 100%;
     padding: 2em 4em;
   }
+
   @media screen and (max-width: 768px) {
     .contenuto-fluid {
       padding: 1.5em 1em;
     }
   }
-    }
-  </style>
+</style>
+<div class="nav-container">
+  <div class="logo">
+    <a href="referendum2025.html" style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Logo Elezioni101" style="height: 2em; margin-right: 0.4em;">
+     Referendum 8-9 giugno 2025
+    </a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="menu">
+    <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+    <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+    <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+    <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+    <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+    <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+    <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+    <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+  </nav>
+</div>
+
 </head>
 <body class="is-preload">
 
@@ -86,26 +207,24 @@
     <span class="icon solid style2 major fa-gavel" style="color: var(--color-primario);"></span>
     <h3>Favorire l’integrazione</h3>
 <p>
-        I sostenitori del SÌ affermano che 10 anni sono un periodo eccessivo per riconoscere un diritto a persone che lavorano, pagano le tasse e vivono stabilmente in Italia. Ridurre a 5 anni avvicinerebbe l’Italia agli standard europei e favorirebbe una cittadinanza più inclusiva.
-      </p>
+        I sostenitori del SÌ affermano che 10 anni sono un periodo eccessivo per riconoscere un diritto a persone che già lavorano, pagano le tasse e vivono stabilmente in Italia. Secondo i promotori, <a href="https://referendumcittadinanza.it/">circa 2.5 milioni di persone</a> potrebbero chiedere la cittadinanza se passasse il SÌ. Questo permetterebbe loro di sentirsi pienamente parte della comunità e di partecipare alla vita democratica, rafforzando il senso di appartenza e favorendo l'integrazione sociale.</p>
 </section>
 
 
   <section style="text-align: center;">
     <span class="icon solid style2 major fa-users" style="color: var(--color-primario);"></span>
     <h3>Snellire le procedure</h3>
-<p>
-        Secondo i promotori, la soglia dei 10 anni contribuisce a rallentare l’iter e ad aumentare le disuguaglianze. Molte persone restano per anni in una situazione di incertezza legale e civile, pur vivendo in Italia in modo stabile.
-      </p>
+<p> Secondo i promotori, la soglia dei 10 anni allunga i tempi e lascia molte persone in una situazione di incertezza, anche se vivono stabilmente in Italia. Chi attende la cittadinanza non può votare, ha accesso limitato ad alcuni diritti e resta spesso escluso da piena partecipazione civile. Inoltre, come riporta <a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/">il Post</a>, tra burocrazia e tempi di attesa, il percorso può durare anche 13 anni. Il SÌ punta a semplificare questo iter e ridurre le disuguaglianze. </p>
   </section>
 
 
   <section style="text-align: center;">
     <span class="icon solid style2 major fa-balance-scale" style="color: var(--color-primario);"></span>
     <h3>Allinearci ad altri Paesi europei</h3>
-<p>
-        In molti Stati dell’UE (come Francia, Germania, Belgio) servono meno di 10 anni per richiedere la cittadinanza. I promotori del SÌ ritengono che l’Italia debba aggiornarsi a standard più comuni e funzionali a una società multiculturale.
-      </p>
+<p>  
+In molti Stati dell’UE (come Francia, Belgio, Portogallo e Svezia) la cittadinanza può essere richiesta dopo 5 anni di residenza, e in Germania dopo 5 o 8 anni a seconda dei casi. I promotori del SÌ ritengono che l’Italia, con i suoi 10 anni minimi, sia tra i Paesi più restrittivi e debba aggiornarsi a standard più comuni in Europa. Ridurre i tempi, spiegano, renderebbe la legge italiana più coerente con una società aperta e multiculturale. <a href="https://www.editorialedomani.it/politica/italia/litalia-e-la-chimera-della-cittadinanza-come-funziona-negli-altri-paesi-europei-g4eja88i" target="_blank">Leggi l’articolo completo su Domani</a>.
+</p>
+
   </section>
 </div>
 </section>
@@ -115,15 +234,13 @@
 <section class="style3" style="width: 100%; padding: 3em 5vw;">
 <div class="contenuto-fluid">
 <h2><span class="icon solid fa-users" style="color: var(--color-primario); margin-right: 0.4em;"> Chi sostiene il Sì – Quesito 5</h2>
-          <p>
-            Il Quesito 5 propone di ridurre da 10 a 5 anni il periodo minimo di residenza richiesto agli stranieri extracomunitari per poter fare domanda di cittadinanza italiana. Ecco chi sostiene il SÌ e perché.
-          </p>
+
   </div>
 
 <div style="padding: 2em;">
     <h3><span class="icon solid fa-thumbtack" style="color: var(--color-primario); margin-right: 0.4em;"></span> I promotori</h3>
           <p>
-            Il referendum è stato promosso a settembre 2024 da Riccardo Magi di <strong>+Europa</strong>, a cui poi si sono aggiunti <strong>Possibile</strong>, <strong>Partito Socialista Italiano</strong>, <strong>Radicali Italiani</strong> e <strong>Rifondazione Comunista</strong>, con il sostegno di numerose associazioni della società civile. La raccolta firme ha superato le 637.000 adesioni.
+Il referendum è stato promosso <a href="https://www.repubblica.it/politica/2024/09/04/news/cittadinanza_italiana_referendum_cassazione_magi_europa-423478834/">a settembre 2024 </a> da Riccardo Magi di <strong>+Europa</strong> e successivamente sostenuto anche da <strong>Possibile</strong>, <strong>Partito Socialista Italiano</strong>, <strong>Radicali Italiani</strong> e <strong>Rifondazione Comunista</strong>, insieme a numerose associazioni della società civile. La raccolta firme ha superato le 637.000 adesioni e a dicembre 2024 ha ottenuto l’approvazione per essere ammesso al voto da parte della <a href="https://www.cortecostituzionale.it/jsp/consulta/registro/registro_abr_n_182.do">Corte Costituzionale</a>. Diverse associazioni di persone con background migratorio (come Italiani Senza Cittadinanza, Coordinamento Nazionale Nuove Generazioni Italiane (CoNNGI)), della società civile (come Libera, ActionAid, Opean Arms, Sea-Watch, A Buon Diritto, ARCI)  e <a href="https://www.corriere.it/politica/24_settembre_25/referendum-cittadinanza-7e499629-98e4-42e7-96f0-293403b96xlk.shtml?refresh_ce">varie personalità</a> (come Alessandro Barbero, Roberto Saviano, Julio Velasco, Ghali, Zerocalcare, Geppi Cucciari, Marco Mengoni, Michele Serra, Maurizio Crozza e <a href="https://www.ilpost.it/2024/09/23/raccolta-firme-referendum-cittadinanza/">molti altri</a>) hanno poi sostenuto l'iniziativa.
           </p>
 </div>
 
@@ -143,10 +260,37 @@
               <img src="images/logo-piueuropa.png" alt="Logo +Europa" style="height: 50px; margin-bottom: 0.5em;">
               <p><strong>+Europa</strong><br><small>Tra i promotori del quesito sulla cittadinanza, con Riccardo Magi in prima linea.</small></p>
             </div>
+
+
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-azione.svg" alt="Logo Azione" style="height: 30px; margin-bottom: 0.8em;">
+              <p><strong>Azione</strong><br><small>Per quanto inizialmente il leader Carlo Calenda avesse mostrato perplessità riguardo al quesito, Azione ora lo sostiene.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-italiaviva.png" alt="Logo Italia Viva" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>Italia Viva</strong><br><small>Italia Viva e il suo leader Matteo Renzi sostengono il quesito sulla cittadinanza, non quelli sul lavoro.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-prc.png" alt="Logo PRC" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>Rifondazione Comunista</strong><br><small>Ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
             <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
               <img src="images/logo-possibile.png" alt="Logo Possibile" style="height: 50px; margin-bottom: 0.5em;">
               <p><strong>Possibile</strong><br><small>Ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
             </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-radicali.svg" alt="Logo Radicali" style="height: 40px; margin-bottom: 0.8em;">
+              <p><strong>Radicali</strong><br><small>Hanno sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-CGIL.jpg" alt="Logo CGIL" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>CGIL</strong><br><small>Il sindacato CGIL ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-USB.png" alt="Logo USB" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>USB</strong><br><small>Il sindacato USB ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
+
           </div>
         </section>
 </div>
@@ -155,10 +299,14 @@
 
 
 <div style="padding: 2em;">
-    <h3><span class="icon solid fa-question-circle" style="color: var(--color-primario); margin-right: 0.4em;"></span> Chi non prende posizione</h3>
+    <h3><span class="icon solid fa-question-circle" style="color: var(--color-primario); margin-right: 0.4em;"></span> Chi si astiene o non si è espresso</h3>
           <p>
-            Alcuni partiti non hanno espresso una posizione netta sul quesito, preferendo non schierarsi pubblicamente. Altri, pur non partecipando attivamente alla campagna, non si oppongono alla proposta.
-          </p>
+Alcuni partiti non hanno preso una posizione netta sul quesito, scegliendo di non schierarsi pubblicamente. Per esempio, i partiti di maggioranza (<strong>Fratelli d’Italia, Lega e Forza Italia</strong>) non hanno promosso il voto per il NO, ma <a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">hanno invitato i propri elettori ad astenersi</a>. Come spiegato da diversi esponenti, pur essendo contrari al quesito, ritengono che – per come funziona il referendum – sia più efficace non votare. Per saperne di più su come influisce l’astensione, puoi <a href="referendum2025.html#faq">leggere le FAQ</a>.
+
+Anche il <strong>Movimento 5 Stelle</strong> <a href="https://www.ansa.it/sito/notizie/politica/2025/05/10/ricciardi-5s-mobilitiamoci-votero-si-anche-alla-cittadinanza_aa801fb9-8a61-4a2d-9e5e-b10b5dc6f83f.html">ha lasciato libertà di voto ai propri elettori</a>, senza esprimere una posizione ufficiale sul quesito, a differenza del sostegno dato agli altri quattro quesiti. Il leader del Movimento, Giuseppe Conte, ha comunque dichiarato che <a href="https://www.tgcom24.mediaset.it/politica/citS%C3%8Ctadinanza-conte-m5s-liberta-voto-referendum-votero-si_97945015-202502k.shtml">voterà SÌ</a> a titolo personale.
+
+Tra i sindacati, la <strong>CGIL</strong> e l’<strong>USB</strong> sostengono il quesito sulla cittadinanza. Altri, come la <strong>UIL</strong>, hanno lasciato libertà di voto, mentre la <strong>CISL</strong> ha invitato all’astensione su tutti e cinque i referendum.
+</p>
   </div>
 </section>
 </div>
@@ -168,11 +316,11 @@
 <section class="wrapper style2 align-center">
 <div class="contenuto-fluid">
     <h3>🔎 Approfondimenti</h3>
-    <p><a href="approfondimento-norme-quesito1.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
+    <p><a href="approfondimento-norme-quesito5.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
 
     <h3>📄 Fonti utili</h3>
     <ul class="actions stacked">
-    <li><a href="https://www.cgil.it/referendum/referendum-lavoro-2025" target="_blank" class="button icon solid fa-external-link-alt">CGIL – Referendum Lavoro 2025</a></li>
+<li><a href="https://referendumcittadinanza.it/"target="_blank" class="button icon solid fa-external-link-alt">Sito dei promotori del referendum</a></li>
     <li><a href="https://pagellapolitica.it/articoli/posizioni-partiti-referendum-cittadinanza" target="_blank" class="button icon solid fa-external-link-alt">Pagella Politica – Posizioni dei partiti</a></li>
     <li><a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/" target="_blank" class="button icon solid fa-external-link-alt">Il Post – Guida al referendum</a></li>
   </ul>

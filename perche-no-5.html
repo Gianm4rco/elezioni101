@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <head>
   <meta charset="UTF-8" />
   <title>Perché votare NO – Quesito 1 | Elezioni101</title>
@@ -8,44 +8,163 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
-    :root {
+  :root {
       --color-rosso: #c62828;
       --color-secondario-rosso: #fde0e0;
     }
-    h3 {
-      border-bottom: 2px solid var(--color-rosso);
-      display: inline-block;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+
+  /* NAV BAR */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+display: block;
+    border-radius: 2px;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+  }
+
+  nav.menu a i {
+    margin-right: 0.5em;
+    color: #333;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 1024px) {
+    .menu-icon {
+      display: flex !important;
     }
-    .icon:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
+
+    nav.menu {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1em 0;
+      text-align: center;
     }
-    .party-entry {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-      margin-bottom: 1.2em;
-      background-color: var(--color-secondario-rosso);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    nav.menu.show {
+      display: flex !important;
     }
-    .party-entry img {
-      height: 50px;
-.contenuto-fluid {
+  }
+
+  /* GENERICI */
+  h3 {
+    border-bottom: 2px solid var(--color-rosso);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+footer a,
+#copyright a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer a:hover,
+#copyright a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+  .party-entry {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+    background-color: var(--color-secondario-rosso);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .party-entry img {
+    height: 50px;
+  }
+
+  .contenuto-fluid {
     max-width: none;
     width: 100%;
     padding: 2em 4em;
   }
+
   @media screen and (max-width: 768px) {
     .contenuto-fluid {
       padding: 1.5em 1em;
     }
   }
-    }
-  </style>
+</style>
+<div class="nav-container">
+  <div class="logo">
+    <a href="referendum2025.html" style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Logo Elezioni101" style="height: 2em; margin-right: 0.4em;">
+     Referendum 8-9 giugno 2025
+    </a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="menu">
+    <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+    <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+    <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+    <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+    <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+    <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+    <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+    <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+  </nav>
+</div>
 </head>
 <body class="is-preload">
 
@@ -82,19 +201,21 @@
   <!-- Motivazioni NO -->
 <div class="items style1 medium onscroll-fade-in" id="motivazioni-no">
   <section style="text-align: center;">
-    <span class="icon solid style2 major fa-gavel" style="color: #c62828;"></span>Un tempo giusto per valutare l’integrazione</h3>
+    <span class="icon solid style2 major fa-gavel" style="color: #c62828;"></span>
+<h3>Un tempo giusto per valutare l’integrazione</h3>
 <p>
-        Secondo i sostenitori del NO, 10 anni sono un periodo adeguato per verificare se una persona è realmente integrata nella società italiana. Ridurre la soglia a 5 anni sarebbe troppo poco per una valutazione completa.
+        Secondo i sostenitori del NO, 10 anni sono un periodo adeguato per verificare se una persona è realmente integrata nella società italiana. Ridurre la soglia a 5 anni sarebbe troppo poco per una valutazione completa. Chi vota NO ritiene che la cittadinanza sia un passo importante che deve essere concesso con cautela, solo dopo un periodo sufficiente di permanenza e stabilità. Il rischio, secondo loro, è banalizzarne il valore. 
       </p>
 </section>
 
 
         <section style="text-align: center;">
           <span class="icon solid style2 major fa-briefcase" style="color: #c62828;"></span>
-          <h3>La cittadinanza non è un automatismo</h3>
+<h3>L’Italia già concede molte cittadinanze</h3>
 <p>
-        Chi vota NO ritiene che la cittadinanza sia un passo importante che deve essere concesso con cautela, solo dopo un periodo sufficiente di permanenza e stabilità. Il rischio, secondo loro, è banalizzarne il valore.
-      </p>
+Chi vota NO ritiene che non ci sia bisogno di ridurre i tempi per ottenere la cittadinanza, perché l’Italia è già tra i Paesi europei che ne concedono di più ogni anno. Secondo questa posizione, la normativa attuale è già sufficientemente aperta e funziona: cambiare la legge aumenterebbe il numero di richieste senza una reale necessità.
+</p>
+
 </section>
 
         <section style="text-align: center;">
@@ -113,59 +234,58 @@
 <section class="style3" style="width: 100%; padding: 3em 5vw;">
     <div class="contenuto-fluid">
     <h2><span class="icon solid fa-users" style="color: var(--color-rosso); margin-right: 0.4em;"> Chi sostiene il NO – Quesito 5</h2>
-          <p>
-            Il quesito propone di ridurre da 10 a 5 anni il tempo minimo di residenza richiesto agli stranieri extracomunitari per chiedere la cittadinanza italiana. Ecco chi è contrario alla modifica e perché.
-          </p>
+
 </div>
 
   <section class="wrapper style1">
 <div style="padding: 2em;">
-    <h3><span class="icon solid fa-landmark" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> I partiti che sostengono il NO</h3>
+    <h3><span class="icon solid fa-landmark" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> I partiti contrari al quesito</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 1em;">
             <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
               <img src="images/logo-fdi.png" alt="Logo Fratelli d'Italia" style="height: 50px; margin-bottom: 0.5em;">
-              <p><strong>Fratelli d’Italia</strong><br><small>Giorgia Meloni ha definito la legge attuale «equilibrata», ricordando che l’Italia è già tra i Paesi che concedono più cittadinanze in Europa.</small></p>
+              <p><strong>Fratelli d’Italia</strong><br><small><a href="https://www.youtube.com/watch?v=S2McEj_MaXk&t=1029s">Giorgia Meloni</a> ha definito la legge attuale «equilibrata», ricordando che l’Italia è già tra i Paesi che concedono più cittadinanze in Europa. Per questo Fratelli d'Italia invita all'<a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">astensione</a>.</small></p>
             </div>
 
             <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
               <img src="images/logo-lega.png" alt="Logo Lega" style="height: 50px; margin-bottom: 0.5em;">
-              <p><strong>Lega</strong><br><small>Rossano Sasso ha dichiarato che la normativa attuale è già chiara e non va modificata.</small></p>
+              <p><strong>Lega</strong><br><small>Diversi esponenti come <a href="https://www.la7.it/omnibus/video/referendum-cittadinanza-molteni-decidera-democraticamente-il-popolo-non-condivido-la-posizione-di-fi-25-09-2024-559606">Nicola Molteni</a> (sottosegretario al Ministero dell'Interno) e Rossano Sasso (deputato) hanno espresso contrarietà al quesito, invitando quindi all'<a href="https://www.corriere.it/politica/25_maggio_05/referendum-8-9-giugno-voto-astensione-maggioranza-opposizione-fi-pd-46641b44-dca9-49fc-affe-86567eeebxlk.shtml?refresh_ce">astensione</a>.</small></p>
             </div>
 
             <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
               <img src="images/logo-fi.png" alt="Logo Forza Italia" style="height: 50px; margin-bottom: 0.5em;">
-              <p><strong>Forza Italia</strong><br><small>Deborah Bergamini ha proposto una via alternativa: cittadinanza dopo 10 anni di scuola con profitto.</small></p>
+              <p><strong>Forza Italia</strong><br><small>Il <a href="https://www.corriere.it/politica/25_maggio_05/referendum-8-9-giugno-voto-astensione-maggioranza-opposizione-fi-pd-46641b44-dca9-49fc-affe-86567eeebxlk.shtml?refresh_ce">leader Antonio Tajani</a> ha espressamente rivendicato la scelta politica di non andare a votare. Forza Italia vorrebbe infatti introdurre lo <em>Ius Scholae</em> e per questo non dà importanza al referendum.</small></p>
             </div>
 
             <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
               <img src="images/logo-noi-moderati.png" alt="Logo Noi Moderati" style="height: 50px; margin-bottom: 0.5em;">
-              <p><strong>Noi Moderati</strong><br><small>Allineati con il resto della maggioranza, esprimono contrarietà al quesito.</small></p>
+              <p><strong>Noi Moderati</strong><br><small>Noi Moderati ha espresso <a href="https://www.ilmessaggero.it/?utm_source=WEB&utm_medium=desktop&utm_campaign=X_paywall">contrarietà al quesito</a>, così come a tutti gli altri quesiti, facendo attivamente campagna per il NO.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-udc.png" alt="Logo UDC" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>Unione di Centro</strong><br><small>Unione di Centro ha espresso <a href="https://antoniodepoli.it/index.php/referendum-le-ragioni-della-nostra-scelta/">contrarietà al quesito</a>, così come a tutti gli altri quesiti, facendo attivamente campagna per il NO.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #ffe6e6; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-cisl.png" alt="Logo CISL" style="height: 50px; margin-bottom: 0.5em;">
+<p><strong>CISL</strong><br>
+<small>La segretaria Daniela Fumarola <a href="https://www.avvenire.it/attualita/pagine/fumarola-partecipazione-svolta-storica-cisl-pronta-alle-intese">invita all’astensione</a>, ritenendo che il tema sia troppo importante per diventare una bandiera politica. Secondo la CISL, è il Parlamento il luogo giusto per affrontare e migliorare la legge.</small></p>
+
             </div>
           </div>
 </div>
         </section>
 
-<div style="padding: 2em;">
-    <h3><span class="icon solid fa-chart-line" style="color: var(--color-rosso); margin-right: 0.4em;"></span> Chi esprime perplessità</h3>
-<p>
-          <ul>
-            <li><strong>Movimento 5 Stelle</strong>: Giuseppe Conte ha dichiarato di preferire lo <em>ius scholae</em>. Il movimento lascia libertà di voto agli elettori.</li>
-            <li><strong>Azione</strong>: Carlo Calenda ha espresso dubbi, ritenendo che la cittadinanza debba essere legata a un reale percorso di integrazione, non solo alla residenza.</li>
-          </ul>
-        </div>
+
 
 
 <div style="padding: 2em;">
-    <h3><span class="icon solid fa-chart-line" style="color: var(--color-rosso); margin-right: 0.4em;"></span> Voci critiche del mondo accademico</h3>
+    <h3><span class="icon solid fa-question-circle" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> 
+<h3>Chi si astiene o non si è espresso</h3>
           <p>
-            Giancarlo Blangiardo (ex presidente ISTAT) ha affermato che la residenza non basta: per concedere la cittadinanza andrebbero valutati anche altri elementi, come il percorso di integrazione personale.
-          </p>
-</div>
+Alcuni partiti non hanno preso una posizione netta sul quesito, scegliendo di non schierarsi pubblicamente. Per esempio, i partiti di maggioranza (<strong>Fratelli d’Italia, Lega e Forza Italia</strong>) non hanno promosso il voto per il NO, ma <a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">hanno invitato i propri elettori ad astenersi</a>. Come spiegato da diversi esponenti, pur essendo contrari al quesito, ritengono che – per come funziona il referendum – sia più efficace non votare. Per saperne di più su come influisce l’astensione, puoi <a href="referendum2025.html#faq">leggere le FAQ</a>.
 
-<div style="padding: 2em;">
-    <h3><span class="icon solid fa-question-circle" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> La strategia del silenzio</h3>
-          <p>
-            Come spesso accade nei referendum abrogativi, alcune forze politiche contrarie non promuovono attivamente il NO per non contribuire a far raggiungere il quorum.
+Anche il <strong>Movimento 5 Stelle</strong> <a href="https://www.ansa.it/sito/notizie/politica/2025/05/10/ricciardi-5s-mobilitiamoci-votero-si-anche-alla-cittadinanza_aa801fb9-8a61-4a2d-9e5e-b10b5dc6f83f.html">ha lasciato libertà di voto ai propri elettori</a>, senza esprimere una posizione ufficiale sul quesito, a differenza del sostegno dato agli altri quattro quesiti. Il leader del Movimento, Giuseppe Conte, ha comunque dichiarato che <a href="https://www.tgcom24.mediaset.it/politica/citS%C3%8Ctadinanza-conte-m5s-liberta-voto-referendum-votero-si_97945015-202502k.shtml">voterà SÌ</a> a titolo personale.
+
+Tra i sindacati, la <strong>CGIL</strong> e l’<strong>USB</strong> sostengono il quesito sulla cittadinanza. Altri, come la <strong>UIL</strong>, hanno lasciato libertà di voto, mentre la <strong>CISL</strong> ha invitato all’astensione su tutti e cinque i referendum.
     </p>
    </div>
 </section>
