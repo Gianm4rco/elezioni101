@@ -5,16 +5,139 @@
   <title>Referendum 2025 – Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --color-primario: #2e7d32;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 1.2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo a {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 2em;
+      margin-right: 0.4em;
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      background: #333;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      display: block;
+      border-radius: 2px;
+    }
+    nav.menu {
+      display: flex;
+      gap: 1.2em;
+    }
+    nav.menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+    nav.menu a i {
+      margin-right: 0.5em;
+      color: #333;
+    }
+    @media screen and (max-width: 1024px) {
+      .menu-icon {
+        display: flex !important;
+      }
+      nav.menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 1em 0;
+        text-align: center;
+      }
+      nav.menu.show {
+        display: flex !important;
+      }
+    }
+@media screen and (max-width: 768px) {
+  .contenuto-fluid {
+    padding: 1.5em 1.5em;
+  }
+
+  section.wrapper,
+  div.items {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+  </style>
 </head>
 <body class="is-preload">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="referendum2025.html">
+        <img src="images/logo.png" alt="Logo Elezioni101">
+        Referendum 8-9 giugno 2025
+      </a>
+    </div>
+    <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="menu">
+      <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+      <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+      <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+      <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+      <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+      <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+      <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+      <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+    </nav>
+  </div>
   <div id="wrapper">
-
 
 
     <!-- Main -->
     <div id="main" class="alt">
-<section class="wrapper style1 align-center">
+<section class="wrapper style1 align-center" style="margin-top:4.5em">
   <div class="inner">
     <h2>🧾 Approfondimento – Le norme sui licenziamenti nelle piccole imprese coinvolte dal Quesito 2</h2>
     <p class="major">
@@ -45,7 +168,7 @@
       Il quesito propone di <strong>abrogare solo le parti della norma che fissano gli importi</strong>. In particolare, si chiede di cancellare:
     </p>
     <ul>
-      <li>la fascia “<em>compreso tra un minimo di 2 ed un massimo di 6 mensilità</em>”;</li>
+      <li>la fascia “<em>compreso tra un minimo di 2.5 ed un massimo di 6 mensilità</em>”;</li>
       <li>le frasi che permettono di aumentare l’indennità fino a <em>10 o 14 mensilità</em> nei casi di maggiore anzianità e dimensione aziendale.</li>
     </ul>
     <p>
