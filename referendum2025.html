@@ -11,6 +11,9 @@
 body {
   padding-top: 70px; /* aumenta lo spazio sotto il menu fisso */
 }
+[id]:target {
+  scroll-margin-top: 100px; /* distanza equivalente all’altezza del menu */
+}
 
 @media screen and (max-width: 768px) {
   body {
@@ -649,20 +652,19 @@ Vuoi un esempio?
 
 <hr>
 
-  <section>
-<p style="font-size: 0.9em; text-align: center; margin-top: 3em; color: #666;">
-  Questo sito non utilizza cookie poiché non raccoglie dati personali né utilizza strumenti di terze parti che rilasciano cookie.
-</p>
-  </section>
+<footer style="background: #f7f7f7; padding: 2em 1.5em; text-align: center; font-size: 0.9em; color: #666; margin-top: 4em; border-top: 1px solid #ddd;">
+  <p>
+    Questo sito non utilizza cookie poiché non raccoglie dati personali né utilizza strumenti di terze parti che rilasciano cookie.
+  </p>
+  <p style="margin-top: 0.8em;">
+    <a href="chi-siamo.html">Chi siamo</a>
+  </p>
+  <p style="margin-top: 0.8em;">
+    &copy; Elezioni101 – Design basato sul template <a href="https://html5up.net/story" target="_blank">Story</a> di HTML5 UP, rilasciato con licenza <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.
+  </p>
 </footer>
 
 
-
-    <div id="copyright">
-      <p>&copy; Elezioni101</p> Design: HTML5 UP
-    </div>
-
-  </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -672,6 +674,15 @@ Vuoi un esempio?
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+<script>
+  // Chiude il menu mobile dopo il clic su un link
+  document.querySelectorAll('nav.menu a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav.menu').classList.remove('show');
+    });
+  });
+</script>
+
 
 </body>
 </html>

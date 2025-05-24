@@ -5,16 +5,140 @@
   <title>Referendum 2025 – Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --color-primario: #2e7d32;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 1.2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo a {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 2em;
+      margin-right: 0.4em;
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      background: #333;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      display: block;
+      border-radius: 2px;
+    }
+    nav.menu {
+      display: flex;
+      gap: 1.2em;
+    }
+    nav.menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+    nav.menu a i {
+      margin-right: 0.5em;
+      color: #333;
+    }
+    @media screen and (max-width: 1024px) {
+      .menu-icon {
+        display: flex !important;
+      }
+      nav.menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 1em 0;
+        text-align: center;
+      }
+      nav.menu.show {
+        display: flex !important;
+      }
+    }
+@media screen and (max-width: 768px) {
+  .contenuto-fluid {
+    padding: 1.5em 1.5em;
+  }
+
+  section.wrapper,
+  div.items {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+  </style>
 </head>
 <body class="is-preload">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="referendum2025.html">
+        <img src="images/logo.png" alt="Logo Elezioni101">
+        Referendum 8-9 giugno 2025
+      </a>
+    </div>
+    <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="menu">
+      <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+      <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+      <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+      <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+      <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+      <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+      <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+      <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+    </nav>
+  </div>
   <div id="wrapper">
 
 
 
     <!-- Main -->
     <div id="main" class="alt">
-<section class="wrapper style1 align-center">
+<section class="wrapper style1 align-center"style="margin-top: 4.5em;">
   <div class="inner">
     <h2>🧾 Approfondimento – Le norme sui contratti a termine coinvolte dal Quesito 3</h2>
     <p>Il terzo quesito del referendum riguarda le <strong>causali dei contratti di lavoro a tempo determinato</strong>. In sintesi, si decide se mantenere o cancellare la possibilità per i datori di <em>non</em> indicare alcuna motivazione nei primi 12 mesi di un contratto a termine. Qui spieghiamo cosa prevede la legge in vigore, quali parti verrebbero abrogate e quali conseguenze concrete avrebbe la vittoria del <strong>SÌ</strong>.</p>
@@ -56,17 +180,17 @@
 
 <section class="wrapper style1 align-center">
   <div class="inner">
-    <h3>📄 Fonti e approfondimenti:</h3>
+    <h3>📄 Fonti e approfondimenti</h3>
     <ul class="actions stacked">
-          <li><a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/" target="_blank"class="button icon solid fa-external-link-alt">Il Post – Guida al referendum</a></li>
-          <li><a href="https://pagellapolitica.it/articoli/referendum-cittadinanza-ragioni-si-no-favorevoli-contrari" target="_blank"class="button icon solid fa-external-link-alt">Pagella Politica – Le ragioni del Sì e del No</a></li>
-          <li><a href="https://www.cgil.it/referendum/referendum-lavoro-2025" target="_blank"class="button icon solid fa-external-link-alt">CGIL – Referendum Lavoro 2025</a></li>
-<li><a href="https://www.ilpost.it/2015/10/14/decreti-jobs-act/" target="_blank" class="button icon solid fa-external-link-alt">I decreti del Jobs Act (Il Post)</a></li>
-<li><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2015-06-15;81" target="_blank" class="button icon solid fa-external-link-alt">Decreto legislativo 81/2015</a></li>
+      <li><a href="https://www.ilpost.it/2025/05/05/guida-referendum-8-9-giugno/" target="_blank" class="button icon solid fa-external-link-alt">Il Post – Guida al referendum</a></li>
+<li><a href="https://www.avvenire.it/attualita/pagine/referendum-sul-lavoro-i-4-quesiti-i-pro-e-contro-cosa-c-e-da-sapere">Pro e contro dei quesiti sul lavoro</a></li>
+      <li><a href="https://pagellapolitica.it/articoli/referendum-cittadinanza-ragioni-si-no-favorevoli-contrari" target="_blank" class="button icon solid fa-external-link-alt">Pagella Politica – Le ragioni del Sì e del No</a></li>
+      <li><a href="https://www.cgil.it/referendum/referendum-lavoro-2025" target="_blank" class="button icon solid fa-external-link-alt">CGIL – Referendum 2025</a></li>
+      <li><a href="https://www.ilpost.it/2015/10/14/decreti-jobs-act/" target="_blank" class="button icon solid fa-external-link-alt">I decreti del Jobs Act</a></li>
+      <li><a href="https://www.ilpost.it/2015/03/10/licenziamenti-jobs-act-articolo-18/" target="_blank" class="button icon solid fa-external-link-alt">Licenziamenti e Articolo 18</a></li>
     </ul>
   </div>
 </section>
-
 
 
   <div id="copyright">

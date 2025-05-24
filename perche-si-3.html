@@ -1,57 +1,201 @@
 <!DOCTYPE html>
 <html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/png" href="images/logo.png">
 <head>
   <meta charset="UTF-8" />
-  <title>Perché votare SÌ – Quesito 3 | Elezioni101</title>
+  <title>Perché votare SÌ – Quesito 1 | Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style>
-    :root {
-      --color-primario: #2e7d32;
-      --color-secondario: #d3f4dc;
+<style>
+  :root {
+    --color-primario: #2e7d32;
+    --color-secondario: #d3f4dc;
+  }
+
+  /* NAV BAR */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+display: block;
+    border-radius: 2px;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+  }
+
+  nav.menu a i {
+    margin-right: 0.5em;
+    color: #333;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 1024px) {
+    .menu-icon {
+      display: flex !important;
     }
-    h3 {
-      border-bottom: 2px solid var(--color-primario);
-      display: inline-block;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+
+    nav.menu {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1em 0;
+      text-align: center;
     }
-    .icon:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
+
+    nav.menu.show {
+      display: flex !important;
     }
-    .party-entry {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-      margin-bottom: 1.2em;
-      background-color: var(--color-secondario);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .party-entry img {
-      height: 50px;
-.contenuto-fluid {
+  }
+
+  /* GENERICI */
+  h3 {
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+footer a,
+#copyright a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer a:hover,
+#copyright a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+  .party-entry {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+    background-color: var(--color-secondario);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .party-entry img {
+    height: 50px;
+  }
+
+  .contenuto-fluid {
     max-width: none;
     width: 100%;
     padding: 2em 4em;
   }
-  @media screen and (max-width: 768px) {
-    .contenuto-fluid {
-      padding: 1.5em 1em;
-    }
+
+@media screen and (max-width: 768px) {
+  .contenuto-fluid {
+    padding: 1.5em 1.5em;
   }
-    }
-  </style>
-</head>
+
+  section.wrapper,
+  div.items {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+</style>
+
+
+<div class="nav-container">
+  <div class="logo">
+    <a href="referendum2025.html" style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Logo Elezioni101" style="height: 2em; margin-right: 0.4em;">
+     Referendum 8-9 giugno
+    </a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="menu">
+    <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+    <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+    <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+    <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+    <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+    <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+    <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+    <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+  </nav>
+</div>
+
+</header>
+
 <body class="is-preload">
 
 <!-- Wrapper -->
 <div id="wrapper">
 
-<section class="wrapper style2 align-center" style="background: #eaf5eb;">
+<section class="wrapper style2 align-center" style="background: #eaf5eb; margin-top:4.5em">
   <div class="inner">
     <h2 style="color:var(--color-primario);">✅ Perché votare SÌ – Quesito 3</h2>
     <p style="font-size: 1.1em;">
