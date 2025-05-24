@@ -38,7 +38,7 @@ Tutti i contenuti testuali sono distribuiti sotto licenza **Creative Commons BY-
 
 Il progetto è realizzato da **[Gianmarco Milan](https://github.com/gianm4rco)**.  
 Non ha finalità politiche o commerciali, ma solo informative.  
-Se vuoi collaborare, segnalare correzioni o suggerire nuove funzionalità, apri una **Issue** o scrivimi direttamente.
+Se vuoi collaborare, segnalare correzioni o suggerire nuove funzionalità, apri una **Issue** o scrivimi direttamente a gianmarcomil4n@gmail.com.
 
 ---
 
