@@ -1,6 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/png" href="images/logo.png">
 <head>
   <meta charset="UTF-8" />
   <title>Perché votare NO – Quesito 1 | Elezioni101</title>
@@ -8,44 +9,183 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
-    :root {
+  :root {
       --color-rosso: #c62828;
       --color-secondario-rosso: #fde0e0;
     }
-    h3 {
-      border-bottom: 2px solid var(--color-rosso);
-      display: inline-block;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+
+  /* NAV BAR */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+display: block;
+    border-radius: 2px;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+  }
+
+  nav.menu a i {
+    margin-right: 0.5em;
+    color: #333;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 1024px) {
+    .menu-icon {
+      display: flex !important;
     }
-    .icon:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
+
+    nav.menu {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1em 0;
+      text-align: center;
     }
-    .party-entry {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-      margin-bottom: 1.2em;
-      background-color: var(--color-secondario-rosso);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    nav.menu.show {
+      display: flex !important;
     }
-    .party-entry img {
-      height: 50px;
-.contenuto-fluid {
+  }
+
+  /* GENERICI */
+  h3 {
+    border-bottom: 2px solid var(--color-rosso);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+footer a,
+#copyright a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer a:hover,
+#copyright a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+  .party-entry {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+    background-color: var(--color-secondario-rosso);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .party-entry img {
+    height: 50px;
+  }
+
+  .contenuto-fluid {
     max-width: none;
     width: 100%;
     padding: 2em 4em;
   }
-  @media screen and (max-width: 768px) {
-    .contenuto-fluid {
-      padding: 1.5em 1em;
-    }
+
+@media screen and (max-width: 768px) {
+  .contenuto-fluid {
+    padding: 1.5em 1.5em;
   }
-    }
-  </style>
+
+  section.wrapper,
+  div.items {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+</style>
+<div class="nav-container">
+  <div class="logo">
+    <a href="referendum2025.html" style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Logo Elezioni101" style="height: 2em; margin-right: 0.4em;">
+     Referendum 8-9 giugno
+    </a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="menu">
+    <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+    <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+    <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+    <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+    <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+    <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+    <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+    <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+  </nav>
+</div>
+
 </head>
 <body class="is-preload">
 
@@ -113,7 +253,6 @@
 <section class="style3" style="width: 100%; padding: 3em 5vw;">
     <div class="contenuto-fluid">
     <h2><span class="icon solid fa-users" style="color: var(--color-rosso); margin-right: 0.4em;"> Chi sostiene il NO – Quesito 4</h2>
-    <p>Il quesito 4 propone di abrogare la norma che limita la responsabilità del committente in caso di infortuni sul lavoro dovuti a rischi specifici dell’attività appaltata. Ecco chi si oppone e perché.</p>
   </div>
 
   <div style="padding: 2em;">
@@ -122,62 +261,106 @@
       Il fronte del NO è composto da partiti e figure che ritengono l’abrogazione dannosa per la chiarezza delle responsabilità. Secondo loro, eliminare questa eccezione renderebbe troppo generica la responsabilità del committente, anche in casi in cui non ha un ruolo diretto.
     </p>
   </div>
+</section>
+</div>
 
   <section class="wrapper style1">
 <div style="padding: 2em;">
-    <h3><span class="icon solid fa-landmark" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> I partiti che sostengono il NO</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-italiaviva.png" alt="Logo Italia Viva" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Italia Viva</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-azione.svg" alt="Logo Azione" style="height: 30px; margin-bottom: 1.8em;">
-        <p><strong>Azione</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-piueuropa.png" alt="Logo Più Europa" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Più Europa</strong></p>
-      </div>
-    </div>
+<div style="display: flex; flex-wrap: wrap; gap: 1em;">
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-italiaviva.png" alt="Logo Italia Viva" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Italia Viva</strong><br><small>Per i quesiti 2 e 4, che non riguardano il Jobs Act, Italia Viva lascia libertà di voto ai suoi sostenitori, mostrando comunque contrarietà ai quesiti.</small></p>
+  </div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-azione.svg" alt="Logo Azione" style="height: 30px; margin-bottom: 1.8em;">
+    <p><strong>Azione</strong><br><small>Carlo Calenda ha dichiarato che irrigidire il mercato del lavoro è un errore e che le priorità dovrebbero essere salario minimo e produttività.</small></p>
+  </div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-piueuropa.png" alt="Logo Più Europa" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Più Europa</strong><br><small>Il segretario Riccardo Magi ha dichiarato che il partito è orientato a votare <strong>No</strong> ai quesiti sul lavoro, pur con una posizione non definitiva.</small></p>
+  </div>
+
+<div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+  <img src="images/logo-fdi.png" alt="Logo Fratelli d'Italia" style="height: 50px; margin-bottom: 0.5em;">
+  <p><strong>Fratelli d’Italia</strong><br>
+  <small>La linea del partito è quella dell’<a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">astensione</a>, ritenendo il referendum inutile e divisivo. Alcuni esponenti, come Ignazio La Russa, hanno dichiarato che voteranno No.</small></p>
+</div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-lega.png" alt="Logo Lega" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Lega</strong><br><small>Esponenti come Nicola Molteni hanno invitato all’astensione, contestando la validità dei quesiti.</small></p>
+  </div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-fi.png" alt="Logo Forza Italia" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Forza Italia</strong><br><small>Antonio Tajani ha ribadito la contrarietà del partito e la scelta politica di non partecipare al voto.</small></p>
+  </div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-noi-moderati.png" alt="Logo Noi Moderati" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Noi Moderati</strong><br><small>Ha espresso esplicita contrarietà ai quesiti, promuovendo la campagna per il NO.</small></p>
+  </div>
+
+  <div style="flex: 1 1 180px; background: #fde0e0; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-udc.png" alt="Logo UDC" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Unione di Centro</strong><br><small>Contraria al quesito, ha partecipato alla campagna per il NO insieme a Noi Moderati.</small></p>
+  </div>
+
+
+</div>
+
   </section>
+
 
 
 
 <div style="padding: 2em;">
     <h3><span class="icon solid fa-question-circle" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> Chi non prende posizione</h3>
     <p>
-      <strong>Fratelli d’Italia</strong>, <strong>Lega</strong> e <strong>Forza Italia</strong> non hanno espresso una posizione ufficiale. Alcune dichiarazioni di esponenti della maggioranza fanno intuire un orientamento all’<strong>astensione</strong>, più che al voto esplicito per il NO.
+Alcuni partiti non hanno preso una posizione netta sul quesito, scegliendo di non schierarsi pubblicamente. Per esempio, i partiti di maggioranza (<strong>Fratelli d’Italia, Lega e Forza Italia</strong>) non hanno promosso il voto per il NO, ma <a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">hanno invitato i propri elettori ad astenersi</a>. Come spiegato da diversi esponenti, pur essendo contrari al quesito, ritengono che – per come funziona il referendum – sia più efficace non votare. Altri esponenti, come <a href="https://www.ansa.it/sito/notizie/topnews/2025/05/07/la-russa-penso-che-andro-a-votare-ai-referendum_e52ef316-2ddc-474d-9172-b3825adf0f92.html">il presidente del Senato Ignazio La Russa</a>, hanno invece dichiarato che voteranno NO, pur facendo campagna per l'astensione. Per saperne di più su come influisce l’astensione, puoi <a href="referendum2025.html#faq">leggere le FAQ</a>.
+
+Tra i sindacati, la <strong>CGIL</strong> e l’<strong>USB</strong> sostengono il quesito sulla cittadinanza. Altri, come la <strong>UIL</strong>, hanno lasciato libertà di voto, mentre la <strong>CISL</strong> ha invitato all’astensione su tutti e cinque i referendum.
     </p>
    </div>
 </section>
 </div>
 
 
+
+
 <section class="wrapper style2 align-center">
 <div class="contenuto-fluid">
     <h3>🔎 Approfondimenti</h3>
-    <p><a href="approfondimento-norme-quesito4.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
-
-  <!-- Fonti -->
+    <p><a href="approfondimento-norme-quesito3.html" class="button primary icon solid fa-book-open">Approfondisci le norme</a></p>
 
       <h3>📄 Fonti utili</h3>
       <ul class="actions stacked">
-    <li><a href="https://www.ilriformista.it/piu-tutele-meno-precari-con-il-jobs-act-abolirlo-e-unillusione-populista-il-referendum-impossibile-di-landini-415769/" target="_blank"class="button icon solid fa-external-link-alt">Il Riformista – “Più tutele, meno precari con il Jobs Act”</a></li>
-    <li><a href="https://www.matteorenzi.it/renzi_guerra_ideologica_su_jobs_act_sinistra_pensi_a_salari_e_bollette" target="_blank"class="button icon solid fa-external-link-alt">Renzi: “Il Jobs Act non si tocca, priorità sono i salari”</a></li>
+    <li><a href="https://www.ilriformista.it/abolire-il-jobs-act-e-unillusione-populista-il-referendum-impossibile-415769/" target="_blank"class="button icon solid fa-external-link-alt">Il Riformista – Il referendum impossibile</a></li>
+<li><a href="https://www.avvenire.it/attualita/pagine/referendum-sul-lavoro-i-4-quesiti-i-pro-e-contro-cosa-c-e-da-sapere" target="_blank" class ="button icon solid fa-external-link-alt">Pro e contro dei quesiti sul lavoro</a></li>
+    <li><a href="https://www.matteorenzi.it/renzi_guerra_ideologica_su_jobs_act_sinistra_pensi_a_salari_e_bollette" target="_blank"class="button icon solid fa-external-link-alt">Renzi: “Serve equilibrio, non ideologia”</a></li>
     <li><a href="https://pagellapolitica.it/articoli/posizioni-partiti-referendum-cittadinanza" target="_blank"class="button icon solid fa-external-link-alt">Pagella Politica – Le posizioni dei partiti</a></li>
+<li><a href="https://www.youtube.com/watch?v=lZwLhfOiLE0&ab_channel=WillMedia" target="_blank" class="button icon solid fa-external-link-alt">Will Media - Pro e contro</a></li>
   </ul>
     </div>
   </section>
 
-
 <a href="#wrapper" class="button small" style="position: fixed; bottom: 20px; right: 20px; background: var(--color-rosso); color: white;">&uarr;</a>
   </div>
 
-  <div id="copyright">
-    <ul>&copy; Elezioni101 <p>Design: HTML5 UP </p></ul>
-  </div>
-
+<footer style="background: #f7f7f7; padding: 2em 1.5em; text-align: center; font-size: 0.9em; color: #666; margin-top: 4em; border-top: 1px solid #ddd;">
+  <p>
+    Questo sito non utilizza cookie poiché non raccoglie dati personali né utilizza strumenti di terze parti che rilasciano cookie.
+  </p>
+  <p style="margin-top: 0.8em;">
+    <a href="chi-siamo.html">Chi siamo</a>
+  </p>
+  <p style="margin-top: 0.8em;">
+    &copy; Elezioni101 – Design basato sul template <a href="https://html5up.net/story" target="_blank">Story</a> di HTML5 UP, rilasciato con licenza <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.
+  </p>
+</footer>
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>

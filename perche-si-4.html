@@ -1,57 +1,200 @@
 <!DOCTYPE html>
 <html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-BMdr+/GkHekJ8OkJQ3wMFeLZZyd5Hv5G6PCU1BOlZb6zJxvWJ2HMSK/9ADLz9V20PZKHrFoXw3eP5jB0ZYjHvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/png" href="images/logo.png">
 <head>
   <meta charset="UTF-8" />
   <title>Perché votare SÌ – Quesito 1 | Elezioni101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style>
-    :root {
-      --color-primario: #2e7d32;
-      --color-secondario: #d3f4dc;
+<style>
+  :root {
+    --color-primario: #2e7d32;
+    --color-secondario: #d3f4dc;
+  }
+
+  /* NAV BAR */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+display: block;
+    border-radius: 2px;
+  }
+
+  nav.menu {
+    display: flex;
+    gap: 1.2em;
+  }
+
+  nav.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+  }
+
+  nav.menu a i {
+    margin-right: 0.5em;
+    color: #333;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 1024px) {
+    .menu-icon {
+      display: flex !important;
     }
-    h3 {
-      border-bottom: 2px solid var(--color-primario);
-      display: inline-block;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+
+    nav.menu {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1em 0;
+      text-align: center;
     }
-    .icon:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
+
+    nav.menu.show {
+      display: flex !important;
     }
-    .party-entry {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-      margin-bottom: 1.2em;
-      background-color: var(--color-secondario);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .party-entry img {
-      height: 50px;
-.contenuto-fluid {
+  }
+
+  /* GENERICI */
+  h3 {
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+footer a,
+#copyright a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer a:hover,
+#copyright a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+  .party-entry {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+    background-color: var(--color-secondario);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .party-entry img {
+    height: 50px;
+  }
+
+  .contenuto-fluid {
     max-width: none;
     width: 100%;
     padding: 2em 4em;
   }
-  @media screen and (max-width: 768px) {
-    .contenuto-fluid {
-      padding: 1.5em 1em;
-    }
+
+@media screen and (max-width: 768px) {
+  .contenuto-fluid {
+    padding: 1.5em 1.5em;
   }
-    }
-  </style>
-</head>
-<body class="is-preload">
+
+  section.wrapper,
+  div.items {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+</style>
+
+
+<div class="nav-container">
+  <div class="logo">
+    <a href="referendum2025.html" style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Logo Elezioni101" style="height: 2em; margin-right: 0.4em;">
+     Referendum 8-9 giugno
+    </a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="menu">
+    <a href="referendum2025.html"><i class="fas fa-home"></i> Home</a>
+    <a href="referendum2025.html#quesito1"><i class="fas fa-question"></i> Quesito 1</a>
+    <a href="referendum2025.html#quesito2"><i class="fas fa-question"></i> Quesito 2</a>
+    <a href="referendum2025.html#quesito3"><i class="fas fa-question"></i> Quesito 3</a>
+    <a href="referendum2025.html#quesito4"><i class="fas fa-question"></i> Quesito 4</a>
+    <a href="referendum2025.html#quesito5"><i class="fas fa-question"></i> Quesito 5</a>
+    <a href="referendum2025.html#faq"><i class="fas fa-info-circle"></i> FAQ</a>
+    <a href="chi-siamo.html"><i class="fas fa-users"></i> Chi siamo</a>
+  </nav>
+</div>
+
+</header>
+
 
 <!-- Wrapper -->
 <div id="wrapper">
 
-<section class="wrapper style2 align-center" style="background: #eaf5eb;">
+<section class="wrapper style2 align-center" style="background: #eaf5eb; margin-top:4.5em">
   <div class="inner">
     <h2 style="color:var(--color-primario);">✅ Perché votare SÌ – Quesito 4</h2>
     <p style="font-size: 1.1em;">
@@ -109,63 +252,76 @@
 
 </section>
 
-<div class="items style1 medium onscroll-fade-in" id="chi-sostiene-sì">
-<section class="style3" style="width: 100%; padding: 3em 5vw;">
 <div class="contenuto-fluid">
-<h2><span class="icon solid fa-users" style="color: var(--color-primario); margin-right: 0.4em;"> Chi sostiene il Sì – Quesito 4</h2>
-    <p>Il quesito 4 riguarda la responsabilità del committente negli appalti, in caso di infortuni sul lavoro. Ecco chi ha promosso il referendum, chi lo sostiene e quali motivazioni sono state espresse.</p>
+          <h2><span class="icon solid fa-users" style="color: var(--color-primario); margin-right: 0.4em;"> Chi sostiene il SÌ – Quesito 4</span></h2>
 </div>
 
 <div style="padding: 2em;">
     <h3><span class="icon solid fa-thumbtack" style="color: var(--color-primario); margin-right: 0.4em;"></span> I promotori</h3>
-    <p>
-      Il quesito è stato promosso dalla <strong>CGIL</strong>, con l’obiettivo di rafforzare la sicurezza dei lavoratori negli appalti e rendere nuovamente responsabile anche il committente, anche in presenza di rischi specifici del lavoro appaltato.
-    </p>
-</div>
-
-  <section class="wrapper style1">
-<div style="padding: 2em;">
-    <h3><span class="icon solid fa-landmark" style="color: var(--color-primario); margin-right: 0.4em;"></span> I partiti che sostengono il Sì</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 1em;">
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-pd.png" alt="Logo PD" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Partito Democratico</strong><br><small>(con posizioni interne diverse)</small></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-m5s.png" alt="Logo M5S" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Movimento 5 Stelle</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-avs.png" alt="Logo AVS" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Alleanza Verdi-Sinistra</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-possibile.png" alt="Logo Possibile" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Possibile</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-prc.png" alt="Logo Rifondazione" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Rifondazione Comunista</strong></p>
-      </div>
-      <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
-        <img src="images/logo-psi.png" alt="Logo PSI" style="height: 50px; margin-bottom: 0.5em;">
-        <p><strong>Partito Socialista Italiano</strong></p>
-      </div>
-    </div>
-  </section>
-  </div>
-
-
-
-<div style="padding: 2em;">
-    <h3><span class="icon solid fa-question-circle" style="color: var(--color-primario); margin-right: 0.4em;"></span> Chi non prende posizione</h3>
-    <p>
-      Alcuni partiti, come <strong>Fratelli d’Italia</strong> e <strong>Forza Italia</strong>, non hanno preso una posizione ufficiale sul quesito. In alcuni casi hanno invitato all’astensione, senza schierarsi apertamente per il NO.
-    </p>
+          <p>
+      Il referendum è stato promosso dalla <strong>CGIL</strong>, con il supporto di <a href="https://it.wikipedia.org/wiki/Referendum_abrogativi_in_Italia_del_2025#cite_note-:18-59">diverse associazioni e movimenti</a> che si occupano di lavoro e diritti sociali, tra cui Auser, Libera, Federconsumatori, ARCI, UDU, Usigrai. Insieme ai promotori e ai movimenti, alcuni personaggi della società civile come <a href="https://www.lastampa.it/politica/2025/02/12/news/barbero_cgil_campagna_referendaria-14998307/">Alessandro Barbero</a> e <a href="https://www.editorialedomani.it/idee/commenti/referendum-8-9-giugno-perche-invocare-astensione-errore-mlg0lffy">Alfiero Grandi</a> hanno pubblicamente sostenuto tutti e 5 i quesiti. 
+          </p>
   </div>
 </section>
 </div>
 
+   <section class="wrapper style1">
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-landmark" style="color: var(--color-primario); margin-right: 0.4em;"></span> I partiti che sostengono il Sì</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 1em;">
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-pd.png" alt="Logo PD" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>Partito Democratico</strong><br><small>La segretaria Elly Schlein ha dichiarato il sostegno del partito a tutti e cinque i quesiti referendari, nonostante all'interno del partito <a href="https://tg24.sky.it/politica/2025/02/27/schlein-pd-direzione-nazionale-discorso">non tutti hanno firmato</a> il sostegno ai quesiti sul Jobs Act.</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-m5s.png" alt="Logo M5S" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Movimento 5 Stelle</strong><br><small>Il presidente Giuseppe Conte ha dichiarato il <a href="https://www.alanews.it/politica/referendum-landini-incontra-conte-ce-impegno-da-m5s-per-campagna-elettorale/">sostegno del partito</a> a tutti e quattro i quesiti referendari sul lavoro, lasciando libertà di voto per il quinto sulla cittadinanza.</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-avs.png" alt="Logo AVS" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>Alleanza Verdi-Sinistra</strong><br><small>Ha espresso il proprio sostegno al SÌ per tutti i quesiti, inclusi quelli sul Jobs Act.</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-possibile.png" alt="Logo Possibile" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Possibile</strong><br><small>Ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-prc.png" alt="Logo Rifondazione" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Rifondazione Comunista</strong><br><small>Ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+  </div>
+  <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+    <img src="images/logo-psi.png" alt="Logo PSI" style="height: 50px; margin-bottom: 0.5em;">
+    <p><strong>Partito Socialista Italiano</strong><br><small>Ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+  </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-radicali.svg" alt="Logo Radicali" style="height: 40px; margin-bottom: 0.8em;">
+              <p><strong>Radicali</strong><br><small>Hanno sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-CGIL.jpg" alt="Logo CGIL" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>CGIL</strong><br><small>Il sindacato CGIL ha sostenuto attivamente la campagna referendaria per il SÌ, essendo promotore dei quesiti sul lavoro.</small></p>
+            </div>
+            <div style="flex: 1 1 180px; background: #e0f7e9; border-radius: 8px; padding: 1em; text-align: center;">
+              <img src="images/logo-USB.png" alt="Logo USB" style="height: 50px; margin-bottom: 0.5em;">
+              <p><strong>USB</strong><br><small>Il sindacato USB ha sostenuto attivamente la campagna referendaria per il SÌ.</small></p>
+            </div>
+</div>
+
+</section>
+  </div>
+
+
+
+<div style="padding: 2em;">
+    <h3><span class="icon solid fa-question-circle" style="color: var(--color-rosso); margin-right: 0.4em;"> </span> Chi non prende posizione</h3>
+    <p>
+Alcuni partiti non hanno preso una posizione netta sul quesito, scegliendo di non schierarsi pubblicamente. Per esempio, i partiti di maggioranza (<strong>Fratelli d’Italia, Lega e Forza Italia</strong>) non hanno promosso il voto per il NO, ma <a href="https://www.repubblica.it/politica/2025/05/05/news/meloni_referendum_8_9_giugno_invito_non_voto-424165883/">hanno invitato i propri elettori ad astenersi</a>. Come spiegato da diversi esponenti, pur essendo contrari al quesito, ritengono che – per come funziona il referendum – sia più efficace non votare. Altri esponenti, come <a href="https://www.ansa.it/sito/notizie/topnews/2025/05/07/la-russa-penso-che-andro-a-votare-ai-referendum_e52ef316-2ddc-474d-9172-b3825adf0f92.html">il presidente del Senato Ignazio La Russa</a>, hanno invece dichiarato che voteranno NO, pur facendo campagna per l'astensione. Per saperne di più su come influisce l’astensione, puoi <a href="referendum2025.html#faq">leggere le FAQ</a>.
+
+Tra i sindacati, la <strong>CGIL</strong> e l’<strong>USB</strong> sostengono il quesito sulla cittadinanza. Altri, come la <strong>UIL</strong>, hanno lasciato libertà di voto, mentre la <strong>CISL</strong> ha invitato all’astensione su tutti e cinque i referendum.
+    </p>
+   </div>
+</section>
+</div>
 
 <section class="wrapper style2 align-center">
 <div class="contenuto-fluid">
