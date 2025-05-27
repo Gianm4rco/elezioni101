@@ -129,6 +129,80 @@ a[href="#faq"] {
   text-decoration: none;
 }
 
+/* Container più armonico */
+#faq {
+  padding: 0 1em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* FAQ block migliorato */
+details.faq-block {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.2em 1.5em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Effetto visivo al click */
+details.faq-block[open] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* Titolo */
+details.faq-block summary {
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* Simbolo + e - */
+details.faq-block summary::before {
+  content: "+ ";
+  font-weight: bold;
+  margin-right: 0.5em;
+  color: #0078d4;
+}
+
+details.faq-block[open] summary::before {
+  content: "− ";
+}
+
+/* Paragrafo interno */
+details.faq-block p {
+  margin-top: 0.6em;
+  line-height: 1.6;
+  font-size: 1em;
+  color: #444;
+}
+
+/* Link interno */
+details.faq-block a {
+  color: #0078d4;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Ottimizzazione mobile */
+@media screen and (max-width: 768px) {
+  details.faq-block {
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+
+  details.faq-block summary {
+    font-size: 1.1em;
+  }
+}
 
 a[href="#faq"]:hover {
   color: #000; /* resta nero al passaggio */
@@ -165,6 +239,55 @@ a[href="#faq"]:hover {
     line-height: 1.6;
   }
 }
+.collapsibile {
+  background: #f7f7f7;
+  padding: 2em;
+  border-radius: 10px;
+  margin: 2em 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.collapsibile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.titolo-collassabile {
+  font-size: 1.7em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.arrow-indicator::after {
+  content: "▼";
+  font-size: 1.3em;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.collapsibile.expanded .arrow-indicator::after {
+  content: "▲";
+}
+
+.inner-content {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .collapsibile.mobile-collapsed .inner-content {
+    display: none;
+  }
+
+  .collapsibile.mobile-collapsed.expanded .inner-content {
+    display: block;
+  }
+}
+
+
 
 .logo a {
   font-weight: bold;
@@ -278,44 +401,58 @@ Elezioni101<br>
 
 
 
-<!-- COME FUNZIONA IL REFERENDUM -->
-<section class="spotlight" style="background: #f7f7f7; padding: 2em; border-radius: 10px; margin-top: 2em;">
-  <div class="content">
-    <h2 style="margin-top: 0;">ℹ️ Come funziona il referendum?</h2>
-    <p style="font-size: 1.1em; line-height: 1.6;">
-      Il <strong>referendum abrogativo</strong> permette ai cittadini di <strong>cancellare una legge esistente</strong> (o parte di essa). Se vince il <strong>SÌ</strong>: la norma viene <strong>abrogata</strong> e quindi non sarà più in vigore. Se vince il <strong>NO</strong>: la legge resta <strong>completamente valida</strong>. Per essere valido, deve votare almeno il <strong>50% degli aventi diritto </strong>.
-    </p>
+<section class="collapsibile mobile-collapsed">
+  <div class="collapsibile-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <h2>ℹ️ Come funziona il referendum?</h2>
+    <span class="arrow-indicator"></span>
   </div>
+  <div class="inner-content">
+    <p>Il <strong>referendum abrogativo</strong> permette ai cittadini di <strong>cancellare una legge esistente</strong> (o parte di essa).
+    Se vince il <strong>SÌ</strong>: la norma viene <strong>abrogata</strong>. Se vince il <strong>NO</strong>: la legge resta
+    <strong>completamente valida</strong>. Per essere valido, deve votare almeno il <strong>50% degli aventi diritto</strong>.</p>
+  </div>
+</section>
 
-
-
-    <!-- Info utili -->
-    <div class="mini-sommario" >
-      <h2 style="margin-top: 0;">📌 Info pratiche</h2>
+<section class="collapsibile mobile-collapsed">
+  <div class="collapsibile-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <h2>📌 Info pratiche</h2>
+    <span class="arrow-indicator"></span>
+  </div>
+  <div class="inner-content">
+    <div class="mini-sommario">
       <ul>
-        <li><strong>🗓️ Quando si vota:</strong><br>Domenica 8 giugno e lunedì 9 giugno 2025</li>
+        <li><strong>🗓️ Quando si vota:</strong><br>Domenica 8 e lunedì 9 giugno 2025</li>
         <li><strong>🕘 Orari:</strong><br>Domenica 7:00–23:00, lunedì 7:00–15:00</li>
-        <li><strong>🪪 Documenti:</strong><br>Tessera elettorale + documento d'identità valido (carta di indentità o patente)</li>
+        <li><strong>🪪 Documenti:</strong><br>Tessera elettorale + documento d'identità valido</li>
         <li><strong>🗳️ Come si vota:</strong><br>Barra una sola casella (SÌ o NO) per ogni scheda</li>
       </ul>
-<p style="margin-top: 1em; text-align: center;">
-  ❓ Hai dubbi su come votare o su cosa serve? <a href="#faq"><strong>Leggi le FAQ</strong></a>
-</p>
-
+      <p style="margin-top: 1.2em; text-align: center;">
+        ❓ Hai dubbi su come votare o su cosa serve? <a href="#faq"><strong>Leggi le FAQ</strong></a>
+      </p>
     </div>
-
+  </div>
 </section>
-    <!-- Sommario quesiti -->
-    <div class="mini-sommario" id="sommario-quesiti">
-      <h2 style="margin-top: 0;">📋 I 5 quesiti in breve</h2>
+
+
+<section class="collapsibile mobile-collapsed" id="sommario-quesiti">
+  <div class="collapsibile-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <h2 class>📋 I 5 quesiti in breve</h2>
+    <span class="arrow-indicator"></span>
+  </div>
+  <div class="inner-content">
+    <div class="mini-sommario">
       <ul>
-        <li><a href="#quesito1"><strong>1. Disciplina dei licenziamenti illegittimi</strong> Reinserire il reintegro nei casi gravi</a></li>
-        <li><a href="#quesito2"><strong>2. Licenziamenti e tutele nelle piccole imprese</strong> Eliminare limiti all’indennizzo</a></li>
-        <li><a href="#quesito3"><strong>3. Contratti a termine</strong> Rendere obbligatoria la causale</a></li>
-        <li><a href="#quesito4"><strong>4. Appalti e responsabilità</strong> Estendere la responsabilità del committente</a></li>
-        <li><a href="#quesito5"><strong>5. Cittadinanza italiana</strong> Dimezzare i tempi per farne richiesta</a></li>
+        <li><a href="#quesito1"><strong>1. Licenziamenti illegittimi</strong><br>Reinserire il reintegro nei casi gravi</a></li>
+        <li><a href="#quesito2"><strong>2. Tutele nelle piccole imprese</strong><br>Eliminare limiti all’indennizzo</a></li>
+        <li><a href="#quesito3"><strong>3. Contratti a termine</strong><br>Rendere obbligatoria la causale</a></li>
+        <li><a href="#quesito4"><strong>4. Appalti e responsabilità</strong><br>Estendere la responsabilità del committente</a></li>
+        <li><a href="#quesito5"><strong>5. Cittadinanza italiana</strong><br>Dimezzare i tempi per richiederla</a></li>
       </ul>
     </div>
+  </div>
+</section>
+
+
 
 <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="quesito1">
   <div class="content">
