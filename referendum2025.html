@@ -34,6 +34,9 @@ body {
 [id]:target {
   scroll-margin-top: 100px; /* distanza equivalente all’altezza del menu */
 }
+.button {
+  font-size: 0.8em !important;
+}
 
 @media screen and (max-width: 768px) {
   body {
@@ -263,15 +266,25 @@ a[href="#faq"]:hover {
 }
 
 .arrow-indicator::after {
-  content: "▼";
-  font-size: 1.3em;
-  color: #333;
-  transition: transform 0.2s ease;
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 0.5em;
+vertical-align: 0.5em;
+
 }
 
 .collapsibile.expanded .arrow-indicator::after {
-  content: "▲";
+  transform: rotate(-135deg);
 }
+
+
+
 
 .inner-content {
   display: block;
@@ -390,7 +403,7 @@ Elezioni101<br>
 
     <p class="major">Prima di votare, meglio capire. Qui trovi cosa prevedono i 5 referendum e cosa significa davvero scegliere SÌ o NO.</p>
     <ul class="actions stacked">
-      <li><a href="#sommario-quesiti" class="button big wide smooth-scroll-middle">Vai ai quesiti</a></li>
+      <li><a href="#quesito1" class="button big wide smooth-scroll-middle">Vai ai quesiti</a></li>
     </ul>
   </div>
   <div class="image">
@@ -426,6 +439,11 @@ Elezioni101<br>
         <li><strong>🪪 Documenti:</strong><br>Tessera elettorale + documento d'identità valido</li>
         <li><strong>🗳️ Come si vota:</strong><br>Barra una sola casella (SÌ o NO) per ogni scheda</li>
       </ul>
+<p style="margin-top: 1.2em; text-align: center;">
+✍️ <strong>Attenzione!</strong> Quando compili le schede, fai attenzione a non scrivere su una scheda appoggiata sopra le altre: il segno potrebbe passare anche alle schede sottostanti e renderle non valide.
+</p>
+
+
       <p style="margin-top: 1.2em; text-align: center;">
         ❓ Hai dubbi su come votare o su cosa serve? <a href="#faq"><strong>Leggi le FAQ</strong></a>
       </p>
@@ -516,7 +534,7 @@ Elezioni101<br>
 
 <p>
   Questo quesito riguarda una norma che stabilisce <strong>quanta indennità economica</strong> spetta a un lavoratore licenziato senza giusta causa da una <strong>piccola impresa</strong> (con meno di 15 dipendenti).
-  Oggi l’indennizzo è fissato tra <strong>2,5 e 6 mensilità</strong> di stipendio, e può arrivare fino a <strong>14 mensilità</strong> per chi ha maggiore anzianità di servizio. 
+  Oggi l’indennizzo è fissato tra <strong>2.5 e 6 mensilità</strong> di stipendio, e può arrivare fino a <strong>14 mensilità</strong> per chi ha maggiore anzianità di servizio. 
   Il referendum propone di <strong>cancellare questi limiti</strong>, lasciando al giudice la libertà di decidere, caso per caso, l’importo del risarcimento economico.
   <br><br>
   Se vince il <strong>SÌ</strong>, i giudici potranno stabilire liberamente l’indennità, anche in misura <strong>superiore </strong> ai limiti oggi previsti. Se vince il <strong>NO</strong>, rimangono in vigore le soglie <strong> massime</strong> previste dalla legge.
