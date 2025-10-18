@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Che cosa fa una Regione – guida semplice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --brand:#1f3d5a; --muted:#666; --bg:#f7f9fc; --card:#fff; --border:#e6e6e6;
+      --accent:#2f6db2; --soft:#eef4ff;
+    }
+    html{scroll-behavior:smooth}
+    body{padding-top:70px}
+
+    /* NAVBAR: identica alla home */
+    .nav-container{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:1em 1.2em;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+    }
+    .logo a{font-weight:700;font-size:1.1em;color:#333;text-decoration:none;display:flex;align-items:center}
+    .logo img{height:2em;margin-right:.4em}
+    .menu-icon{display:none;flex-direction:column;cursor:pointer}
+    .menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+    nav.menu{display:flex;gap:1.2em}
+    nav.menu a{text-decoration:none;font-weight:600;color:#333}
+    @media (max-width:768px){
+      .menu-icon{display:flex}
+      nav.menu{display:none;flex-direction:column;position:absolute;top:60px;right:0;background:#fff;width:100%;
+        box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}
+      nav.menu.show{display:flex}
+    }
+
+    /* HERO */
+    .hero.wrapper{background:linear-gradient(0deg,#fff, #f4f7fb)}
+    .hero .inner{max-width:1100px;margin:0 auto}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{margin:.2rem 0}
+    .hero .major{color:#444}
+    .hero .image{border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+    .hero .image img{width:100%;height:auto;display:block}
+    @media (max-width:900px){.hero .grid{grid-template-columns:1fr}}
+
+    /* SEZIONI */
+    .wrapper.align-center .inner{max-width:1000px}
+    .callout{
+      border-left:6px solid var(--brand);background:#f7fafc;padding:1.1rem 1.2rem;border-radius:8px
+    }
+    .mini-toc{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.8rem}
+    .mini-toc a{border:1px solid var(--border);border-radius:999px;padding:.45rem .8rem;text-decoration:none}
+    .items.style1 .icon{color:var(--brand)}
+    .badge{background:var(--soft);border:1px solid #dfe9ff;border-radius:999px;padding:.2rem .55rem;font-weight:600}
+
+    /* TAB COMPARATIVA */
+    .compare{overflow-x:auto}
+    .compare table{width:100%;border-collapse:collapse}
+    .compare th,.compare td{border:1px solid rgba(0,0,0,.12);padding:.7rem .8rem;text-align:left}
+    .compare th{background:#f6f8fb}
+
+    /* FOOTER identico */
+    footer.site-footer{background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:3em;border-top:1px solid #ddd}
+
+    /* Back-to-top */
+    .back-to-top{
+      position:fixed;bottom:20px;right:20px;display:flex;align-items:center;justify-content:center;
+      font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;
+      z-index:100;transition:opacity .5s, transform .3s;opacity:0;pointer-events:none
+    }
+    .back-to-top.show{opacity:1;pointer-events:auto}
+    .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+
+    .muted{color:#666}
+  </style>
+</head>
+<body id="top" class="is-preload">
+
+  <!-- NAVBAR (uguale alla home) -->
+  <div class="nav-container">
+    <div class="logo">
+      <a href="Regionali_home.html">
+        <img src="images/logo.png" alt="Logo" /> Elezioni Veneto 2025
+      </a>
+    </div>
+    <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="menu">
+      <a href="Regionali_home.html#hero">Home</a>
+      <a href="Regionali_home.html#candidati">Candidati</a>
+      <a href="Regionali_home.html#province">Province</a>
+      <a href="Regionali_home.html#cosa-succede">Cosa succede</a>
+      <a href="Regionali_home.html#faq">FAQ</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+    </nav>
+  </div>
+
+  <div id="wrapper" class="divided">
+
+    <!-- HERO (coerente con home) -->
+    <section class="wrapper hero style1 align-center">
+      <div class="inner">
+        <div class="grid">
+          <div class="content">
+            <h1>Che cosa fa una Regione</h1>
+            <p class="major">Competenze, poteri e differenze con Province e Comuni. Esempi pratici, link utili, fonti ufficiali.</p>
+            <div class="mini-toc">
+              <a href="#in-breve">In breve</a>
+              <a href="#competenze">Cosa fa</a>
+              <a href="#non-fa">Cosa non fa</a>
+              <a href="#confronto">Regione vs Provincia vs Comune</a>
+              <a href="#esempi">Esempi</a>
+              <a href="#fonti">Fonti</a>
+            </div>
+          </div>
+          <div class="image">
+            <img src="images/regioni.jpg" alt="Mappa stilizzata del Veneto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN BREVE -->
+    <section id="in-breve" class="wrapper style2 align-center">
+      <div class="inner">
+        <h2>In breve</h2>
+        <div class="items style1 medium">
+          <section>
+            <span class="icon solid fa-scale-balanced major"></span>
+            <h3>Autonomia e leggi regionali</h3>
+            <p>Le Regioni fanno leggi nelle materie non riservate allo Stato; in molte aree lo Stato stabilisce i principi e la Regione disciplina i dettagli (legislazione concorrente).</p>
+            <p>
+              <a class="badge" href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-117">Cost. art. 117</a>
+              <a class="badge" href="https://presidenza.governo.it/Governo/Costituzione/2_titolo5.html">Titolo V</a>
+            </p>
+          </section>
+          <section>
+            <span class="icon solid fa-gears major"></span>
+            <h3>Servizi e amministrazione</h3>
+            <p>Sanità regionale, trasporti di interesse regionale, governo del territorio, formazione professionale e sviluppo: programmazione, regole, finanziamento.</p>
+            <p>
+              <a class="badge" href="https://it.wikipedia.org/wiki/Regioni_d%27Italia">Regioni d’Italia</a>
+              <a class="badge" href="https://www.regione.veneto.it/statuto-della-regione-veneto">Statuto Veneto</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENZE -->
+    <section id="competenze" class="wrapper style1">
+      <div class="inner">
+        <h2>Cosa fa una Regione (competenze)</h2>
+        <p>
+          Le Regioni hanno potestà legislativa per tutte le materie non riservate allo Stato. In molte aree (salute, governo del territorio, professioni, ricerca, protezione civile, reti di trasporto, valorizzazione beni culturali) lo Stato definisce i principi fondamentali e la Regione dettaglia; le funzioni amministrative seguono i principi di sussidiarietà, differenziazione e adeguatezza.
+          <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-117">Cost. art. 117</a> ·
+          <a href="https://presidenza.governo.it/Governo/Costituzione/2_titolo5.html">Titolo V</a>
+        </p>
+        <div class="items style1">
+          <section>
+            <span class="icon solid fa-notes-medical"></span>
+            <h3>Sanità</h3>
+            <p>Programmazione e organizzazione del Servizio sanitario regionale: piani sanitari, ospedali e rete territoriale, aziende sanitarie.</p>
+          </section>
+          <section>
+            <span class="icon solid fa-bus"></span>
+            <h3>Trasporti</h3>
+            <p>Programma e finanzia il TPL di interesse regionale/extraurbano, coordina reti e servizi con Province/enti di area vasta.</p>
+          </section>
+          <section>
+            <span class="icon solid fa-tree-city"></span>
+            <h3>Governo del territorio</h3>
+            <p>Piani territoriali/paesaggistici, norme edilizie regionali, coordinamento con pianificazione provinciale e comunale.</p>
+          </section>
+          <section>
+            <span class="icon solid fa-graduation-cap"></span>
+            <h3>Istruzione & formazione prof.</h3>
+            <p>Programmazione dell’istruzione e formazione professionale; sostegno a ricerca e innovazione.</p>
+          </section>
+        </div>
+        <p class="muted">Per il Veneto vedi <a href="https://www.regione.veneto.it/statuto-della-regione-veneto">Statuto</a> e <a href="https://www.regione.veneto.it/normativa">Normativa</a>.</p>
+      </div>
+    </section>
+
+    <!-- COSA NON FA -->
+    <section id="non-fa" class="wrapper style2">
+      <div class="inner">
+        <h2>Cosa <em>non</em> fa una Regione</h2>
+        <div class="callout">
+          Materie riservate allo Stato: politica estera e difesa, moneta e finanza statale, immigrazione,
+          ordine pubblico e sicurezza, giustizia e ordinamento civile/penale, livelli essenziali delle prestazioni,
+          norme generali sull’istruzione, tutela dell’ambiente e dei beni culturali (salvo profili regionali).
+          <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-117">Cost. art. 117, c.2</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFRONTO -->
+    <section id="confronto" class="wrapper style1">
+      <div class="inner">
+        <h2>Regione, Provincia/Città metropolitana e Comune: differenze</h2>
+        <div class="compare">
+          <table>
+            <thead>
+              <tr>
+                <th>Ente</th>
+                <th>Organi</th>
+                <th>Che cosa fa</th>
+                <th>Riferimenti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Regione</strong></td>
+                <td>Consiglio • Giunta • Presidente</td>
+                <td>Leggi regionali; sanità; trasporti regionali; governo del territorio; formazione prof./sviluppo.</td>
+                <td><a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-121">Cost. art. 121</a> · <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-117">art. 117</a></td>
+              </tr>
+              <tr>
+                <td><strong>Provincia</strong><br><span class="muted">(ente di area vasta)</span></td>
+                <td>Presidente • Consiglio (elezione di 2° grado)</td>
+                <td>Strade provinciali; edilizia scolastica secondaria; pianificazione d’area vasta; ambiente; coordinamento TPL d’area.</td>
+                <td><a href="https://temi.camera.it/leg19DIL/post/19_pl18_le_nuove_funzioni.html">Legge 56/2014 (Delrio)</a></td>
+              </tr>
+              <tr>
+                <td><strong>Comune</strong></td>
+                <td>Consiglio • Giunta • Sindaco</td>
+                <td>Servizi di prossimità: anagrafe, polizia locale, rifiuti, strade comunali, urbanistica locale, servizi sociali, scuole infanzia/primarie (edifici).</td>
+                <td><a href="https://www.parlamento.it/leggi/deleghe/00267dl.htm">TUEL</a> · <a href="https://www.brocardi.it/testo-unico-enti-locali/parte-i/titolo-ii/capo-i/art13.html">art. 13 TUEL</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESEMPI PRATICI -->
+    <section id="esempi" class="wrapper style2">
+      <div class="inner">
+        <h2>Esempi pratici</h2>
+        <div class="items style1">
+          <section>
+            <span class="icon solid fa-hospital"></span>
+            <h3>Nuovo ospedale</h3>
+            <p>Programmazione e finanziamento stanno nel SSR (Regione). Il Comune cura urbanistica e permessi.</p>
+          </section>
+          <section>
+            <span class="icon solid fa-train"></span>
+            <h3>Linea bus extraurbana</h3>
+            <p>Regione programma e finanzia i servizi di TPL di interesse regionale; Province/Comuni coordinano tratte e fermate.</p>
+          </section>
+          <section>
+            <span class="icon solid fa-building-user"></span>
+            <h3>Scuole superiori</h3>
+            <p>Gli edifici sono competenza provinciale (o Città metropolitana). Lo Stato definisce ordinamenti e programmi.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONTI -->
+    <section id="fonti" class="wrapper style1 align-center">
+      <div class="inner">
+        <h2>Fonti principali</h2>
+        <p>
+          • <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-117">Costituzione – art. 117</a> ·
+            <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-v/articolo-121">art. 121</a> ·
+            <a href="https://presidenza.governo.it/Governo/Costituzione/2_titolo5.html">Titolo V (Presidenza del Consiglio)</a><br/>
+          • <a href="https://temi.camera.it/leg19DIL/post/19_pl18_le_nuove_funzioni.html">Legge 56/2014 (Delrio) – dossier Camera</a> ·
+            <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2014-04-07;56">Testo su Normattiva</a><br/>
+          • <a href="https://www.parlamento.it/leggi/deleghe/00267dl.htm">TUEL – D.Lgs. 267/2000</a> (art. 13 funzioni comunali) ·
+            <a href="https://www.brocardi.it/testo-unico-enti-locali/parte-i/titolo-ii/capo-i/art13.html">art. 13 spiegato</a><br/>
+          • <a href="https://it.wikipedia.org/wiki/Regioni_d%27Italia">Wikipedia – Regioni d’Italia</a> ·
+            <a href="https://it.wikipedia.org/wiki/Regione_(Italia)">Regione (Italia)</a> ·
+            <a href="https://it.wikipedia.org/wiki/Comuni_d%27Italia">Comuni d’Italia</a><br/>
+          • Veneto: <a href="https://www.regione.veneto.it/statuto-della-regione-veneto">Statuto</a> ·
+            <a href="https://www.regione.veneto.it/normativa">Normativa</a> ·
+            <a href="https://it.wikipedia.org/wiki/Veneto">Voce Wikipedia</a>
+        </p>
+        <p class="muted">I link a Wikipedia sono orientativi; per la base normativa rimandiamo ai testi ufficiali.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER (stesso della home) -->
+    <footer class="site-footer">
+      <p>Questo sito utilizza Google Analytics in forma anonimizzata per statistiche aggregate. Nessun cookie di profilazione.</p>
+      <p><a href="chi-siamo.html">Chi siamo</a></p>
+      <p>&copy; Elezioni101 – Design basato su <a href="https://html5up.net/story" target="_blank">Story</a> (HTML5 UP • CC BY 3.0).</p>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top" aria-label="Torna su"><i class="fas fa-arrow-up"></i></a>
+
+  </div><!-- /wrapper -->
+
+  <!-- Scripts (stessi della home) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Chiude il menu mobile dopo click su un link interno
+    document.querySelectorAll('nav.menu a[href^="Regionali_home.html#"], nav.menu a[href^="#"]').forEach(link=>{
+      link.addEventListener('click',()=>document.querySelector('nav.menu').classList.remove('show'));
+    });
+    // Back to top
+    const toTop=document.querySelector('.back-to-top');
+    window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>300));
+  </script>
+</body>
+</html>

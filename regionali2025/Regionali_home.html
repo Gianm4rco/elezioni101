@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Elezioni Regionali Veneto 2025 – Guida</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Guida semplice e neutrale alle Elezioni Regionali Veneto 2025: quando si vota, come si vota, chi si presenta.">
+	<meta name="theme-color" content="#1f3d5a">
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      /* ===================== A) Stili originali sintetizzati (estratto) ===================== */
+      #hero .content h1 img { max-height: 2em; width: auto; }
+      .nav-container {display:flex;justify-content:space-between;align-items:center;padding:1em 1.2em;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);position:fixed;top:0;width:100%;z-index:1000}
+      .logo a{font-weight:bold;font-size:1.1em;color:#333;text-decoration:none;display:flex;align-items:center}
+      .logo img{height:2em;margin-right:.4em}
+      .menu-icon{display:none;flex-direction:column;cursor:pointer}
+      .menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+      nav.menu{display:flex;gap:1.2em}
+      nav.menu a{text-decoration:none;font-weight:600;color:#333}
+      @media (max-width: 768px){.menu-icon{display:flex!important}nav.menu{display:none!important;flex-direction:column;position:absolute;top:60px;right:0;background:#fff;width:100%;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}nav.menu.show{display:flex!important}}
+      body{padding-top:70px}
+
+      /* Province grid, FAQ, back-to-top (come file utente) */
+      #province .province-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2em}
+      .province-card{background:#f9f9f9;border-radius:.6rem;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:1.5em 1em;text-align:center;transition:transform .2s,box-shadow .3s;width:200px}
+      .province-card:hover{transform:translateY(-5px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+      .province-card a{text-decoration:none;color:#1f3d5a;font-weight:600;font-size:1.1em;display:block}
+      .province-card i{font-size:2em;margin-bottom:.5em;color:#777}
+      #faq{padding:0 1em;max-width:900px;margin:0 auto}
+      details.faq-block{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.2em 1.5em;margin-bottom:1.2em;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:box-shadow .3s}
+      details.faq-block[open]{box-shadow:0 4px 12px rgba(0,0,0,.07)}
+      details.faq-block summary{cursor:pointer;font-size:1.2em;font-weight:700;color:#333;display:flex;align-items:center}
+      details.faq-block summary::before{content:"+ ";font-weight:bold;margin-right:.5em;color:#0078d4}
+      details.faq-block[open] summary::before{content:"− "}
+      details.faq-block p{margin-top:.6em;line-height:1.6;font-size:1em;color:#444}
+      a[href="#faq"]:hover{color:#000;text-decoration:underline;font-weight:600}
+
+      /* ===================== B) Bottom Quick Navbar (NUOVA) ===================== */
+      :root{--nav-bg:#ffffff;--nav-border:#e6ebf1;--nav-text:#6b7a88;--nav-active:#1f3d5a}
+      .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--nav-bg);border-top:1px solid var(--nav-border);box-shadow:0 -4px 12px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:saturate(140%) blur(6px)}
+      .bottomnav .row{max-width:740px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+      .bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;color:var(--nav-text);text-decoration:none}
+      .bottomnav i{font-size:1.1rem}
+      .bottomnav a.active{color:var(--nav-active);font-weight:800}
+      /* Nascondi su schermi ampi; lascia solo mobile/tablet */
+      @media (min-width: 980px){.bottomnav{display:none}}
+      /* Evita che la barra copra i contenuti su mobile */
+      @media (max-width: 979px){body{padding-bottom:64px}}
+
+      /* Pulsante "Torna su" (compatibile con bottomnav) */
+      .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
+      .back-to-top.show{opacity:1;pointer-events:auto}
+      .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+
+      /* ===================== C) Sezioni d'ancora evidenziate ===================== */
+      section[id]{scroll-margin-top:90px}
+    </style>
+  </head>
+  <body id="top" class="is-preload">
+    <!-- NAV SUPERIORE -->
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Veneto 2025</a>
+      </div>
+      <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')"><span></span><span></span><span></span></div>
+      <nav class="menu" aria-label="Menu principale">
+        <a href="#hero">Home</a>
+        <a href="#candidati">Candidati</a>
+        <a href="#province">Province</a>
+        <a href="#cosa-succede">Cosa succede</a>
+        <a href="#faq">FAQ</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+      </nav>
+    </div>
+
+    <div id="wrapper" class="divided">
+      <!-- HERO -->
+      <section id="hero" class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+          <h1><img src="images/logo.png" alt="Logo Elezioni101" />Elezioni Regionali Veneto 2025</h1>
+          <p class="major">Chi si vota? Quando? Come funziona? Chiariamo le cose.</p>
+          <ul class="actions stacked"><li><a href="#candidati" class="button big wide smooth-scroll-middle">Vai ai candidati</a></li></ul>
+        </div>
+        <div class="image"><img src="images/veneto-map.png" alt="Mappa Veneto" /></div>
+      </section>
+
+      <!-- COSA SUCCEDE (riassunto) -->
+<section id="cosa-succede" class="wrapper style2">
+  <div class="inner">
+    <header class="major">
+      <h2>23–24 novembre · In breve</h2>
+      <p class="major">3 mosse per orientarti, + 2 info chiave.</p>
+    </header>
+
+    <div class="items style1 medium onscroll-fade-in">
+      <!-- 1) QUANDO -->
+      <section>
+        <span class="icon solid major fa-calendar-days"></span>
+        <h3>Quando si vota</h3>
+        <p class="major"><strong>Domenica 23</strong> (7:00–23:00) · <strong>Lunedì 24</strong> (7:00–15:00)</p>
+        <p>Se sei in fila all'orario di chiusura <strong>voti comunque</strong>.</p>
+      </section>
+
+      <!-- 2) COME -->
+      <section>
+        <span class="icon solid major fa-pen-to-square"></span>
+        <h3>Come si vota</h3>
+        <ol>
+          <li><strong>X sul Presidente</strong> → voti solo lui</li>
+          <li><strong>X su una lista</strong> → lista + Presidente collegato</li>
+          <li><strong>Voto disgiunto</strong> → lista e Presidente diversi</li>
+        </ol>
+      </section>
+
+      <!-- 3) PRIMA DI USCIRE -->
+      <section>
+        <span class="icon solid major fa-id-card"></span>
+        <h3>Prima di uscire</h3>
+        <ul class="alt">
+          <li><strong>Tessera elettorale</strong> e <strong>documento</strong> (anche scaduto se riconoscibile)</li>
+          <li><strong>Seggio:</strong> quello indicato sulla tessera (se hai cambiato residenza, verifica sul sito del Comune)</li>
+        </ul>
+      </section>
+
+      <!-- 4) COSA SI VOTA (compattato) -->
+      <section>
+        <span class="icon solid major fa-check-to-slot"></span>
+        <h3>Cosa si vota</h3>
+        <p class="major">Eleggi il <strong>Presidente della Regione</strong> e il <strong>Consiglio regionale</strong>.</p>
+        <p>Puoi usare il <strong>voto disgiunto</strong> (Presidente ≠ lista).</p>
+      </section>
+
+      <!-- 5) REGOLE PRINCIPALI (no elenchi) -->
+      <section>
+        <span class="icon solid major fa-scale-balanced"></span>
+        <h3>Regole principali</h3>
+        <p class="major"><strong>50</strong> seggi complessivi</p>
+        <p>Alla coalizione del Presidente eletto va il <strong>premio di maggioranza</strong>. Un seggio al <strong>secondo candidato Presidente</strong> più votato. <span class="label">Soglie di sbarramento</span> come da normativa regionale.</p>
+      </section>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CANDIDATI -->
+<section id="candidati" class="wrapper style1 align-center">
+<div class="inner">
+<h2>Candidati Governatore</h2>
+
+
+<!-- Hover-grow + deep link (solo CSS, no JS) -->
+<style>
+.candidate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem}
+.candidate-link{display:block;text-decoration:none;color:inherit;border-radius:.75rem}
+.candidate-card{background:#fff;border-radius:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.08);overflow:hidden;text-align:center;border-top:4px solid #0056a3;transition:transform .18s ease, box-shadow .22s ease}
+.candidate-card .candidate-photo{width:60%;height:180px;object-fit:cover;margin:0 auto;border-radius:.4rem}
+.candidate-card .candidate-info{padding:1rem}
+.candidate-link:hover .candidate-card,
+.candidate-link:focus-visible .candidate-card{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 22px rgba(0,0,0,.12)}
+.candidate-link:focus-visible{outline:3px solid #1f3d5a;outline-offset:4px;border-radius:.9rem}
+/* Variante colore per CSX */
+.candidate-card.csx{border-top-color:#d12a27}
+@media (hover:none){.candidate-link .candidate-card{transform:none}}
+</style>
+
+
+<div class="candidate-grid">
+<!-- STEFANI -->
+<a class="candidate-link" href="candidati/stefani.html" aria-label="Apri scheda candidato: Alberto Stefani">
+<div class="candidate-card cdx">
+<img class="candidate-photo" src="images/stefani.jpg" alt="Alberto Stefani" />
+<div class="candidate-info">
+<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Alberto Stefani</h3>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Deputato della Lega ed ex-sindaco di Borgoricco (PD)</div>
+<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 16/11/1992 a Camposampiero (PD)</div>
+</div>
+</div>
+</a>
+
+
+<!-- MANILDO -->
+<a class="candidate-link" href="candidati/manildo.html" aria-label="Apri scheda candidato: Giovanni Manildo">
+<div class="candidate-card csx">
+<img class="candidate-photo" src="images/manildo.jpg" alt="Giovanni Manildo" />
+<div class="candidate-info">
+<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Giovanni Manildo</h3>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Avvocato ed ex-sindaco di Treviso</div>
+<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 22/07/1969 a Conegliano (TV)</div>
+</div>
+</div>
+</a>
+
+
+<!-- Altri candidati: duplica il blocco <a class="candidate-link" ...> -->
+
+
+</div>
+</div>
+</section>
+
+      <!-- PROVINCE -->
+      <section id="province" class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>📍 Province del Veneto</h2>
+          <p style="max-width:700px;margin:0 auto 2em">I consiglieri si eleggono in collegi provinciali. Clicca sulla tua provincia.</p>
+          <div class="province-grid">
+            <div class="province-card"><a href="province/padova.html"><img src="images/padova.png" alt="Padova" width="60" style="margin-bottom:.5em" /><br>Padova</a></div>
+            <div class="province-card"><a href="province/treviso.html"><img src="images/treviso.png" alt="Treviso" width="60" style="margin-bottom:.5em" /><br>Treviso</a></div>
+            <div class="province-card"><a href="province/venezia.html"><img src="images/venezia.png" alt="Venezia" width="60" style="margin-bottom:.5em" /><br>Venezia</a></div>
+            <div class="province-card"><a href="province/verona.html"><img src="images/verona.png" alt="Verona" width="60" style="margin-bottom:.5em" /><br>Verona</a></div>
+            <div class="province-card"><a href="province/vicenza.html"><img src="images/vicenza.png" alt="Vicenza" width="60" style="margin-bottom:.5em" /><br>Vicenza</a></div>
+            <div class="province-card"><a href="province/belluno.html"><img src="images/belluno.png" alt="Belluno" width="60" style="margin-bottom:.5em" /><br>Belluno</a></div>
+            <div class="province-card"><a href="province/rovigo.html"><img src="images/rovigo.png" alt="Rovigo" width="60" style="margin-bottom:.5em" /><br>Rovigo</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ sintetiche -->
+      <div style="max-width:900px;margin:0 auto">
+        <section id="faq" style="margin-top:4em">
+          <h2>❓ Domande frequenti</h2>
+          <details class="faq-block"><summary>💳 Ho perso la tessera elettorale: posso votare?</summary><p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune.</p></details>
+          <details class="faq-block"><summary>🛂 Il mio documento è scaduto: posso votare?</summary><p>Sì. Puoi votare anche con un documento scaduto se riconoscibile e con fotografia.</p></details>
+          <details class="faq-block"><summary>🖊️ Se sbaglio a votare?</summary><p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda.</p></details>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:4em;border-top:1px solid #ddd">
+        <p>Questo sito utilizza Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+        <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+        <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+      </footer>
+
+      <!-- Pulsante "Torna su" -->
+      <a href="#top" class="back-to-top" aria-label="Torna su"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- ===================== Bottom Quick Navbar (HTML) ===================== -->
+    <nav class="bottomnav" aria-label="Navigazione rapida">
+      <div class="row">
+        <a href="#hero" data-target="hero"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#cosa-succede" data-target="cosa-succede"><i class="fa-solid fa-bolt"></i><span>In breve</span></a>
+        <a href="#candidati" data-target="candidati"><i class="fa-solid fa-user-group"></i><span>Candidati</span></a>
+        <a href="#province" data-target="province"><i class="fa-solid fa-location-dot"></i><span>Province</span></a>
+        <a href="#faq" data-target="faq"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a>
+      </div>
+    </nav>
+
+    <!-- Scripts Story -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Interazioni: chiudi menu mobile al click, back-to-top, evidenzia bottomnav -->
+    <script>
+      document.querySelectorAll('nav.menu a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav.menu').classList.remove('show')));
+      const toTop=document.querySelector('.back-to-top');
+      window.addEventListener('scroll',()=>{window.scrollY>300?toTop.classList.add('show'):toTop.classList.remove('show')});
+      // Evidenzia la voce attiva in bottomnav con IntersectionObserver
+      const bnLinks=[...document.querySelectorAll('.bottomnav a')];
+      const sections=bnLinks.map(a=>document.getElementById(a.dataset.target)).filter(Boolean);
+      const obs=new IntersectionObserver((entries)=>{
+        const vis=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+        if(!vis) return; const id=vis.target.id; bnLinks.forEach(l=>l.classList.toggle('active', l.dataset.target===id));
+      },{rootMargin:'-40% 0px -50% 0px',threshold:[0,0.25,0.5,0.75,1]});
+      sections.forEach(s=>obs.observe(s));
+      // Smooth scroll nativo
+      document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href')); if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}}));
+    </script>
+  </body>
+</html>
