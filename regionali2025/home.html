@@ -7,8 +7,8 @@
 	<meta name="description" content="Guida semplice e neutrale alle Elezioni Regionali Veneto 2025: quando si vota, come si vota, chi si presenta.">
 	<meta name="theme-color" content="#1f3d5a">
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -27,15 +27,15 @@
 
       /* Province grid, FAQ, back-to-top (come file utente) */
       #province .province-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2em}
-      .province-card{background:#f9f9f9;border-radius:.6rem;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:1.5em 1em;text-align:center;transition:transform .2s,box-shadow .3s;width:200px}
+      .province-card{background:#f9f9f9;border-radius:.6rem;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:1.5em 1em;text-align:center;transition:transform .2s,box-shadow .3s,width .2s}
       .province-card:hover{transform:translateY(-5px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
       .province-card a{text-decoration:none;color:#1f3d5a;font-weight:600;font-size:1.1em;display:block}
       .province-card i{font-size:2em;margin-bottom:.5em;color:#777}
       #faq{padding:0 1em;max-width:900px;margin:0 auto}
-      details.faq-block{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.2em 1.5em;margin-bottom:1.2em;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:box-shadow .3s}
+      details.faq-block{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.2em 1.5em;margin-bottom:1.2em;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:box-shadow .3s,border-color .3s}
       details.faq-block[open]{box-shadow:0 4px 12px rgba(0,0,0,.07)}
       details.faq-block summary{cursor:pointer;font-size:1.2em;font-weight:700;color:#333;display:flex;align-items:center}
-      details.faq-block summary::before{content:"+ ";font-weight:bold;margin-right:.5em;color:#0078d4}
+      details.faq-block summary::before{content:"+ ";font-weight:bold;margin-right:.5em;color:#0078d4;transition:transform .25s}
       details.faq-block[open] summary::before{content:"− "}
       details.faq-block p{margin-top:.6em;line-height:1.6;font-size:1em;color:#444}
       a[href="#faq"]:hover{color:#000;text-decoration:underline;font-weight:600}
@@ -47,9 +47,7 @@
       .bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;color:var(--nav-text);text-decoration:none}
       .bottomnav i{font-size:1.1rem}
       .bottomnav a.active{color:var(--nav-active);font-weight:800}
-      /* Nascondi su schermi ampi; lascia solo mobile/tablet */
       @media (min-width: 980px){.bottomnav{display:none}}
-      /* Evita che la barra copra i contenuti su mobile */
       @media (max-width: 979px){body{padding-bottom:64px}}
 
       /* Pulsante "Torna su" (compatibile con bottomnav) */
@@ -255,13 +253,13 @@
     </nav>
 
     <!-- Scripts Story -->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.scrollex.min.js"></script>
-    <script src="../assets/js/jquery.scrolly.min.js"></script>
-    <script src="../assets/js/browser.min.js"></script>
-    <script src="../assets/js/breakpoints.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Interazioni: chiudi menu mobile al click, back-to-top, evidenzia bottomnav -->
     <script>
@@ -278,6 +276,54 @@
       sections.forEach(s=>obs.observe(s));
       // Smooth scroll nativo
       document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href')); if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}}));
+
+      // Aesthetic extras: sticky nav shadow on scroll + prefers-color-scheme tweaks
+      const nav=document.querySelector('.nav-container');
+      window.addEventListener('scroll',()=>{
+        if(window.scrollY>2) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+      });
     </script>
+
+    <style>
+      /* Aesthetic refinements (non-intrusive) */
+      :root{
+        --brand:#1f3d5a;
+        --brand-2:#0d5cb6;
+        --paper:#ffffff;
+        --ink:#24313d;
+        --muted:#6b7a88;
+        --ring:#9ec1ff;
+      }
+      body{font-feature-settings:"liga" 1,"kern" 1; text-rendering:optimizeLegibility}
+      .nav-container{background:rgba(255,255,255,.96);transition:box-shadow .25s, background .25s}
+      .nav-container.scrolled{box-shadow:0 4px 12px rgba(0,0,0,.08);background:#fff}
+      .logo a{letter-spacing:.1px}
+      #hero .content{max-width:640px}
+      #hero .content h1{line-height:1.12}
+      #hero .content p.major{font-size:1.15rem;color:var(--muted)}
+      .button.big.wide{border-radius:10px}
+      .province-card img{filter:drop-shadow(0 1px 1px rgba(0,0,0,.12))}
+      details.faq-block summary{list-style:none}
+      details.faq-block summary::-webkit-details-marker{display:none}
+      details.faq-block[open]{border-color:#cfd8e3}
+      .label{display:inline-block;background:#eef5ff;color:#0a4db3;border:1px solid #d3e4ff;border-radius:999px;padding:.15em .6em;font-size:.85em}
+
+      /* Focus visible high-contrast */
+      a:focus-visible, button:focus-visible, summary:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:6px}
+
+      /* Dark mode (inherits Story but tunes contrast) */
+      @media (prefers-color-scheme: dark){
+        .nav-container{background:rgba(18,24,33,.88)}
+        .nav-container.scrolled{background:#121821}
+        .logo a, nav.menu a{color:#e6eef8}
+        .province-card{background:#141a23; box-shadow:0 1px 0 rgba(255,255,255,.04)}
+        .province-card a{color:#d9e6ff}
+        details.faq-block{background:#121821;border-color:#2a3342}
+        details.faq-block p{color:#c9d4e3}
+        footer{background:#121821 !important; color:#c9d4e3 !important; border-top-color:#2a3342 !important}
+        .bottomnav{background:#121821; border-top-color:#2a3342}
+        .back-to-top{background:#0d5cb6}
+      }
+    </style>
   </body>
 </html>
