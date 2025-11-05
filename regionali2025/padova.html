@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padova – Candidati e liste | Elezioni Regionali Veneto 2025</title>
+  <meta name="description" content="Candidati al Consiglio regionale nella circoscrizione di Padova, divisi per lista. Tocca un nome per aprire la scheda rapida." />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --cdx:#0056a3;         /* centrodestra */
+      --csx:#d12a27;         /* centrosinistra */
+      --bui:#e2a400;         /* popolari per il veneto */
+      --res:#178d36;         /* resistere veneto */
+      --dsp:#7a1b1b;         /* democrazia sovrana popolare */
+      --ink:#1f3d5a; --muted:#6b7a88;
+      --card:#ffffff; --line:#e4e7eb; --chip:#f4f6f9;
+    }
+
+    header.page{max-width:980px;margin:0 auto 1rem;display:flex;flex-direction:column;gap:.45rem}
+    header.page h1{font-size:1.6rem;line-height:1.2;margin:0;color:var(--ink)}
+    header.page .lede{color:#556;max-width:70ch}
+
+    .legend{display:flex;flex-wrap:wrap;gap:.4rem .8rem;margin:.3rem 0 0}
+    .legend .tag{display:inline-flex;align-items:center;gap:.4rem;padding:.28rem .55rem;border-radius:999px;font-size:.85rem;border:1px solid #d8e0ea;background:#fff}
+    .legend .dot{width:.8rem;height:.8rem;border-radius:50%}
+
+    .bloc{max-width:980px;margin:1rem auto 1.2rem;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .bloc header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;border-bottom:1px solid var(--line)}
+    .bloc h2{font-size:1.15rem;margin:0;display:flex;align-items:center;gap:.55rem}
+    .bloc h2 .pill{font-size:.8rem;border-radius:999px;padding:.15rem .5rem;color:#fff}
+
+    .lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;padding:1rem}
+    .list-card{border:1px solid var(--line);border-radius:12px;background:#fff}
+    .list-card header{padding:.75rem .9rem;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.6rem}
+    .list-card header img.logo{width:28px;height:28px;object-fit:contain}
+    .list-card h3{font-size:1rem;margin:0}
+
+    .cands{display:flex;flex-wrap:wrap;gap:.5rem;padding:.75rem}
+    .cand{display:inline-flex;align-items:center;gap:.45rem;background:var(--chip);border:1px solid #e9edf3;border-radius:999px;padding:.38rem .6rem;cursor:pointer}
+    .cand img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+    .cand .nm{font-size:.95rem}
+
+    /* coalition colors */
+    /* subtle coalition accent on sections (stripe + soft border) */
+    .bloc{ position:relative; overflow:hidden; }
+
+    /* banda verticale sottile a sinistra */
+    .bloc::after{
+    content:"";
+    position:absolute;
+    left:0; top:0; bottom:0;
+    width:6px; /* puoi portarla a 4px se vuoi ancora più “light” */
+    opacity:.9; /* banda visibile ma non invadente */
+    }
+
+    /* bordo leggermente “tinto” sul colore di coalizione */
+    .bloc.cdx{ border-color: rgba(0,86,163,.22); }      /* var(--cdx) */
+    .bloc.csx{ border-color: rgba(209,42,39,.22); }     /* var(--csx) */
+    .bloc.bui{ border-color: rgba(226,164,0,.22); }     /* var(--bui) */
+    .bloc.res{ border-color: rgba(23,141,54,.22); }     /* var(--res) */
+    .bloc.dsp{ border-color: rgba(122,27,27,.22); }     /* var(--dsp) */
+
+    /* colore della banda per ogni coalizione */
+    .bloc.cdx::after{ background: rgba(0,86,163,.85); }
+    .bloc.csx::after{ background: rgba(209,42,39,.85); }
+    .bloc.bui::after{ background: rgba(226,164,0,.85); }
+    .bloc.res::after{ background: rgba(23,141,54,.85); }
+    .bloc.dsp::after{ background: rgba(122,27,27,.85); }
+
+    .cdx .pill{background:var(--cdx)}
+    .csx .pill{background:var(--csx)}
+    .bui .pill{background:var(--bui);color:#222}
+    .res .pill{background:var(--res)}
+    .dsp .pill{background:var(--dsp)}
+
+    /* modal */
+    .modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 2000; /* alzato sopra la bottomnav */
+    }
+/* Quando il popup è visibile, la bottomnav non copre né intercetta clic */
+.modal.show ~ nav.bottomnav {
+  pointer-events: none;
+  opacity: 0.999; /* puoi ridurre a 0.6 se vuoi che si veda attenuata */
+}
+
+    .modal.show{display:flex}
+    .sheet{width:100%;max-width:520px;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -6px 24px rgba(0,0,0,.2);animation:rise .18s ease-out}
+    @keyframes rise{from{transform:translateY(30px);opacity:.8}to{transform:none;opacity:1}}
+    .sheet header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1rem .5rem}
+    .sheet .xbtn{border:none;background:transparent;font-size:1.4rem;cursor:pointer}
+    .sheet .body{display:flex;gap:.9rem;padding:.25rem 1rem 1rem}
+    .sheet .ph{width:64px;height:64px;border-radius:50%;object-fit:cover}
+    .sheet .info h4{margin:.1rem 0 .15rem}
+    .sheet .info .meta{font-size:.95rem;color:#555}
+    .sheet .info .desc{margin:.35rem 0 0;color:#333;line-height:1.45}
+    .sheet .info .ext{margin-top:.6rem}
+    .sheet .info .ext a{font-weight:600}
+
+    @media (min-width:760px){
+      .modal{align-items:center}
+      .sheet{border-radius:16px}
+    }
+  </style>
+<meta name="theme-color" content="#1f3d5a">
+<link rel="icon" type="image/png" href="images/logo.png" />
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+<style>
+  /* Top fixed nav (come in home) */
+  #hero .content h1 img { max-height: 2em; width: auto; }
+  .nav-container{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1em 1.2em;background:#121821;box-shadow:none;
+    position:fixed;top:0;width:100%;z-index:1000
+  }
+  .logo a{font-weight:bold;font-size:1.1em;color:#e6eef8;text-decoration:none;display:flex;align-items:center}
+  .logo img{height:2em;margin-right:.4em}
+  .menu-icon{display:none;flex-direction:column;cursor:pointer}
+  .menu-icon span{background:#e6eef8;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+  nav.menu{display:none!important;flex-direction:column;position:absolute;top:60px;right:0;background:#121821;width:100%;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}
+  nav.menu a{text-decoration:none;font-weight:600;color:#e6eef8;padding:.6rem 0}
+  @media (max-width:768px){.menu-icon{display:flex!important}nav.menu.show{display:flex!important}}
+  body{padding-top:70px}
+main, header.page, section.bloc {
+  padding: 0 1.2rem;
+}
+.legend a.tag {
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease;
+}
+.legend a.tag:hover {
+  transform: scale(1.05);
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* compensa l’altezza della barra fissa in alto */
+}
+
+  /* Bottom quick navbar (come in home) */
+  :root{--nav-bg:#121821; --nav-border:#2a3342; --nav-text:#d9e6ff; --nav-active:#ffffff;}
+  .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--nav-bg);border-top:1px solid var(--nav-border);box-shadow:0 -4px 12px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom)}
+  .bottomnav .row{max-width:740px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+  .bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;color:var(--nav-text);text-decoration:none}
+  .bottomnav i{font-size:1.1rem;color:var(--nav-text)}
+  .bottomnav a.active{color:var(--nav-active);font-weight:800}
+  .bottomnav a.active i{color:var(--nav-active)}
+  @media (min-width:980px){.bottomnav{display:none}}
+  @media (max-width:979px){body{padding-bottom:64px}}
+
+  /* Pulsante "Torna su" */
+  .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
+  .back-to-top.show{opacity:1;pointer-events:auto}
+  .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+</style>
+
+</head>
+<body>
+    <!-- NAV SUPERIORE (uguale a home, con path relativi) -->
+<div class="nav-container">
+  <div class="logo">
+    <a href="home.html"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali - Veneto 2025</a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="menu" aria-label="Menu principale">
+    <a href="home.html#hero">Home</a>
+    <a href="home.html#candidati">Candidati</a>
+    <a href="home.html#province">Province</a>
+    <a href="home.html#cosa-succede">Cosa succede</a>
+    <a href="home.html#faq">FAQ</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+  </nav>
+</div>
+
+  <header class="page">
+    <a href="home.html" style="text-decoration:none;color:var(--muted)"><i class="fa-solid fa-arrow-left"></i> Home</a>
+    <h1>Padova – Candidati e liste</h1>
+    <p class="lede">Elenco rapido e neutrale dei candidati al Consiglio regionale nella circoscrizione di Padova. Tocca un nome per aprire la <strong>scheda rapida</strong>. I colori seguono la legenda.
+    <div class="legend" aria-label="Legenda coalizioni">
+    <a href="#centrodestra" class="tag"><span class="dot" style="background:var(--cdx)"></span> Centrodestra</a>
+    <a href="#centrosinistra" class="tag"><span class="dot" style="background:var(--csx)"></span> Centrosinistra</a>
+    <a href="#popolari" class="tag"><span class="dot" style="background:var(--bui)"></span> Popolari per il Veneto</a>
+    <a href="#resistere" class="tag"><span class="dot" style="background:var(--res)"></span> Resistere Veneto</a>
+    <a href="#dsp" class="tag"><span class="dot" style="background:var(--dsp)"></span> Democrazia Sovrana e Popolare</a>
+    </div>
+
+  </header>
+
+  <!-- BLOCCO: CENTRODESTRA -->
+  <section class="bloc cdx" id="centrodestra" aria-labelledby="h-cdx">
+    <header>
+      <h2 id="h-cdx"><span class="pill">Centrodestra</span> – a sostegno di Alberto Stefani</h2>
+    </header>
+    <div class="lists">
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-fi.png" alt="Logo Forza Italia"/><h3>Forza Italia</h3></header>
+        <div class="cands" data-lista="Forza Italia" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Flavio Tosi"><img src="images/tosi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Flavio Tosi</span></button>
+          <button class="cand" data-n="Giorgia Cecchinato"><img src="images/cecchinato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giorgia Cecchinato</span></button>
+          <button class="cand" data-n="Fabrizio Boron"><img src="images/boron.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Fabrizio Boron</span></button>
+          <button class="cand" data-n="Nila Hila"><img src="images/hila.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Nila Hila</span></button>
+          <button class="cand" data-n="Lorenzo Innocenti"><img src="images/innocenti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Lorenzo Innocenti</span></button>
+          <button class="cand" data-n="Anna Chiara Moretti"><img src="images/moretti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Anna Chiara Moretti</span></button>
+          <button class="cand" data-n="Alberto Moretto"><img src="images/moretto.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alberto Moretto</span></button>
+          <button class="cand" data-n="Elisa Venturini"><img src="images/venturini.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elisa Venturini</span></button>
+          <button class="cand" data-n="Mirko Patron"><img src="images/patron.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Mirko Patron</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-fdi.png" alt="Logo Fratelli d'Italia"/><h3>Fratelli d'Italia</h3></header>
+        <div class="cands" data-lista="Fratelli d'Italia" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Enoch Soranzo"><img src="images/soranzo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Enoch Soranzo</span></button>
+          <button class="cand" data-n="Antonella Argenti"><img src="images/argenti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Antonella Argenti</span></button>
+          <button class="cand" data-n="Massimo Pulin"><img src="images/pulin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Massimo Pulin</span></button>
+          <button class="cand" data-n="Elisabetta Baldi"><img src="images/baldi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elisabetta Baldi</span></button>
+          <button class="cand" data-n="Filippo Giacinti"><img src="images/giacinti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Filippo Giacinti</span></button>
+          <button class="cand" data-n="Paola Geremia"><img src="images/geremia.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Paola Geremia</span></button>
+          <button class="cand" data-n="Elena Cappellin"><img src="images/cappellin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elena Cappellin</span></button>
+          <button class="cand" data-n="Luciano Sandonà"><img src="images/sandona.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Luciano Sandonà</span></button>
+          <button class="cand" data-n="Matteo Turetta"><img src="images/turetta.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Matteo Turetta</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-lega.png" alt="Logo Lega"/><h3>Lega</h3></header>
+        <div class="cands" data-lista="Lega" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Luca Zaia"><img src="images/zaia.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Luca Zaia</span></button>
+          <button class="cand" data-n="Giorgia Bedin"><img src="images/bedin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giorgia Bedin</span></button>
+          <button class="cand" data-n="Giulio Centenaro"><img src="images/centenaro.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giulio Centenaro</span></button>
+          <button class="cand" data-n="Elisa Cavinato"><img src="images/cavinato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elisa Cavinato</span></button>
+          <button class="cand" data-n="Filippo Lazzarin"><img src="images/lazzarin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Filippo Lazzarin</span></button>
+          <button class="cand" data-n="Eleonora Mosco"><img src="images/mosco.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Eleonora Mosco</span></button>
+          <button class="cand" data-n="Roberto Marcato"><img src="images/marcato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Roberto Marcato</span></button>
+          <button class="cand" data-n="Francesca Pizziolo"><img src="images/pizziolo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Francesca Pizziolo</span></button>
+          <button class="cand" data-n="Giuseppe Pan"><img src="images/pan.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giuseppe Pan</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-liga-veneta.png" alt="Logo Liga Veneta"/><h3>Liga Veneta</h3></header>
+        <div class="cands" data-lista="Liga Veneta" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Alessio Morosin"><img src="images/morosin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alessio Morosin</span></button>
+          <button class="cand" data-n="Martina Peloso"><img src="images/peloso.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Martina Peloso</span></button>
+          <button class="cand" data-n="Michele Munaretto"><img src="images/munaretto.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Michele Munaretto</span></button>
+          <button class="cand" data-n="Marzia Magagnin"><img src="images/magagnin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marzia Magagnin</span></button>
+          <button class="cand" data-n="Gianluigi Sette"><img src="images/sette.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Gianluigi Sette</span></button>
+          <button class="cand" data-n="Patrizia Virgilio"><img src="images/virgilio.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Patrizia Virgilio</span></button>
+          <button class="cand" data-n="Gualtiero Mercanti"><img src="images/mercanti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Gualtiero Mercanti</span></button>
+          <button class="cand" data-n="Angelica Garbin"><img src="images/garbin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Angelica Garbin</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-noi-moderati.png" alt="Logo Noi Moderati"/><h3>Noi Moderati</h3></header>
+        <div class="cands" data-lista="Noi Moderati" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Andrea Ronco"><img src="images/ronco.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Andrea Ronco</span></button>
+          <button class="cand" data-n="Caterina Sambugaro"><img src="images/sambugaro.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Caterina Sambugaro</span></button>
+          <button class="cand" data-n="Mario Artusi"><img src="images/artusi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Mario Artusi</span></button>
+          <button class="cand" data-n="Marlene Di Costanzo"><img src="images/dicostanzo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marlene Di Costanzo</span></button>
+          <button class="cand" data-n="Stefano Manni"><img src="images/manni.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Stefano Manni</span></button>
+          <button class="cand" data-n="Sabrina Dorio"><img src="images/dorio.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sabrina Dorio</span></button>
+          <button class="cand" data-n="Julien Scapin"><img src="images/scapin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Julien Scapin</span></button>
+          <button class="cand" data-n="Maria Rosa Favaro"><img src="images/favaro.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Maria Rosa Favaro</span></button>
+          <button class="cand" data-n="Francesco Tosetto"><img src="images/tosetto.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Francesco Tosetto</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-udc.png" alt="Logo UDC"/><h3>UDC</h3></header>
+        <div class="cands" data-lista="UDC" data-coalizione="Centrodestra">
+          <button class="cand" data-n="Massimo Cavazzana"><img src="images/cavazzana.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Massimo Cavazzana</span></button>
+          <button class="cand" data-n="Manuela Baldo"><img src="images/baldo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Manuela Baldo</span></button>
+          <button class="cand" data-n="Maurizio Martinello"><img src="images/martinello.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Maurizio Martinello</span></button>
+          <button class="cand" data-n="Maria Cristina Maran"><img src="images/maran.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Maria Cristina Maran</span></button>
+          <button class="cand" data-n="Eric Pasqualon"><img src="images/pasqualon.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Eric Pasqualon</span></button>
+          <button class="cand" data-n="Diana Michelazzo"><img src="images/michelazzo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Diana Michelazzo</span></button>
+          <button class="cand" data-n="Luigi Tarzia"><img src="images/tarzia.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Luigi Tarzia</span></button>
+          <button class="cand" data-n="Federica Morello"><img src="images/morello.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Federica Morello</span></button>
+          <button class="cand" data-n="Nicola Zordan"><img src="images/zordan.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Nicola Zordan</span></button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BLOCCO: CENTROSINISTRA -->
+  <section class="bloc csx" id="centrosinistra" aria-labelledby="h-csx">
+    <header>
+      <h2 id="h-csx"><span class="pill">Centrosinistra</span> – a sostegno di Giovanni Manildo</h2>
+    </header>
+    <div class="lists">
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-pd.png" alt="Logo Partito Democratico"/><h3>Partito Democratico</h3></header>
+        <div class="cands" data-lista="Partito Democratico" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Vanessa Camani"><img src="images/camani.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Vanessa Camani</span></button>
+          <button class="cand" data-n="Andrea Micalizzi"><img src="images/micalizzi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Andrea Micalizzi</span></button>
+          <button class="cand" data-n="Sabrina Doni"><img src="images/doni.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sabrina Doni</span></button>
+          <button class="cand" data-n="Alessandro Dal Corso"><img src="images/dalcorso.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alessandro Dal Corso</span></button>
+          <button class="cand" data-n="Eleonora Guizzaro"><img src="images/guizzaro.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Eleonora Guizzaro</span></button>
+          <button class="cand" data-n="Stefano Pozzi"><img src="images/pozzi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Stefano Pozzi</span></button>
+          <button class="cand" data-n="Virginia Libero"><img src="images/libero.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Virginia Libero</span></button>
+          <button class="cand" data-n="Luciano Sguotti"><img src="images/sguotti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Luciano Sguotti</span></button>
+          <button class="cand" data-n="Franca Bortolamei"><img src="images/bortolamei.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Franca Bortolamei</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-m5s.png" alt="Logo Movimento 5 Stelle"/><h3>Movimento 5 Stelle</h3></header>
+        <div class="cands" data-lista="Movimento 5 Stelle" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Daniano Biasiolo"><img src="images/biasiolo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Daniano Biasiolo</span></button>
+          <button class="cand" data-n="Silvia Schiavon"><img src="images/schiavon.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Silvia Schiavon</span></button>
+          <button class="cand" data-n="Marco Paccagnella"><img src="images/paccagnella.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marco Paccagnella</span></button>
+          <button class="cand" data-n="Ornella Marangon"><img src="images/marangon.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Ornella Marangon</span></button>
+          <button class="cand" data-n="Giacomo Cusumano"><img src="images/cusumano.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giacomo Cusumano</span></button>
+          <button class="cand" data-n="Tamara Lazzarin"><img src="images/lazzarin_tamara.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Tamara Lazzarin</span></button>
+          <button class="cand" data-n="Nicola Pizzato"><img src="images/pizzato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Nicola Pizzato</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-avs.png" alt="Logo Alleanza Verdi e Sinistra"/><h3>AVS – Reti Civiche</h3></header>
+        <div class="cands" data-lista="AVS – Reti Civiche" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Elena Ostanel"><img src="images/ostanel.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elena Ostanel</span></button>
+          <button class="cand" data-n="Alessandro Turetta"><img src="images/turetta_alessandro.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alessandro Turetta</span></button>
+          <button class="cand" data-n="Maria Elena Martinez"><img src="images/martinez.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Maria Elena Martinez</span></button>
+          <button class="cand" data-n="Marco Sangati"><img src="images/sangati.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marco Sangati</span></button>
+          <button class="cand" data-n="Lucia Basso"><img src="images/basso.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Lucia Basso</span></button>
+          <button class="cand" data-n="Gianmaria Gioga"><img src="images/gioga.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Gianmaria Gioga</span></button>
+          <button class="cand" data-n="Elisabetta Cedretti"><img src="images/cedretti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Elisabetta Cedretti</span></button>
+          <button class="cand" data-n="Andrea Ruzzante"><img src="images/ruzzante.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Andrea Ruzzante</span></button>
+          <button class="cand" data-n="Francesca Citran"><img src="images/citran.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Francesca Citran</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-volt.png" alt="Logo Volt"/><h3>Volt Europa</h3></header>
+        <div class="cands" data-lista="Volt Europa" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Edoardo Sinigaglia"><img src="images/sinigaglia.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Edoardo Sinigaglia</span></button>
+          <button class="cand" data-n="Lucia Bastarolo"><img src="images/bastarolo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Lucia Bastarolo</span></button>
+          <button class="cand" data-n="Mattia Albertin"><img src="images/albertin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Mattia Albertin</span></button>
+          <button class="cand" data-n="Margherita Rigoli"><img src="images/rigoli.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Margherita Rigoli</span></button>
+          <button class="cand" data-n="Luca Ciavarella"><img src="images/ciavarella.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Luca Ciavarella</span></button>
+          <button class="cand" data-n="Sofia Marchesini"><img src="images/marchesini.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sofia Marchesini</span></button>
+          <button class="cand" data-n="Marco Scattolin"><img src="images/scattolin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marco Scattolin</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-uniti-manildo.png" alt="Logo Uniti per Manildo"/><h3>Uniti per Manildo Presidente</h3></header>
+        <div class="cands" data-lista="Uniti per Manildo Presidente" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Silvia Fattore"><img src="images/fattore.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Silvia Fattore</span></button>
+          <button class="cand" data-n="Antonino Pipitone"><img src="images/pipitone.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Antonino Pipitone</span></button>
+          <button class="cand" data-n="Monica Balbinot"><img src="images/balbinot.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Monica Balbinot</span></button>
+          <button class="cand" data-n="Simone Loddoni"><img src="images/loddoni.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Simone Loddoni</span></button>
+          <button class="cand" data-n="Maria Antonietta Auditore"><img src="images/auditore.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Maria Antonietta Auditore</span></button>
+          <button class="cand" data-n="Innocente Marangon"><img src="images/marangon_innocente.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Innocente Marangon</span></button>
+          <button class="cand" data-n="Ilaria Storti"><img src="images/storti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Ilaria Storti</span></button>
+          <button class="cand" data-n="Valentino Pittarello"><img src="images/pittarello.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Valentino Pittarello</span></button>
+          <button class="cand" data-n="Cristiana Zangrossi"><img src="images/zangrossi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Cristiana Zangrossi</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-prc.png" alt="Logo PRC"/><h3>Pace Salute Lavoro – Rifondazione</h3></header>
+        <div class="cands" data-lista="Pace Salute Lavoro – Rifondazione" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Paolo Benvegnù"><img src="images/benvegnu.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Paolo Benvegnù</span></button>
+          <button class="cand" data-n="Giorgia D’Andrea"><img src="images/dandrea.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giorgia D’Andrea</span></button>
+          <button class="cand" data-n="Bouchaib Tanji"><img src="images/tanji.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Bouchaib Tanji</span></button>
+          <button class="cand" data-n="Latifa Akounach"><img src="images/akounach.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Latifa Akounach</span></button>
+          <button class="cand" data-n="Amady Cissé"><img src="images/cisse.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Amady Cissé</span></button>
+          <button class="cand" data-n="Stefania Aquilini"><img src="images/quilini.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Stefania Aquilini</span></button>
+          <button class="cand" data-n="Daniele Raggiotto"><img src="images/raggiotto.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Daniele Raggiotto</span></button>
+          <button class="cand" data-n="Sarah Linda Beidaoui"><img src="images/beidaoui.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sarah Linda Beidaoui</span></button>
+          <button class="cand" data-n="Mattia Chinello"><img src="images/chinello.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Mattia Chinello</span></button>
+        </div>
+      </article>
+
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-civiche-venete.png" alt="Logo Civiche Venete"/><h3>Civiche Venete per Manildo Presidente</h3></header>
+        <div class="cands" data-lista="Civiche Venete per Manildo Presidente" data-coalizione="Centrosinistra">
+          <button class="cand" data-n="Arturo Lorenzoni"><img src="images/lorenzoni.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Arturo Lorenzoni</span></button>
+          <button class="cand" data-n="Annalisa Di Maso"><img src="images/dimaso.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Annalisa Di Maso</span></button>
+          <button class="cand" data-n="Filippo Rosaspina"><img src="images/rosaspina.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Filippo Rosaspina</span></button>
+          <button class="cand" data-n="Evelyn Nwoakenye"><img src="images/nwoakenye.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Evelyn Nwoakenye</span></button>
+          <button class="cand" data-n="Renzo Volpin"><img src="images/volpin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Renzo Volpin</span></button>
+          <button class="cand" data-n="Sara Vanin"><img src="images/vanin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sara Vanin</span></button>
+          <button class="cand" data-n="Giovanni Menegato"><img src="images/menegato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giovanni Menegato</span></button>
+          <button class="cand" data-n="Rossella Cendron"><img src="images/cendron.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Rossella Cendron</span></button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BLOCCO: LISTE NON COALIZZATE CON CSX/CDX -->
+  <section class="bloc bui" id="popolari" aria-labelledby="h-bui">
+    <header>
+      <h2 id="h-bui"><span class="pill">Popolari per il Veneto</span> – a sostegno di Fabio Bui</h2>
+    </header>
+    <div class="lists">
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-popolari.png" alt="Logo Popolari per il Veneto"/><h3>Popolari per il Veneto</h3></header>
+        <div class="cands" data-lista="Popolari per il Veneto" data-coalizione="Popolari per il Veneto">
+          <button class="cand" data-n="Fabio Bui"><img src="images/bui.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Fabio Bui</span></button>
+          <button class="cand" data-n="Paola Crepaldi"><img src="images/crepaldi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Paola Crepaldi</span></button>
+          <button class="cand" data-n="Alberto Danieli"><img src="images/danieli.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alberto Danieli</span></button>
+          <button class="cand" data-n="Laura Fraccallanza"><img src="images/fraccallanza.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Laura Fraccallanza</span></button>
+          <button class="cand" data-n="Alessandro Gianesini"><img src="images/gianesini.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Alessandro Gianesini</span></button>
+          <button class="cand" data-n="Giuliana Trevisan"><img src="images/trevisan.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Giuliana Trevisan</span></button>
+          <button class="cand" data-n="Davide Ghegin"><img src="images/ghegin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Davide Ghegin</span></button>
+          <button class="cand" data-n="Angela Triarico"><img src="images/triarico.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Angela Triarico</span></button>
+          <button class="cand" data-n="Andrea Lovisetto"><img src="images/lovisetto.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Andrea Lovisetto</span></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bloc res" id="resistere" aria-labelledby="h-res">
+    <header>
+      <h2 id="h-res"><span class="pill">Resistere Veneto</span> – a sostegno di Riccardo Szumski</h2>
+    </header>
+    <div class="lists">
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-resistere.png" alt="Logo Resistere Veneto"/><h3>Resistere Veneto</h3></header>
+        <div class="cands" data-lista="Resistere Veneto" data-coalizione="Resistere Veneto">
+          <button class="cand" data-n="Riccardo Szumski"><img src="images/szumski.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Riccardo Szumski</span></button>
+          <button class="cand" data-n="Carmen Amadio"><img src="images/amadio.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Carmen Amadio</span></button>
+          <button class="cand" data-n="Ferdinando Donolato"><img src="images/donolato.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Ferdinando Donolato</span></button>
+          <button class="cand" data-n="Tiziana Bruna Bertinotti"><img src="images/bertinotti.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Tiziana Bruna Bertinotti</span></button>
+          <button class="cand" data-n="Manuel Fagan"><img src="images/fagan.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Manuel Fagan</span></button>
+          <button class="cand" data-n="Sara Cunial"><img src="images/cunial.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sara Cunial</span></button>
+          <button class="cand" data-n="Gianfranco Volpin"><img src="images/volpin_gianfranco.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Gianfranco Volpin</span></button>
+          <button class="cand" data-n="Lisa Spada"><img src="images/spada.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Lisa Spada</span></button>
+          <button class="cand" data-n="Michele Favero"><img src="images/favero.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Michele Favero</span></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bloc dsp" id="dsp" aria-labelledby="h-dsp">
+    <header>
+      <h2 id="h-dsp"><span class="pill">Democrazia Sovrana e Popolare</span> – a sostegno di Marco Rizzo</h2>
+    </header>
+    <div class="lists">
+      <article class="list-card">
+        <header><img class="logo" src="images/logo-dsp.png" alt="Logo Democrazia Sovrana e Popolare"/><h3>Democrazia Sovrana e Popolare</h3></header>
+        <div class="cands" data-lista="Democrazia Sovrana e Popolare" data-coalizione="Democrazia Sovrana e Popolare">
+          <button class="cand" data-n="Marco Rizzo"><img src="images/rizzo.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Marco Rizzo</span></button>
+          <button class="cand" data-n="Monica Finco"><img src="images/finco.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Monica Finco</span></button>
+          <button class="cand" data-n="Lucio Perin"><img src="images/perin.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Lucio Perin</span></button>
+          <button class="cand" data-n="Sonia Franzoi"><img src="images/franzoi.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Sonia Franzoi</span></button>
+          <button class="cand" data-n="Francesco Toscano"><img src="images/toscano.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Francesco Toscano</span></button>
+          <button class="cand" data-n="Flaviana Daniela Floris"><img src="images/floris.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Flaviana Daniela Floris</span></button>
+          <button class="cand" data-n="Francesco Maragno"><img src="images/maragno.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Francesco Maragno</span></button>
+          <button class="cand" data-n="Patrizia Caproni"><img src="images/caproni.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Patrizia Caproni</span></button>
+          <button class="cand" data-n="Jacopo Zanella"><img src="images/zanella.jpg" alt="" onerror="this.src='images/avatar.jpg'"/><span class="nm">Jacopo Zanella</span></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Modal bottom-sheet riutilizzabile -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" aria-hidden="true">
+    <div class="sheet">
+      <header>
+        <strong id="m-title">Scheda candidato/a</strong>
+        <button class="xbtn" aria-label="Chiudi" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      <div class="body">
+        <img id="m-ph" class="ph" src="images/avatar.jpg" alt="" />
+        <div class="info">
+          <h4 id="m-name">—</h4>
+          <div class="meta"><span id="m-lista">—</span> · <span id="m-coal">—</span> · <span>Circoscrizione: Padova</span></div>
+          <p class="desc" id="m-desc">Breve descrizione (se disponibile). Questo sito è informativo e neutrale.</p>
+          <div class="ext" id="m-links"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mini database (solo info essenziali + eventuali link esterni autorevoli)
+    // NB: le immagini puntano a images/<slug>.jpg con fallback avatar
+    const BIO = {
+      "Flavio Tosi":{desc:"Consigliere regionale uscente.", links:[]},
+      "Fabrizio Boron":{desc:"Consigliere regionale uscente.", links:[]},
+      "Elisa Venturini":{desc:"Consigliera regionale uscente.", links:[]},
+      "Roberto Marcato":{desc:"Assessore regionale uscente.", links:[]},
+      "Giuseppe Pan":{desc:"Assessore regionale uscente nella precedente legislatura.", links:[]},
+      "Vanessa Camani":{desc:"Capogruppo PD in Consiglio regionale uscente.", links:[]},
+      "Andrea Micalizzi":{desc:"Vicesindaco di Padova.", links:[]},
+      "Arturo Lorenzoni":{desc:"Docente universitario, già vicesindaco di Padova.", links:[]},
+      "Luca Zaia":{desc:"Presidente della Regione Veneto dal 2010 al 2025.", links:[{t:"Wikipedia", href:"https://it.wikipedia.org/wiki/Luca_Zaia"}]},
+      "Marco Rizzo":{desc:"Giornalista ed ex parlamentare.", links:[{t:"Wikipedia", href:"https://it.wikipedia.org/wiki/Marco_Rizzo"}]},
+      "Riccardo Szumski":{desc:"Medico, già sindaco di Santa Lucia di Piave.", links:[]},
+    };
+
+    const modal = document.getElementById('modal');
+    function openModal(name, lista, coal, imgSrc){
+      document.getElementById('m-name').textContent = name;
+      document.getElementById('m-lista').textContent = lista;
+      document.getElementById('m-coal').textContent = coal;
+      const bio = BIO[name] || {};
+      document.getElementById('m-desc').textContent = bio.desc || '—';
+      const links = bio.links || [];
+      const linksBox = document.getElementById('m-links');
+      linksBox.innerHTML = links.map(l=>`<a href="${l.href}" target="_blank" rel="noopener">${l.t} <i class='fa-solid fa-arrow-up-right-from-square' aria-hidden='true'></i></a>`).join(' · ');
+      const img = document.getElementById('m-ph');
+      img.src = imgSrc || 'images/avatar.jpg';
+      img.onerror = ()=>{img.src='images/avatar.jpg'};
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+
+    // Delegation: clic su un candidato apre scheda
+    document.querySelectorAll('.cands').forEach(box=>{
+      box.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.cand'); if(!btn) return;
+        const name = btn.dataset.n;
+        const lista = box.dataset.lista;
+        const coal = box.dataset.coalizione;
+        const img = btn.querySelector('img')?.src;
+        openModal(name, lista, coal, img);
+      });
+    });
+  </script>
+<!-- Pulsante "Torna su" -->
+<a href="#top" class="back-to-top" aria-label="Torna su"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Bottom quick navbar (coerente con home) -->
+    <nav class="bottomnav" aria-label="Navigazione rapida">
+      <div class="row">
+        <a href="home.html#hero" data-target="hero"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="home.html#cosa-succede" data-target="cosa-succede"><i class="fa-solid fa-bolt"></i><span>In breve</span></a>
+        <a href="home.html#candidati" data-target="candidati"><i class="fa-solid fa-user-group"></i><span>Candidati</span></a>
+        <a href="home.html#province" data-target="province"><i class="fa-solid fa-location-dot"></i><span>Province</span></a>
+        <a href="home.html#faq" data-target="faq"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a>
+      </div>
+    </nav>
+
+<script>
+  // Mostra/nascondi "torna su"
+  const bt = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    (window.scrollY > 600 ? bt.classList.add('show') : bt.classList.remove('show'));
+  });
+</script>
+
+</body>
+</html>

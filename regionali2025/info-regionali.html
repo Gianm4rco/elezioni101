@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Elezioni Regionali Veneto 2025 – Info rapide</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Informazioni rapide: quando si vota, come funziona la scheda, ruoli e poteri della Regione Veneto." />
+    <meta name="theme-color" content="#1f3d5a">
+
+    <!-- Stessi asset di home.html -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estratto di stile inline identico a home.html (nav/barre/ancore) -->
+    <style>
+      /* NAV superiore (copiato da home.html) */
+      .nav-container{
+        display:flex;justify-content:space-between;align-items:center;
+        padding:1em 1.2em;background:#121821;box-shadow:none;
+        position:fixed;top:0;width:100%;z-index:1000
+      }
+      .nav-container.scrolled{background:#121821;box-shadow:none}
+      .logo a{font-weight:bold;font-size:1.1em;color:#e6eef8; text-decoration:none; display:flex;align-items:center}
+      .logo img{height:2em;margin-right:.4em; position: relative}
+      .menu-icon{display:none;flex-direction:column;cursor:pointer}
+      .menu-icon span{background:#e6eef8;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+      nav.menu{display:none!important;flex-direction:column;position:absolute;top:60px;right:0;background:#121821;width:100%;
+        box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}
+      nav.menu a{text-decoration:none;font-weight:600;color:#e6eef8;padding:.6rem 0}
+      nav.menu a:hover{color:#4ea0ff;text-decoration:underline}
+      @media (max-width:768px){.menu-icon{display:flex!important}nav.menu.show{display:flex!important}}
+      body{padding-top:70px}
+
+    :root{
+      --nav-bg:#121821;--nav-border:#2a3342;--nav-text:#d9e6ff;--nav-active:#ffffff;
+      --nav-badge:#4ea0ff;
+    }
+    .bottomnav{
+      position:fixed;bottom:0;left:0;right:0;z-index:999;
+      background:var(--nav-bg);border-top:1px solid var(--nav-border);
+      box-shadow:0 -6px 16px rgba(0,0,0,.22);
+      padding-bottom:calc(env(safe-area-inset-bottom) + 2px);
+      backdrop-filter:saturate(140%) blur(6px)
+    }
+    .bottomnav .row{
+      max-width:840px;margin:0 auto;
+      display:grid;grid-template-columns:repeat(6,1fr)
+    }
+    .bottomnav a{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18rem;
+      padding:.62rem 0 .54rem;font-size:.8rem;line-height:1;min-height:54px;
+      color:var(--nav-text);text-decoration:none;position:relative
+    }
+    .bottomnav i{font-size:1.1rem;color:var(--nav-text)}
+    .bottomnav a.active{color:var(--nav-active);font-weight:800}
+    .bottomnav a.active i{color:var(--nav-active)}
+    .bottomnav a.active::after{
+      content:"";position:absolute;bottom:0;left:18%;right:18%;height:3px;border-radius:3px;background:var(--nav-badge)
+    }
+    @media (min-width:980px){.bottomnav{display:none}}
+    @media (max-width:979px){body{padding-bottom:68px}}
+
+
+      /* Pulsante "Torna su" */
+      .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;
+        text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
+      .back-to-top.show{opacity:1;pointer-events:auto}
+      .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+
+      /* Ancore con offset per nav fissa */
+      section[id]{scroll-margin-top:90px}
+
+      /* Ritocchi estetici coerenti con home.html */
+      :root{--brand:#1f3d5a;--muted:#6b7a88;--ring:#9ec1ff}
+      .page-intro h1 img{height:1.8em;vertical-align:middle;margin-right:.4em;position:relative;top:4px}
+      .note{color:#6b7a88}
+      /* Card leggere */
+      .card{background:#fff;border:1px solid #e4e7eb;border-radius:14px;padding:1rem 1.15rem;box-shadow:0 1px 6px rgba(0,0,0,.05);margin:.6rem 0}
+      .table{width:100%;border-collapse:collapse}
+      .table th,.table td{border-bottom:1px solid #e4e7eb;padding:8px 6px;text-align:left}
+      .pill{display:inline-block;font-size:.85rem;background:#eef5ff;color:#0a4db3;border:1px solid #d3e4ff;border-radius:999px;padding:.1rem .55rem}
+      .btn-mini{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .7rem;border-radius:8px;text-decoration:none;border:1px solid #1f3d5a;
+        font-weight:600;font-size:.9rem;color:#1f3d5a}
+      .btn-mini:hover{text-decoration:underline}
+    </style>
+  </head>
+
+  <body id="top" class="is-preload">
+
+    <!-- NAV superiore (identica a home.html) -->
+    <div class="nav-container">
+      <div class="logo">
+        <a href="home.html"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali - Veneto 2025</a>
+      </div>
+      <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </div>
+      <nav class="menu" aria-label="Menu principale">
+        <a href="home.html#hero">Home</a>
+        <a href="home.html#candidati">Candidati</a>
+        <a href="home.html#province">Province</a>
+        <a href="home.html#cosa-succede">Cosa succede</a>
+        <a href="home.html#faq">FAQ</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+      </nav>
+    </div>
+
+    <!-- Intro compatta -->
+    <section class="wrapper style1 page-intro" id="intro">
+      <div class="inner">
+        <h1><img src="images/logo.png" alt="">Info rapide</h1>
+        <p class="major" style="max-width:740px">
+          Quando si vota, come funziona la scheda (anche <em>voto disgiunto</em>), quanti seggi per provincia,
+          chi fa cosa (Consiglio, Giunta, Presidente) e le competenze della Regione Veneto.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTENUTI: ripresa delle tue sezioni con lo stile di home.html -->
+    <section id="quando" class="wrapper style1">
+      <div class="inner">
+        <h2>1) Quando si vota</h2>
+        <div class="card">
+          <p class="lead"><strong>Domenica 23 e lunedì 24 novembre 2025</strong></p>
+          <p class="note">Porta con te: documento d’identità e tessera elettorale (duplicato in Comune se l’hai smarrita).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="scheda" class="wrapper style1">
+      <div class="inner">
+        <h2>2) Come si vota (e cos’è il voto disgiunto)</h2>
+        <div class="card">
+          <p>La scheda ha due spazi: uno per le <strong>liste provinciali</strong> e uno per i <strong>candidati Presidente</strong>.</p>
+          <img src="images/fac-simile-scheda.png" alt="Fac-simile scheda elettorale Veneto 2020" style="width:100%;max-width:520px;margin:1rem auto;display:block;border:1px solid #ccc;border-radius:10px">
+          <ul>
+            <li><strong>X sul Presidente</strong> → voto solo a lui e alle liste collegate.</li>
+            <li><strong>X su una lista</strong> → voto alla lista e al suo Presidente collegato.</li>
+            <li><strong>X su lista + Presidente non collegato</strong> → <em>voto disgiunto</em>, valido.</li>
+          </ul>
+          <p class="note">Puoi scrivere una sola preferenza (nome del candidato consigliere). Se segni più liste, la parte “lista” è nulla.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="seggi" class="wrapper style1">
+      <div class="inner">
+        <h2>3) Quanti seggi e chi vince</h2>
+        <div class="card">
+          <p>Il Consiglio regionale ha <strong>51 membri</strong>: 49 eletti nelle province + il Presidente eletto + il secondo classificato.</p>
+          <p>Chi ottiene più voti come Presidente diventa governatore. La sua coalizione riceve un <strong>premio di maggioranza</strong> per garantire la stabilità del governo regionale.</p>
+          <div style="overflow:auto">
+            <table class="table">
+              <thead><tr><th>Provincia</th><th>Seggi</th></tr></thead>
+              <tbody>
+                <tr><td>Padova</td><td>9</td></tr>
+                <tr><td>Verona</td><td>9</td></tr>
+                <tr><td>Vicenza</td><td>9</td></tr>
+                <tr><td>Treviso</td><td>8</td></tr>
+                <tr><td>Venezia</td><td>7</td></tr>
+                <tr><td>Rovigo</td><td>4</td></tr>
+                <tr><td>Belluno</td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+
+    <section id="ruoli" class="wrapper style1">
+      <div class="inner">
+        <h2>4) Chi fa cosa in Regione</h2>
+        <div class="card">
+          <p><span class="pill">Presidente</span> — guida la Giunta e rappresenta la Regione. Nomina gli assessori.</p>
+          <p><span class="pill">Giunta</span> — applica le leggi, gestisce la sanità, prepara piani e bilanci.</p>
+          <p><span class="pill">Consiglio regionale</span> — fa le leggi, approva il bilancio e controlla la Giunta.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="poteri" class="wrapper style1">
+      <div class="inner">
+        <h2>5) Cosa decide la Regione Veneto</h2>
+        <div class="card">
+          <ul>
+            <li>Sanità (ospedali, ULSS, medici di base)</li>
+            <li>Trasporti pubblici locali e viabilità</li>
+            <li>Formazione professionale e istruzione regionale</li>
+            <li>Ambiente, energia, gestione rifiuti</li>
+            <li>Urbanistica, territorio e protezione civile</li>
+            <li>Commercio, turismo, agricoltura, artigianato</li>
+          </ul>
+          <p class="note">Lo Stato scrive le regole generali; la Regione organizza i servizi; i Comuni li gestiscono sul territorio.</p>
+        </div>
+      </div>
+    </section>
+
+<section id="livelli" class="wrapper style1">
+  <div class="inner">
+    <h2>6) Stato – Regione – Comuni (chi fa cosa)</h2>
+    <div class="card">
+      <p style="margin-top:0">Lo Stato fissa le <strong>regole generali</strong> (Costituzione e leggi-quadro), la Regione fa le <strong>leggi regionali e la programmazione</strong> su molte materie (es. sanità, TPL), i Comuni erogano i <strong>servizi quotidiani</strong> sul territorio.</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:.8rem">
+        <div><strong>Stato</strong> — competenze esclusive (esempi): difesa, giustizia, moneta, immigrazione, standard minimi (LEP), tutela concorrenza.<br></div>
+        <div><strong>Regione</strong> — legifera e programma in materie concorrenti o residuali: sanità (ULSS), trasporto pubblico locale, formazione prof., sviluppo economico, ambiente/energia nei limiti nazionali, urbanistica di livello regionale.</div>
+        <div><strong>Comuni</strong> — gestiscono servizi locali: anagrafe, rifiuti, illuminazione, strade comunali, scuole dell’infanzia/primarie per la parte logistica, impianti sportivi, eventi, protezione civile locale.</div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid #e4e7eb;margin:.9rem 0">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem">
+        <div style="background:#f8fbff;border:1px solid #e4e7eb;border-radius:10px;padding:.7rem">
+          <strong>Sanità</strong><br>
+          Stato: LEA nazionali<br>
+          Regione: organizza ULSS, ospedali<br>
+          Comune: servizi socio-assistenziali locali
+        </div>
+        <div style="background:#f8fbff;border:1px solid #e4e7eb;border-radius:10px;padding:.7rem">
+          <strong>Trasporti</strong><br>
+          Stato: norme cornice, infrastrutture strategiche<br>
+          Regione: TPL, piani bacino<br>
+          Comune: orari fermate, viabilità cittadina
+        </div>
+        <div style="background:#f8fbff;border:1px solid #e4e7eb;border-radius:10px;padding:.7rem">
+          <strong>Ambiente</strong><br>
+          Stato: limiti/standard nazionali<br>
+          Regione: piani rifiuti/energia/qualità aria<br>
+          Comune: raccolta rifiuti, parchi urbani
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Footer identico a home.html -->
+    <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:4em;border-top:1px solid #ddd">
+      <p>Questo sito utilizza Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+      <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+      <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+    </footer>
+
+    <!-- Torna su -->
+    <a href="#top" class="back-to-top" aria-label="Torna su"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Bottom quick navbar (ridisegnata) -->
+<nav class="bottomnav" aria-label="Navigazione rapida">
+  <div class="row">
+    <a href="#intro"  data-target="intro"><i class="fa-solid fa-house"></i><span>Inizio</span></a>
+    <a href="#quando" data-target="quando"><i class="fa-solid fa-calendar-days"></i><span>Quando</span></a>
+    <a href="#scheda" data-target="scheda"><i class="fa-solid fa-ticket"></i><span>Scheda</span></a>
+    <a href="#seggi"  data-target="seggi"><i class="fa-solid fa-layer-group"></i><span>Seggi</span></a>
+    <a href="#poteri" data-target="poteri"><i class="fa-solid fa-landmark-flag"></i><span>Poteri</span></a>
+    <a href="#livelli" data-target="livelli"><i class="fa-solid fa-diagram-project"></i><span>St-Reg-Com</span></a>
+  </div>
+</nav>
+
+
+
+    <!-- Script identici a home.html -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Interazioni: chiudi menu mobile, back-to-top, evidenziazione bottomnav, smooth scroll, nav shadow -->
+    <script>
+      // Chiudi menu mobile al click
+      document.querySelectorAll('nav.menu a[href^="#"], nav.menu a[href$=".html"]').forEach(a =>
+        a.addEventListener('click', ()=>document.querySelector('nav.menu').classList.remove('show'))
+      );
+
+      // Back to top
+      const toTop=document.querySelector('.back-to-top');
+      window.addEventListener('scroll',()=>{window.scrollY>300?toTop.classList.add('show'):toTop.classList.remove('show')});
+
+      // Evidenzia la sezione attiva nella bottomnav
+      const bnLinks=[...document.querySelectorAll('.bottomnav a')];
+      const sections=bnLinks.map(a=>document.getElementById(a.dataset.target)).filter(Boolean);
+      const obs=new IntersectionObserver((entries)=>{
+        const vis=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+        if(!vis) return; const id=vis.target.id; bnLinks.forEach(l=>l.classList.toggle('active', l.dataset.target===id));
+      },{rootMargin:'-40% 0px -50% 0px',threshold:[0,0.25,0.5,0.75,1]});
+      sections.forEach(s=>obs.observe(s));
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+        const el=document.querySelector(a.getAttribute('href'));
+        if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}
+      }));
+
+      // Ombra nav in scroll
+      const nav=document.querySelector('.nav-container');
+      window.addEventListener('scroll',()=>{ if(window.scrollY>2) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); });
+    </script>
+  </body>
+</html>

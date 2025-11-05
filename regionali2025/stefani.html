@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Alberto Stefani – Candidato Presidente | Elezioni Regionali Veneto 2025</title>
+    <meta name="description" content="Scheda chiara e neutrale di Alberto Stefani: identikit, programma sintetico con punti chiave, e liste che lo sostengono. Veneto 2025." />
+    <meta name="theme-color" content="#121821">
+
+    <!-- Stili del sito -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      :root{
+        --brand:#121821;        /* blu scuro coerente con home */
+        --brand-2:#1f3d5a;
+        --paper:#ffffff;
+        --ink:#22313f;
+        --muted:#6b7a88;
+        --ring:#9ec1ff;
+        --cdx:#1f3d5a;          /* accento centrodestra (coerente con home) */
+      }
+      body{background:#ffffff;color:var(--ink);padding-top:72px}
+
+      /* NAV in linea con home.html */
+      .nav-container{display:flex;justify-content:space-between;align-items:center;padding:1em 1.2em;background:#121821;box-shadow:none;position:fixed;top:0;left:0;right:0;z-index:1000}
+      .nav-container.scrolled{background:#121821;box-shadow:none}
+      .logo a{font-weight:700;font-size:1.05rem;color:#e6eef8;text-decoration:none;display:flex;align-items:center}
+      .logo img{height:2em;margin-right:.5em}
+      .menu-icon{display:none;flex-direction:column;cursor:pointer}
+      .menu-icon span{background:#e6eef8;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+      nav.menu a{text-decoration:none;font-weight:600;color:#e6eef8;margin-left:1rem}
+      nav.menu a:hover{color:#4ea0ff;text-decoration:underline;font-weight:600}
+      html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+      @media (max-width: 768px){
+        .menu-icon{display:flex}
+        nav.menu{display:none!important;position:absolute;top:60px;right:0;background:#121821;width:100%;
+          box-shadow:0 4px 10px rgba(0,0,0,.12);padding:1em 0;text-align:center}
+        nav.menu.show{display:flex!important;flex-direction:column}
+        nav.menu a{display:block;padding:.6rem 0;margin:0}
+      }
+
+      /* HERO con accento blu coerente con cdx */
+      .candidate-hero{position:relative;isolation:isolate}
+      .candidate-hero::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--cdx);z-index:0}
+      .hero-wrap{display:grid;grid-template-columns:320px 1fr;gap:1.5rem;align-items:center;max-width:1024px;margin:0 auto;padding:1.5rem}
+      .candidate-photo{width:100%;height:320px;object-fit:cover;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+      .candidate-title h1{font-size:2rem;margin:0 0 .25rem 0}
+      .candidate-title .subtitle{color:var(--muted);font-size:1.05rem;margin:.25rem 0 .75rem}
+      .tagline{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:#1f3d5a}
+      .tagline i{color:#1f3d5a}
+      .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:10px;padding:.65rem .9rem;text-decoration:none;font-weight:700}
+      .btn.ghost{background:#121821;border:1px solid #2a3342;color:#e6eef8}
+      .btn.ghost:hover{background:#4ea0ff;color:#fff;border-color:#4ea0ff;text-decoration:none;transition:all .25s ease}
+      @media (max-width: 960px){.hero-wrap{grid-template-columns:1fr}.candidate-photo{height:260px}}
+
+      /* Sezioni */
+      .wrapper{padding:2rem 1rem}
+      .inner{max-width:1024px;margin:0 auto}
+      section[id]{scroll-margin-top:90px}
+
+      /* Titoli sezione con accento blu */
+      h2.section-title{display:flex;align-items:center;gap:.6rem;margin:0}
+      h2.section-title .bar{display:inline-block;width:14px;height:14px;border-radius:3px;background:var(--cdx)}
+
+      /* Programma: in alto e dettagliato */
+      .prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+      .prog-card{background:#fff;border:1px solid rgba(31,61,90,.25);border-left:6px solid var(--cdx);border-radius:12px;padding:1rem 1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+      .prog-card h3{margin:.1rem 0 .4rem;font-size:1.05rem;color:#2a3342;display:flex;align-items:center;gap:.45rem}
+      .prog-card h3 i{color:var(--cdx)}
+      .prog-card ul{margin:.25rem 0 0 1.1rem}
+      .prog-card li{margin:.18rem 0}
+      .prog-note{color:#6b7a88;font-size:.95rem;margin-top:.6rem}
+
+      /* Identikit (unificato con biografia / CV) */
+      .id-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+      .id-card{background:#fff;border:1px solid #e8edf3;border-radius:12px;padding:1rem 1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+      .row{display:flex;gap:.6rem;align-items:flex-start;margin:.25rem 0}
+      .row i{width:18px;opacity:.85}
+
+      /* Liste/loghi – solo loghi, niente tag pill */
+      .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem}
+      .logo-card{background:#fff;border:1px solid #e8edf3;border-radius:14px;padding:.9rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+      .logo-card img{width:100px;height:100px;object-fit:contain;margin:.25rem auto .5rem;display:block}
+      .logo-card figcaption{font-size:.95rem;font-weight:600;color:#22313f;line-height:1.2}
+
+      /* Footer */
+      footer.site{background:#f7f7f7;padding:2rem 1.2rem;text-align:center;color:#666;border-top:1px solid #ddd}
+
+      /* Bottom quick nav (riuso di home) */
+      .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:999;background:#121821;border-top:1px solid #2a3342;
+        box-shadow:0 -4px 12px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:saturate(140%) blur(6px)}
+      .bottomnav .row{max-width:740px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+      .bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;color:#d9e6ff;text-decoration:none}
+      .bottomnav i{font-size:1.1rem;color:#d9e6ff}
+      .bottomnav a.active,.bottomnav a.active i{color:#ffffff;font-weight:800}
+      @media (min-width:980px){.bottomnav{display:none}}
+      @media (max-width:979px){body{padding-bottom:64px}}
+
+      /* Pulsante "Torna su" */
+      .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
+      .back-to-top.show{opacity:1;pointer-events:auto}
+      .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+
+      /* Accessibilità focus */
+      a:focus-visible, button:focus-visible, summary:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:6px}
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark){
+        .btn.ghost{background:#121821;border-color:#2a3342;color:#e6eef8}
+        footer.site{background:#121821;color:#c9d4e3;border-top-color:#2a3342}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <div class="nav-container">
+      <div class="logo">
+        <a href="home.html#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Veneto 2025</a>
+      </div>
+      <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')"><span></span><span></span><span></span></div>
+      <nav class="menu" aria-label="Menu principale">
+        <a href="home.html#hero">Home</a>
+        <a href="home.html#candidati">Candidati</a>
+        <a href="home.html#province">Province</a>
+        <a href="home.html#cosa-succede">Cosa succede</a>
+        <a href="home.html#faq">FAQ</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+      </nav>
+    </div>
+
+    <!-- HERO CANDIDATO con accento blu -->
+    <header class="wrapper candidate-hero" style="padding-top:1rem">
+      <div class="hero-wrap">
+        <img class="candidate-photo" src="images/stefani.jpg" alt="Ritratto di Alberto Stefani" />
+        <div class="candidate-title">
+          <p><a class="btn ghost" href="home.html#candidati" aria-label="Torna alla lista dei candidati"><i class="fa-solid fa-arrow-left"></i> Torna ai candidati</a></p>
+          <h1>Alberto Stefani</h1>
+          <div class="subtitle">Candidato Presidente – Elezioni Regionali Veneto 2025</div>
+          <div class="tagline"><i class="fa-solid fa-circle"></i> Coalizione: Centrodestra</div>
+        </div>
+      </div>
+    </header>
+
+<!-- IDENTIKIT UNIFICATO (chi è + bio + CV sintetico) -->
+<section id="identikit" class="wrapper" aria-labelledby="identikit-title">
+  <div class="inner">
+    <h2 class="section-title" id="identikit-title"><span class="bar" aria-hidden="true"></span> Identikit</h2>
+    <div class="id-grid">
+      <div class="id-card">
+        <h3>Dati principali</h3>
+        <div class="row"><i class="fa-regular fa-calendar"></i> <div><strong>Nascita:</strong> 16 novembre 1992</div></div>
+        <div class="row"><i class="fa-solid fa-location-dot"></i> <div><strong>Luogo:</strong> Camposampiero (PD)</div></div>
+        <div class="row"><i class="fa-solid fa-people-group"></i> <div><strong>Coalizione:</strong> Centrodestra (Lega, Fratelli d’Italia, Forza Italia, Noi Moderati – Civici per Stefani, UDC)</div></div>
+        <div class="row"><i class="fa-solid fa-hashtag"></i> <div><strong>Slogan:</strong> «Sempre più Veneto»</div></div>
+      </div>
+
+      <div class="id-card">
+        <h3>Chi è</h3>
+        <p>Deputato dal 2018, già Sindaco di Borgoricco (2019–2024). Segretario nazionale della Liga Veneta e vicesegretario federale della Lega. Avvocato, laureato in Giurisprudenza all’Università di Padova con lode.</p>
+      </div>
+
+      <div class="id-card">
+        <h3>Curriculum in breve</h3>
+        <ul>
+          <li><strong>2018–oggi</strong>: Camera dei Deputati (Affari Costituzionali; Federalismo Fiscale – Presidente; poi Ambiente).</li>
+          <li><strong>2019–2024</strong>: Sindaco di Borgoricco (PD).</li>
+          <li><strong>2023–oggi</strong>: Segretario <em>Liga Veneta</em>; <strong>2024–oggi</strong>: Vicesegretario federale Lega.</li>
+          <li><strong>Laurea</strong>: Giurisprudenza – Università di Padova (110/110 e lode).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMA – punti chiave (estratti e sintetizzati) -->
+<section id="programma" class="wrapper" aria-labelledby="programma-title">
+  <div class="inner">
+    <h2 class="section-title" id="programma-title"><span class="bar" aria-hidden="true"></span> Programma – punti chiave</h2>
+    <p class="prog-note">Sintesi non ufficiale dei capitoli principali del “Programma di Governo 2025–2030 del Veneto”.</p>
+
+    <div class="prog-grid">
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-house-chimney"></i> Famiglia & welfare di prossimità</h3>
+        <ul>
+          <li>Potenziamento nidi, voucher nascita, conciliazione vita-lavoro.</li>
+          <li>Welfare aziendale integrato con il sistema pubblico.</li>
+          <li>Piano Sociale regionale e aggiornamento Piano Socio-Sanitario.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-hand-holding-heart"></i> Longevità & invecchiamento attivo</h3>
+        <ul>
+          <li>Assessorato alla Longevità e villaggi <em>senior friendly</em>.</li>
+          <li>Sportelli psicologici di comunità e reti di “vicinato attivo”.</li>
+          <li>Cohousing e progetti intergenerazionali anziani–giovani.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-universal-access"></i> Disabilità & vita indipendente</h3>
+        <ul>
+          <li>Attuazione riforma nazionale; piattaforma unica regionale.</li>
+          <li>Disability Manager nei Comuni; turismo e servizi accessibili.</li>
+          <li>Progetti “Dopo di noi” e sostegno ai caregiver.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-user-group"></i> Giovani & salute mentale</h3>
+        <ul>
+          <li>Piano regionale per il benessere psicologico giovanile.</li>
+          <li>Sportelli permanenti in scuole e atenei; psicologo di base.</li>
+          <li>Contrasto dipendenze e progetti di protagonismo giovanile.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-stethoscope"></i> Sanità di prossimità</h3>
+        <ul>
+          <li>Medicina territoriale, DM 77/22, integrazione digitale–umanità.</li>
+          <li>Valorizzazione del personale sanitario; riduzione liste d’attesa.</li>
+          <li>Integrazione socio-sanitaria e servizi domiciliari.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-industry"></i> Imprese, lavoro & innovazione</h3>
+        <ul>
+          <li>Centralità di PMI e manifattura con transizione sostenibile.</li>
+          <li>Formazione tecnica e ITS legati al fabbisogno delle aziende.</li>
+          <li>Valorizzazione del <em>Veneto Welfare</em> e del fondo “Sani in Veneto”.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-leaf"></i> Ambiente & territorio</h3>
+        <ul>
+          <li>Piani integrati per clima, qualità dell’aria e difesa del suolo.</li>
+          <li>Equilibrio turismo/territorio e gestione dei grandi eventi.</li>
+          <li>Rigenerazione urbana e resilienza idrogeologica.</li>
+        </ul>
+      </article>
+
+      <article class="prog-card">
+        <h3><i class="fa-solid fa-road"></i> Mobilità & infrastrutture</h3>
+        <ul>
+          <li>Trasporto pubblico competitivo e intermodale.</li>
+          <li>Infrastrutture materiali e digitali per aree urbane e interne.</li>
+          <li>Piattaforme dati regionali per servizi più vicini ai cittadini.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LISTE CHE LO SOSTENGONO (solo loghi + caption) -->
+<section id="liste" class="wrapper" aria-labelledby="liste-title">
+  <div class="inner">
+    <h2 class="section-title" id="liste-title"><span class="bar" aria-hidden="true"></span> Liste che lo sostengono</h2>
+    <div class="logo-grid">
+      <figure class="logo-card"><img src="images/loghi/fdi.png" alt="Logo Fratelli d'Italia" /><figcaption>Fratelli d’Italia</figcaption></figure>
+      <figure class="logo-card"><img src="images/loghi/lega.png" alt="Logo Lega" /><figcaption>Lega – Liga Veneta</figcaption></figure>
+      <figure class="logo-card"><img src="images/loghi/fi.png" alt="Logo Forza Italia" /><figcaption>Forza Italia</figcaption></figure>
+      <figure class="logo-card"><img src="images/loghi/noimoderati.png" alt="Logo Noi Moderati" /><figcaption>Noi Moderati – Civici per Stefani</figcaption></figure>
+      <figure class="logo-card"><img src="images/loghi/udc.png" alt="Logo UDC" /><figcaption>UDC</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <p>Pagina informativa indipendente. Non ufficiale. Ultimo aggiornamento: novembre 2025.</p>
+</footer>
+
+<!-- Bottom quick navbar (coerente con home) -->
+<nav class="bottomnav" aria-label="Navigazione rapida">
+  <div class="row">
+    <a href="#identikit" class="active" title="Identikit"><i class="fa-solid fa-id-card"></i><span>Identikit</span></a>
+    <a href="#programma" title="Programma"><i class="fa-solid fa-list-check"></i><span>Programma</span></a>
+    <a href="#liste" title="Liste"><i class="fa-solid fa-people-group"></i><span>Liste</span></a>
+    <a href="home.html#cosa-succede" title="Cosa succede"><i class="fa-solid fa-bolt"></i><span>In breve</span></a>
+    <a href="#top" title="Torna su"><i class="fa-solid fa-arrow-up"></i><span>Su</span></a>
+  </div>
+</nav>
+
+<a href="#top" class="back-to-top" aria-label="Torna all’inizio"><i class="fa-solid fa-arrow-up"></i></a>
+<script>
+  // mostra/nascondi pulsante Torna su
+  const backTop = document.querySelector('.back-to-top');
+  const onScroll = () => {
+    if(window.scrollY > 300){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+  };
+  document.addEventListener('scroll', onScroll);
+</script>
+
+  </body>
+</html>

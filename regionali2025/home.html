@@ -15,14 +15,32 @@
     <style>
       /* ===================== A) Stili originali sintetizzati (estratto) ===================== */
       #hero .content h1 img { max-height: 2em; width: auto; }
-      .nav-container {display:flex;justify-content:space-between;align-items:center;padding:1em 1.2em;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);position:fixed;top:0;width:100%;z-index:1000}
-      .logo a{font-weight:bold;font-size:1.1em;color:#333;text-decoration:none;display:flex;align-items:center}
-      .logo img{height:2em;margin-right:.4em}
+      .nav-container{
+        display:flex;justify-content:space-between;align-items:center;
+        padding:1em 1.2em;
+        background:#121821;          /* resta blu scuro sempre */
+        box-shadow:none;              /* niente ombra */
+        position:fixed;top:0;width:100%;z-index:1000
+      }
+
+      .nav-container.scrolled{
+        background:#121821;           /* identico anche in scroll */
+        box-shadow:none;              /* niente ombra in scroll */
+      }
+      .logo a{font-weight:bold;font-size:1.1em;color:#e6eef8; text-decoration:none; display:flex;align-items:center}
+      .menu-icon span{background:#e6eef8; height:3px; width:25px; margin:3px 0; display:block; border-radius:2px}
+      nav.menu a{text-decoration:none;font-weight:600;color:#121821}
+      nav.menu a:hover{color: #4ea0ff;  text-decoration: underline;   font-weight: 600; }
+      .logo img{height:2em;margin-right:.4em; position: relative}
       .menu-icon{display:none;flex-direction:column;cursor:pointer}
-      .menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
-      nav.menu{display:flex;gap:1.2em}
-      nav.menu a{text-decoration:none;font-weight:600;color:#333}
-      @media (max-width: 768px){.menu-icon{display:flex!important}nav.menu{display:none!important;flex-direction:column;position:absolute;top:60px;right:0;background:#fff;width:100%;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}nav.menu.show{display:flex!important}}
+            nav.menu{
+        display:none!important; flex-direction:column; position:absolute; top:60px; right:0;
+        background:#121821; width:100%;
+        box-shadow:0 4px 14px #121821;
+        padding:1em 0; text-align:center
+      }
+      nav.menu a{color:#121821; padding:.6rem 0}
+      @media (max-width: 768px){.menu-icon{display:flex!important}nav.menu{display:none!important;flex-direction:column;position:absolute;top:60px;right:0;background:#121821;width:100%;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1em 0;text-align:center}nav.menu.show{display:flex!important}}
       body{padding-top:70px}
 
       /* Province grid, FAQ, back-to-top (come file utente) */
@@ -30,25 +48,43 @@
       .province-card{background:#f9f9f9;border-radius:.6rem;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:1.5em 1em;text-align:center;transition:transform .2s,box-shadow .3s,width .2s}
       .province-card:hover{transform:translateY(-5px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
       .province-card a{text-decoration:none;color:#1f3d5a;font-weight:600;font-size:1.1em;display:block}
-      .province-card i{font-size:2em;margin-bottom:.5em;color:#777}
+      .province-card i{font-size:2em;margin-bottom:.5em;color:#ddd}
       #faq{padding:0 1em;max-width:900px;margin:0 auto}
       details.faq-block{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.2em 1.5em;margin-bottom:1.2em;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:box-shadow .3s,border-color .3s}
       details.faq-block[open]{box-shadow:0 4px 12px rgba(0,0,0,.07)}
-      details.faq-block summary{cursor:pointer;font-size:1.2em;font-weight:700;color:#333;display:flex;align-items:center}
-      details.faq-block summary::before{content:"+ ";font-weight:bold;margin-right:.5em;color:#0078d4;transition:transform .25s}
+      details.faq-block summary{cursor:pointer;font-size:1.2em;font-weight:700;color:#ddd;display:flex;align-items:center}
+      details.faq-block summary::before{content:"+ ";font-weight:bold;margin-right:.5em;color:#ddd;transition:transform .25s}
       details.faq-block[open] summary::before{content:"− "}
-      details.faq-block p{margin-top:.6em;line-height:1.6;font-size:1em;color:#444}
-      a[href="#faq"]:hover{color:#000;text-decoration:underline;font-weight:600}
+      details.faq-block p{margin-top:.6em;line-height:1.6;font-size:1em;color:#ddd}
 
       /* ===================== B) Bottom Quick Navbar (NUOVA) ===================== */
-      :root{--nav-bg:#ffffff;--nav-border:#e6ebf1;--nav-text:#6b7a88;--nav-active:#1f3d5a}
-      .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--nav-bg);border-top:1px solid var(--nav-border);box-shadow:0 -4px 12px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:saturate(140%) blur(6px)}
+      :root{
+        --nav-bg:#121821;        /* più scuro */
+        --nav-border:#2a3342;
+        --nav-text:#d9e6ff;      /* testo chiaro */
+        --nav-active:#ffffff;    /* attivo bianco pieno */
+      }
+
+      .bottomnav{
+        position:fixed;bottom:0;left:0;right:0;z-index:999;
+        background:var(--nav-bg);
+        border-top:1px solid var(--nav-border);
+        box-shadow:0 -4px 12px rgba(0,0,0,.18);
+        padding-bottom:env(safe-area-inset-bottom);
+        backdrop-filter:saturate(140%) blur(6px)
+      }
       .bottomnav .row{max-width:740px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
-      .bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;color:var(--nav-text);text-decoration:none}
-      .bottomnav i{font-size:1.1rem}
+      .bottomnav a{
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:.15rem;padding:.55rem 0 .5rem;font-size:.8rem;
+        color:var(--nav-text);text-decoration:none
+      }
+      .bottomnav i{font-size:1.1rem;color:var(--nav-text)}        /* icone sempre chiare */
       .bottomnav a.active{color:var(--nav-active);font-weight:800}
-      @media (min-width: 980px){.bottomnav{display:none}}
-      @media (max-width: 979px){body{padding-bottom:64px}}
+      .bottomnav a.active i{color:var(--nav-active)}               /* icona attiva bianca */
+      @media (min-width:980px){.bottomnav{display:none}}
+      @media (max-width:979px){body{padding-bottom:64px}}
+
 
       /* Pulsante "Torna su" (compatibile con bottomnav) */
       .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
@@ -63,7 +99,7 @@
     <!-- NAV SUPERIORE -->
     <div class="nav-container">
       <div class="logo">
-        <a href="#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Veneto 2025</a>
+        <a href="#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali- Veneto 2025</a>
       </div>
       <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')"><span></span><span></span><span></span></div>
       <nav class="menu" aria-label="Menu principale">
@@ -80,71 +116,158 @@
       <!-- HERO -->
       <section id="hero" class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
         <div class="content">
-          <h1><img src="images/logo.png" alt="Logo Elezioni101" />Elezioni Regionali Veneto 2025</h1>
-          <p class="major">Chi si vota? Quando? Come funziona? Chiariamo le cose.</p>
+          <h1><img src="images/logo.png" alt="Logo Elezioni101" />Elezioni Regionali - Veneto 2025</h1>
+          <p class="major"> Come funziona? Quando? Chi? Chiariamo le cose.</p>
           <ul class="actions stacked"><li><a href="#candidati" class="button big wide smooth-scroll-middle">Vai ai candidati</a></li></ul>
         </div>
         <div class="image"><img src="images/veneto-map.png" alt="Mappa Veneto" /></div>
       </section>
 
-      <!-- COSA SUCCEDE (riassunto) -->
-<section id="cosa-succede" class="wrapper style2">
+<!-- COSA SUCCEDE (versione mobile-first, verticale) -->
+<section id="cosa-succede" class="wrapper style2" aria-labelledby="quick-info-title">
   <div class="inner">
     <header class="major">
-      <h2>23–24 novembre · In breve</h2>
-      <p class="major">3 mosse per orientarti, + 2 info chiave.</p>
+      <h2 id="quick-info-title">23–24 novembre: che succede?</h2>
     </header>
 
-    <div class="items style1 medium onscroll-fade-in">
-      <!-- 1) QUANDO -->
-      <section>
-        <span class="icon solid major fa-calendar-days"></span>
-        <h3>Quando si vota</h3>
-        <p class="major"><strong>Domenica 23</strong> (7:00–23:00) · <strong>Lunedì 24</strong> (7:00–15:00)</p>
-        <p>Se sei in fila all'orario di chiusura <strong>voti comunque</strong>.</p>
-      </section>
+<style>
+  /* --- Scoped styles per la sezione (versione bianca) --- */
+  #cosa-succede .quick-vertical{
+    display:flex;flex-direction:column;gap:1.2rem
+  }
 
-      <!-- 2) COME -->
-      <section>
-        <span class="icon solid major fa-pen-to-square"></span>
-        <h3>Come si vota</h3>
-        <ol>
-          <li><strong>X sul Presidente</strong> → voti solo lui</li>
-          <li><strong>X su una lista</strong> → lista + Presidente collegato</li>
-          <li><strong>Voto disgiunto</strong> → lista e Presidente diversi</li>
-        </ol>
-      </section>
+  #cosa-succede .qcard{
+    background:#ffffff;                      /* bianco pieno */
+    border:1px solid #e4e7eb;
+    border-radius:14px;
+    padding:1rem 1.15rem;
+    box-shadow:0 1px 6px rgba(0,0,0,.05);
+  }
 
-      <!-- 3) PRIMA DI USCIRE -->
-      <section>
-        <span class="icon solid major fa-id-card"></span>
-        <h3>Prima di uscire</h3>
-        <ul class="alt">
-          <li><strong>Tessera elettorale</strong> e <strong>documento</strong> (anche scaduto se riconoscibile)</li>
-          <li><strong>Seggio:</strong> quello indicato sulla tessera (se hai cambiato residenza, verifica sul sito del Comune)</li>
+  #cosa-succede .qcard h3{
+    display:flex;align-items:center;gap:.55rem;
+    margin:0 0 .25rem;font-size:1.15rem;
+    color:#1f3d5a;
+  }
+
+  #cosa-succede .qcard h3 i{font-size:1.1rem;color:#1f3d5a}
+  #cosa-succede .lead{font-weight:600;margin:.15rem 0 .35rem}
+  #cosa-succede ul{margin:.35rem 0 0 1.1rem}
+  #cosa-succede li{margin:.15rem 0}
+  #cosa-succede .note{font-size:.95rem;color:#444;margin-top:.35rem}
+
+  #cosa-succede .btn-mini{
+    display:inline-flex;align-items:center;gap:.35rem;
+    padding:.45rem .7rem;border-radius:8px;text-decoration:none;
+    border:1px solid #1f3d5a;
+    font-weight:600;font-size:.9rem;color:#1f3d5a
+  }
+  #cosa-succede .btn-mini:hover{text-decoration:underline}
+
+  #cosa-succede .pill{
+    display:inline-block;font-size:.85rem;background:#1f3d5a;
+    color:#ddd;border:1px solid #1f3d5a;
+    border-radius:999px;padding:.1rem .55rem;margin-left:.25rem
+  }
+#cosa-succede .quick-vertical {
+  padding-bottom: 2.5rem;   /* o prova 3rem se vuoi più respiro */
+}
+#cosa-succede .lead{
+  font-weight: 400;      /* prima era 600 */
+  font-size: 1.02rem;    
+  line-height: 1.5;
+}
+  @media (min-width:980px){
+    #cosa-succede .qcard{padding:1.15rem 1.3rem}
+  }
+
+  /* Dark mode: mantieni fondo scuro ma leggibile */
+  @media (prefers-color-scheme:dark){
+    #cosa-succede .qcard{background:#e3e2e2;border-color:#ddd}
+    #cosa-succede .btn-mini{border-color:#2a3342;color:#1f3d5a}
+    #cosa-succede .note{color:#1f3d5a}
+  }
+</style>
+
+
+    <div class="quick-vertical">
+
+
+      <!-- 2) COSA SUCCEDE -->
+      <article class="qcard" aria-labelledby="q-what">
+        <h3 id="q-what"><i class="fa-solid fa-bolt" aria-hidden="true"></i>Cosa succede</h3>
+
+        <p class="lead">
+          Il 23 e 24 novembre i cittadini del Veneto scelgono chi guiderà la Regione per i prossimi cinque anni.
+          Si vota per due cose insieme:
+        </p>
+
+        <ul>
+          <li>il <strong>Presidente della Regione</strong>, cioè chi sarà il “governatore”;</li>
+          <li>i <strong>51 consiglieri regionali</strong>, che formano il Consiglio regionale.</li>
         </ul>
-      </section>
 
-      <!-- 4) COSA SI VOTA (compattato) -->
-      <section>
-        <span class="icon solid major fa-check-to-slot"></span>
-        <h3>Cosa si vota</h3>
-        <p class="major">Eleggi il <strong>Presidente della Regione</strong> e il <strong>Consiglio regionale</strong>.</p>
-        <p>Puoi usare il <strong>voto disgiunto</strong> (Presidente ≠ lista).</p>
-      </section>
+        <p style="margin-top:.6rem"></p>
+          La scheda ha una parte per il Presidente e una per le liste dei partiti.  
+          Si può:
 
-      <!-- 5) REGOLE PRINCIPALI (no elenchi) -->
-      <section>
-        <span class="icon solid major fa-scale-balanced"></span>
-        <h3>Regole principali</h3>
-        <p class="major"><strong>50</strong> seggi complessivi</p>
-        <p>Alla coalizione del Presidente eletto va il <strong>premio di maggioranza</strong>. Un seggio al <strong>secondo candidato Presidente</strong> più votato. <span class="label">Soglie di sbarramento</span> come da normativa regionale.</p>
-      </section>
+        <ul>
+          <li>fare una <strong>X sul nome del Presidente</strong> → voti lui e le liste collegate;</li>
+          <li>fare una <strong>X solo su una lista</strong> → il voto va anche al suo Presidente collegato;</li>
+          <li>scegliere un <strong>Presidente e una lista di schieramenti diversi</strong>: è il cosiddetto <em>voto disgiunto</em>.</li>
+        </ul>
+      </p>
+        <p style="margin-top:.6rem">
+          49 consiglieri sono eletti nelle province, mentre 2 seggi vanno al Presidente eletto e al candidato arrivato secondo.
+          Ogni provincia elegge un numero diverso di consiglieri:
+          <br><strong>Padova 9 · Verona 9 · Vicenza 8 · Treviso 8 · Venezia 7 · Rovigo 4 · Belluno 3</strong>.
+        </p>
+
+        <hr style="border:none;border-top:1px solid #ddd;margin:0.8rem 0;">
+
+          In pratica, la <strong>Regione Veneto</strong> è come un piccolo “governo locale”.
+          <br>Si occupa di <strong>sanità (ospedali e ULSS)</strong>, <strong>trasporti</strong>, <strong>scuole professionali</strong>, <strong>ambiente</strong>, <strong>agricoltura</strong>, <strong>turismo</strong> e <strong>sviluppo economico del territorio</strong>.
+          È governata da tre organi principali:
+          <ul>
+          <li> Il <strong>Consiglio regionale</strong> scrive e approva le leggi, e controlla che la Giunta le rispetti.
+          <li> La <strong>Giunta regionale</strong> non si elegge: la <strong>nomina il Presidente</strong> e la forma con i suoi assessori, come un governo regionale.
+          <li> Il <strong>Presidente</strong> guida la Giunta e rappresenta la Regione.
+          </ul>
+
+        <p style="margin-top:.8rem">
+          <a class="btn-mini" href="info-regionali.html" aria-label="Approfondisci come si vota in Veneto">
+            Vuoi saperne di più? <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </p>
+      </article>
+
+
+
+      <!-- 1) QUANDO SI VOTA -->
+      <article class="qcard" aria-labelledby="q-when">
+        <h3 id="q-when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Quando si vota</h3>
+        <p class="lead">📅 <strong>Domenica 23 novembre</strong> (7:00–23:00) · <strong>Lunedì 24 novembre</strong> (7:00–15:00)</p>
+        <p class="note">Se sei in fila all’orario di chiusura <strong>voti comunque</strong>.    
+           I risultati provvisori saranno pubblicati la sera di lunedì 24.</p>
+      </article>
+
+
+
+      <!-- 3) COSA PORTARE + SEGIO -->
+      <article class="qcard" aria-labelledby="q-bring">
+        <h3 id="q-bring"><i class="fa-solid fa-id-card" aria-hidden="true"></i>Cosa portare per votare</h3>
+        <ul>
+          <li><strong>Tessera elettorale</strong></li>
+          <li><strong>Documento d’identità</strong> (anche scaduto se riconoscibile)</li>
+        </ul>
+        <p class="note">
+          <strong>Dove voti:</strong> il seggio indicato sulla tessera. Se hai cambiato residenza, verifica sul sito del tuo Comune.
+        </p>
+      </article>
+
     </div>
-
   </div>
 </section>
-
 
 
 <!-- CANDIDATI -->
@@ -163,37 +286,46 @@
 .candidate-link:hover .candidate-card,
 .candidate-link:focus-visible .candidate-card{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 22px rgba(0,0,0,.12)}
 .candidate-link:focus-visible{outline:3px solid #1f3d5a;outline-offset:4px;border-radius:.9rem}
-/* Variante colore per CSX */
-.candidate-card.csx{border-top-color:#d12a27}
+/* Colori specifici per ciascun candidato */
+.candidate-card.cdx      {border-top-color:#0056a3}  /* Centrodestra */
+.candidate-card.csx      {border-top-color:#d12a27}  /* Centrosinistra */
+.candidate-card.rizzo    {border-top-color:#7a1b1b}  /* Rizzo */
+.candidate-card.szumski  {border-top-color:#178d36}  /* Szumski */
+.candidate-card.bui      {border-top-color:#e2a400}  /* Bui */
+
 @media (hover:none){.candidate-link .candidate-card{transform:none}}
 </style>
-
-
-<div class="candidate-grid">
-<!-- STEFANI -->
-<a class="candidate-link" href="candidati/stefani.html" aria-label="Apri scheda candidato: Alberto Stefani">
-<div class="candidate-card cdx">
-<img class="candidate-photo" src="images/stefani.jpg" alt="Alberto Stefani" />
+<div class="candidate-grid"><a aria-label="Apri scheda candidato: Alberto Stefani" class="candidate-link" href="stefani.html"><div class="candidate-card cdx"><img alt="Alberto Stefani" class="candidate-photo" src="images/stefani.jpg"/>
 <div class="candidate-info">
 <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Alberto Stefani</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Deputato della Lega ed ex-sindaco di Borgoricco (PD)</div>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Deputato (Lega) – candidato del centrodestra</div>
 <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 16/11/1992 a Camposampiero (PD)</div>
-</div>
-</div>
-</a>
-
-
-<!-- MANILDO -->
-<a class="candidate-link" href="candidati/manildo.html" aria-label="Apri scheda candidato: Giovanni Manildo">
-<div class="candidate-card csx">
-<img class="candidate-photo" src="images/manildo.jpg" alt="Giovanni Manildo" />
+<div style="font-size:.85rem;color:#556">Coalizione: Fratelli d'Italia · Lega · Forza Italia · Noi Moderati/UDC</div>
+</div></div></a><a aria-label="Apri scheda candidato: Giovanni Manildo" class="candidate-link" href="manildo.html"><div class="candidate-card csx"><img alt="Giovanni Manildo" class="candidate-photo" src="images/manildo.jpg"/>
 <div class="candidate-info">
 <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Giovanni Manildo</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Avvocato ed ex-sindaco di Treviso</div>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Avvocato – candidato del centrosinistra</div>
 <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 22/07/1969 a Conegliano (TV)</div>
-</div>
-</div>
-</a>
+<div style="font-size:.85rem;color:#556">Coalizione: PD · Uniti per Manildo · AVS · M5S · Volt · Pace Salute Lavoro/PRC · Le Civiche Venete</div>
+</div></div></a><a aria-label="Apri scheda candidato: Marco Rizzo" class="candidate-link" href="rizzo.html"><div class="candidate-card rizzo"><img alt="Marco Rizzo" class="candidate-photo" src="images/rizzo.png"/>
+<div class="candidate-info">
+<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Marco Rizzo</h3>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Giornalista – candidato di Democrazia Sovrana e Popolare</div>
+<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 12/10/1959 a (TO)</div>
+<div style="font-size:.85rem;color:#556">Lista: Democrazia Sovrana Popolare</div>
+</div></div></a><a aria-label="Apri scheda candidato: Riccardo Szumski" class="candidate-link" href="szumski.html"><div class="candidate-card szumski"><img alt="Riccardo Szumski" class="candidate-photo" src="images/szumski.jpg"/>
+<div class="candidate-info">
+<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Riccardo Szumski</h3>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Medico – candidato di Resistere Veneto</div>
+<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 02/12/1962 a Santa Lucia di Piave (TV)</div>
+<div style="font-size:.85rem;color:#556">Lista: Resistere Veneto</div>
+</div></div></a><a aria-label="Apri scheda candidato: Fabio Bui" class="candidate-link" href="bui.html"><div class="candidate-card bui"><img alt="Fabio Bui" class="candidate-photo" src="images/bui.png"/>
+<div class="candidate-info">
+<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Fabio Bui</h3>
+<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Amministratore locale – candidato di Popolari per il Veneto</div>
+<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 13/04/1964 a Padova (PD)</div>
+<div style="font-size:.85rem;color:#556">Lista: Popolari per il Veneto </div>
+</div></div></a></div>
 
 
 <!-- Altri candidati: duplica il blocco <a class="candidate-link" ...> -->
@@ -206,16 +338,20 @@
       <!-- PROVINCE -->
       <section id="province" class="wrapper style1 align-center">
         <div class="inner">
-          <h2>📍 Province del Veneto</h2>
-          <p style="max-width:700px;margin:0 auto 2em">I consiglieri si eleggono in collegi provinciali. Clicca sulla tua provincia.</p>
+<h2>📍 Province e liste locali</h2>
+<p style="max-width:700px;margin:0 auto 2em">
+  Ogni provincia elegge i propri <strong>consiglieri regionali</strong>.  
+  Clicca sulla tua provincia per vedere <strong>candidati e liste</strong>.
+</p>
+
           <div class="province-grid">
-            <div class="province-card"><a href="province/padova.html"><img src="images/padova.png" alt="Padova" width="60" style="margin-bottom:.5em" /><br>Padova</a></div>
-            <div class="province-card"><a href="province/treviso.html"><img src="images/treviso.png" alt="Treviso" width="60" style="margin-bottom:.5em" /><br>Treviso</a></div>
-            <div class="province-card"><a href="province/venezia.html"><img src="images/venezia.png" alt="Venezia" width="60" style="margin-bottom:.5em" /><br>Venezia</a></div>
-            <div class="province-card"><a href="province/verona.html"><img src="images/verona.png" alt="Verona" width="60" style="margin-bottom:.5em" /><br>Verona</a></div>
-            <div class="province-card"><a href="province/vicenza.html"><img src="images/vicenza.png" alt="Vicenza" width="60" style="margin-bottom:.5em" /><br>Vicenza</a></div>
-            <div class="province-card"><a href="province/belluno.html"><img src="images/belluno.png" alt="Belluno" width="60" style="margin-bottom:.5em" /><br>Belluno</a></div>
-            <div class="province-card"><a href="province/rovigo.html"><img src="images/rovigo.png" alt="Rovigo" width="60" style="margin-bottom:.5em" /><br>Rovigo</a></div>
+            <div class="province-card"><a href="padova.html"><img src="images/padova.png" alt="Padova" width="60" style="margin-bottom:.5em" /><br>Padova</a></div>
+            <div class="province-card"><a href="treviso.html"><img src="images/treviso.png" alt="Treviso" width="60" style="margin-bottom:.5em" /><br>Treviso</a></div>
+            <div class="province-card"><a href="venezia.html"><img src="images/venezia.png" alt="Venezia" width="60" style="margin-bottom:.5em" /><br>Venezia</a></div>
+            <div class="province-card"><a href="verona.html"><img src="images/verona.png" alt="Verona" width="60" style="margin-bottom:.5em" /><br>Verona</a></div>
+            <div class="province-card"><a href="vicenza.html"><img src="images/vicenza.png" alt="Vicenza" width="60" style="margin-bottom:.5em" /><br>Vicenza</a></div>
+            <div class="province-card"><a href="belluno.html"><img src="images/belluno.png" alt="Belluno" width="60" style="margin-bottom:.5em" /><br>Belluno</a></div>
+            <div class="province-card"><a href="rovigo.html"><img src="images/rovigo.png" alt="Rovigo" width="60" style="margin-bottom:.5em" /><br>Rovigo</a></div>
           </div>
         </div>
       </section>
@@ -227,6 +363,61 @@
           <details class="faq-block"><summary>💳 Ho perso la tessera elettorale: posso votare?</summary><p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune.</p></details>
           <details class="faq-block"><summary>🛂 Il mio documento è scaduto: posso votare?</summary><p>Sì. Puoi votare anche con un documento scaduto se riconoscibile e con fotografia.</p></details>
           <details class="faq-block"><summary>🖊️ Se sbaglio a votare?</summary><p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda.</p></details>
+    <details class="faq-block">
+      <summary>📅 Devo votare per forza?</summary>
+      <p>No, il voto è facoltativo. Ma se vuoi rendere valido il referendum, è importante partecipare: serve almeno il 50% degli aventi diritto.</p>
+    </details>
+
+  <details class="faq-block">
+    <summary>📊 Ogni quesito ha il proprio quorum?</summary>
+    <p>
+      Sì. Ogni quesito referendario ha un <strong>quorum separato</strong>: è valido solo se vota almeno il 50% degli aventi diritto su quel singolo quesito. 
+      <br><br>
+      Questo significa che <strong>può essere valido un quesito e non un altro</strong>, a seconda dell'affluenza specifica registrata per ciascuna scheda.
+    </p>
+  </details>
+
+
+  <details class="faq-block">
+    <summary>🗳️ Posso votare solo per alcuni quesiti?</summary>
+    <p>
+      Sì, puoi scegliere su quali quesiti esprimerti. Il presidente di seggio ti consegnerà tutte le schede, ma puoi decidere di prenderne solo alcune e rifiutare le altre.
+      <br><br>
+      Se rifiuti una scheda, il tuo gesto viene registrato e <strong>non contribuirai al quorum</strong> di quel quesito. Questo è diverso rispetto a votare scheda bianca o nulla, che invece contano nella partecipazione e quindi <strong>fanno aumentare l’affluenza valida</strong>.
+      <br><br>
+      In pratica: rifiutare la scheda è un modo per <strong>non partecipare</strong> a quel quesito specifico, mentre votare comunque (anche senza scegliere SÌ o NO) fa valere la tua presenza nel conteggio dell'affluenza.
+    </p>
+  </details>
+
+
+    <details class="faq-block">
+      <summary>💳 Ho perso la tessera elettorale: posso votare?</summary>
+      <p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune, anche nei giorni del voto.</p>
+    </details>
+
+    <details class="faq-block">
+      <summary>🛂 Il mio documento è scaduto: posso votare?</summary>
+      <p>Sì. Puoi votare anche con un documento di identità scaduto, purché riconoscibile e con fotografia.</p>
+    </details>
+
+  <details class="faq-block">
+    <summary>🌍 Vivo in un'altra città o all’estero. Posso votare?</summary>
+    <p>
+      Sì. Se vivi in un comune diverso da quello in cui sei iscritto, puoi fare domanda per votare nel luogo in cui ti trovi, ma solo per motivi di studio, lavoro o cure mediche da almeno 3 mesi. La richiesta va inviata entro il 5 maggio 2025 al tuo comune di domicilio.
+      <br><br>
+      Se risiedi all’estero e sei iscritto all’AIRE, riceverai il plico per votare per corrispondenza. In alternativa, se ti trovi temporaneamente fuori dall'Italia per lavoro, studio o cure mediche, devi fare richiesta al portale del Ministero degli Esteri.
+      <br><br>
+      <a href="https://www.interno.gov.it/it/notizie/referendum-2025-ed-elettori-fuori-sede-modalita-voto-nel-comune-temporaneo-domicilio" target="_blank">Info per chi è fuori sede in Italia</a> – 
+      <a href="https://www.esteri.it/it/servizi-consolari-e-visti/italiani-all-estero/votoestero/elezionipolitiche/referendum-abrogativi-2025/" target="_blank">Info per chi vive all’estero</a>
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🖊️ Se sbaglio a votare?</summary>
+    <p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda al presidente di seggio.</p>
+  </details>
+
+
         </section>
       </div>
 
@@ -295,11 +486,17 @@
         --ring:#9ec1ff;
       }
       body{font-feature-settings:"liga" 1,"kern" 1; text-rendering:optimizeLegibility}
-      .nav-container{background:rgba(255,255,255,.96);transition:box-shadow .25s, background .25s}
-      .nav-container.scrolled{box-shadow:0 4px 12px rgba(0,0,0,.08);background:#fff}
       .logo a{letter-spacing:.1px}
       #hero .content{max-width:640px}
       #hero .content h1{line-height:1.12}
+      #hero .content h1 img {
+        position: relative;
+        top: 4px;            /* sposta verso il basso di 4px: regola a occhio se serve */
+        margin-right: 0.4em; /* mantiene la distanza dal testo */
+        height: 1.8em;       /* dimensione coerente con la linea del titolo */
+        width: auto;
+        vertical-align: middle;
+      }
       #hero .content p.major{font-size:1.15rem;color:var(--muted)}
       .button.big.wide{border-radius:10px}
       .province-card img{filter:drop-shadow(0 1px 1px rgba(0,0,0,.12))}
@@ -313,17 +510,29 @@
 
       /* Dark mode (inherits Story but tunes contrast) */
       @media (prefers-color-scheme: dark){
-        .nav-container{background:rgba(18,24,33,.88)}
+        .nav-container{background:#121821}
         .nav-container.scrolled{background:#121821}
         .logo a, nav.menu a{color:#e6eef8}
         .province-card{background:#141a23; box-shadow:0 1px 0 rgba(255,255,255,.04)}
         .province-card a{color:#d9e6ff}
         details.faq-block{background:#121821;border-color:#2a3342}
         details.faq-block p{color:#c9d4e3}
-        footer{background:#121821 !important; color:#c9d4e3 !important; border-top-color:#2a3342 !important}
+        /* footer{background:#121821 !important; color:#c9d4e3 !important; border-top-color:#2a3342 !important} */
         .bottomnav{background:#121821; border-top-color:#2a3342}
-        .back-to-top{background:#0d5cb6}
+        .back-to-top{background:#173a5e}
+
+        footer a {
+          color: #6b7a88;
+          text-decoration: none;
+          transition: color .2s;
+        }
+
+        footer a:hover {
+          color: #4ea0ff;           /* azzurro coerente con il resto del sito */
+          text-decoration: underline;
+        }
       }
+      
     </style>
   </body>
 </html>
