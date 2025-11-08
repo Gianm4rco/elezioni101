@@ -99,7 +99,7 @@
     <!-- NAV SUPERIORE -->
     <div class="nav-container">
       <div class="logo">
-        <a href="#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali- Veneto 2025</a>
+        <a href="#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali - Veneto 2025</a>
       </div>
       <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')"><span></span><span></span><span></span></div>
       <nav class="menu" aria-label="Menu principale">
@@ -212,7 +212,7 @@
           Si può:
 
         <ul>
-          <li>fare una <strong>X sul nome del Presidente</strong> → voti lui e le liste collegate;</li>
+          <li>fare una <strong>X slo sul nome del Presidente</strong> → voti lui e le liste collegate;</li>
           <li>fare una <strong>X solo su una lista</strong> → il voto va anche al suo Presidente collegato;</li>
           <li>scegliere un <strong>Presidente e una lista di schieramenti diversi</strong>: è il cosiddetto <em>voto disgiunto</em>.</li>
         </ul>
@@ -270,79 +270,84 @@
 </section>
 
 
-<!-- CANDIDATI -->
-<section id="candidati" class="wrapper style1 align-center">
-<div class="inner">
-<h2>Candidati Governatore</h2>
+    <!-- CANDIDATI -->
+    <section id="candidati" class="wrapper style1 align-center">
+      <div class="inner">
+      <h2>Candidati Governatore</h2>
 
 
-<!-- Hover-grow + deep link (solo CSS, no JS) -->
-<style>
-.candidate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem}
-.candidate-link{display:block;text-decoration:none;color:inherit;border-radius:.75rem}
-.candidate-card{background:#fff;border-radius:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.08);overflow:hidden;text-align:center;border-top:4px solid #0056a3;transition:transform .18s ease, box-shadow .22s ease}
-.candidate-card .candidate-photo{width:60%;height:180px;object-fit:cover;margin:0 auto;border-radius:.4rem}
-.candidate-card .candidate-info{padding:1rem}
-.candidate-link:hover .candidate-card,
-.candidate-link:focus-visible .candidate-card{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 22px rgba(0,0,0,.12)}
-.candidate-link:focus-visible{outline:3px solid #1f3d5a;outline-offset:4px;border-radius:.9rem}
-/* Colori specifici per ciascun candidato */
-.candidate-card.cdx      {border-top-color:#0056a3}  /* Centrodestra */
-.candidate-card.csx      {border-top-color:#d12a27}  /* Centrosinistra */
-.candidate-card.rizzo    {border-top-color:#7a1b1b}  /* Rizzo */
-.candidate-card.szumski  {border-top-color:#178d36}  /* Szumski */
-.candidate-card.bui      {border-top-color:#e2a400}  /* Bui */
+      <!-- Hover-grow + deep link (solo CSS, no JS) -->
+      <style>
+      .candidate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem}
+      .candidate-link{display:block;text-decoration:none;color:inherit;border-radius:.75rem}
+      .candidate-card{background:#fff;border-radius:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.08);overflow:hidden;text-align:center;border-top:4px solid #0056a3;transition:transform .18s ease, box-shadow .22s ease}
+      .candidate-card .candidate-photo{width:60%;height:180px;object-fit:cover;margin:0 auto;border-radius:.4rem}
+      .candidate-card .candidate-info{padding:1rem}
+      .candidate-link:hover .candidate-card,
+      .candidate-link:focus-visible .candidate-card{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 22px rgba(0,0,0,.12)}
+      .candidate-link:focus-visible{outline:3px solid #1f3d5a;outline-offset:4px;border-radius:.9rem}
+      /* Colori specifici per ciascun candidato */
+      .candidate-card.cdx      {border-top-color:#0056a3}  /* Centrodestra */
+      .candidate-card.csx      {border-top-color:#d12a27}  /* Centrosinistra */
+      .candidate-card.rizzo    {border-top-color:#7a1b1b}  /* Rizzo */
+      .candidate-card.szumski  {border-top-color:#178d36}  /* Szumski */
+      .candidate-card.bui      {border-top-color:#e2a400}  /* Bui */
 
-@media (hover:none){.candidate-link .candidate-card{transform:none}}
-</style>
-<div class="candidate-grid"><a aria-label="Apri scheda candidato: Alberto Stefani" class="candidate-link" href="stefani.html"><div class="candidate-card cdx"><img alt="Alberto Stefani" class="candidate-photo" src="images/stefani.jpg"/>
-<div class="candidate-info">
-<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Alberto Stefani</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Deputato (Lega) – candidato del centrodestra</div>
-<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 16/11/1992 a Camposampiero (PD)</div>
-<div style="font-size:.85rem;color:#556">Coalizione: Fratelli d'Italia · Lega · Forza Italia · Noi Moderati/UDC</div>
-</div></div></a><a aria-label="Apri scheda candidato: Giovanni Manildo" class="candidate-link" href="manildo.html"><div class="candidate-card csx"><img alt="Giovanni Manildo" class="candidate-photo" src="images/manildo.jpg"/>
-<div class="candidate-info">
-<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Giovanni Manildo</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Avvocato – candidato del centrosinistra</div>
-<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 22/07/1969 a Conegliano (TV)</div>
-<div style="font-size:.85rem;color:#556">Coalizione: PD · Uniti per Manildo · AVS · M5S · Volt · Pace Salute Lavoro/PRC · Le Civiche Venete</div>
-</div></div></a><a aria-label="Apri scheda candidato: Marco Rizzo" class="candidate-link" href="rizzo.html"><div class="candidate-card rizzo"><img alt="Marco Rizzo" class="candidate-photo" src="images/rizzo.png"/>
-<div class="candidate-info">
-<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Marco Rizzo</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Giornalista – candidato di Democrazia Sovrana e Popolare</div>
-<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 12/10/1959 a (TO)</div>
-<div style="font-size:.85rem;color:#556">Lista: Democrazia Sovrana Popolare</div>
-</div></div></a><a aria-label="Apri scheda candidato: Riccardo Szumski" class="candidate-link" href="szumski.html"><div class="candidate-card szumski"><img alt="Riccardo Szumski" class="candidate-photo" src="images/szumski.jpg"/>
-<div class="candidate-info">
-<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Riccardo Szumski</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Medico – candidato di Resistere Veneto</div>
-<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 02/12/1962 a Santa Lucia di Piave (TV)</div>
-<div style="font-size:.85rem;color:#556">Lista: Resistere Veneto</div>
-</div></div></a><a aria-label="Apri scheda candidato: Fabio Bui" class="candidate-link" href="bui.html"><div class="candidate-card bui"><img alt="Fabio Bui" class="candidate-photo" src="images/bui.png"/>
-<div class="candidate-info">
-<h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Fabio Bui</h3>
-<div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Amministratore locale – candidato di Popolari per il Veneto</div>
-<div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 13/04/1964 a Padova (PD)</div>
-<div style="font-size:.85rem;color:#556">Lista: Popolari per il Veneto </div>
-</div></div></a></div>
-
-
-<!-- Altri candidati: duplica il blocco <a class="candidate-link" ...> -->
+      @media (hover:none){.candidate-link .candidate-card{transform:none}}
+      </style>
+      <div class="candidate-grid"><a aria-label="Apri scheda candidato: Alberto Stefani" class="candidate-link" href="stefani.html"><div class="candidate-card cdx"><img alt="Alberto Stefani" class="candidate-photo" src="images/stefani.jpg"/>
+      <div class="candidate-info">
+      <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Alberto Stefani</h3>
+      <div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Deputato (Lega) – candidato del centrodestra</div>
+      <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 16/11/1992 a Camposampiero (PD)</div>
+      <div style="font-size:.85rem;color:#556">Coalizione: Fratelli d'Italia · Lega · Forza Italia · Noi Moderati/UDC</div>
+      </div></div></a><a aria-label="Apri scheda candidato: Giovanni Manildo" class="candidate-link" href="manildo.html"><div class="candidate-card csx"><img alt="Giovanni Manildo" class="candidate-photo" src="images/manildo.jpg"/>
+      <div class="candidate-info">
+      <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Giovanni Manildo</h3>
+      <div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Avvocato – candidato del centrosinistra</div>
+      <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 22/07/1969 a Conegliano (TV)</div>
+      <div style="font-size:.85rem;color:#556">Coalizione: PD · Uniti per Manildo · AVS · M5S · Volt · Pace Salute Lavoro/PRC · Le Civiche Venete</div>
+      </div></div></a><a aria-label="Apri scheda candidato: Marco Rizzo" class="candidate-link" href="rizzo.html"><div class="candidate-card rizzo"><img alt="Marco Rizzo" class="candidate-photo" src="images/rizzo.png"/>
+      <div class="candidate-info">
+      <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Marco Rizzo</h3>
+      <div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Giornalista – candidato di Democrazia Sovrana e Popolare</div>
+      <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 12/10/1959 a (TO)</div>
+      <div style="font-size:.85rem;color:#556">Lista: Democrazia Sovrana Popolare</div>
+      </div></div></a><a aria-label="Apri scheda candidato: Riccardo Szumski" class="candidate-link" href="szumski.html"><div class="candidate-card szumski"><img alt="Riccardo Szumski" class="candidate-photo" src="images/szumski.jpg"/>
+      <div class="candidate-info">
+      <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Riccardo Szumski</h3>
+      <div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Medico – candidato di Resistere Veneto</div>
+      <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 02/12/1962 a Santa Lucia di Piave (TV)</div>
+      <div style="font-size:.85rem;color:#556">Lista: Resistere Veneto</div>
+      </div></div></a><a aria-label="Apri scheda candidato: Fabio Bui" class="candidate-link" href="bui.html"><div class="candidate-card bui"><img alt="Fabio Bui" class="candidate-photo" src="images/bui.png"/>
+      <div class="candidate-info">
+      <h3 class="candidate-name" style="margin:.5rem 0 .3rem;font-size:1.2rem;font-weight:600">Fabio Bui</h3>
+      <div class="candidate-role" style="font-size:.9rem;color:#666;margin-bottom:.5rem">Amministratore locale – candidato di Popolari per il Veneto</div>
+      <div class="candidate-born" style="font-size:.85rem;color:#888">Nato il 13/04/1964 a Padova (PD)</div>
+      <div style="font-size:.85rem;color:#556">Lista: Popolari per il Veneto </div>
+      </div></div></a></div>
 
 
-</div>
-</div>
-</section>
+      <!-- Altri candidati: duplica il blocco <a class="candidate-link" ...> -->
+
+
+      </div>
+      </div>
+    </section>
 
       <!-- PROVINCE -->
       <section id="province" class="wrapper style1 align-center">
         <div class="inner">
 <h2>📍 Province e liste locali</h2>
 <p style="max-width:700px;margin:0 auto 2em">
-  Ogni provincia elegge i propri <strong>consiglieri regionali</strong>.  
-  Clicca sulla tua provincia per vedere <strong>candidati e liste</strong>.
+  Ogni provincia elegge i propri <strong>consiglieri regionali</strong>, che insieme formeranno il Consiglio della Regione Veneto.  
+  <br><br>
+  Ogni lista provinciale è collegata a uno dei candidati <strong>Presidente</strong>: votando una lista, il tuo voto va anche al candidato governatore collegato. 
+  Nelle pagine provinciali trovi i <strong>nomi dei candidati locali</strong> (quelli che si possono votare nella tua provincia) e le <strong>liste che li sostengono</strong>.  
+  <br><br>
+  Se non sai bene chi si presenta nella tua zona, clicca sulla tua provincia per vedere chi potrai trovare sulla scheda.
 </p>
+
 
           <div class="province-grid">
             <div class="province-card"><a href="padova.html"><img src="images/padova.png" alt="Padova" width="60" style="margin-bottom:.5em" /><br>Padova</a></div>
@@ -358,67 +363,98 @@
 
       <!-- FAQ sintetiche -->
       <div style="max-width:900px;margin:0 auto">
-        <section id="faq" style="margin-top:4em">
-          <h2>❓ Domande frequenti</h2>
-          <details class="faq-block"><summary>💳 Ho perso la tessera elettorale: posso votare?</summary><p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune.</p></details>
-          <details class="faq-block"><summary>🛂 Il mio documento è scaduto: posso votare?</summary><p>Sì. Puoi votare anche con un documento scaduto se riconoscibile e con fotografia.</p></details>
-          <details class="faq-block"><summary>🖊️ Se sbaglio a votare?</summary><p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda.</p></details>
-    <details class="faq-block">
-      <summary>📅 Devo votare per forza?</summary>
-      <p>No, il voto è facoltativo. Ma se vuoi rendere valido il referendum, è importante partecipare: serve almeno il 50% degli aventi diritto.</p>
-    </details>
+<section id="faq" style="margin-top:4em">
+  <h2>❓ Domande frequenti</h2>
 
   <details class="faq-block">
-    <summary>📊 Ogni quesito ha il proprio quorum?</summary>
+    <summary>📅 Quando si vota?</summary>
     <p>
-      Sì. Ogni quesito referendario ha un <strong>quorum separato</strong>: è valido solo se vota almeno il 50% degli aventi diritto su quel singolo quesito. 
-      <br><br>
-      Questo significa che <strong>può essere valido un quesito e non un altro</strong>, a seconda dell'affluenza specifica registrata per ciascuna scheda.
-    </p>
-  </details>
-
-
-  <details class="faq-block">
-    <summary>🗳️ Posso votare solo per alcuni quesiti?</summary>
-    <p>
-      Sì, puoi scegliere su quali quesiti esprimerti. Il presidente di seggio ti consegnerà tutte le schede, ma puoi decidere di prenderne solo alcune e rifiutare le altre.
-      <br><br>
-      Se rifiuti una scheda, il tuo gesto viene registrato e <strong>non contribuirai al quorum</strong> di quel quesito. Questo è diverso rispetto a votare scheda bianca o nulla, che invece contano nella partecipazione e quindi <strong>fanno aumentare l’affluenza valida</strong>.
-      <br><br>
-      In pratica: rifiutare la scheda è un modo per <strong>non partecipare</strong> a quel quesito specifico, mentre votare comunque (anche senza scegliere SÌ o NO) fa valere la tua presenza nel conteggio dell'affluenza.
-    </p>
-  </details>
-
-
-    <details class="faq-block">
-      <summary>💳 Ho perso la tessera elettorale: posso votare?</summary>
-      <p>No, serve la tessera. Ma puoi richiederne un duplicato all’ufficio elettorale del tuo comune, anche nei giorni del voto.</p>
-    </details>
-
-    <details class="faq-block">
-      <summary>🛂 Il mio documento è scaduto: posso votare?</summary>
-      <p>Sì. Puoi votare anche con un documento di identità scaduto, purché riconoscibile e con fotografia.</p>
-    </details>
-
-  <details class="faq-block">
-    <summary>🌍 Vivo in un'altra città o all’estero. Posso votare?</summary>
-    <p>
-      Sì. Se vivi in un comune diverso da quello in cui sei iscritto, puoi fare domanda per votare nel luogo in cui ti trovi, ma solo per motivi di studio, lavoro o cure mediche da almeno 3 mesi. La richiesta va inviata entro il 5 maggio 2025 al tuo comune di domicilio.
-      <br><br>
-      Se risiedi all’estero e sei iscritto all’AIRE, riceverai il plico per votare per corrispondenza. In alternativa, se ti trovi temporaneamente fuori dall'Italia per lavoro, studio o cure mediche, devi fare richiesta al portale del Ministero degli Esteri.
-      <br><br>
-      <a href="https://www.interno.gov.it/it/notizie/referendum-2025-ed-elettori-fuori-sede-modalita-voto-nel-comune-temporaneo-domicilio" target="_blank">Info per chi è fuori sede in Italia</a> – 
-      <a href="https://www.esteri.it/it/servizi-consolari-e-visti/italiani-all-estero/votoestero/elezionipolitiche/referendum-abrogativi-2025/" target="_blank">Info per chi vive all’estero</a>
+      Si vota <strong>domenica 23 novembre</strong> dalle 7:00 alle 23:00 e <strong>lunedì 24 novembre</strong> dalle 7:00 alle 15:00.  
+      Se sei già in fila all’orario di chiusura, <strong>puoi comunque votare</strong>.
     </p>
   </details>
 
   <details class="faq-block">
-    <summary>🖊️ Se sbaglio a votare?</summary>
-    <p>Finché non inserisci la scheda nell’urna, puoi chiedere una nuova scheda al presidente di seggio.</p>
+    <summary>🗳️ Per cosa si vota?</summary>
+    <p>
+      Si sceglie il <strong>Presidente della Regione Veneto</strong> e i <strong>51 consiglieri regionali</strong> che compongono il Consiglio regionale.  
+      49 consiglieri sono eletti nelle province, mentre 2 seggi spettano al Presidente eletto e al candidato arrivato secondo.
+    </p>
   </details>
 
+        <details class="faq-block">
+          <summary>📄 Come funziona la scheda?</summary>
+          <p>
+            La scheda mostra i nomi dei candidati PRESIDENTE e, accanto, le LISTE che li sostengono.
+            <br><br>
+            Puoi votare in tre modi:
+            <ul>
+              <li>una X sul nome del Presidente → il voto va a lui e alle sue liste;</li>
+              <li>una X su una lista → il voto va anche al Presidente collegato;</li>
+              <li>una X su un Presidente e una lista di schieramenti diversi → voto disgiunto.</li>
+            </ul>
+          </p>
+          <p style="text-align:center;margin-top:1em">
+            <img src="images/fac-simile-scheda.png" alt="Fac-simile scheda elettorale" style="max-width:90%;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.25)">
+            <br><span style="font-size:.9rem;color:#bbb">Fac-simile della scheda delle elezioni 2020 (stesso formato)</span>
+          </p>
+        </details>
 
-        </section>
+  <details class="faq-block">
+    <summary>🧾 Come si esprimono le preferenze?</summary>
+    <p>
+      Puoi scrivere <strong>il cognome di uno o due candidati consiglieri</strong> della tua provincia, nella parte della scheda dedicata alle liste.  
+      Se esprimi due preferenze, devono essere <strong>di genere diverso</strong> (una donna e un uomo della stessa lista).
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🗺️ Dove posso vedere chi si candida nella mia provincia?</summary>
+    <p>
+      Vai alla sezione <a href="#province">📍 Province e liste locali</a> e scegli la tua provincia.  
+      Troverai <strong>liste e candidati consiglieri</strong> che compariranno sulla tua scheda elettorale.
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>💳 Cosa serve per votare?</summary>
+    <p>
+      Porta con te:
+      <ul>
+        <li>la <strong>tessera elettorale</strong>;</li>
+        <li>un <strong>documento d’identità</strong> valido (va bene anche se scaduto, purché riconoscibile).</li>
+      </ul>
+      Se hai perso la tessera o hai esaurito gli spazi, puoi richiederne <strong>un duplicato al tuo Comune</strong>, anche nei giorni del voto.
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🏠 Dove devo andare a votare?</summary>
+    <p>
+      Nella tua tessera elettorale trovi indicato il numero e l’indirizzo del tuo <strong>seggio</strong>.  
+      Se hai cambiato residenza, verifica sul sito o all’ufficio elettorale del tuo Comune.
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🌍 Posso votare se vivo fuori città o all’estero?</summary>
+    <p>
+      Se sei temporaneamente in un altro comune per motivi di lavoro, studio o cure mediche da almeno tre mesi, puoi chiedere di votare dove ti trovi: la domanda va presentata al tuo Comune entro i termini indicati dalla Regione.  
+      <br><br>
+      Gli iscritti AIRE (residenti all’estero) votano invece nel proprio Comune in Italia: per queste elezioni <strong>non è previsto il voto per corrispondenza</strong>.
+    </p>
+  </details>
+
+  <details class="faq-block">
+    <summary>🕓 Quando sapremo i risultati?</summary>
+    <p>
+      Lo spoglio inizia <strong>lunedì 24 novembre pomeriggio</strong>.  
+      I risultati provvisori saranno pubblicati sul portale <a href="https://elezioni.regione.veneto.it/" target="_blank">elezioni.regione.veneto.it</a> e sui siti dei Comuni nelle ore successive.
+    </p>
+  </details>
+
+</section>
+
       </div>
 
       <!-- Footer -->

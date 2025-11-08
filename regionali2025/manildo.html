@@ -103,9 +103,9 @@
       @media (min-width:980px){.bottomnav{display:none}}
       @media (max-width:979px){body{padding-bottom:64px}}
   /* Pulsante "Torna su" */
-  .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#1f3d5a;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
+  .back-to-top{position:fixed;bottom:76px;right:20px;display:flex;align-items:center;justify-content:center;font-size:1.4em;width:50px;height:50px;border-radius:50%;text-decoration:none;background:#d12a27;color:#fff;z-index:100;transition:opacity .5s ease,transform .3s ease;opacity:0;pointer-events:none}
   .back-to-top.show{opacity:1;pointer-events:auto}
-  .back-to-top:hover{background:#223c5f;transform:scale(1.1)}
+  .back-to-top:hover{background:#d12a27;transform:scale(1.1)}
       /* Accessibilità focus */
       a:focus-visible, button:focus-visible, summary:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:6px}
 
@@ -120,7 +120,7 @@
     <!-- NAV -->
     <div class="nav-container">
       <div class="logo">
-        <a href="home.html#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Veneto 2025</a>
+        <a href="home.html#hero"><img src="images/logo.png" alt="Logo" /> Elezioni Regionali - Veneto 2025</a>
       </div>
       <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')"><span></span><span></span><span></span></div>
       <nav class="menu" aria-label="Menu principale">
@@ -176,58 +176,62 @@
 </section>
 
     <!-- PROGRAMMA: sezione alta e corposa -->
-    <section id="programma" class="wrapper" aria-labelledby="programma-title">
-      <div class="inner">
-        <h2 class="section-title" id="programma-title"><span class="bar" aria-hidden="true"></span> Punti chiave di programma</h2>
-        <div class="prog-grid">
-          <article class="prog-card">
-            <h3><i class="fa-solid fa-kit-medical"></i> Sanità territoriale e liste d'attesa</h3>
-            <ul>
-              <li>Rafforzare <strong>medicina di base</strong> e <strong>pediatri</strong> nelle ULSS; case della comunità operative.</li>
-              <li>Agenda unica regionale per le <strong>prenotazioni</strong>, più prestazioni in orari serali/festivi per smaltire arretrati.</li>
-              <li>Incentivi per <strong>personale sanitario</strong> nelle aree carenti e riduzione burocrazia per assunzioni.</li>
-            </ul>
-          </article>
+<section id="programma" class="wrapper" aria-labelledby="programma-title">
+  <div class="inner">
+    <h2 class="section-title" id="programma-title">
+      <span class="bar" aria-hidden="true"></span> Programma – cosa propone
+    </h2>
+    <p class="prog-note">
+      La Regione Veneto gestisce sanità, trasporti, ambiente, formazione e sviluppo economico.
+      Qui una sintesi semplice delle proposte di Giovanni Manildo.
+    </p>
 
-          <article class="prog-card">
-            <h3><i class="fa-solid fa-train-subway"></i> Mobilità e trasporti</h3>
-            <ul>
-              <li>Potenziare <strong>treni regionali</strong> e integrazione orari ferro–gomma.</li>
-              <li>Corridoi veloci bus nelle aree metropolitane e rinnovo flotte a basse emissioni.</li>
-              <li>Più <strong>sicurezza stradale</strong> e piste ciclabili connesse (<em>ultimo miglio</em> verso stazioni/poli scolastici).</li>
-            </ul>
-          </article>
+    <!-- Sanità -->
+    <div class="prog-card">
+      <h3><i class="fa-solid fa-heart-pulse"></i> Sanità e welfare</h3>
+      <ul>
+        <li>Vuole rafforzare la <b>sanità pubblica</b>, con più personale e meno liste d’attesa negli ospedali.</li>
+        <li>Propone più attenzione a <b>case popolari, servizi sociali e assistenza di quartiere</b>.</li>
+      </ul>
+    </div>
 
-          <article class="prog-card">
-            <h3><i class="fa-solid fa-industry"></i> Impresa, lavoro, competenze</h3>
-            <ul>
-              <li>Sportelli unici per <strong>bandi</strong> e <strong>transizione digitale/green</strong> delle PMI.</li>
-              <li>Filiera formazione–impresa: ITS Academy, tirocini qualificati, upskilling per lavoratori.</li>
-              <li>Fondi per <strong>innovazione</strong> e brevetti, con priorità a manifattura e turismo sostenibile.</li>
-            </ul>
-          </article>
+    <!-- Lavoro -->
+    <div class="prog-card">
+      <h3><i class="fa-solid fa-briefcase"></i> Lavoro e imprese</h3>
+      <ul>
+        <li>Punta su <b>investimenti sostenibili</b> e innovazione per creare lavoro stabile e ben pagato.</li>
+        <li>Vuole usare meglio i <b>fondi europei</b> e sostenere le piccole imprese che innovano.</li>
+      </ul>
+    </div>
 
-          <article class="prog-card">
-            <h3><i class="fa-solid fa-house-chimney"></i> Casa, comunità, territori</h3>
-            <ul>
-              <li><strong>Rigenerazione urbana</strong> e recupero alloggi ERP; canoni sostenibili per giovani/famiglie.</li>
-              <li>Protezione del territorio (acqua, suolo) e <strong>resilienza climatica</strong> dei centri minori.</li>
-              <li>Cultura e sport come servizi di prossimità, soprattutto nelle aree interne.</li>
-            </ul>
-          </article>
+    <!-- Ambiente -->
+    <div class="prog-card">
+      <h3><i class="fa-solid fa-leaf"></i> Ambiente e territorio</h3>
+      <ul>
+        <li>Prevede un <b>piano veneto per il clima</b> e regole più severe contro il consumo di suolo.</li>
+        <li>Propone più investimenti per <b>reti idriche, energia pulita e mobilità sostenibile</b>.</li>
+      </ul>
+    </div>
 
-          <article class="prog-card">
-            <h3><i class="fa-solid fa-scale-balanced"></i> Autonomia responsabile</h3>
-            <ul>
-              <li>Più competenze alla Regione assicurando <strong>standard minimi uguali</strong> per tutti i veneti.</li>
-              <li>Contabilità trasparente su <strong>LEP</strong> e fabbisogni, senza penalizzare i servizi essenziali.</li>
-              <li>Coinvolgimento di Comuni e parti sociali nelle scelte strategiche.</li>
-            </ul>
-          </article>
-        </div>
-        <p class="prog-note">Nota: sintesi divulgativa basata su comunicazioni pubbliche del candidato e alleanze; sarà aggiornata con eventuali documenti ufficiali.</p>
-      </div>
-    </section>
+    <!-- Giovani -->
+    <div class="prog-card">
+      <h3><i class="fa-solid fa-graduation-cap"></i> Giovani e formazione</h3>
+      <ul>
+        <li>Vuole una <b>“Regione dei giovani”</b>: borse di studio, alloggi e opportunità per restare in Veneto.</li>
+        <li>Punta su <b>formazione e cultura</b> come strumenti di crescita personale e professionale.</li>
+      </ul>
+    </div>
+
+    <!-- Infrastrutture -->
+    <div class="prog-card">
+      <h3><i class="fa-solid fa-train"></i> Infrastrutture e mobilità</h3>
+      <ul>
+        <li>Priorità al <b>trasporto pubblico</b> e a collegamenti migliori tra città e aree interne.</li>
+        <li>Chiede che le nuove opere siano <b>davvero utili e rispettose dell’ambiente</b>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 
 
@@ -244,7 +248,7 @@
           </article>
           <article class="logo-card" role="listitem">
             <figure>
-              <img src="images/logo-possibile.png" alt="Uniti per Manildo (civiche)" width="100" height="100" loading="lazy" decoding="async">
+              <img src="images/logo-uniti-manildo.png" alt="Uniti per Manildo (civiche)" width="100" height="100" loading="lazy" decoding="async">
               <figcaption>Uniti per Manildo</figcaption>
             </figure>
           </article>
