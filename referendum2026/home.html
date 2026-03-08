@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Referendum Giustizia 2026 – Elezioni101</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Guida semplice e neutrale al Referendum sulla Giustizia (22–23 marzo 2026): come funziona, perché SÌ/NO, chi sostiene le posizioni, situazione attuale." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      /* ===== Top nav (da home.html, adattata) ===== */
+      .nav-container{
+        display:flex;justify-content:space-between;align-items:center;
+        padding:1em 1.2em;
+        background:#ffffff;
+        box-shadow:none;
+        position:fixed;top:0;width:100%;z-index:1000
+      }
+      .logo a{font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;display:flex;align-items:center;letter-spacing:.1px}
+      .logo img{height:2em;margin-right:.4em}
+      .menu-icon{display:none;flex-direction:column;cursor:pointer}
+      .menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+      nav.menu{display:flex;gap:1.2em}
+      nav.menu a{text-decoration:none;font-weight:600;color:#333}
+      nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
+
+      @media (max-width: 768px){
+        .menu-icon{display:flex!important}
+        nav.menu{
+          display:none!important;flex-direction:column;position:absolute;top:60px;right:0;
+          background:#ffffff;width:100%;
+          box-shadow:0 4px 14px rgba(0,0,0,.1);
+          padding:1em 0;text-align:center
+        }
+        nav.menu a{padding:.6rem 0}
+        nav.menu.show{display:flex!important}
+      }
+
+      body{padding-top:70px}
+      @media (max-width: 979px){body{padding-bottom:64px}}
+
+    /* ===== Cards (mobile-first) ===== */
+    #scelte .quick-vertical{
+      display:flex;
+      flex-direction:column;
+      gap:1.15rem;
+      padding-bottom:1.3rem
+    }
+
+    #scelte a.cardlink{
+      text-decoration:none;
+      color:inherit;
+      border-radius:20px;
+      display:block
+    }
+
+    #scelte a.cardlink:active .qcard{
+      transform:scale(.99)
+    }
+
+    #scelte .qcard{
+      position:relative;
+      overflow:hidden;
+      background:#f4f1ec;                 /* base neutra calda */
+      border:1px solid #e3ddd4;
+      border-radius:20px;
+      padding:1.25rem 1.25rem 1.15rem 1.25rem;
+      box-shadow:0 4px 18px rgba(0,0,0,.08);
+      transition:transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    /* Gradient wash (solo accento colore tematico) */
+    #scelte .qcard::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        135deg,
+        var(--c1, #aaaaaa),
+        rgba(255,255,255,0) 58%
+      );
+      opacity:.16;
+      pointer-events:none;
+    }
+
+    /* Accent rail laterale */
+    #scelte .qcard::after{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:8px;
+      background:linear-gradient(
+        180deg,
+        var(--c1, #999999),
+        var(--c2, #666666)
+      );
+      pointer-events:none;
+    }
+
+    #scelte .qcard:hover{
+      transform:translateY(-4px) scale(1.01);
+      box-shadow:0 14px 28px rgba(0,0,0,.13);
+      border-color:#d8d2c8;
+    }
+
+    /* ===== Title + icon badge ===== */
+    #scelte .qcard h3{
+      display:flex;
+      align-items:center;
+      gap:.7rem;
+      margin:0 0 .35rem;
+      font-size:1.25rem;
+      color:#2b2b2b;                     /* antracite, non blu */
+    }
+
+    #scelte .qcard .ic{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:2.15rem;
+      height:2.15rem;
+      border-radius:999px;
+      background:linear-gradient(
+        135deg,
+        var(--c1, #999999),
+        var(--c2, #666666)
+      );
+      box-shadow:0 6px 16px rgba(0,0,0,.12);
+      flex:0 0 auto;
+    }
+
+    #scelte .qcard .ic i{
+      font-size:1.05rem;
+      color:#ffffff;
+    }
+
+    /* Arrow hint */
+    #scelte .qcard .go{
+      position:absolute;
+      right:1rem;
+      top:1rem;
+      font-size:1rem;
+      color:rgba(0,0,0,.45);
+      transition:transform .18s ease, color .18s ease;
+    }
+
+    #scelte .qcard:hover .go{
+      transform:translateX(3px);
+      color:rgba(0,0,0,.75);
+    }
+
+    #scelte .lead{
+      margin:.15rem 0 .2rem;
+      line-height:1.6;
+      color:#3a3a3a;
+      font-size:1.03rem;
+    }
+
+    #scelte .meta{
+      font-size:.95rem;
+      color:#777;
+      margin:0;
+    }
+
+    /* Theme presets (more distinct hues) */
+    #scelte .t-info{--c1:#0ea5e9;--c2:#0b3a5a}   /* sky/teal */
+    #scelte .t-yes {--c1:#22c55e;--c2:#14532d}   /* green */
+    #scelte .t-no  {--c1:#ef4444;--c2:#7f1d1d}   /* red */
+    #scelte .t-who {--c1:#a855f7;--c2:#4c1d95}   /* purple */
+    #scelte .t-now {--c1:#f59e0b;--c2:#78350f}   /* amber */
+
+      @media (hover:none){#scelte .qcard:hover{transform:none}}
+
+
+      /* ===== Bottom quick navbar (da home.html) ===== */
+      :root{
+        --nav-bg:#ffffff;
+        --nav-border:#e0e0e0;
+        --nav-text:#444;
+        --nav-active:#000;
+        --ring:#9ec1ff;
+      }
+.bottomnav{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:#ffffff;
+  border-top:1px solid #e0e0e0;
+  box-shadow:0 -4px 12px rgba(0,0,0,.18);
+  padding-bottom:env(safe-area-inset-bottom);
+  backdrop-filter:saturate(140%) blur(6px)
+}
+.bottomnav .row{
+  max-width:740px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr)
+}
+.bottomnav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.15rem;
+  padding:.55rem 0 .5rem;
+  font-size:.8rem;
+  color:#444;
+  text-decoration:none;
+  border-radius:14px;
+  margin:.2rem .15rem;
+  transition:
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease,
+    color .18s ease;
+}
+.bottomnav i{
+  font-size:1.1rem;
+  color:#444;
+  transition:transform .18s ease, color .18s ease;
+}
+
+/* colori icone */
+.bottomnav a:nth-child(1) i{ color:#2f7ea1; }
+.bottomnav a:nth-child(2) i{ color:#2f8f57; }
+.bottomnav a:nth-child(3) i{ color:#b14a4a; }
+.bottomnav a:nth-child(4) i{ color:#7a58b5; }
+.bottomnav a:nth-child(5) i{ color:#b47a1f; }
+
+/* hover/focus: sfondo coerente col colore */
+.bottomnav a:nth-child(1):hover,
+.bottomnav a:nth-child(1):focus-visible{
+  background:rgba(47,126,161,.12);
+  box-shadow:0 4px 12px rgba(47,126,161,.16);
+}
+.bottomnav a:nth-child(2):hover,
+.bottomnav a:nth-child(2):focus-visible{
+  background:rgba(47,143,87,.12);
+  box-shadow:0 4px 12px rgba(47,143,87,.16);
+}
+.bottomnav a:nth-child(3):hover,
+.bottomnav a:nth-child(3):focus-visible{
+  background:rgba(177,74,74,.12);
+  box-shadow:0 4px 12px rgba(177,74,74,.16);
+}
+.bottomnav a:nth-child(4):hover,
+.bottomnav a:nth-child(4):focus-visible{
+  background:rgba(122,88,181,.12);
+  box-shadow:0 4px 12px rgba(122,88,181,.16);
+}
+.bottomnav a:nth-child(5):hover,
+.bottomnav a:nth-child(5):focus-visible{
+  background:rgba(180,122,31,.12);
+  box-shadow:0 4px 12px rgba(180,122,31,.16);
+}
+
+/* piccolo movimento */
+.bottomnav a:hover i,
+.bottomnav a:focus-visible i{
+  transform:translateY(-1px) scale(1.08);
+}
+
+.bottomnav a:hover span,
+.bottomnav a:focus-visible span{
+  color:#222;
+}
+
+@media (min-width:980px){
+  .bottomnav{display:none}
+}
+
+@media (hover:none){
+  .bottomnav a:hover{
+    background:transparent;
+    box-shadow:none;
+  }
+  .bottomnav a:hover i{
+    transform:none;
+  }
+}
+
+      /* Focus visible */
+      a:focus-visible, summary:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:10px}
+
+    @media (prefers-color-scheme: dark){
+      /* Disabilitato: il sito resta in light mode anche su sistemi dark */
+      #scelte .qcard{
+        background:#f4f1ec;
+        border-color:#e3ddd4;
+      }
+
+      #scelte .qcard::before{ opacity:.16; }
+
+      #scelte .qcard h3{ color:#2b2b2b; }
+
+      #scelte .qcard .go{
+        color:rgba(0,0,0,.45);
+      }
+
+      #scelte .qcard:hover .go{
+        color:rgba(0,0,0,.75);
+      }
+
+      #scelte .lead{ color:#3a3a3a; }
+      #scelte .meta{ color:#777; }
+
+      footer a:hover{
+        color:#0ea5e9;
+        text-decoration:underline;
+      }
+    }
+
+/* ===== HERO polish (pulito, senza blur) ===== */
+section.banner{
+  background:
+    radial-gradient(900px 520px at 20% 20%, rgba(14,165,233,.12), rgba(255,255,255,0) 60%),
+    radial-gradient(900px 520px at 80% 35%, rgba(168,85,247,.10), rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+}
+
+section.banner .content{
+  max-width: 640px;
+  background:#ffffff;
+  border:1px solid #e6edf5;
+  border-radius:22px;
+  padding:2.2rem 2rem;
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
+}
+
+section.banner .content h1{
+  letter-spacing:-.02em;
+  line-height:1.05;
+}
+
+section.banner .content h1 span{
+  display:block;
+}
+
+section.banner .content .major{
+  margin-top:1rem;
+  color:#2f3b45;
+  line-height:1.65;
+  font-size:1.05rem;
+}
+
+section.banner .actions .button{
+  border-radius:999px;
+  border:1px solid #cfd8e3 !important;
+  background:#ffffff !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+section.banner .actions .button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(0,0,0,.12);
+  border-color:#b9c6d6 !important;
+}
+
+section.banner .image img{
+  border-radius:26px;
+  box-shadow:0 22px 60px rgba(0,0,0,.16);
+}
+
+/* Mobile: centra, più aria, niente “bruttino” schiacciato */
+@media (max-width: 768px){
+  section.banner{ padding-top: 1.2rem; }
+  section.banner .content{
+    padding:1.8rem 1.35rem;
+    border-radius:18px;
+  }
+  section.banner .content-align-left{ text-align:center; }
+  section.banner.style1.orient-left .content{ align-items:center; }
+  section.banner .actions.stacked{ align-items:center; }
+}
+/* ===== Fix: rimuove lo sfumato grigio nella card della hero ===== */
+section.banner.style1 > .content{
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Se lo sfumato arriva da pseudo-elementi del template */
+section.banner.style1 > .content::before,
+section.banner.style1 > .content::after{
+  content: none !important;
+  display: none !important;
+}
+    </style>
+  </head>
+
+  <body id="top" class="is-preload">
+    <!-- NAV SUPERIORE -->
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#top"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
+      </div>
+      <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    <nav class="menu" aria-label="Menu principale">
+      <a href="#scelte">Sezioni</a>
+      <a href="come-funziona.html">Come funziona</a>
+      <a href="perche-si.html">Perché SÌ</a>
+      <a href="perche-no.html">Perché NO</a>
+      <a href="chi-dice-si-chi-dice-no.html">Chi</a>
+      <a href="situazione-attuale.html">Oggi</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+    </nav>
+    </div>
+
+    <div id="wrapper" class="divided">
+      <!-- HERO -->
+      <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" aria-label="Introduzione">
+        <div class="content">
+          <h1>
+            <img src="images/logo.png" alt="Logo Elezioni101" style="height:1.8em; width:auto; vertical-align:middle; margin-right:.4em;">
+            Elezioni101<br>
+            <span style="font-size:1.2em">Referendum sulla giustizia</span>
+            <p></p>
+            <span  style="font-size:0.8em">22–23 marzo 2026</span>
+          </h1>
+          <p class="major">Una guida essenziale: come funziona il referendum costituzionale, cosa significa votare SÌ o NO e chi sostiene le due posizioni.</p>
+          <ul class="actions stacked">
+            <li><a href="#prima-card" class="button big wide smooth-scroll-middle">Scegli una sezione</a></li>
+          </ul>
+          <p style="margin-top:1rem; font-size:0.95rem; color:#6b7a88">
+            Seggi aperti: <strong>domenica 22</strong> (7:00–23:00) · <strong>lunedì 23</strong> (7:00–15:00).
+          </p>
+        </div>
+        <div class="image">
+          <img src="images/voto.png" alt="Referendum sulla giustizia 2026" />
+        </div>
+      </section>
+
+      <!-- SCELTE (solo link alle 5 opzioni) -->
+      <section id="scelte" class="wrapper style2" aria-label="Sezioni disponibili">
+        <div class="inner">
+          <header class="major">
+            <h2>Scegli cosa vuoi capire</h2>
+          </header>
+
+          <div class="quick-vertical">
+
+            <a id="prima-card" class="cardlink" href="come-funziona.html" aria-label="Apri: Come funziona">
+              <article class="qcard t-info">
+                <h3><span class="ic" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>Come funziona<i class="fa-solid fa-chevron-right go" aria-hidden="true"></i></h3>
+                <p class="lead">Che tipo di referendum è, cosa succede se vince SÌ o NO, e quali sono le regole del voto.</p>
+              </article>
+            </a>
+
+            <a class="cardlink" href="perche-si.html" aria-label="Apri: Perché SÌ">
+              <article class="qcard t-yes">
+                <h3><span class="ic" aria-hidden="true"><i class="fa-solid fa-check"></i></span>Perché SÌ<i class="fa-solid fa-chevron-right go" aria-hidden="true"></i></h3>
+                <p class="lead">Le ragioni principali di chi sostiene la riforma: separazione delle carriere, due CSM, alta corte disciplinare.</p>
+              </article>
+            </a>
+
+            <a class="cardlink" href="perche-no.html" aria-label="Apri: Perché NO">
+              <article class="qcard t-no">
+                <h3><span class="ic" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>Perché NO<i class="fa-solid fa-chevron-right go" aria-hidden="true"></i></h3>
+                <p class="lead">Le ragioni principali di chi contesta la riforma: rischi per l’unità e l’indipendenza della magistratura, sorteggio e governance.</p>
+              </article>
+            </a>
+
+            <a class="cardlink" href="chi-dice-si-chi-dice-no.html" aria-label="Apri: Chi dice SÌ e chi dice NO">
+              <article class="qcard t-who">
+                <h3><span class="ic" aria-hidden="true"><i class="fa-solid fa-users"></i></span>Chi dice SÌ e chi dice NO<i class="fa-solid fa-chevron-right go" aria-hidden="true"></i></h3>
+                <p class="lead">Partiti, comitati e organizzazioni: chi sostiene ufficialmente le due campagne.</p>
+              </article>
+            </a>
+
+            <a class="cardlink" href="situazione-attuale.html" aria-label="Apri: La situazione attuale della magistratura">
+              <article class="qcard t-now">
+                <h3><span class="ic" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>Situazione attuale della magistratura<i class="fa-solid fa-chevron-right go" aria-hidden="true"></i></h3>
+                <p class="lead">Contesto: come funzionano oggi magistratura giudicante e requirente, e quali sono i problemi/obiettivi nel dibattito pubblico.</p>
+              </article>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
+        <p>Questo sito usa Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+        <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+        <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+      </footer>
+    </div>
+
+    <!-- Bottom Quick Navbar (solo 5 scelte) -->
+    <nav class="bottomnav" aria-label="Navigazione rapida">
+      <div class="row">
+        <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
+        <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
+        <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
+        <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
+        <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
+      </div>
+    </nav>
+
+    <!-- Scripts Story -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Close mobile menu after click
+      document.querySelectorAll('nav.menu a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav.menu').classList.remove('show')));
+
+    // Smooth scroll (usa scroll-margin-top via CSS: #scelte { scroll-margin-top: ... })
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const target = a.getAttribute('href');
+      const el = document.querySelector(target);
+      if(!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+
+      // Enable keyboard toggle on hamburger
+      const burger=document.querySelector('.menu-icon');
+      burger.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); document.querySelector('nav.menu').classList.toggle('show'); }});
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4D9CLEH2R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K4D9CLEH2R', { 'anonymize_ip': true });
+    </script>
+  </body>
+</html>
