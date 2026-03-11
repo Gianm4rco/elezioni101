@@ -1,0 +1,634 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Perché NO – Referendum Giustizia 2026</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Le ragioni principali di chi vota NO al referendum costituzionale sulla giustizia del 22–23 marzo 2026, spiegate in modo semplice e diretto." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+/* ===== STILE COERENTE CON home.html / come-funziona.html ===== */
+.page-title{
+  margin:0 0 1.1rem 0;
+  color:#b14a4a;
+  font-size:3.5rem;
+  line-height:1.08;
+  font-weight:600;
+  letter-spacing:0.0025em;
+  text-wrap:balance;
+}
+.page-subtitle{
+  margin:0 0 1.6rem 0;
+  color:#b14a4a;
+  font-size:1.05rem;
+  line-height:1.45;
+  max-width:42rem;
+}
+
+@media (max-width:768px){
+  .page-subtitle{
+    font-size:1rem;
+    margin:0 0 1.35rem 0;
+  }
+}
+@media (max-width:768px){
+  .page-title{
+    font-size:3rem;
+    line-height:1.1;
+    margin:0 0 .95rem 0;
+  }
+}
+
+.nav-container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1em 1.2em;
+  background:#ffffff;
+  box-shadow:none;
+  position:fixed;top:0;width:100%;z-index:1000
+}
+.logo a{font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;display:flex;align-items:center;letter-spacing:.1px}
+.logo img{height:2em;margin-right:.4em}
+.menu-icon{display:none;flex-direction:column;cursor:pointer}
+.menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+nav.menu{display:flex;gap:1.2em}
+nav.menu a{text-decoration:none;font-weight:600;color:#333}
+nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
+
+@media (max-width:768px){
+  .menu-icon{display:flex!important}
+  nav.menu{
+    display:none!important;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#ffffff;
+    width:100%;
+    box-shadow:0 4px 14px rgba(0,0,0,.1);
+    padding:1em 0;
+    text-align:center
+  }
+  nav.menu a{padding:.6rem 0}
+  nav.menu.show{display:flex!important}
+}
+
+body{padding-top:70px}
+@media (max-width:979px){body{padding-bottom:64px}}
+
+section.wrapper .inner{
+  max-width:760px;
+}
+
+h2{margin-bottom:1rem}
+header.major h2{
+  margin-bottom:.9rem;
+  font-size:2.05rem;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+}
+
+@media (max-width:768px){
+  header.major h2{
+    font-size:1.75rem;
+  }
+}
+
+p{line-height:1.7;margin-bottom:1rem}
+ul{margin-left:1.2rem}
+
+/* ===== elementi grafici aggiunti ===== */
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin:1.25rem 0 2rem 0;
+}
+@media (max-width:700px){
+  .summary-grid{grid-template-columns:1fr}
+}
+
+.summary-card{
+  background:#fff;
+  border:1px solid rgba(177,74,74,.18);
+  border-radius:20px;
+  padding:1.05rem 1rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.05);
+}
+.summary-card .icon{
+  width:2.35rem;height:2.35rem;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(177,74,74,.1);
+  color:#b14a4a;
+  margin-bottom:.7rem;
+  font-size:1rem;
+}
+.summary-card h3{
+  margin:0 0 .45rem 0;
+  font-size:1.05rem;
+  line-height:1.25;
+}
+.summary-card p{
+  margin:0;
+  font-size:.98rem;
+  line-height:1.55;
+  color:#444;
+}
+
+.info-box{
+  background:linear-gradient(135deg, rgba(177,74,74,.14), rgba(90,24,24,.06));
+  border:1px solid rgba(177,74,74,.26);
+  border-left:8px solid #b14a4a;
+  border-radius:18px;
+  padding:1.15rem 1.25rem;
+  margin:1.2rem 0 2rem 0;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
+}
+.info-box strong{color:#6b1f1f}
+
+.icon-points{
+  display:grid;
+  gap:.8rem;
+  margin:1rem 0 1.5rem 0;
+}
+.icon-point{
+  display:flex;
+  align-items:flex-start;
+  gap:.8rem;
+  padding:.85rem .9rem;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid rgba(177,74,74,.14);
+  box-shadow:0 6px 18px rgba(0,0,0,.04);
+}
+.icon-point .mini{
+  flex:0 0 auto;
+  width:2rem;height:2rem;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(177,74,74,.1);
+  color:#b14a4a;
+  font-size:.92rem;
+}
+.icon-point p{
+  margin:0;
+  line-height:1.55;
+}
+
+.compare-box{
+  background:#fffaf9;
+  border:1px solid rgba(177,74,74,.18);
+  border-radius:18px;
+  padding:1rem 1.1rem;
+  margin:1rem 0 2rem 0;
+}
+.compare-box h3{
+  margin:0 0 .65rem 0;
+  font-size:1rem;
+  color:#7f2f2f;
+}
+.compare-box ul{
+  margin:0;
+}
+.compare-box li{
+  margin:.35rem 0;
+}
+
+.bottomnav{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:#ffffff;
+  border-top:1px solid #e0e0e0;
+  box-shadow:0 -4px 12px rgba(0,0,0,.18);
+  padding-bottom:env(safe-area-inset-bottom);
+  backdrop-filter:saturate(140%) blur(6px)
+}
+.bottomnav .row{
+  max-width:740px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr)
+}
+.bottomnav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.15rem;
+  padding:.55rem 0 .5rem;
+  font-size:.8rem;
+  color:#444;
+  text-decoration:none;
+  border-radius:14px;
+  margin:.2rem .15rem;
+  transition:
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease,
+    color .18s ease;
+}
+.bottomnav i{
+  font-size:1.1rem;
+  color:#444;
+  transition:transform .18s ease, color .18s ease;
+}
+
+.bottomnav a:nth-child(1) i{ color:#2f7ea1; }
+.bottomnav a:nth-child(2) i{ color:#2f8f57; }
+.bottomnav a:nth-child(3) i{ color:#b14a4a; }
+.bottomnav a:nth-child(4) i{ color:#7a58b5; }
+.bottomnav a:nth-child(5) i{ color:#b47a1f; }
+
+.bottomnav a:nth-child(1):hover,
+.bottomnav a:nth-child(1):focus-visible{
+  background:rgba(47,126,161,.12);
+  box-shadow:0 4px 12px rgba(47,126,161,.16);
+}
+.bottomnav a:nth-child(2):hover,
+.bottomnav a:nth-child(2):focus-visible{
+  background:rgba(47,143,87,.12);
+  box-shadow:0 4px 12px rgba(47,143,87,.16);
+}
+.bottomnav a:nth-child(3):hover,
+.bottomnav a:nth-child(3):focus-visible{
+  background:rgba(177,74,74,.12);
+  box-shadow:0 4px 12px rgba(177,74,74,.16);
+}
+.bottomnav a:nth-child(4):hover,
+.bottomnav a:nth-child(4):focus-visible{
+  background:rgba(122,88,181,.12);
+  box-shadow:0 4px 12px rgba(122,88,181,.16);
+}
+.bottomnav a:nth-child(5):hover,
+.bottomnav a:nth-child(5):focus-visible{
+  background:rgba(180,122,31,.12);
+  box-shadow:0 4px 12px rgba(180,122,31,.16);
+}
+
+.bottomnav a:hover i,
+.bottomnav a:focus-visible i{
+  transform:translateY(-1px) scale(1.08);
+}
+.bottomnav a:hover span,
+.bottomnav a:focus-visible span{
+  color:#222;
+}
+
+@media (min-width:980px){
+  .bottomnav{display:none}
+}
+
+@media (hover:none){
+  .bottomnav a:hover{
+    background:transparent;
+    box-shadow:none;
+  }
+  .bottomnav a:hover i{
+    transform:none;
+  }
+}
+
+a:focus-visible{
+  outline:3px solid #9ec1ff;
+  outline-offset:3px;
+  border-radius:10px
+}
+</style>
+  </head>
+
+  <body>
+
+<!-- NAV SUPERIORE -->
+<div class="nav-container">
+  <div class="logo">
+    <a href="home.html"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="menu" aria-label="Menu principale">
+    <a href="home.html">Home</a>
+    <a href="come-funziona.html">Come funziona</a>
+    <a href="perche-si.html">Perché SÌ</a>
+    <a href="perche-no.html">Perché NO</a>
+    <a href="chi-dice-si-chi-dice-no.html">Chi</a>
+    <a href="situazione-attuale.html">Oggi</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+  </nav>
+</div>
+
+<div id="wrapper">
+
+<section class="wrapper style2">
+<div class="inner">
+<h1 class="page-title">Perché NO?</h1>
+<p class="page-subtitle">Le ragioni principali di chi contesta la riforma: timore di indebolire l’unità della magistratura, dubbi sul sorteggio e sull’Alta Corte disciplinare, e l’idea che questa riforma non risolva i problemi concreti della giustizia.</p>
+
+<div class="summary-grid">
+  <article class="summary-card">
+    <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+    <h3>Magistratura meno unita</h3>
+    <p>Chi vota NO teme che separare le carriere renda più fragile l’equilibrio tra chi accusa e chi giudica.</p>
+  </article>
+
+  <article class="summary-card">
+    <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+    <h3>PM meno indipendente</h3>
+    <p>Il timore è che, col tempo, il pubblico ministero possa diventare più esposto a pressioni politiche o governative.</p>
+  </article>
+
+  <article class="summary-card">
+    <div class="icon"><i class="fa-solid fa-dice"></i></div>
+    <h3>Sorteggio contestato</h3>
+    <p>Secondo il NO, affidare i nuovi CSM al sorteggio può indebolire competenza, rappresentatività e pluralismo interno.</p>
+  </article>
+
+  <article class="summary-card">
+    <div class="icon"><i class="fa-solid fa-hourglass-half"></i></div>
+    <h3>Nessun effetto sui tempi</h3>
+    <p>Per il NO la riforma cambia l’assetto costituzionale, ma non riduce da sola processi lunghi, arretrato o carenze di organico.</p>
+  </article>
+</div>
+
+<header class="major">
+  <h2>L’idea di fondo di chi vota NO</h2>
+</header>
+
+<p>
+Chi vota <strong>NO</strong> parte da questa idea:
+la riforma non interviene sui problemi che i cittadini sentono di più — processi lunghi, uffici sotto organico, difficoltà organizzative — ma cambia in profondità l’assetto costituzionale della magistratura.
+</p>
+
+<p>
+Per il fronte del NO, il rischio è modificare un equilibrio delicato senza una prova chiara che il nuovo sistema funzioni meglio di quello attuale.
+</p>
+
+<div class="info-box">
+  <strong>In breve:</strong> chi dice NO ritiene che la riforma tocchi molto l’architettura istituzionale della magistratura, ma poco i problemi concreti della giustizia che i cittadini vedono ogni giorno.
+</div>
+
+<header class="major">
+  <h2>Primo argomento: l’unità della magistratura è una garanzia</h2>
+</header>
+
+<p>
+Oggi giudici e pubblici ministeri appartengono allo <strong>stesso ordine della magistratura</strong>, anche se svolgono funzioni diverse.
+Per chi vota NO, questo non è un difetto da correggere, ma una <strong>garanzia costituzionale</strong>.
+</p>
+
+<p>
+L’idea è che tenere insieme giudici e PM dentro un unico ordine autonomo e indipendente serva a proteggere entrambi da pressioni esterne.
+Secondo questa impostazione, separare le carriere rischia di spezzare questo equilibrio.
+</p>
+
+<div class="icon-points">
+  <div class="icon-point">
+    <div class="mini"><i class="fa-solid fa-link"></i></div>
+    <p><strong>Per il NO</strong>, giudice e pubblico ministero hanno ruoli diversi, ma devono restare dentro lo stesso quadro di garanzie costituzionali.</p>
+  </div>
+  <div class="icon-point">
+    <div class="mini"><i class="fa-solid fa-building-columns"></i></div>
+    <p><strong>Il punto centrale</strong> è l’autonomia complessiva della magistratura rispetto agli altri poteri dello Stato.</p>
+  </div>
+</div>
+
+<header class="major">
+  <h2>Secondo argomento: il rischio di un PM più vicino all’esecutivo</h2>
+</header>
+
+<p>
+Questa è una delle obiezioni più importanti del fronte del NO.
+Se il pubblico ministero viene separato sempre di più dai giudici, secondo i contrari alla riforma, nel tempo può diventare più facile considerarlo una figura distinta, più simile a un organo dell’accusa dipendente da priorità politiche.
+</p>
+
+<p>
+In altre parole, il timore non è tanto ciò che accade il giorno dopo il referendum, ma <strong>la direzione verso cui si spinge il sistema</strong>:
+un pubblico ministero meno legato alle garanzie dell’ordine giudiziario unitario e più esposto a influenze esterne.
+</p>
+
+<div class="info-box">
+  <strong>Come la vede il NO:</strong> separare le carriere può essere il primo passo verso un pubblico ministero meno indipendente, anche se la riforma non lo mette formalmente sotto il governo.
+</div>
+
+<header class="major">
+  <h2>Terzo argomento: il giudice non è meno imparziale solo perché appartiene allo stesso ordine</h2>
+</header>
+
+<p>
+Chi sostiene il NO contesta anche il principale argomento del SÌ.
+Secondo questa posizione, il giudice non diventa meno terzo solo perché appartiene allo stesso ordine del pubblico ministero.
+</p>
+
+<p>
+Il punto è che già oggi le <strong>funzioni sono separate</strong>, e i passaggi da una funzione all’altra sono già stati fortemente limitati negli ultimi anni.
+Perciò, per il NO, la riforma risolve un problema che sarebbe già molto ridotto nella pratica.
+</p>
+
+<div class="compare-box">
+  <h3>Cosa sostiene il NO su questo punto</h3>
+  <ul>
+    <li>la terzietà del giudice dipende prima di tutto da regole processuali, cultura professionale e garanzie di indipendenza;</li>
+    <li>non basta dividere le carriere in Costituzione per rendere automaticamente i giudici più imparziali;</li>
+    <li>i passaggi di funzione sono già oggi molto rari e molto limitati.</li>
+  </ul>
+</div>
+
+<header class="major">
+  <h2>Quarto argomento: due CSM possono indebolire il sistema invece di rafforzarlo</h2>
+</header>
+
+<p>
+La riforma prevede due Consigli superiori distinti, uno per i giudici e uno per i pubblici ministeri.
+Per il fronte del NO, questo non significa necessariamente migliorare il governo autonomo della magistratura.
+</p>
+
+<p>
+L’obiezione è che dividere il CSM possa <strong>indebolire</strong> un organo di garanzia che oggi ha un peso istituzionale unitario.
+Due organi separati potrebbero risultare meno autorevoli o meno equilibrati, soprattutto se costruiti con meccanismi nuovi ancora da definire in dettaglio con leggi successive.
+</p>
+
+<div class="icon-points">
+  <div class="icon-point">
+    <div class="mini"><i class="fa-solid fa-object-ungroup"></i></div>
+    <p><strong>Per il NO</strong>, dividere non significa automaticamente governare meglio.</p>
+  </div>
+  <div class="icon-point">
+    <div class="mini"><i class="fa-solid fa-gears"></i></div>
+    <p>Una parte importante delle regole concrete sui nuovi organi arriverebbe solo dopo, con leggi attuative.</p>
+  </div>
+</div>
+
+<header class="major">
+  <h2>Quinto argomento: il sorteggio non convince</h2>
+</header>
+
+<p>
+Uno dei punti più contestati è il <strong>sorteggio</strong> per la composizione dei nuovi CSM.
+Chi vota NO ritiene che un organo costituzionale così importante non debba dipendere in misura decisiva dalla casualità.
+</p>
+
+<p>
+Le obiezioni principali sono tre:
+</p>
+
+<ul>
+  <li>il sorteggio può ridurre la <strong>rappresentatività</strong> delle diverse sensibilità presenti nella magistratura;</li>
+  <li>può indebolire la <strong>qualità della selezione</strong>, perché non sceglie in base a consenso, esperienza o capacità di governo;</li>
+  <li>può non eliminare davvero le correnti, che potrebbero continuare a influenzare il sistema anche dopo l’estrazione.</li>
+</ul>
+
+<div class="info-box">
+  <strong>Riassunto del NO:</strong> il sorteggio può cambiare il metodo di scelta, ma non garantisce da solo né competenza maggiore né fine delle logiche di gruppo.
+</div>
+
+<header class="major">
+  <h2>Sesto argomento: dubbi sull’Alta Corte disciplinare</h2>
+</header>
+
+<p>
+La riforma istituisce una nuova <strong>Alta Corte disciplinare</strong> per i magistrati ordinari.
+Anche questo punto viene contestato da chi vota NO.
+</p>
+
+<p>
+Il dubbio principale è che si crei un nuovo organo costituzionale senza che sia chiaro perché l’attuale sistema disciplinare non possa essere corretto in modo meno radicale.
+Un’altra critica ricorrente riguarda il fatto che cambierebbe anche il sistema delle impugnazioni, con la perdita del passaggio attuale davanti alle Sezioni Unite della Cassazione.
+</p>
+
+<p>
+Per il NO, quindi, la nuova Corte non appare come una semplificazione ovvia, ma come una scelta molto forte, con effetti istituzionali non facili da prevedere.
+</p>
+
+<header class="major">
+  <h2>Settimo argomento: questa riforma non accelera i processi</h2>
+</header>
+
+<p>
+Un altro punto centrale è molto semplice:
+chi vota NO sostiene che questa riforma <strong>non interviene direttamente</strong> sui tempi dei processi, sull’arretrato, sulle scoperture di personale, sull’edilizia giudiziaria o sulla digitalizzazione degli uffici.
+</p>
+
+<p>
+Per questo il NO dice che il referendum può cambiare molto l’assetto della magistratura, ma non offre da solo una risposta ai problemi più concreti che i cittadini associano alla parola “giustizia”.
+</p>
+
+<div class="compare-box">
+  <h3>Secondo il NO, i problemi urgenti stanno soprattutto qui</h3>
+  <ul>
+    <li>durata dei processi;</li>
+    <li>carenza di personale e risorse;</li>
+    <li>organizzazione degli uffici;</li>
+    <li>efficienza e prevedibilità delle procedure.</li>
+  </ul>
+</div>
+
+<header class="major">
+  <h2>Ottavo argomento: rischio di cambiare troppo con norme ancora da completare</h2>
+</header>
+
+<p>
+Il referendum decide i <strong>principi costituzionali</strong>, ma una parte importante del funzionamento concreto dei nuovi organi dovrebbe essere definita in seguito.
+Chi vota NO considera questo un motivo di cautela.
+</p>
+
+<p>
+L’obiezione è: prima si cambia la Costituzione, poi si vedrà nel dettaglio come funzioneranno davvero CSM separati, sorteggio e Alta Corte.
+Per il NO, un cambiamento così profondo dovrebbe avere contorni più chiari già prima del voto.
+</p>
+
+<div class="info-box">
+  <strong>Idea di fondo:</strong> il NO preferisce non approvare una riforma costituzionale così ampia quando diversi effetti pratici dipendono ancora da leggi successive.
+</div>
+
+<header class="major">
+  <h2>Cosa promette il NO, in parole semplici</h2>
+</header>
+
+<p>
+Chi fa campagna per il <strong>NO</strong>, in sostanza, promette questo:
+</p>
+
+<ul>
+  <li>mantenere unita la magistratura ordinaria come ordine autonomo e indipendente;</li>
+  <li>evitare che il pubblico ministero si allontani dal sistema di garanzie comuni ai giudici;</li>
+  <li>non affidare organi costituzionali così delicati a un meccanismo fondato sul sorteggio;</li>
+  <li>non creare una nuova Alta Corte disciplinare con effetti ancora incerti;</li>
+  <li>concentrare gli sforzi su problemi concreti della giustizia, non solo sull’assetto istituzionale.</li>
+</ul>
+
+<header class="major">
+  <h2>Cosa è corretto dire, e cosa no</h2>
+</header>
+
+<p>
+Per restare precisi, anche qui serve una distinzione.
+Chi vota NO <strong>teme</strong> che la riforma possa indebolire garanzie e creare nuovi problemi.
+Ma non è corretto dire che questi effetti negativi siano automaticamente certi in ogni dettaglio.
+</p>
+
+<p>
+La formulazione più corretta è questa:
+il NO ritiene che la riforma <strong>esponga il sistema a rischi istituzionali rilevanti</strong> senza risolvere i problemi quotidiani della giustizia.
+</p>
+
+<div class="info-box">
+  <strong>Formula più corretta:</strong> “Chi vota NO pensa che questa riforma possa indebolire l’equilibrio costituzionale della magistratura senza migliorare i problemi concreti della giustizia”.<br>
+  <strong>Formula meno corretta:</strong> “Con il NO tutto funzionerà bene così com’è”.
+</div>
+
+<header class="major">
+  <h2>In una frase</h2>
+</header>
+
+<p>
+Il <strong>NO</strong> è il voto di chi preferisce mantenere l’assetto attuale della magistratura, perché considera la riforma troppo rischiosa sul piano delle garanzie costituzionali e troppo poco utile rispetto ai problemi concreti della giustizia.
+</p>
+
+</div>
+</section>
+
+<footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
+  <p>Questo sito usa Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+  <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+  <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+</footer>
+
+</div>
+
+<nav class="bottomnav" aria-label="Navigazione rapida">
+  <div class="row">
+    <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
+    <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
+    <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
+    <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
+    <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
+  </div>
+</nav>
+
+<script>
+  document.querySelectorAll('nav.menu a').forEach(a =>
+    a.addEventListener('click', () =>
+      document.querySelector('nav.menu').classList.remove('show')
+    )
+  );
+
+  const burger = document.querySelector('.menu-icon');
+  burger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.querySelector('nav.menu').classList.toggle('show');
+    }
+  });
+</script>
+
+</body>
+</html>

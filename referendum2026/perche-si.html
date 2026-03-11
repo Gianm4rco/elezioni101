@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Perché SÌ – Referendum Giustizia 2026</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Le ragioni principali di chi vota SÌ al referendum costituzionale sulla giustizia del 22–23 marzo 2026, spiegate in modo semplice e diretto." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+/* ===== STILE IDENTICO A come-funziona.html / home.html ===== */
+.page-title{
+  margin:0 0 1.1rem 0;
+  color:#2f8f57;
+  font-size:3.5rem;
+  line-height:1.08;
+  font-weight:600;
+  letter-spacing:0.0025em;
+  text-wrap:balance;
+}
+.page-subtitle{
+  margin:0 0 1.6rem 0;
+  color:#2f8f57;
+  font-size:1.05rem;
+  line-height:1.45;
+  max-width:38rem;
+}
+
+@media (max-width:768px){
+  .page-subtitle{
+    font-size:1rem;
+    margin:0 0 1.35rem 0;
+  }
+}
+@media (max-width:768px){
+  .page-title{
+    font-size:3rem;
+    line-height:1.1;
+    margin:0 0 .95rem 0;
+  }
+}
+
+.nav-container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1em 1.2em;
+  background:#ffffff;
+  box-shadow:none;
+  position:fixed;top:0;width:100%;z-index:1000
+}
+.logo a{font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;display:flex;align-items:center;letter-spacing:.1px}
+.logo img{height:2em;margin-right:.4em}
+.menu-icon{display:none;flex-direction:column;cursor:pointer}
+.menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+nav.menu{display:flex;gap:1.2em}
+nav.menu a{text-decoration:none;font-weight:600;color:#333}
+nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
+
+@media (max-width:768px){
+  .menu-icon{display:flex!important}
+  nav.menu{
+    display:none!important;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#ffffff;
+    width:100%;
+    box-shadow:0 4px 14px rgba(0,0,0,.1);
+    padding:1em 0;
+    text-align:center
+  }
+  nav.menu a{padding:.6rem 0}
+  nav.menu.show{display:flex!important}
+}
+
+body{padding-top:70px}
+@media (max-width:979px){body{padding-bottom:64px}}
+
+section.wrapper .inner{
+  max-width:760px;
+}
+
+h2{margin-bottom:1rem}
+header.major h2{
+  margin-bottom:.9rem;
+  font-size:2.05rem;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+}
+
+@media (max-width:768px){
+  header.major h2{
+    font-size:1.75rem;
+  }
+}
+p{line-height:1.7;margin-bottom:1rem}
+ul{margin-left:1.2rem}
+
+/* colore sezione "Perché SÌ" */
+.info-box{
+  background:linear-gradient(135deg, rgba(34,197,94,.14), rgba(20,83,45,.08));
+  border:1px solid rgba(34,197,94,.28);
+  border-left:8px solid #2f8f57;
+  border-radius:18px;
+  padding:1.15rem 1.25rem;
+  margin:1.2rem 0 2rem 0;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
+}
+
+.info-box strong{
+  color:#18472d;
+}
+
+.bottomnav{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:#ffffff;
+  border-top:1px solid #e0e0e0;
+  box-shadow:0 -4px 12px rgba(0,0,0,.18);
+  padding-bottom:env(safe-area-inset-bottom);
+  backdrop-filter:saturate(140%) blur(6px)
+}
+.bottomnav .row{
+  max-width:740px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr)
+}
+.bottomnav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.15rem;
+  padding:.55rem 0 .5rem;
+  font-size:.8rem;
+  color:#444;
+  text-decoration:none;
+  border-radius:14px;
+  margin:.2rem .15rem;
+  transition:
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease,
+    color .18s ease;
+}
+.bottomnav i{
+  font-size:1.1rem;
+  color:#444;
+  transition:transform .18s ease, color .18s ease;
+}
+
+/* colori icone */
+.bottomnav a:nth-child(1) i{ color:#2f7ea1; }
+.bottomnav a:nth-child(2) i{ color:#2f8f57; }
+.bottomnav a:nth-child(3) i{ color:#b14a4a; }
+.bottomnav a:nth-child(4) i{ color:#7a58b5; }
+.bottomnav a:nth-child(5) i{ color:#b47a1f; }
+
+/* hover/focus: sfondo coerente col colore */
+.bottomnav a:nth-child(1):hover,
+.bottomnav a:nth-child(1):focus-visible{
+  background:rgba(47,126,161,.12);
+  box-shadow:0 4px 12px rgba(47,126,161,.16);
+}
+.bottomnav a:nth-child(2):hover,
+.bottomnav a:nth-child(2):focus-visible{
+  background:rgba(47,143,87,.12);
+  box-shadow:0 4px 12px rgba(47,143,87,.16);
+}
+.bottomnav a:nth-child(3):hover,
+.bottomnav a:nth-child(3):focus-visible{
+  background:rgba(177,74,74,.12);
+  box-shadow:0 4px 12px rgba(177,74,74,.16);
+}
+.bottomnav a:nth-child(4):hover,
+.bottomnav a:nth-child(4):focus-visible{
+  background:rgba(122,88,181,.12);
+  box-shadow:0 4px 12px rgba(122,88,181,.16);
+}
+.bottomnav a:nth-child(5):hover,
+.bottomnav a:nth-child(5):focus-visible{
+  background:rgba(180,122,31,.12);
+  box-shadow:0 4px 12px rgba(180,122,31,.16);
+}
+
+/* piccolo movimento */
+.bottomnav a:hover i,
+.bottomnav a:focus-visible i{
+  transform:translateY(-1px) scale(1.08);
+}
+
+.bottomnav a:hover span,
+.bottomnav a:focus-visible span{
+  color:#222;
+}
+
+@media (min-width:980px){
+  .bottomnav{display:none}
+}
+
+@media (hover:none){
+  .bottomnav a:hover{
+    background:transparent;
+    box-shadow:none;
+  }
+  .bottomnav a:hover i{
+    transform:none;
+  }
+}
+
+a:focus-visible{
+  outline:3px solid #9ec1ff;
+  outline-offset:3px;
+  border-radius:10px
+}
+</style>
+  </head>
+
+  <body>
+
+<!-- NAV SUPERIORE -->
+<div class="nav-container">
+  <div class="logo">
+    <a href="home.html"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="menu" aria-label="Menu principale">
+    <a href="home.html">Home</a>
+    <a href="come-funziona.html">Come funziona</a>
+    <a href="perche-si.html">Perché SÌ</a>
+    <a href="perche-no.html">Perché NO</a>
+    <a href="chi-dice-si-chi-dice-no.html">Chi</a>
+    <a href="situazione-attuale.html">Oggi</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+  </nav>
+</div>
+
+<div id="wrapper">
+
+<section class="wrapper style2">
+<div class="inner">
+<h1 class="page-title">Perché SÌ?</h1>
+<p class="page-subtitle">Le ragioni principali di chi sostiene la riforma, spiegate in modo semplice: ruoli più distinti, meno peso delle correnti, regole disciplinari separate.</p>
+
+<header class="major">
+  <h2>L’idea di fondo di chi vota SÌ</h2>
+</header>
+
+<p>
+Chi vota <strong>SÌ</strong> parte da un’idea semplice:
+in un processo penale <strong>giudice</strong> e <strong>pubblico ministero</strong> fanno lavori diversi, quindi dovrebbero avere
+<strong>carriere diverse anche in Costituzione</strong>.
+</p>
+
+<p>
+Per i sostenitori della riforma, questo renderebbe il sistema più chiaro da capire anche per i cittadini:
+</p>
+
+<ul>
+  <li>il <strong>giudice</strong> decide;</li>
+  <li>il <strong>pubblico ministero</strong> accusa e chiede che il processo vada avanti;</li>
+  <li>i due ruoli restano entrambi autonomi, ma diventano <strong>più nettamente distinti</strong>.</li>
+</ul>
+
+<div class="info-box">
+  <strong>In breve:</strong> chi dice SÌ pensa che ruoli diversi debbano avere percorsi diversi, per dare un’immagine più chiara di imparzialità del giudice.
+</div>
+
+<header class="major">
+  <h2>Primo argomento: un giudice deve apparire più terzo</h2>
+</header>
+
+<p>
+L’argomento più noto del fronte del SÌ è questo:
+se giudici e pubblici ministeri appartengono allo stesso ordine, sono governati dallo stesso sistema e, in alcuni casi limitati, possono anche passare da una funzione all’altra, allora per alcuni cittadini il giudice può sembrare <strong>troppo vicino</strong> alla parte dell’accusa.
+</p>
+
+<p>
+Chi sostiene il SÌ dice che una <strong>separazione costituzionale delle carriere</strong> servirebbe soprattutto a rafforzare la percezione di <strong>terzietà</strong> del giudice:
+non solo essere imparziale, ma anche <strong>apparire chiaramente imparziale</strong>.
+</p>
+
+<p>
+L’idea è coerente con un modello processuale accusatorio:
+</p>
+
+<ul>
+  <li>da una parte c’è chi accusa;</li>
+  <li>dall’altra c’è chi difende;</li>
+  <li>in mezzo c’è un giudice che deve restare il più possibile separato da entrambi.</li>
+</ul>
+
+<div class="info-box">
+  <strong>Come la vede il fronte SÌ:</strong> la riforma non serve a “punire” i magistrati, ma a rendere più netta la distinzione tra chi accusa e chi giudica.
+</div>
+
+<header class="major">
+  <h2>Secondo argomento: stop definitivo al passaggio tra i due ruoli</h2>
+</header>
+
+<p>
+Oggi il passaggio da funzioni giudicanti a requirenti, e viceversa, è già molto limitato.
+Ma non è escluso in assoluto sul piano costituzionale.
+</p>
+
+<p>
+Chi vota SÌ considera questo un punto importante:
+se una persona entra come <strong>giudice</strong>, deve restare giudice;
+se entra come <strong>pubblico ministero</strong>, deve restare pubblico ministero.
+</p>
+
+<p>
+Secondo questa impostazione, la riforma porterebbe una regola più semplice e leggibile:
+<strong>due percorsi professionali separati dall’inizio</strong>, senza zone grigie.
+</p>
+
+<header class="major">
+  <h2>Terzo argomento: due CSM invece di uno</h2>
+</header>
+
+<p>
+Oggi esiste un solo <strong>Consiglio Superiore della Magistratura</strong>, che si occupa della carriera dei magistrati.
+Con il SÌ i Consigli diventerebbero <strong>due</strong>:
+uno per i giudici e uno per i pubblici ministeri.
+</p>
+
+<p>
+Per chi sostiene la riforma, questo avrebbe un vantaggio pratico:
+ogni carriera sarebbe governata da un organo dedicato, senza mescolare esigenze diverse.
+</p>
+
+<ul>
+  <li>il CSM dei <strong>giudici</strong> seguirebbe la carriera dei giudici;</li>
+  <li>il CSM dei <strong>pubblici ministeri</strong> seguirebbe la carriera dei pubblici ministeri.</li>
+</ul>
+
+<p>
+L’argomento del SÌ è che, se le carriere vengono separate, allora anche il loro <strong>autogoverno</strong> dovrebbe essere separato.
+</p>
+
+<div class="info-box">
+  <strong>Logica del SÌ:</strong> se i mestieri sono diversi, anche gli organi che ne gestiscono nomine, assegnazioni e valutazioni dovrebbero essere distinti.
+</div>
+
+<header class="major">
+  <h2>Quarto argomento: ridurre il peso delle correnti interne</h2>
+</header>
+
+<p>
+Un altro punto centrale del fronte del SÌ riguarda le <strong>correnti</strong>, cioè i gruppi organizzati interni alla magistratura.
+Nel dibattito pubblico, soprattutto dopo gli scandali degli ultimi anni sulle nomine, molti sostenitori della riforma dicono che il sistema attuale abbia mostrato un eccesso di logiche interne di gruppo.
+</p>
+
+<p>
+Per questo la riforma prevede che nei nuovi Consigli entri il principio del <strong>sorteggio</strong>.
+L’argomento favorevole è che il sorteggio possa ridurre il peso delle appartenenze organizzate e delle campagne interne, limitando gli accordi tra gruppi.
+</p>
+
+<p>
+In questa lettura, il punto non è dire che tutti i magistrati agiscono per corrente, ma che il sistema di governo interno dovrebbe essere meno esposto a dinamiche di blocco, di scambio o di influenza reciproca.
+</p>
+
+<div class="info-box">
+  <strong>Per chi vota SÌ, il sorteggio serve a questo:</strong> contare meno sulle appartenenze organizzate e di più su un meccanismo neutrale di selezione dei componenti.
+</div>
+
+<header class="major">
+  <h2>Quinto argomento: disciplina separata dai CSM</h2>
+</header>
+
+<p>
+La riforma prevede anche una <strong>Alta Corte disciplinare</strong>, separata dai due CSM.
+In pratica, i procedimenti disciplinari contro i magistrati ordinari non passerebbero più per la sezione disciplinare del CSM attuale, ma per un organo distinto.
+</p>
+
+<p>
+Chi sostiene il SÌ vede qui un altro vantaggio:
+se si separano le carriere e si separano gli organi di autogoverno, allora può avere senso separare anche il giudizio disciplinare, così da renderlo più autonomo e più riconoscibile.
+</p>
+
+<p>
+L’idea favorevole è che la disciplina debba stare in una sede dedicata, distinta dagli organi che gestiscono le carriere.
+</p>
+
+<header class="major">
+  <h2>Sesto argomento: una riforma scritta direttamente in Costituzione</h2>
+</header>
+
+<p>
+Chi vota SÌ ritiene che questo cambiamento non debba dipendere solo da leggi ordinarie modificabili con maggiore facilità, ma debba essere scritto nel testo della <strong>Costituzione</strong>.
+</p>
+
+<p>
+Per questo il punto, per i sostenitori della riforma, non è soltanto cambiare qualche regola tecnica:
+è fissare un principio stabile, cioè che <strong>giudici e pubblici ministeri sono due carriere diverse</strong> e che il loro governo interno debba seguire questa distinzione.
+</p>
+
+<div class="info-box">
+  <strong>Per il SÌ il messaggio è questo:</strong> la separazione non deve essere solo pratica o parziale, ma strutturale e costituzionale.
+</div>
+
+<header class="major">
+  <h2>Cosa promette il SÌ, in parole molto semplici</h2>
+</header>
+
+<p>
+Chi fa campagna per il SÌ, in sostanza, promette questo:
+</p>
+
+<ul>
+  <li><strong>più chiarezza</strong> tra chi accusa e chi giudica;</li>
+  <li><strong>più distanza visibile</strong> tra giudice e pubblico ministero;</li>
+  <li><strong>meno peso delle correnti</strong> negli organi di autogoverno;</li>
+  <li><strong>regole disciplinari separate</strong> dai nuovi CSM;</li>
+  <li>un assetto scritto in modo più netto <strong>direttamente in Costituzione</strong>.</li>
+</ul>
+
+<header class="major">
+  <h2>Cosa è corretto dire, e cosa no</h2>
+</header>
+
+<p>
+Per restare precisi, c’è una distinzione importante.
+Chi vota SÌ <strong>pensa</strong> che la riforma possa rendere il sistema più chiaro, più trasparente e meno condizionato dalle correnti.
+Ma il referendum non può dimostrare da solo che questi risultati pratici si vedranno automaticamente.
+</p>
+
+<p>
+Inoltre, il referendum approva i <strong>principi costituzionali</strong>.
+Una parte delle regole concrete su composizione e funzionamento dei nuovi organi dovrà poi essere definita con leggi successive.
+</p>
+
+<div class="info-box">
+  <strong>Formula più corretta:</strong> “Chi vota SÌ ritiene che questa riforma renda più netto il confine tra giudice e pubblico ministero e aiuti a ridurre il peso delle correnti”.<br>
+  <strong>Formula meno corretta:</strong> “Con il SÌ tutti i problemi della giustizia saranno risolti”.
+</div>
+
+<header class="major">
+  <h2>In una frase</h2>
+</header>
+
+<p>
+Il <strong>SÌ</strong> è il voto di chi vuole una magistratura organizzata in modo più separato tra <strong>chi giudica</strong> e <strong>chi accusa</strong>, con due CSM distinti, un sistema pensato per pesare meno sulle correnti e una disciplina affidata a un organo autonomo.
+</p>
+
+</div>
+</section>
+
+<footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
+  <p>Questo sito usa Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+  <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+  <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+</footer>
+
+</div>
+
+<nav class="bottomnav" aria-label="Navigazione rapida">
+  <div class="row">
+    <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
+    <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
+    <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
+    <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
+    <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
+  </div>
+</nav>
+
+<script>
+  document.querySelectorAll('nav.menu a').forEach(a =>
+    a.addEventListener('click', () =>
+      document.querySelector('nav.menu').classList.remove('show')
+    )
+  );
+
+  const burger = document.querySelector('.menu-icon');
+  burger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.querySelector('nav.menu').classList.toggle('show');
+    }
+  });
+</script>
+
+</body>
+</html>

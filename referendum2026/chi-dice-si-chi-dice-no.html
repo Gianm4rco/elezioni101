@@ -1,0 +1,655 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>Chi dice SÌ, chi dice NO – Referendum Giustizia 2026</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Chi sostiene il SÌ e chi sostiene il NO al referendum costituzionale sulla giustizia del 22–23 marzo 2026." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+.page-title{
+  margin:0 0 1.1rem 0;
+  color:#7a58b5;
+  font-size:3.5rem;
+  line-height:1.08;
+  font-weight:600;
+  letter-spacing:0.0025em;
+  text-wrap:balance;
+}
+.page-subtitle{
+  margin:0 0 1.6rem 0;
+  color:#7a58b5;
+  font-size:1.05rem;
+  line-height:1.45;
+  max-width:42rem;
+}
+@media (max-width:768px){
+  .page-subtitle{font-size:1rem;margin:0 0 1.35rem 0}
+  .page-title{font-size:3rem;line-height:1.1;margin:0 0 .95rem 0}
+}
+
+.nav-container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1em 1.2em;
+  background:#ffffff;
+  box-shadow:none;
+  position:fixed;top:0;width:100%;z-index:1000
+}
+.logo a{font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;display:flex;align-items:center;letter-spacing:.1px}
+.logo img{height:2em;margin-right:.4em}
+.menu-icon{display:none;flex-direction:column;cursor:pointer}
+.menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+nav.menu{display:flex;gap:1.2em}
+nav.menu a{text-decoration:none;font-weight:600;color:#333}
+nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
+@media (max-width:768px){
+  .menu-icon{display:flex!important}
+  nav.menu{
+    display:none!important;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#ffffff;
+    width:100%;
+    box-shadow:0 4px 14px rgba(0,0,0,.1);
+    padding:1em 0;
+    text-align:center
+  }
+  nav.menu a{padding:.6rem 0}
+  nav.menu.show{display:flex!important}
+}
+
+body{padding-top:70px}
+@media (max-width:979px){body{padding-bottom:64px}}
+
+section.wrapper .inner{max-width:860px}
+p{line-height:1.7;margin-bottom:1rem}
+header.major h2{
+  margin-bottom:.9rem;
+  font-size:2.05rem;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+}
+@media (max-width:768px){
+  header.major h2{font-size:1.75rem}
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+  margin:1.1rem 0 2rem 0;
+}
+@media (max-width:760px){
+  .intro-grid{grid-template-columns:1fr}
+}
+.intro-card{
+  background:#fff;
+  border:1px solid rgba(122,88,181,.18);
+  border-radius:20px;
+  padding:1rem 1rem .95rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.05);
+}
+.intro-card .ic{
+  width:2.3rem;height:2.3rem;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(122,88,181,.12);
+  color:#7a58b5;
+  margin-bottom:.65rem;
+}
+.intro-card h3{
+  margin:0 0 .3rem 0;
+  font-size:1.02rem;
+  line-height:1.25;
+}
+.intro-card p{
+  margin:0;
+  color:#444;
+  font-size:.96rem;
+  line-height:1.52;
+}
+
+.info-box{
+  background:linear-gradient(135deg, rgba(168,85,247,.14), rgba(76,29,149,.08));
+  border:1px solid rgba(122,88,181,.26);
+  border-left:8px solid #7a58b5;
+  border-radius:18px;
+  padding:1.05rem 1.15rem;
+  margin:1.1rem 0 1.7rem 0;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
+}
+.info-box strong{color:#44226f}
+
+.two-sides{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.1rem;
+  margin:1rem 0 2rem 0;
+}
+@media (max-width:820px){
+  .two-sides{grid-template-columns:1fr}
+}
+.side-panel{
+  background:#fff;
+  border-radius:22px;
+  padding:1rem;
+  box-shadow:0 10px 26px rgba(0,0,0,.06);
+  border:1px solid #ece7f5;
+}
+.side-panel.yes{
+  border-top:8px solid #2f8f57;
+}
+.side-panel.no{
+  border-top:8px solid #b14a4a;
+}
+.side-head{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:.9rem;
+}
+.side-head .badge{
+  width:2.3rem;height:2.3rem;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;
+  font-size:1rem;
+  flex:0 0 auto;
+}
+.side-panel.yes .badge{background:#2f8f57}
+.side-panel.no .badge{background:#b14a4a}
+.side-head h3{
+  margin:0;
+  font-size:1.2rem;
+}
+.side-head p{
+  margin:0;
+  font-size:.92rem;
+  color:#666;
+  line-height:1.3;
+}
+
+.party-list{
+  display:grid;
+  gap:.75rem;
+}
+.party-card{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  background:#faf9fc;
+  border:1px solid #ece7f5;
+  border-radius:16px;
+  padding:.8rem .85rem;
+}
+.party-logo{
+  width:48px;height:48px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e8e3f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex:0 0 auto;
+  position:relative;
+}
+.party-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.logo-fallback{
+  width:100%;
+  height:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  font-size:.86rem;
+  font-weight:700;
+  color:#555;
+  background:linear-gradient(135deg,#f3eefb,#ffffff);
+}
+.party-text{
+  min-width:0;
+}
+.party-text h4{
+  margin:0 0 .12rem 0;
+  font-size:1rem;
+  line-height:1.2;
+}
+.party-text p{
+  margin:0;
+  font-size:.9rem;
+  color:#666;
+  line-height:1.35;
+}
+
+.neutral-strip{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin:1rem 0 2rem 0;
+}
+@media (max-width:760px){
+  .neutral-strip{grid-template-columns:1fr}
+}
+.neutral-box{
+  background:#fff;
+  border:1px solid #ece7f5;
+  border-radius:18px;
+  padding:1rem 1rem .95rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.04);
+}
+.neutral-box h3{
+  margin:0 0 .45rem 0;
+  font-size:1rem;
+  color:#5b3f8f;
+}
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  padding:.45rem .72rem;
+  border-radius:999px;
+  background:#f4f1fa;
+  color:#4a3a68;
+  font-size:.88rem;
+  line-height:1;
+  border:1px solid #e6ddf7;
+}
+
+.note{
+  font-size:.92rem;
+  color:#666;
+  margin-top:.2rem;
+}
+
+.bottomnav{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:#ffffff;
+  border-top:1px solid #e0e0e0;
+  box-shadow:0 -4px 12px rgba(0,0,0,.18);
+  padding-bottom:env(safe-area-inset-bottom);
+  backdrop-filter:saturate(140%) blur(6px)
+}
+.bottomnav .row{
+  max-width:740px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr)
+}
+.bottomnav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.15rem;
+  padding:.55rem 0 .5rem;
+  font-size:.8rem;
+  color:#444;
+  text-decoration:none;
+  border-radius:14px;
+  margin:.2rem .15rem;
+  transition:
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease,
+    color .18s ease;
+}
+.bottomnav i{
+  font-size:1.1rem;
+  color:#444;
+  transition:transform .18s ease, color .18s ease;
+}
+.bottomnav a:nth-child(1) i{ color:#2f7ea1; }
+.bottomnav a:nth-child(2) i{ color:#2f8f57; }
+.bottomnav a:nth-child(3) i{ color:#b14a4a; }
+.bottomnav a:nth-child(4) i{ color:#7a58b5; }
+.bottomnav a:nth-child(5) i{ color:#b47a1f; }
+
+.bottomnav a:nth-child(1):hover,.bottomnav a:nth-child(1):focus-visible{background:rgba(47,126,161,.12);box-shadow:0 4px 12px rgba(47,126,161,.16)}
+.bottomnav a:nth-child(2):hover,.bottomnav a:nth-child(2):focus-visible{background:rgba(47,143,87,.12);box-shadow:0 4px 12px rgba(47,143,87,.16)}
+.bottomnav a:nth-child(3):hover,.bottomnav a:nth-child(3):focus-visible{background:rgba(177,74,74,.12);box-shadow:0 4px 12px rgba(177,74,74,.16)}
+.bottomnav a:nth-child(4):hover,.bottomnav a:nth-child(4):focus-visible{background:rgba(122,88,181,.12);box-shadow:0 4px 12px rgba(122,88,181,.16)}
+.bottomnav a:nth-child(5):hover,.bottomnav a:nth-child(5):focus-visible{background:rgba(180,122,31,.12);box-shadow:0 4px 12px rgba(180,122,31,.16)}
+
+.bottomnav a:hover i,.bottomnav a:focus-visible i{transform:translateY(-1px) scale(1.08)}
+.bottomnav a:hover span,.bottomnav a:focus-visible span{color:#222}
+@media (min-width:980px){.bottomnav{display:none}}
+@media (hover:none){
+  .bottomnav a:hover{background:transparent;box-shadow:none}
+  .bottomnav a:hover i{transform:none}
+}
+a:focus-visible{
+  outline:3px solid #9ec1ff;
+  outline-offset:3px;
+  border-radius:10px
+}
+</style>
+  </head>
+
+  <body>
+
+<div class="nav-container">
+  <div class="logo">
+    <a href="home.html"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
+  </div>
+  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="menu" aria-label="Menu principale">
+    <a href="home.html">Home</a>
+    <a href="come-funziona.html">Come funziona</a>
+    <a href="perche-si.html">Perché SÌ</a>
+    <a href="perche-no.html">Perché NO</a>
+    <a href="chi-dice-si-chi-dice-no.html">Chi</a>
+    <a href="situazione-attuale.html">Oggi</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+  </nav>
+</div>
+
+<div id="wrapper">
+
+<section class="wrapper style2">
+  <div class="inner">
+
+    <h1 class="page-title">Chi dice SÌ, chi dice NO?</h1>
+    <p class="page-subtitle">Una mappa rapida delle posizioni pubbliche più visibili. Qui conta una cosa semplice: capire da che parte stanno partiti e organizzazioni, senza entrare nei dettagli tecnici.</p>
+
+    <div class="intro-grid">
+      <article class="intro-card">
+        <div class="ic"><i class="fa-solid fa-check"></i></div>
+        <h3>Il SÌ</h3>
+        <p>Soprattutto partiti di centrodestra e alcune forze centriste o liberali.</p>
+      </article>
+      <article class="intro-card">
+        <div class="ic"><i class="fa-solid fa-xmark"></i></div>
+        <h3>Il NO</h3>
+        <p>Soprattutto opposizioni di centrosinistra, M5S e area ecologista-sinistra.</p>
+      </article>
+      <article class="intro-card">
+        <div class="ic"><i class="fa-solid fa-hand"></i></div>
+        <h3>Non tutti si schierano</h3>
+        <p>Alcuni soggetti hanno lasciato libertà di voto o hanno chiesto solo di partecipare.</p>
+      </article>
+    </div>
+
+    <div class="info-box">
+      <strong>Attenzione:</strong> questa pagina serve a orientarsi. Riporta le posizioni pubbliche più note e leggibili, non ogni singola eccezione locale o personale.
+    </div>
+
+    <header class="major">
+      <h2>I partiti, in breve</h2>
+    </header>
+
+    <div class="two-sides">
+
+      <section class="side-panel yes">
+        <div class="side-head">
+          <div class="badge"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <h3>Chi sostiene il SÌ</h3>
+            <p>Le adesioni più riconoscibili</p>
+          </div>
+        </div>
+
+        <div class="party-list">
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/fdi.png" alt="Logo Fratelli d'Italia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">FdI</div>
+            </div>
+            <div class="party-text">
+              <h4>Fratelli d’Italia</h4>
+              <p>È il partito più chiaramente associato alla riforma.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/lega.png" alt="Logo Lega" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">Lega</div>
+            </div>
+            <div class="party-text">
+              <h4>Lega</h4>
+              <p>Fa parte del fronte politico favorevole.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/forza-italia.png" alt="Logo Forza Italia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">FI</div>
+            </div>
+            <div class="party-text">
+              <h4>Forza Italia</h4>
+              <p>Sostiene il SÌ insieme al resto della maggioranza.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/azione.png" alt="Logo Azione" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">Az</div>
+            </div>
+            <div class="party-text">
+              <h4>Azione</h4>
+              <p>Si colloca nel campo favorevole alla riforma.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/noi-moderati.png" alt="Logo Noi Moderati" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">NM</div>
+            </div>
+            <div class="party-text">
+              <h4>Noi Moderati</h4>
+              <p>Posizione pubblica favorevole al SÌ.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/piu-europa.png" alt="Logo +Europa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">+E</div>
+            </div>
+            <div class="party-text">
+              <h4>+Europa</h4>
+              <p>Tra le forze non di centrodestra schierate per il SÌ.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="side-panel no">
+        <div class="side-head">
+          <div class="badge"><i class="fa-solid fa-xmark"></i></div>
+          <div>
+            <h3>Chi sostiene il NO</h3>
+            <p>Le adesioni più riconoscibili</p>
+          </div>
+        </div>
+
+        <div class="party-list">
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/pd.png" alt="Logo Partito Democratico" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">PD</div>
+            </div>
+            <div class="party-text">
+              <h4>Partito Democratico</h4>
+              <p>È uno dei principali partiti schierati per il NO.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/m5s.png" alt="Logo Movimento 5 Stelle" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">M5S</div>
+            </div>
+            <div class="party-text">
+              <h4>Movimento 5 Stelle</h4>
+              <p>Si oppone alla riforma e invita a votare NO.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/europa-verde.png" alt="Logo Europa Verde" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">EV</div>
+            </div>
+            <div class="party-text">
+              <h4>Europa Verde</h4>
+              <p>Si colloca nel fronte contrario.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/sinistra-italiana.png" alt="Logo Sinistra Italiana" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">SI</div>
+            </div>
+            <div class="party-text">
+              <h4>Sinistra Italiana</h4>
+              <p>Fa parte del campo del NO.</p>
+            </div>
+          </article>
+
+          <article class="party-card">
+            <div class="party-logo">
+              <img src="images/avs.png" alt="Logo Alleanza Verdi e Sinistra" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback">AVS</div>
+            </div>
+            <div class="party-text">
+              <h4>Alleanza Verdi e Sinistra</h4>
+              <p>Politicamente si colloca sul NO, anche se in Parlamento le sigle rilevate sono EV e SI.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <header class="major">
+      <h2>Chi non prende una posizione netta</h2>
+    </header>
+
+    <div class="neutral-strip">
+      <div class="neutral-box">
+        <h3>Libertà di voto</h3>
+        <div class="tag-row">
+          <span class="tag"><i class="fa-regular fa-circle"></i> Italia Viva</span>
+          <span class="tag"><i class="fa-regular fa-circle"></i> SVP</span>
+        </div>
+      </div>
+
+      <div class="neutral-box">
+        <h3>Più invito al voto che schieramento</h3>
+        <div class="tag-row">
+          <span class="tag"><i class="fa-solid fa-person-booth"></i> CISL</span>
+          <span class="tag"><i class="fa-solid fa-person-booth"></i> CEI</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="major">
+      <h2>Anche fuori dai partiti</h2>
+    </header>
+
+    <div class="two-sides">
+      <section class="side-panel yes">
+        <div class="side-head">
+          <div class="badge"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div>
+            <h3>Nel SÌ</h3>
+            <p>Soprattutto area forense</p>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">CNF</span>
+          <span class="tag">OCF</span>
+          <span class="tag">UCPI</span>
+          <span class="tag">UNCC</span>
+          <span class="tag">ANI</span>
+          <span class="tag">AIGA</span>
+          <span class="tag">UIF</span>
+        </div>
+      </section>
+
+      <section class="side-panel no">
+        <div class="side-head">
+          <div class="badge"><i class="fa-solid fa-landmark-dome"></i></div>
+          <div>
+            <h3>Nel NO</h3>
+            <p>Magistrati e associazioni civiche</p>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">ANM</span>
+          <span class="tag">Libera</span>
+          <span class="tag">ANPI</span>
+          <span class="tag">ARCI</span>
+          <span class="tag">ACLI</span>
+          <span class="tag">Legambiente</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="info-box">
+      <strong>Da ricordare:</strong> non stai votando “un partito”. Stai votando una riforma costituzionale. Questa pagina serve solo a capire chi la sostiene e chi la contesta.
+    </div>
+
+
+  </div>
+</section>
+
+<footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
+  <p>Questo sito usa Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
+  <p style="margin-top:.8em"><a href="chi-siamo.html">Chi siamo</a></p>
+  <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
+</footer>
+
+</div>
+
+<nav class="bottomnav" aria-label="Navigazione rapida">
+  <div class="row">
+    <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
+    <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
+    <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
+    <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
+    <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
+  </div>
+</nav>
+
+<script>
+  document.querySelectorAll('nav.menu a').forEach(a =>
+    a.addEventListener('click', () =>
+      document.querySelector('nav.menu').classList.remove('show')
+    )
+  );
+
+  const burger = document.querySelector('.menu-icon');
+  burger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.querySelector('nav.menu').classList.toggle('show');
+    }
+  });
+</script>
+
+</body>
+</html>
