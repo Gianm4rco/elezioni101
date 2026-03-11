@@ -158,15 +158,15 @@ header.major h2{
 }
 .info-box strong{color:#452d70}
 .warning-box{
-  background:linear-gradient(135deg, rgba(245,158,11,.13), rgba(120,53,15,.08));
-  border:1px solid rgba(245,158,11,.25);
-  border-left:8px solid #d38a11;
+  background:linear-gradient(135deg, rgba(122,88,181,.14), rgba(65,44,103,.08));
+  border:1px solid rgba(122,88,181,.28);
+  border-left:8px solid #7a58b5;
   border-radius:18px;
   padding:1.05rem 1.2rem;
   margin:1rem 0 1.8rem 0;
   box-shadow:0 4px 18px rgba(0,0,0,.05);
 }
-.warning-box strong{color:#6b4200}
+.warning-box strong{color:#452d70}
 
 .dual-grid{
   display:grid;
@@ -208,7 +208,64 @@ header.major h2{
 .side-card.yes h3{color:#14532d}
 .side-card.no h3{color:#7f1d1d}
 .side-card.mixed h3{color:#5c3d95}
-
+.logo-list{
+  display:grid;
+  gap:.6rem;
+  margin:.85rem 0 0 0;
+}
+.logo-item{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:16px;
+  padding:.55rem .7rem;
+}
+.logo-mark{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 42px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.logo-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.logo-text{
+  min-width:0;
+}
+.logo-text strong{
+  display:block;
+  line-height:1.2;
+  font-size:.98rem;
+}
+.logo-text span{
+  display:block;
+  margin-top:.1rem;
+  font-size:.86rem;
+  line-height:1.35;
+  color:#555;
+}
+.note-inline{
+  color:#5b5b5b;
+  font-size:.96rem;
+}
+.compact-list{
+  margin:.5rem 0 0 1.1rem;
+}
+.compact-list li{
+  margin-bottom:.35rem;
+}
 .mini-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -236,72 +293,6 @@ header.major h2{
 .mini-card i{color:#7a58b5}
 .mini-card p:last-child{margin-bottom:0}
 
-.people-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1rem;
-  margin:1rem 0 1.2rem 0;
-}
-@media (max-width:760px){
-  .people-grid{grid-template-columns:1fr}
-}
-.person-card{
-  background:#fbfbfd;
-  border:1px solid #e4e2f0;
-  border-radius:20px;
-  padding:1rem 1rem .9rem 1rem;
-  box-shadow:0 4px 14px rgba(0,0,0,.04);
-}
-.person-card h3{
-  display:flex;align-items:center;gap:.6rem;
-  margin:0 0 .5rem 0;
-  font-size:1.1rem;
-}
-.person-card .tag{
-  display:inline-block;
-  border-radius:999px;
-  padding:.3rem .6rem;
-  font-size:.8rem;
-  font-weight:700;
-  margin-bottom:.6rem;
-}
-.person-card.yes .tag{background:rgba(34,197,94,.12); color:#166534}
-.person-card.no .tag{background:rgba(239,68,68,.12); color:#991b1b}
-
-.faq-list{
-  display:grid;
-  gap:.8rem;
-  margin:1rem 0 0 0;
-}
-.faq-item{
-  background:#fbfbfb;
-  border:1px solid #e5e7eb;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,.04);
-}
-.faq-item summary{
-  list-style:none;
-  cursor:pointer;
-  padding:1rem 1.1rem;
-  font-weight:700;
-  color:#24343d;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary i{
-  color:#7a58b5;
-  transition:transform .2s ease;
-}
-.faq-item[open] summary i{transform:rotate(180deg)}
-.faq-body{
-  padding:0 1.1rem 1rem 1.1rem;
-  color:#3a3a3a;
-}
-.faq-body p:last-child{margin-bottom:0}
 
 .bottomnav{
   position:fixed;bottom:0;left:0;right:0;z-index:999;
@@ -420,8 +411,7 @@ a:focus-visible{
         <div class="inner">
 
           <h1 class="page-title">Chi dice SÌ, chi dice NO?</h1>
-          <p class="page-subtitle">Qui non trovi tutti i nomi possibili, ma la mappa essenziale di chi si è schierato. L’idea è semplice: capire da che parte stanno partiti, associazioni, comitati e alcune figure note del dibattito pubblico.</p>
-
+          <p class="page-subtitle">Qui trovi la mappa essenziale di chi si è schierato. Non è un elenco completo: serve solo a capire, in modo rapido, quali partiti, associazioni e comitati stanno principalmente nel campo del SÌ e quali nel campo del NO.</p>
           <div class="hero-card">
             <div class="hero-top">
               <span class="hero-badge"><i class="fa-solid fa-users"></i> Come leggere questa pagina</span>
@@ -444,82 +434,206 @@ a:focus-visible{
           </header>
 
           <p>
-            Sul piano politico il quadro generale è abbastanza leggibile: il <strong>SÌ</strong> è sostenuto soprattutto dai partiti che sostengono il governo e da alcune forze liberali o centriste; il <strong>NO</strong> è sostenuto soprattutto dai principali partiti di centrosinistra e del campo progressista.
+            Guardando ai partiti nazionali, il quadro è abbastanza leggibile: il <strong>SÌ</strong> è sostenuto dai partiti della <strong>maggioranza di governo</strong> e da alcune forze liberali o centriste; il <strong>NO</strong> dai principali partiti dell’<strong>opposizione progressista</strong>. Ci sono poi alcuni casi meno netti, con libertà di voto o posizioni meno marcate. 
           </p>
 
           <div class="dual-grid">
             <article class="side-card yes">
               <h3><i class="fa-solid fa-check"></i> Partiti più chiaramente per il SÌ</h3>
-              <ul>
-                <li>Fratelli d’Italia</li>
-                <li>Lega</li>
-                <li>Forza Italia</li>
-                <li>Noi Moderati</li>
-                <li>Azione</li>
-                <li>+Europa</li>
-              </ul>
+
+              <div class="logo-list">
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/fdi.png" alt="Logo Fratelli d'Italia" /></div>
+                  <div class="logo-text">
+                    <strong>Fratelli d’Italia</strong>
+                    <span>Partito della presidente del Consiglio, nel fronte del SÌ.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/lega.png" alt="Logo Lega" /></div>
+                  <div class="logo-text">
+                    <strong>Lega</strong>
+                    <span>Schierata a favore della riforma.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/forza-italia.png" alt="Logo Forza Italia" /></div>
+                  <div class="logo-text">
+                    <strong>Forza Italia</strong>
+                    <span>Storicamente favorevole alla separazione delle carriere.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/noi-moderati.png" alt="Logo Noi Moderati" /></div>
+                  <div class="logo-text">
+                    <strong>Noi Moderati</strong>
+                    <span>Dentro il fronte del SÌ insieme alla maggioranza.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/azione.svg" alt="Logo Azione" /></div>
+                  <div class="logo-text">
+                    <strong>Azione</strong>
+                    <span>Tra le opposizioni, è una delle forze che sostiene il SÌ.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/piu-europa.png" alt="Logo +Europa" /></div>
+                  <div class="logo-text">
+                    <strong>+Europa</strong>
+                    <span>Favorevole alla riforma e al SÌ.</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="side-card no">
               <h3><i class="fa-solid fa-xmark"></i> Partiti più chiaramente per il NO</h3>
-              <ul>
-                <li>Partito Democratico</li>
-                <li>Movimento 5 Stelle</li>
-                <li>Europa Verde</li>
-                <li>Sinistra Italiana</li>
-              </ul>
+
+              <div class="logo-list">
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/pd.png" alt="Logo Partito Democratico" /></div>
+                  <div class="logo-text">
+                    <strong>Partito Democratico</strong>
+                    <span>Ha impostato la sua campagna sul NO.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/m5s.png" alt="Logo Movimento 5 Stelle" /></div>
+                  <div class="logo-text">
+                    <strong>Movimento 5 Stelle</strong>
+                    <span>Schierato contro la riforma.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/avs.png" alt="Logo Alleanza Verdi e Sinistra" /></div>
+                  <div class="logo-text">
+                    <strong>Alleanza Verdi e Sinistra</strong>
+                    <span>Nel fronte del NO insieme all’area progressista.</span>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
 
           <div class="side-card mixed" style="margin-top:.2rem;">
             <h3><i class="fa-solid fa-code-compare"></i> Casi meno lineari</h3>
-            <ul>
-              <li><strong>Italia Viva</strong>: libertà di voto</li>
-              <li><strong>SVP</strong>: libertà di voto</li>
-              <li>Esistono poi partiti minori e liste civiche schierati su uno dei due fronti, ma per capire il quadro generale i nomi sopra bastano già.</li>
+            <ul class="compact-list">
+              <li><strong>Italia Viva</strong>: posizione non unitaria e libertà di voto.</li>
+              <li><strong>SVP</strong>: libertà di voto.</li>
+              <li>Esistono poi partiti minori o liste civiche schierati su uno dei due fronti, ma per orientarsi i nomi sopra bastano già. </li>
             </ul>
           </div>
 
           <div class="info-box">
-            <strong>Tradotto:</strong> se guardi solo ai partiti nazionali più visibili, il referendum divide abbastanza nettamente <strong>maggioranza di governo</strong> e <strong>opposizione progressista</strong>, ma non in modo perfetto.
+            <strong>Tradotto:</strong> se si guarda solo ai partiti più visibili, il referendum divide abbastanza nettamente <strong>centrodestra di governo</strong> e <strong>opposizione progressista</strong>, ma non in modo perfettamente simmetrico. 
           </div>
 
           <header class="major">
-            <h2>2. Non sono solo i partiti: anche associazioni e corpi intermedi si sono schierati</h2>
+            <h2>2. Anche associazioni e organizzazioni si sono schierate</h2>
           </header>
 
           <p>
-            Una parte importante del dibattito non passa dai partiti, ma da associazioni professionali, realtà civiche e organizzazioni della società civile. Questo conta molto, perché il referendum parla di magistratura, avvocatura e regole costituzionali.
+            Questa pagina si capisce meglio se non ci si ferma ai partiti. Sul referendum si sono mossi anche organismi professionali, associazioni civiche e realtà del terzo settore. È importante, perché il voto riguarda magistratura, avvocatura e regole costituzionali. 
           </p>
 
           <div class="dual-grid">
             <article class="side-card yes">
               <h3><i class="fa-solid fa-scale-balanced"></i> Nel fronte del SÌ si vedono soprattutto</h3>
-              <ul>
-                <li>realtà dell’avvocatura e del mondo forense;</li>
-                <li>Consiglio Nazionale Forense e OCF;</li>
-                <li>Unione Camere Penali e altre associazioni di avvocati;</li>
-                <li>Fondazione Luigi Einaudi;</li>
-                <li>Nessuno tocchi Caino e altre realtà liberal-garantiste.</li>
-              </ul>
+
+              <div class="logo-list">
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/cnf.jpeg" alt="Logo Consiglio Nazionale Forense" /></div>
+                  <div class="logo-text">
+                    <strong>Consiglio Nazionale Forense</strong>
+                    <span>Tra i soggetti più citati del mondo forense favorevoli al SÌ.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/ucpi.jpeg" alt="Logo Unione Camere Penali" /></div>
+                  <div class="logo-text">
+                    <strong>Unione Camere Penali</strong>
+                    <span>Uno dei riferimenti più visibili della campagna per il SÌ.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/einaudi.png" alt="Logo Fondazione Luigi Einaudi" /></div>
+                  <div class="logo-text">
+                    <strong>Fondazione Luigi Einaudi</strong>
+                    <span>Presente nell’area liberal-garantista favorevole alla riforma.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/nessuno-tocchi-caino.jpg" alt="Logo Nessuno tocchi Caino" /></div>
+                  <div class="logo-text">
+                    <strong>Nessuno tocchi Caino</strong>
+                    <span>Tra le realtà civiche più chiaramente nel campo del SÌ.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="note-inline" style="margin-top:.9rem;">
+                Tra i nomi più riconoscibili del fronte favorevole compaiono anche <strong>Nicolò Zanon</strong> e <strong>Gian Domenico Caiazza</strong>, legati a comitati e iniziative per il SÌ. 
+              </p>
             </article>
 
             <article class="side-card no">
               <h3><i class="fa-solid fa-shield-halved"></i> Nel fronte del NO si vedono soprattutto</h3>
-              <ul>
-                <li>Associazione Nazionale Magistrati;</li>
-                <li>Libera, ANPI, ARCI, ACLI;</li>
-                <li>Legambiente;</li>
-                <li>Giuristi democratici e Libertà e Giustizia;</li>
-                <li>altre associazioni civiche, studentesche e sociali.</li>
-              </ul>
+
+              <div class="logo-list">
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/anm.jpg" alt="Logo Associazione Nazionale Magistrati" /></div>
+                  <div class="logo-text">
+                    <strong>Associazione Nazionale Magistrati</strong>
+                    <span>La principale associazione dei magistrati ha promosso il NO.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/libera.jpg" alt="Logo Libera" /></div>
+                  <div class="logo-text">
+                    <strong>Libera</strong>
+                    <span>Tra i promotori del comitato della società civile per il NO.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/anpi.jpeg" alt="Logo ANPI" /></div>
+                  <div class="logo-text">
+                    <strong>ANPI</strong>
+                    <span>Presente nel fronte associativo contrario alla riforma.</span>
+                  </div>
+                </div>
+
+                <div class="logo-item">
+                  <div class="logo-mark"><img src="images/legambiente.jpeg" alt="Logo Legambiente" /></div>
+                  <div class="logo-text">
+                    <strong>Legambiente</strong>
+                    <span>Indicata tra le realtà che sostengono il NO.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="note-inline" style="margin-top:.9rem;">
+                Tra i volti più citati del fronte contrario compaiono <strong>Giovanni Bachelet</strong>, <strong>Enrico Grosso</strong> e, sul piano più pubblico, anche <strong>Gustavo Zagrebelsky</strong>.
+              </p>
             </article>
           </div>
 
           <div class="mini-grid">
             <article class="mini-card">
               <h3><i class="fa-solid fa-gavel"></i> Un indizio utile</h3>
-              <p>Molte associazioni forensi stanno nel SÌ. Molte associazioni civiche e la principale associazione dei magistrati stanno nel NO.</p>
+              <p>Molte organizzazioni dell’avvocatura stanno nel SÌ. L’ANM e diverse realtà civiche e sociali stanno nel NO. </p>
             </article>
             <article class="mini-card">
               <h3><i class="fa-solid fa-users-gear"></i> Perché conta</h3>
@@ -527,25 +641,24 @@ a:focus-visible{
             </article>
             <article class="mini-card">
               <h3><i class="fa-solid fa-circle-info"></i> Da non fraintendere</h3>
-              <p>Non significa che “gli avvocati” o “i magistrati” siano tutti uguali. Significa solo che alcune organizzazioni ufficiali hanno preso posizione.</p>
+              <p>Non significa che tutti gli avvocati o tutti i magistrati la pensino allo stesso modo: significa solo che alcune organizzazioni ufficiali hanno preso posizione.</p>
             </article>
           </div>
 
           <header class="major">
-            <h2>3. I comitati: chi fa campagna davvero sul territorio e online</h2>
+            <h2>3. I comitati: chi fa campagna davvero</h2>
           </header>
 
           <p>
-            Oltre ai partiti e alle associazioni, la campagna si muove attraverso comitati. Sono utili perché raccolgono persone diverse sotto uno stesso messaggio e spesso sono il volto pubblico più riconoscibile del referendum.
+            Oltre ai partiti e alle associazioni, la campagna si muove attraverso comitati. Non serve elencarli tutti: basta ricordare i più visibili a livello nazionale, perché sono quelli che hanno dato un volto pubblico ai due fronti.
           </p>
 
           <div class="dual-grid">
             <article class="side-card yes">
-              <h3><i class="fa-solid fa-bullhorn"></i> Comitati per il SÌ</h3>
-              <ul>
+              <h3><i class="fa-solid fa-bullhorn"></i> Comitati più visibili per il SÌ</h3>
+              <ul class="compact-list">
                 <li><strong>Sì Riforma</strong></li>
                 <li><strong>Sì Separa</strong></li>
-                <li><strong>La sinistra che vota SÌ</strong></li>
                 <li><strong>Comitato Camere Penali per il SÌ</strong></li>
                 <li><strong>Comitato Giuliano Vassalli per il SÌ</strong></li>
                 <li><strong>Popolari per il SÌ</strong></li>
@@ -553,120 +666,37 @@ a:focus-visible{
             </article>
 
             <article class="side-card no">
-              <h3><i class="fa-solid fa-bullhorn"></i> Comitati per il NO</h3>
-              <ul>
+              <h3><i class="fa-solid fa-bullhorn"></i> Comitati più visibili per il NO</h3>
+              <ul class="compact-list">
                 <li><strong>Giusto dire NO</strong></li>
                 <li><strong>Avvocati per il NO</strong></li>
                 <li><strong>Società civile per il NO nel referendum costituzionale</strong></li>
                 <li><strong>Comitato dei 15 cittadini</strong></li>
-                <li><strong>Comitato nazionale per il NO sociale</strong></li>
               </ul>
             </article>
           </div>
 
-          <div class="info-box">
-            <strong>Il punto chiave:</strong> i comitati servono a mostrare che il referendum non è solo una battaglia tra partiti. Su entrambi i fronti si sono mossi anche costituzionalisti, avvocati, magistrati, associazioni e gruppi civici.
+          <div class="warning-box">
+            <strong>La chiave per leggere bene questa pagina:</strong> qui non conta avere un elenco infinito di nomi. Conta capire che il <strong>SÌ</strong> raccoglie soprattutto maggioranza di governo, area liberal-garantista e una parte importante dell’avvocatura organizzata; il <strong>NO</strong> raccoglie soprattutto opposizione progressista, ANM e molte realtà civiche e associative. 
           </div>
 
           <header class="major">
-            <h2>4. Alcune figure note del dibattito</h2>
+            <h2>4. La domanda che molti si fanno: magistrati e avvocati stanno da parti opposte?</h2>
           </header>
 
           <p>
-            Qui conviene tenere solo i nomi davvero utili a orientarsi, senza trasformare la pagina in una rubrica infinita.
-          </p>
-
-          <div class="people-grid">
-            <article class="person-card yes">
-              <h3><i class="fa-solid fa-user-check" style="color:#16a34a;"></i> Nicolò Zanon</h3>
-              <div class="tag">Area SÌ</div>
-              <p>È una delle figure giuridiche più riconoscibili associate al fronte favorevole alla riforma ed è indicato come presidente del comitato “Sì Riforma”.</p>
-            </article>
-
-            <article class="person-card no">
-              <h3><i class="fa-solid fa-user-xmark" style="color:#dc2626;"></i> Gustavo Zagrebelsky</h3>
-              <div class="tag">Area NO</div>
-              <p>È una delle figure più note del fronte contrario e viene spesso citato come riferimento del NO sul piano costituzionale.</p>
-            </article>
-
-            <article class="person-card yes">
-              <h3><i class="fa-solid fa-user-check" style="color:#16a34a;"></i> Gian Domenico Caiazza</h3>
-              <div class="tag">Area SÌ</div>
-              <p>È uno dei volti più riconoscibili del SÌ nel mondo dell’avvocatura e guida il comitato “Sì Separa”.</p>
-            </article>
-
-            <article class="person-card no">
-              <h3><i class="fa-solid fa-user-xmark" style="color:#dc2626;"></i> Giovanni Bachelet</h3>
-              <div class="tag">Area NO</div>
-              <p>Presiede uno dei principali comitati civici del NO, utile per capire che il fronte contrario va oltre i soli partiti.</p>
-            </article>
-          </div>
-
-          <header class="major">
-            <h2>5. La domanda che molti si fanno: allora magistrati e avvocati stanno da parti opposte?</h2>
-          </header>
-
-          <p>
-            In modo molto semplificato, <strong>spesso sì</strong>, ma non va assolutizzato. La pagina corretta da costruire è questa:
+            In modo molto semplificato, <strong>spesso sì</strong>, ma non va scritto in modo assoluto. La formula più corretta è questa:
           </p>
 
           <ul>
             <li>una parte importante dell’<strong>avvocatura organizzata</strong> sostiene il SÌ;</li>
-            <li>l’<strong>Associazione Nazionale Magistrati</strong> sta nel NO;</li>
-            <li>esistono però anche <strong>magistrati per il SÌ</strong> e <strong>avvocati per il NO</strong>.</li>
+            <li>l’<strong>Associazione Nazionale Magistrati</strong> sostiene il NO;</li>
+            <li>esistono però anche <strong>magistrati per il SÌ</strong> e <strong>avvocati per il NO</strong>. </li>
           </ul>
 
-          <div class="warning-box">
-            <strong>Questa è la correzione più importante:</strong> non bisogna scrivere “i magistrati sono contro” o “gli avvocati sono a favore”. È più corretto dire che <strong>alcune delle principali organizzazioni rappresentative</strong> si sono schierate in quel modo, ma non tutta la categoria in blocco.
-          </div>
-
-          <header class="major">
-            <h2>6. Dubbi frequenti</h2>
-          </header>
-
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>Questa pagina è un elenco completo di tutti i sostenitori?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  No. L’obiettivo non è essere enciclopedici, ma farti capire il quadro. Per orientarsi davvero bastano i soggetti più visibili e più citati nel dibattito pubblico.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Se un partito o un’associazione si schiera, tutti i suoi iscritti la pensano così?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  No. Una posizione ufficiale non equivale a unanimità interna. Vale soprattutto come indicazione politica o associativa.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Perché qui ci sono partiti, comitati e persone insieme?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  Perché nel referendum contano tutti e tre i livelli: chi ha una posizione politica ufficiale, chi organizza la campagna e chi diventa un volto pubblico riconoscibile del SÌ o del NO.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Chi non si schiera apertamente conta comunque?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  Sì. In alcuni casi la scelta è libertà di voto; in altri c’è un invito alla partecipazione senza indicazione di merito. Anche questo, per capire il quadro, è un’informazione utile.
-                </p>
-              </div>
-            </details>
-          </div>
-
           <div class="info-box">
-            <strong>In una frase:</strong> il <strong>SÌ</strong> raccoglie soprattutto il centrodestra di governo, una parte dell’area liberale e molte organizzazioni dell’avvocatura; il <strong>NO</strong> raccoglie soprattutto il centrosinistra progressista, l’ANM e molte associazioni civiche e sociali.
+            <strong>La formulazione più corretta:</strong> non “i magistrati sono contro” o “gli avvocati sono a favore”, ma “alcune delle principali organizzazioni rappresentative si sono schierate così, senza coincidere con l’intera categoria”.
           </div>
-
-        </div>
       </section>
 
       <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">

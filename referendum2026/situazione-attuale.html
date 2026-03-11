@@ -158,15 +158,15 @@ header.major h2{
 }
 .info-box strong{color:#69450e}
 .warning-box{
-  background:linear-gradient(135deg, rgba(245,158,11,.13), rgba(120,53,15,.08));
-  border:1px solid rgba(245,158,11,.25);
-  border-left:8px solid #d38a11;
+  background:linear-gradient(135deg, rgba(180,122,31,.14), rgba(120,79,18,.08));
+  border:1px solid rgba(180,122,31,.28);
+  border-left:8px solid #b47a1f;
   border-radius:18px;
   padding:1.05rem 1.2rem;
   margin:1rem 0 1.8rem 0;
   box-shadow:0 4px 18px rgba(0,0,0,.05);
 }
-.warning-box strong{color:#6b4200}
+.warning-box strong{color:#69450e}
 
 .summary-grid{
   display:grid;
@@ -259,71 +259,6 @@ header.major h2{
 }
 .icon-item p{margin:0}
 
-.compare{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1rem;
-  margin:1rem 0 1.2rem 0;
-}
-@media (max-width:760px){
-  .compare{grid-template-columns:1fr}
-}
-.compare-card{
-  border-radius:20px;
-  padding:1.1rem 1.1rem 1rem 1.1rem;
-  border:1px solid #e6e6e6;
-  box-shadow:0 6px 20px rgba(0,0,0,.06);
-}
-.compare-card.today{
-  background:linear-gradient(135deg, rgba(180,122,31,.10), rgba(120,79,18,.05));
-  border-color:rgba(180,122,31,.24);
-}
-.compare-card.change{
-  background:linear-gradient(135deg, rgba(47,126,161,.10), rgba(27,78,101,.05));
-  border-color:rgba(47,126,161,.22);
-}
-.compare-card h3{
-  margin:0 0 .6rem 0;
-  font-size:1.2rem;
-}
-.compare-card.today h3{color:#7a5315}
-.compare-card.change h3{color:#1f5f7b}
-.compare-card p:last-child{margin-bottom:0}
-
-.faq-list{
-  display:grid;
-  gap:.8rem;
-  margin:1rem 0 0 0;
-}
-.faq-item{
-  background:#fbfbfb;
-  border:1px solid #e5e7eb;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,.04);
-}
-.faq-item summary{
-  list-style:none;
-  cursor:pointer;
-  padding:1rem 1.1rem;
-  font-weight:700;
-  color:#24343d;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary i{
-  color:#b47a1f;
-  transition:transform .2s ease;
-}
-.faq-item[open] summary i{transform:rotate(180deg)}
-.faq-body{
-  padding:0 1.1rem 1rem 1.1rem;
-  color:#3a3a3a;
-}
-.faq-body p:last-child{margin-bottom:0}
 
 .bottomnav{
   position:fixed;bottom:0;left:0;right:0;z-index:999;
@@ -442,8 +377,7 @@ a:focus-visible{
         <div class="inner">
 
           <h1 class="page-title">Situazione attuale</h1>
-          <p class="page-subtitle">Prima del referendum, il sistema è questo: giudici e pubblici ministeri stanno nello stesso ordine della magistratura, con un solo CSM, una distinzione già chiara di funzioni, ma non una separazione costituzionale delle carriere.</p>
-
+          <p class="page-subtitle">Questa pagina serve a capire come funziona oggi la magistratura ordinaria: come sono organizzate le carriere, che cosa fa il CSM, come vengono scelti i suoi membri e perché si parla tanto di correnti.</p>
           <div class="hero-card">
             <div class="hero-top">
               <span class="hero-badge"><i class="fa-solid fa-scale-balanced"></i> La fotografia di oggi</span>
@@ -460,36 +394,40 @@ a:focus-visible{
           <div class="summary-grid">
             <article class="summary-card">
               <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
-              <h3>Un solo ordine</h3>
+              <h3>Stesso ordine</h3>
               <p>Giudici e PM appartengono oggi alla stessa magistratura ordinaria.</p>
             </article>
 
             <article class="summary-card">
               <div class="icon"><i class="fa-solid fa-building-columns"></i></div>
               <h3>Un solo CSM</h3>
-              <p>Nomine, trasferimenti, valutazioni e disciplina stanno dentro un unico organo di autogoverno.</p>
+              <p>Il governo delle carriere sta dentro un unico organo di autogoverno.</p>
             </article>
 
             <article class="summary-card">
-              <div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-              <h3>Funzioni già diverse</h3>
-              <p>Chi giudica e chi accusa non fanno lo stesso lavoro già oggi.</p>
+              <div class="icon"><i class="fa-solid fa-check-to-slot"></i></div>
+              <h3>Membri eletti</h3>
+              <p>I togati sono eletti dai magistrati; i laici dal Parlamento.</p>
             </article>
 
             <article class="summary-card">
-              <div class="icon"><i class="fa-solid fa-hourglass-half"></i></div>
-              <h3>Problemi concreti</h3>
-              <p>Tempi, arretrato, organici e organizzazione restano i temi più sentiti.</p>
+              <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+              <h3>Correnti</h3>
+              <p>Sono gruppi associativi interni alla magistratura, influenti soprattutto nel CSM.</p>
             </article>
           </div>
 
           <div class="info-box">
-            <strong>La domanda chiave è questa:</strong> il referendum non parte da zero. Parte da un sistema che già distingue i ruoli tra chi giudica e chi accusa, ma li tiene ancora dentro lo stesso assetto costituzionale.
+            <strong>La chiave per leggere bene questa pagina:</strong> oggi il punto non è il referendum, ma capire il sistema attuale: chi fa cosa, chi decide sulle carriere dei magistrati e come funziona il CSM.
           </div>
 
           <header class="major">
-            <h2>1. Com’è organizzata oggi la magistratura</h2>
+            <h2>1. Com’è organizzata oggi la carriera dei magistrati</h2>
           </header>
+
+          <p>
+            Oggi <strong>giudici</strong> e <strong>pubblici ministeri</strong> appartengono alla stessa <strong>magistratura ordinaria</strong>. Entrano con lo stesso concorso e fanno parte dello stesso ordine, ma svolgono <strong>funzioni diverse</strong>.
+          </p>
 
           <div class="dual-grid">
             <article class="state-card">
@@ -504,171 +442,151 @@ a:focus-visible{
             <article class="state-card">
               <h3><span class="dot"><i class="fa-solid fa-user-shield"></i></span> Pubblici ministeri</h3>
               <ul>
-                <li>dirigono le indagini e sostengono l’accusa nel processo penale;</li>
-                <li>non decidono il processo;</li>
+                <li>dirigono le indagini penali;</li>
+                <li>sostengono l’accusa nel processo;</li>
                 <li>svolgono funzioni requirenti.</li>
               </ul>
             </article>
           </div>
 
           <p>
-            Questi due ruoli sono quindi <strong>già distinti oggi</strong>. Il referendum non serve a inventare per la prima volta una differenza tra giudice e PM. Serve a decidere se questa differenza debba diventare una <strong>separazione costituzionale di carriera</strong>.
+            Questo vuol dire una cosa semplice: <strong>oggi i ruoli sono già distinti</strong>, ma non esistono ancora due carriere separate in Costituzione. I passaggi da una funzione all’altra sono possibili solo in casi limitati e sono stati molto irrigiditi nel tempo; dopo la riforma Cartabia sono diventati ancora più rari e più vincolati. 
           </p>
 
+          <div class="warning-box">
+            <strong>La formula più precisa è questa:</strong> oggi c’è già una <strong>separazione delle funzioni</strong>, ma non una <strong>separazione costituzionale delle carriere</strong>.
+          </div>
+
           <header class="major">
-            <h2>2. Che cos’è il CSM oggi</h2>
+            <h2>2. Che cos’è il CSM e che cosa fa</h2>
           </header>
 
           <p>
-            Il <strong>Consiglio Superiore della Magistratura</strong> è l’organo di autogoverno della magistratura ordinaria. In pratica segue lo stato professionale dei magistrati: assunzioni, assegnazioni, trasferimenti, promozioni, valutazioni e provvedimenti disciplinari.
+            Il <strong>Consiglio Superiore della Magistratura</strong> è l’organo di autogoverno della magistratura ordinaria. Non giudica i processi: governa soprattutto la vita professionale dei magistrati.
           </p>
 
           <div class="icon-list">
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-user-plus"></i></div>
-              <p><strong>Nomine e incarichi:</strong> decide molte scelte interne sugli uffici giudiziari.</p>
+              <p><strong>Nomine e incarichi:</strong> decide molte nomine agli uffici direttivi e semidirettivi.</p>
             </div>
 
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-right-left"></i></div>
-              <p><strong>Trasferimenti e assegnazioni:</strong> regola dove i magistrati lavorano e con quali funzioni.</p>
+              <p><strong>Assegnazioni e trasferimenti:</strong> decide dove i magistrati lavorano e con quali funzioni.</p>
             </div>
 
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-clipboard-check"></i></div>
-              <p><strong>Valutazioni e disciplina:</strong> oggi anche la disciplina resta dentro il sistema del CSM.</p>
+              <p><strong>Valutazioni professionali:</strong> incide sulla progressione in carriera.</p>
+            </div>
+
+            <div class="icon-item">
+              <div class="mini"><i class="fa-solid fa-gavel"></i></div>
+              <p><strong>Disciplina:</strong> oggi la funzione disciplinare resta dentro il CSM, tramite la sua sezione disciplinare.</p>
             </div>
           </div>
 
-          <p>
-            Oggi il CSM è <strong>uno solo</strong>, non due. È presieduto dal <strong>Presidente della Repubblica</strong> e ha anche membri di diritto legati alla Cassazione, oltre ai componenti togati e laici scelti con il sistema attuale.
-          </p>
-
           <div class="info-box">
-            <strong>Oggi quindi:</strong> c’è un solo CSM, non due. E la giurisdizione disciplinare non è affidata a una Corte separata, ma alla sezione disciplinare del CSM.
+            <strong>Da ricordare:</strong> il CSM non è un tribunale che decide chi ha ragione o torto in un processo. È l’organo che governa carriere, incarichi e disciplina dei magistrati ordinari.
           </div>
 
           <header class="major">
-            <h2>3. I passaggi tra funzioni oggi esistono?</h2>
+            <h2>3. Com’è composto oggi il CSM</h2>
           </header>
 
           <p>
-            <strong>Sì, ma sono già molto limitati.</strong> Nel tempo le regole sono state irrigidite e, dopo la riforma Cartabia, il passaggio tra funzioni giudicanti e requirenti è diventato molto più ristretto rispetto al passato.
+            Il CSM attuale ha <strong>3 membri di diritto</strong> e <strong>30 membri elettivi</strong>.
+          </p>
+
+          <div class="dual-grid">
+            <article class="state-card">
+              <h3><span class="dot"><i class="fa-solid fa-crown"></i></span> Membri di diritto</h3>
+              <ul>
+                <li>il <strong>Presidente della Repubblica</strong>, che presiede il CSM;</li>
+                <li>il <strong>primo presidente della Corte di cassazione</strong>;</li>
+                <li>il <strong>procuratore generale della Cassazione</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="state-card">
+              <h3><span class="dot"><i class="fa-solid fa-users"></i></span> Membri elettivi</h3>
+              <ul>
+                <li><strong>20 togati</strong>, cioè magistrati eletti dai magistrati;</li>
+                <li><strong>10 laici</strong>, eletti dal Parlamento in seduta comune tra professori ordinari di diritto e avvocati con almeno 15 anni di esercizio.</li>
+              </ul>
+            </article>
+          </div>
+
+          <p>
+            I membri laici e togati restano in carica per <strong>quattro anni</strong>. Il CSM elegge poi un <strong>vicepresidente</strong> tra i componenti laici: è la figura che, nella pratica quotidiana, svolge molte funzioni operative.
+          </p>
+
+          <header class="major">
+            <h2>4. Come vengono eletti oggi i membri</h2>
+          </header>
+
+          <p>
+            I <strong>membri laici</strong> sono eletti dal <strong>Parlamento in seduta comune</strong>. I <strong>membri togati</strong> sono eletti direttamente dai magistrati, con un sistema a collegi e correttivi di recupero nazionale che cerca di rappresentare le diverse funzioni e aree della magistratura.
           </p>
 
           <p>
-            Questo è uno dei punti che generano più confusione. Dire che oggi esiste un unico ordine della magistratura <strong>non</strong> significa dire che giudici e PM si scambiano facilmente di posto. Significa solo che stanno ancora dentro lo stesso ordine costituzionale, anche se i passaggi sono ormai molto ridotti.
+            Per capire il punto essenziale non serve entrare in tutti i dettagli tecnici della legge elettorale. Basta ricordare questo: <strong>oggi il CSM nasce da elezioni</strong>, non da sorteggio.
           </p>
 
           <div class="warning-box">
-            <strong>Correzione utile:</strong> oggi c’è già una <strong>separazione di funzioni</strong>, ma non una <strong>separazione costituzionale delle carriere</strong>. È questa la differenza più importante da capire.
+            <strong>Questo è uno dei nodi del dibattito:</strong> se i componenti del CSM sono eletti, conta molto anche il modo in cui si formano candidature, gruppi e alleanze interne.
           </div>
 
           <header class="major">
-            <h2>4. Dove stanno oggi i problemi più discussi</h2>
+            <h2>5. Che cosa sono le correnti</h2>
           </header>
 
           <p>
-            Quando si parla di giustizia, molti cittadini pensano soprattutto al funzionamento concreto del sistema. È qui che stanno gran parte dei problemi più percepiti ogni giorno.
+            Le <strong>correnti</strong> sono gruppi associativi organizzati interni alla magistratura. Non sono previste dalla Costituzione come organi ufficiali, ma esistono da molti anni e hanno avuto un peso importante soprattutto nelle elezioni del CSM e nelle dinamiche delle nomine.
+          </p>
+
+          <p>
+            Non è corretto dire che ogni magistrato appartenga per forza a una corrente, né che le correnti siano solo un’anomalia italiana. Però nel dibattito pubblico italiano la parola indica soprattutto il problema del <strong>peso delle appartenenze organizzate</strong> nell’autogoverno della magistratura.
+          </p>
+
+          <div class="info-box">
+            <strong>Tradotto in modo semplice:</strong> quando si parla di correnti, si parla soprattutto di come si formano consenso, potere interno e nomine dentro il sistema del CSM.
+          </div>
+
+          <header class="major">
+            <h2>6. Quali sono oggi i punti più discussi</h2>
+          </header>
+
+          <p>
+            Le discussioni più frequenti sul sistema attuale riguardano almeno quattro aspetti:
           </p>
 
           <div class="icon-list">
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-clock"></i></div>
-              <p><strong>Tempi dei processi:</strong> restano uno dei temi più sentiti, soprattutto nei procedimenti lunghi.</p>
+              <p><strong>Tempi dei processi:</strong> per molti cittadini è il problema più visibile.</p>
             </div>
 
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-folder-open"></i></div>
-              <p><strong>Arretrato:</strong> in molti uffici pesa ancora l’accumulo di fascicoli e cause pendenti.</p>
+              <p><strong>Arretrato e organizzazione:</strong> in molti uffici pesano ancora fascicoli pendenti e problemi gestionali.</p>
             </div>
 
             <div class="icon-item">
               <div class="mini"><i class="fa-solid fa-users-slash"></i></div>
-              <p><strong>Carenze di organico:</strong> in diversi uffici mancano magistrati e personale amministrativo.</p>
+              <p><strong>Carenze di organico:</strong> mancano magistrati e personale amministrativo in diversi uffici.</p>
             </div>
 
             <div class="icon-item">
-              <div class="mini"><i class="fa-solid fa-sitemap"></i></div>
-              <p><strong>Organizzazione degli uffici:</strong> il modo in cui i tribunali lavorano conta moltissimo quanto, o più, delle regole costituzionali.</p>
+              <div class="mini"><i class="fa-solid fa-building-columns"></i></div>
+              <p><strong>Nomine e correnti:</strong> il modo in cui funziona l’autogoverno della magistratura è uno dei punti più controversi.</p>
             </div>
           </div>
 
-          <header class="major">
-            <h2>5. Perché allora si parla tanto di correnti</h2>
-          </header>
-
-          <p>
-            Un altro tema forte è quello delle <strong>correnti</strong>, cioè dei gruppi associativi interni alla magistratura. Una parte importante del dibattito sul referendum nasce anche dalle critiche al funzionamento dell’autogoverno, soprattutto dopo gli scandali sulle nomine.
-          </p>
-
           <div class="info-box">
-            <strong>Tradotto in modo semplice:</strong> una parte della discussione non riguarda i processi in aula, ma il modo in cui la magistratura governa se stessa.
+            <strong>Il quadro di oggi, in breve:</strong> stessa magistratura ordinaria per giudici e PM, un solo CSM, membri scelti con elezione e non con sorteggio, disciplina ancora interna al CSM e forte attenzione pubblica sul tema delle correnti e delle nomine.
           </div>
-
-          <header class="major">
-            <h2>6. Oggi vs riforma, in una riga</h2>
-          </header>
-
-          <div class="compare">
-            <article class="compare-card today">
-              <h3>Oggi</h3>
-              <p>Stesso ordine della magistratura, un solo CSM, disciplina nel CSM, passaggi di funzione possibili ma molto limitati.</p>
-            </article>
-
-            <article class="compare-card change">
-              <h3>Se vincesse il SÌ</h3>
-              <p>Carriere separate in Costituzione, due CSM distinti, disciplina affidata a una nuova Alta Corte, nuovo sistema con sorteggio.</p>
-            </article>
-          </div>
-
-          <header class="major">
-            <h2>Dubbi frequenti</h2>
-          </header>
-
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>Oggi giudici e PM sono già separati oppure no?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  Sì e no. Sono già separati nelle <strong>funzioni</strong>, perché fanno lavori diversi. Ma non sono separati in <strong>carriere costituzionalmente distinte</strong>.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Oggi esistono due CSM?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  No. Oggi esiste un solo <strong>Consiglio Superiore della Magistratura</strong>, che riguarda la magistratura ordinaria nel suo insieme.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Oggi la disciplina è già separata dal CSM?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  No. Oggi i procedimenti disciplinari dei magistrati ordinari restano dentro il sistema del CSM, tramite la sua sezione disciplinare.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>Il referendum nasce solo dal tema giudici-PM?<i class="fa-solid fa-chevron-down"></i></summary>
-              <div class="faq-body">
-                <p>
-                  No. Nasce anche dal dibattito sul funzionamento del CSM, sulle correnti e sul modo in cui vengono gestite nomine e carriera dei magistrati.
-                </p>
-              </div>
-            </details>
-          </div>
-
-          <div class="info-box">
-            <strong>In una frase:</strong> oggi la magistratura italiana funziona con <strong>un solo ordine</strong>, <strong>un solo CSM</strong> e una distinzione già esistente tra <strong>chi giudica</strong> e <strong>chi accusa</strong>, mentre i problemi più discussi ogni giorno riguardano soprattutto efficienza, tempi e organizzazione degli uffici.
-          </div>
-
-        </div>
       </section>
 
       <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
