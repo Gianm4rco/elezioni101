@@ -4,7 +4,7 @@
     <title>Come funziona – Referendum Giustizia 2026</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Come funziona il referendum costituzionale sulla giustizia 2026: cosa si vota, cosa cambia, cosa succede se vince SÌ o NO." />
+    <meta name="description" content="Guida semplice al referendum costituzionale sulla giustizia 2026: cosa si vota, cosa cambia davvero, cosa succede se vince SÌ o NO." />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -13,36 +13,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
-/* ===== STILE IDENTICO A home.html ===== */
+/* ===== BASE: coerente con home.html ===== */
 .page-title{
-  margin:0 0 1.1rem 0;
+  margin:0 0 1.05rem 0;
   color:#2f7ea1;
   font-size:3.5rem;
   line-height:1.08;
   font-weight:600;
-  letter-spacing:0.0025em;
+  letter-spacing:.0025em;
   text-wrap:balance;
 }
 .page-subtitle{
-  margin:0 0 1.6rem 0;
+  margin:0 0 1.15rem 0;
   color:#2f7ea1;
   font-size:1.05rem;
-  line-height:1.45;
-  max-width:38rem;
-}
-
-@media (max-width:768px){
-  .page-subtitle{
-    font-size:1rem;
-    margin:0 0 1.35rem 0;
-  }
+  line-height:1.5;
+  max-width:42rem;
 }
 @media (max-width:768px){
-  .page-title{
-    font-size:3rem;
-    line-height:1.1;
-    margin:0 0 .95rem 0;
-  }
+  .page-title{font-size:3rem;line-height:1.1;margin:0 0 .9rem 0}
+  .page-subtitle{font-size:1rem;margin:0 0 1rem 0}
 }
 
 .nav-container{
@@ -52,10 +42,15 @@
   box-shadow:none;
   position:fixed;top:0;width:100%;z-index:1000
 }
-.logo a{font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;display:flex;align-items:center;letter-spacing:.1px}
+.logo a{
+  font-weight:bold;font-size:1.05em;color:#333;text-decoration:none;
+  display:flex;align-items:center;letter-spacing:.1px
+}
 .logo img{height:2em;margin-right:.4em}
 .menu-icon{display:none;flex-direction:column;cursor:pointer}
-.menu-icon span{background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px}
+.menu-icon span{
+  background:#333;height:3px;width:25px;margin:3px 0;display:block;border-radius:2px
+}
 nav.menu{display:flex;gap:1.2em}
 nav.menu a{text-decoration:none;font-weight:600;color:#333}
 nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
@@ -63,16 +58,10 @@ nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
 @media (max-width:768px){
   .menu-icon{display:flex!important}
   nav.menu{
-    display:none!important;
-    flex-direction:column;
-    position:absolute;
-    top:60px;
-    right:0;
-    background:#ffffff;
-    width:100%;
+    display:none!important;flex-direction:column;position:absolute;top:60px;right:0;
+    background:#ffffff;width:100%;
     box-shadow:0 4px 14px rgba(0,0,0,.1);
-    padding:1em 0;
-    text-align:center
+    padding:1em 0;text-align:center
   }
   nav.menu a{padding:.6rem 0}
   nav.menu.show{display:flex!important}
@@ -81,41 +70,217 @@ nav.menu a:hover{color:#0078d4;text-decoration:underline;font-weight:600}
 body{padding-top:70px}
 @media (max-width:979px){body{padding-bottom:64px}}
 
-section.wrapper .inner{
-  max-width:760px;
-}
-
+section.wrapper .inner{max-width:820px}
+p{line-height:1.72;margin-bottom:1rem}
+ul{margin-left:1.2rem}
+li{margin-bottom:.5rem}
 h2{margin-bottom:1rem}
+header.major{
+  margin:2.8rem 0 1rem 0;
+}
 header.major h2{
   margin-bottom:.9rem;
   font-size:2.05rem;
   line-height:1.15;
-  letter-spacing:-0.02em;
+  letter-spacing:-.02em;
 }
-
 @media (max-width:768px){
-  header.major h2{
-    font-size:1.75rem;
-  }
+  header.major{margin:2.2rem 0 .8rem 0}
+  header.major h2{font-size:1.72rem}
 }
-p{line-height:1.7;margin-bottom:1rem}
-ul{margin-left:1.2rem}
 
-/* colore sezione "Come funziona" */
+/* ===== HERO ===== */
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg, rgba(14,165,233,.16), rgba(11,58,90,.08));
+  border:1px solid rgba(14,165,233,.22);
+  border-radius:24px;
+  padding:1.3rem 1.25rem 1.1rem 1.25rem;
+  box-shadow:0 8px 28px rgba(0,0,0,.07);
+  margin:0 0 1.4rem 0;
+}
+.hero-card::before{
+  content:"";
+  position:absolute;
+  right:-3rem;
+  top:-3rem;
+  width:11rem;
+  height:11rem;
+  border-radius:999px;
+  background:radial-gradient(circle, rgba(47,126,161,.18), rgba(47,126,161,0));
+  pointer-events:none;
+}
+.hero-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:.7rem;
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  background:#fff;
+  border:1px solid rgba(47,126,161,.22);
+  color:#1f5f7b;
+  border-radius:999px;
+  padding:.45rem .75rem;
+  font-size:.88rem;
+  font-weight:700;
+}
+.hero-badge i{font-size:.9rem}
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+  margin:.95rem 0 .1rem 0;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  padding:.5rem .75rem;
+  border-radius:999px;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.08);
+  font-size:.9rem;
+  color:#2d2d2d;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.chip i{color:#2f7ea1}
+
+/* ===== BOX ===== */
 .info-box{
   background:linear-gradient(135deg, rgba(14,165,233,.14), rgba(11,58,90,.08));
   border:1px solid rgba(14,165,233,.28);
   border-left:8px solid #2f7ea1;
   border-radius:18px;
-  padding:1.15rem 1.25rem;
-  margin:1.2rem 0 2rem 0;
+  padding:1.1rem 1.2rem;
+  margin:1.2rem 0 1.8rem 0;
   box-shadow:0 4px 18px rgba(0,0,0,.06);
 }
-
-.info-box strong{
-  color:#16384b;
+.info-box strong{color:#16384b}
+.warning-box{
+  background:linear-gradient(135deg, rgba(245,158,11,.13), rgba(120,53,15,.08));
+  border:1px solid rgba(245,158,11,.25);
+  border-left:8px solid #d38a11;
+  border-radius:18px;
+  padding:1.05rem 1.2rem;
+  margin:1rem 0 1.8rem 0;
+  box-shadow:0 4px 18px rgba(0,0,0,.05);
 }
+.warning-box strong{color:#6b4200}
 
+/* ===== CARDS ===== */
+.change-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:1rem;
+  margin:1rem 0 1.3rem 0;
+}
+@media (max-width:760px){
+  .change-grid{grid-template-columns:1fr}
+}
+.change-card{
+  position:relative;
+  background:#f8fafb;
+  border:1px solid #dce9ef;
+  border-radius:20px;
+  padding:1.1rem 1.05rem 1rem 1.05rem;
+  box-shadow:0 4px 16px rgba(0,0,0,.05);
+}
+.change-card h3{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  margin:0 0 .55rem 0;
+  font-size:1.18rem;
+  color:#21333d;
+}
+.change-card .icon{
+  width:2.1rem;height:2.1rem;border-radius:999px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#2f7ea1,#1b4e65);
+  color:#fff;flex:0 0 auto;
+  box-shadow:0 6px 16px rgba(47,126,161,.2);
+}
+.change-card p:last-child{margin-bottom:0}
+
+/* ===== COMPARISON ===== */
+.compare-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin:1rem 0 1.2rem 0;
+}
+@media (max-width:760px){
+  .compare-grid{grid-template-columns:1fr}
+}
+.compare-card{
+  border-radius:20px;
+  padding:1.15rem 1.15rem 1rem 1.15rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
+  border:1px solid #e6e6e6;
+}
+.compare-card h3{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0 0 .75rem 0;
+  font-size:1.22rem;
+}
+.compare-card.yes{
+  background:linear-gradient(135deg, rgba(34,197,94,.12), rgba(20,83,45,.06));
+  border-color:rgba(34,197,94,.25);
+}
+.compare-card.no{
+  background:linear-gradient(135deg, rgba(239,68,68,.12), rgba(127,29,29,.06));
+  border-color:rgba(239,68,68,.22);
+}
+.compare-card.yes h3{color:#14532d}
+.compare-card.no h3{color:#7f1d1d}
+.compare-card ul{margin-bottom:0}
+.compare-card li{margin-bottom:.45rem}
+
+/* ===== FAQ ===== */
+.faq-list{
+  display:grid;
+  gap:.8rem;
+  margin:1rem 0 0 0;
+}
+.faq-item{
+  background:#fbfbfb;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  padding:1rem 1.1rem;
+  font-weight:700;
+  color:#24343d;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary i{
+  color:#2f7ea1;
+  transition:transform .2s ease;
+}
+.faq-item[open] summary i{transform:rotate(180deg)}
+.faq-body{
+  padding:0 1.1rem 1rem 1.1rem;
+  color:#3a3a3a;
+}
+.faq-body p:last-child{margin-bottom:0}
+
+/* ===== BOTTOM NAV ===== */
 .bottomnav{
   position:fixed;bottom:0;left:0;right:0;z-index:999;
   background:#ffffff;
@@ -142,26 +307,19 @@ ul{margin-left:1.2rem}
   text-decoration:none;
   border-radius:14px;
   margin:.2rem .15rem;
-  transition:
-    background-color .18s ease,
-    transform .18s ease,
-    box-shadow .18s ease,
-    color .18s ease;
+  transition:background-color .18s ease, transform .18s ease, box-shadow .18s ease, color .18s ease;
 }
 .bottomnav i{
   font-size:1.1rem;
   color:#444;
   transition:transform .18s ease, color .18s ease;
 }
-
-/* colori icone */
 .bottomnav a:nth-child(1) i{ color:#2f7ea1; }
 .bottomnav a:nth-child(2) i{ color:#2f8f57; }
 .bottomnav a:nth-child(3) i{ color:#b14a4a; }
 .bottomnav a:nth-child(4) i{ color:#7a58b5; }
 .bottomnav a:nth-child(5) i{ color:#b47a1f; }
 
-/* hover/focus: sfondo coerente col colore */
 .bottomnav a:nth-child(1):hover,
 .bottomnav a:nth-child(1):focus-visible{
   background:rgba(47,126,161,.12);
@@ -187,30 +345,23 @@ ul{margin-left:1.2rem}
   background:rgba(180,122,31,.12);
   box-shadow:0 4px 12px rgba(180,122,31,.16);
 }
-
-/* piccolo movimento */
 .bottomnav a:hover i,
 .bottomnav a:focus-visible i{
   transform:translateY(-1px) scale(1.08);
 }
-
 .bottomnav a:hover span,
 .bottomnav a:focus-visible span{
   color:#222;
 }
-
 @media (min-width:980px){
   .bottomnav{display:none}
 }
-
 @media (hover:none){
   .bottomnav a:hover{
     background:transparent;
     box-shadow:none;
   }
-  .bottomnav a:hover i{
-    transform:none;
-  }
+  .bottomnav a:hover i{transform:none}
 }
 
 a:focus-visible{
@@ -223,136 +374,137 @@ a:focus-visible{
 
   <body>
 
-<!-- NAV SUPERIORE -->
-<div class="nav-container">
-  <div class="logo">
-    <a href="home.html"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
-  </div>
-  <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="menu" aria-label="Menu principale">
-    <a href="home.html">Home</a>
-    <a href="come-funziona.html">Come funziona</a>
-    <a href="perche-si.html">Perché SÌ</a>
-    <a href="perche-no.html">Perché NO</a>
-    <a href="chi-dice-si-chi-dice-no.html">Chi</a>
-    <a href="situazione-attuale.html">Oggi</a>
-    <a href="chi-siamo.html">Chi siamo</a>
-  </nav>
-</div>
+    <!-- NAV SUPERIORE -->
+    <div class="nav-container">
+      <div class="logo">
+        <a href="home.html"><img src="images/logo.png" alt="Logo Elezioni101" /> Referendum Giustizia 2026</a>
+      </div>
+      <div class="menu-icon" onclick="document.querySelector('nav.menu').classList.toggle('show')" aria-label="Apri/chiudi menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <nav class="menu" aria-label="Menu principale">
+        <a href="home.html">Home</a>
+        <a href="come-funziona.html">Come funziona</a>
+        <a href="perche-si.html">Perché SÌ</a>
+        <a href="perche-no.html">Perché NO</a>
+        <a href="chi-dice-si-chi-dice-no.html">Chi</a>
+        <a href="situazione-attuale.html">Oggi</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+      </nav>
+    </div>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-  
+      <section class="wrapper style2">
+        <div class="inner">
 
-<section class="wrapper style2">
-<div class="inner">
-<h1 class="page-title">Che succede?</h1>
-<p class="page-subtitle">Pochi punti per capire cosa propone la riforma e cosa cambia se vince il SÌ.</p>
-<header class="major">
-  <h2>Come funziona il referendum?</h2>
-</header>
-<p>
-È un <strong>referendum costituzionale confermativo</strong>.
-Si usa quando il Parlamento approva una legge costituzionale, ma senza la maggioranza dei due terzi in entrambe le Camere.
-In quel caso la riforma non entra subito in vigore: devono decidere gli elettori.
-</p>
+          <h1 class="page-title">Che succede?</h1>
+          <p class="page-subtitle">La versione breve: non si vota un partito, non si vota un processo, non si vota una sentenza. Si vota se confermare oppure no una riforma della Costituzione che cambia l’organizzazione della magistratura.</p>
 
-<p>
-Quindi qui non si vota per cancellare una legge ordinaria già in vigore, come nei referendum abrogativi.
-Si vota per <strong>confermare oppure respingere</strong> una riforma della Costituzione che cambia l’organizzazione della magistratura.
-</p>
+          <div class="hero-card">
+            <div class="hero-top">
+              <span class="hero-badge"><i class="fa-solid fa-circle-info"></i> Tre cose da sapere subito</span>
+            </div>
 
-<div class="info-box">
-<strong>Regola essenziale:</strong> non c’è quorum.<br>
-Il risultato vale qualunque sia il numero dei votanti. Conta solo quale opzione prende più <strong>voti validi</strong>.<br>
-Se vince il <strong>Sì</strong>, la riforma entra in vigore. Se vince il <strong>No</strong>, resta il sistema attuale.
-</div>
+            <div class="chips">
+              <span class="chip"><i class="fa-solid fa-check-to-slot"></i> È un referendum costituzionale confermativo</span>
+              <span class="chip"><i class="fa-solid fa-users"></i> Non c’è quorum</span>
+              <span class="chip"><i class="fa-solid fa-scale-balanced"></i> Riguarda giudici, PM, CSM e disciplina</span>
+            </div>
+          </div>
 
-<header class="major">
-  <h2>Cosa si vota concretamente?</h2>
-</header>
+          <header class="major">
+            <h2>1. Che voto è?</h2>
+          </header>
 
-<p>
-Si vota una legge costituzionale che modifica alcuni articoli della Costituzione sul <strong>modo in cui è organizzata la magistratura</strong>.
-Non riguarda singoli processi, singole sentenze o singoli reati.
-</p>
+          <p>
+            È un <strong>referendum costituzionale confermativo</strong>. Succede quando il Parlamento approva una riforma della Costituzione, ma senza i due terzi dei voti in entrambe le Camere. In quel caso la riforma non entra subito in vigore: possono decidere gli elettori.
+          </p>
 
-<p>
-Il referendum riguarda soprattutto quattro punti:
-</p>
+          <p>
+            Qui quindi non si vota per cancellare una legge ordinaria già esistente. Si vota per <strong>confermare oppure respingere</strong> una riforma costituzionale sull’ordinamento della magistratura.
+          </p>
 
-<ul>
-  <li><strong>separazione costituzionale delle carriere</strong> tra magistrati giudicanti e magistrati requirenti;</li>
-  <li><strong>due Consigli superiori distinti</strong>, uno per la magistratura giudicante e uno per la magistratura requirente;</li>
-  <li><strong>nuove regole di composizione</strong> dei due Consigli: la Costituzione fisserebbe il principio del sorteggio, ma numero esatto e procedure operative sarebbero definiti da leggi successive al referendum;</li>
-  <li><strong>una nuova Alta Corte disciplinare</strong>, distinta dai due Consigli, competente per la giurisdizione disciplinare sui magistrati ordinari.</li>
-</ul>
+          <div class="info-box">
+            <strong>Regola essenziale:</strong> <strong>non c’è quorum</strong>. Non conta quanti vanno a votare: conta solo quale opzione prende più <strong>voti validi</strong>.<br />
+            Se vince il <strong>SÌ</strong>, la riforma entra in vigore. Se vince il <strong>NO</strong>, resta il sistema attuale.
+          </div>
 
+          <header class="major">
+            <h2>2. Cosa propone la riforma</h2>
+          </header>
 
-<div class="info-box">
-  <strong>Punto chiave:</strong> il referendum decide i principi costituzionali. 
-  Una parte delle regole pratiche — per esempio alcune modalità di composizione e funzionamento dei nuovi organi — dovrebbe poi essere definita da leggi ordinarie approvate dal Parlamento.
-</div>
+          <p>
+            La riforma tocca soprattutto <strong>quattro punti</strong>. Il senso generale è questo: oggi giudici e PM stanno dentro lo stesso ordine della magistratura e fanno capo a un solo CSM; con il SÌ il sistema verrebbe diviso.
+          </p>
 
+          <div class="change-grid">
+            <article class="change-card">
+              <h3><span class="icon"><i class="fa-solid fa-code-branch"></i></span> Carriere separate</h3>
+              <p>
+                Oggi giudici e pubblici ministeri fanno già <strong>funzioni diverse</strong>, e la riforma Cartabia del 2022 ha reso molto più rigidi i passaggi da una funzione all’altra. Però restano nello <strong>stesso ordine</strong>. Con la riforma, la separazione diventerebbe <strong>costituzionale</strong>: una carriera per i giudici e una per i PM.
+              </p>
+            </article>
 
-<header class="major">
-  <h2>Cosa significa separazione delle carriere?</h2>
-</header>
+            <article class="change-card">
+              <h3><span class="icon"><i class="fa-solid fa-building-columns"></i></span> Due CSM, non uno</h3>
+              <p>
+                Oggi esiste un solo <strong>Consiglio Superiore della Magistratura</strong>. Con la riforma diventerebbero due: uno per i giudici e uno per i PM. Li presiederebbe in entrambi i casi il <strong>Presidente della Repubblica</strong>. Il <strong>primo presidente della Cassazione</strong> starebbe nel CSM dei giudici; il <strong>procuratore generale della Cassazione</strong> in quello dei PM.
+              </p>
+            </article>
 
-<p>
-Oggi giudici e pubblici ministeri appartengono allo <strong>stesso ordine della magistratura</strong>.
-Svolgono funzioni diverse, ma fanno parte dello stesso sistema e, in casi limitati previsti dalla legge, possono passare da una funzione all’altra.
-</p>
+            <article class="change-card">
+              <h3><span class="icon"><i class="fa-solid fa-shuffle"></i></span> Sorteggio dei componenti</h3>
+              <p>
+                Nei due nuovi CSM i componenti non verrebbero più eletti come oggi. La Costituzione direbbe solo questo: <strong>un terzo</strong> sarebbe sorteggiato da un elenco di <strong>professori ordinari di diritto e avvocati con almeno 20 anni di esercizio</strong> formato dal Parlamento; <strong>due terzi</strong> sarebbero sorteggiati tra i magistrati della rispettiva carriera. <strong>Numero esatto dei componenti, dimensione delle liste e regole del sorteggio</strong> sarebbero fissati dopo da una legge ordinaria.
+              </p>
+            </article>
 
-<p>
-Con la riforma, la distinzione diventerebbe <strong>costituzionale e strutturale</strong>: la Costituzione indicherebbe espressamente due carriere, quella giudicante e quella requirente:
-</p>
+            <article class="change-card">
+              <h3><span class="icon"><i class="fa-solid fa-gavel"></i></span> Alta Corte disciplinare</h3>
+              <p>
+                La disciplina non resterebbe ai CSM. Passerebbe a una nuova <strong>Alta Corte disciplinare</strong> di <strong>15 membri</strong>: 3 nominati dal Presidente della Repubblica, 3 sorteggiati dall’elenco votato dal Parlamento, 6 giudici e 3 PM sorteggiati tra magistrati con almeno 20 anni di esercizio e con esperienza di legittimità.
+              </p>
+            </article>
+          </div>
 
-<ul>
-<li>chi entra come <strong>giudice</strong> resterebbe nella carriera giudicante;</li>
-<li>chi entra come <strong>pubblico ministero</strong> resterebbe nella carriera requirente.</li>
-</ul>
+          <div class="warning-box">
+            <strong>Dettaglio importante:</strong> la riforma cambia la <strong>Costituzione</strong>, ma lascia a una <strong>legge ordinaria</strong> diversi aspetti pratici: quanti membri avranno i due CSM, come saranno costruiti gli elenchi, come funzionerà in concreto il sorteggio e varie regole operative dell’Alta Corte disciplinare.
+          </div>
 
-<p>
-<strong>Attenzione:</strong> la riforma Cartabia del 2022 non ha introdotto una separazione costituzionale delle carriere. Ha però ristretto il passaggio dalle funzioni giudicanti a quelle requirenti, e viceversa: come regola generale, il cambio può avvenire una sola volta entro 9 anni dalla prima assegnazione delle funzioni. Ha anche modificato il sistema elettorale del CSM, ma non ha previsto né due CSM distinti né il sorteggio costituzionale previsto da questo referendum.
-</p>
+          <header class="major">
+            <h2>3. Il punto più delicato da capire</h2>
+          </header>
 
-<div class="info-box">
-  <strong>In pratica:</strong> con il SÌ giudici e pubblici ministeri avrebbero due carriere separate in Costituzione; con il NO resterebbe il sistema attuale, in cui appartengono allo stesso ordine della magistratura. Per capire meglio come funziona oggi, scopri com'è la <a href="situazione-attuale.html">situazione attuale</a>.
-</div>
+          <p>
+            Il nodo centrale non è che giudici e PM facciano mestieri diversi: questo è già vero oggi. Il punto è un altro: <strong>oggi appartengono ancora allo stesso ordine costituzionale</strong>; con la riforma apparterrebbero a <strong>due carriere distinte</strong>, con <strong>due organi di autogoverno diversi</strong>.
+          </p>
 
-<header class="major">
-  <h2>Cosa cambia per il CSM?</h2>
-</header>
+          <p>
+            Per questo la separazione delle carriere è così discussa: non cambia solo un dettaglio tecnico, ma il modo in cui la Costituzione disegna i rapporti tra chi giudica e chi accusa. Dire soltanto “le funzioni sono già separate” sarebbe quindi incompleto; dire che “non cambierebbe nulla” sarebbe sbagliato.
+          </p>
 
-<p>
-Oggi esiste un solo <strong>Consiglio Superiore della Magistratura</strong>.
-Si occupa della carriera dei magistrati: nomine, assegnazioni, trasferimenti, valutazioni di professionalità e disciplina.
-</p>
+          <div class="info-box">
+            <strong>Da tenere distinto:</strong> il referendum <strong>non dice</strong> che i PM passano sotto il Governo. Dice che avrebbero <strong>carriera separata</strong> e <strong>proprio CSM</strong>. Il rapporto futuro tra PM ed esecutivo è parte del dibattito politico, ma non è il contenuto letterale di questo voto.
+          </div>
 
-<p>
-Con la riforma i CSM diventerebbero <strong>due</strong>:
-</p>
+          <header class="major">
+            <h2>4. E negli altri Paesi europei?</h2>
+          </header>
 
-<ul>
-<li>un CSM per i <strong>giudici</strong>;</li>
-<li>un CSM per i <strong>pubblici ministeri</strong>.</li>
-</ul>
+          <p>
+            Non esiste un solo modello europeo. In molti Paesi giudici e pubblici ministeri hanno <strong>percorsi più separati</strong> di quelli italiani, ma il grado di autonomia del PM cambia molto da Stato a Stato.
+          </p>
 
-<p>
-Cambierebbe anche il sistema di composizione. Oggi i componenti togati del CSM sono <strong>eletti dai magistrati</strong> e i componenti laici sono <strong>eletti dal Parlamento</strong>. Con la riforma, nei due nuovi Consigli un terzo dei componenti sarebbe estratto a sorte da un elenco formato dal Parlamento e due terzi sarebbero estratti a sorte tra i magistrati della rispettiva carriera. La Costituzione fisserebbe quindi il principio generale, ma <strong>numero e procedure concrete</strong> sarebbero definiti dalla legge.
-</p>
+          <p>
+            Per esempio: in <strong>Germania</strong> il pubblico ministero è separato dai giudici ma organizzato in modo più gerarchico e vicino all’esecutivo; in <strong>Francia</strong> giudici e PM appartengono formalmente alla stessa magistratura, però con funzioni e percorsi distinti; in altri ordinamenti esistono consigli separati o meccanismi diversi di nomina e disciplina. Quindi dire “in Europa fanno tutti così” è troppo generico: <strong>i modelli europei sono diversi tra loro</strong>.
+          </p>
 
-<p>
-Cambierebbe, poi, la disciplina: la <strong>giurisdizione disciplinare</strong> sui magistrati ordinari passerebbe a una nuova <strong>Alta Corte disciplinare</strong>, mentre i due Consigli resterebbero competenti per assunzioni, assegnazioni, trasferimenti, valutazioni di professionalità e conferimento delle funzioni. Anche qui, diversi aspetti operativi del procedimento e del funzionamento sarebbero rimessi alla legge.
-</p>
-<div class="info-box">
-  <strong>Punto da sapere:</strong> con il <strong>Sì</strong> la Costituzione cambierebbe subito, ma una parte importante delle regole concrete su CSM e disciplina dovrebbe essere scritta o adeguata dopo, con leggi ordinarie. Fino ad allora continuerebbero a valere le norme attuali. Per capire meglio il sistema di oggi, scopri com'è la <a href="situazione-attuale.html">situazione attuale</a>.
-</div>
-</div>
-</section>
+          <div class="info-box">
+            <strong>In sintesi:</strong> il 22-23 marzo 2026 non si vota su un processo o su una sentenza. Si vota se lasciare l’assetto attuale della magistratura oppure scrivere in Costituzione un sistema con <strong>due carriere</strong>, <strong>due CSM</strong> e una <strong>nuova Alta Corte disciplinare</strong>.
+          </div>
+
+      </section>
 
       <footer style="background:#f7f7f7;padding:2em 1.5em;text-align:center;font-size:.9em;color:#666;margin-top:2.5em;border-top:1px solid #ddd">
         <p>Questo sito usa Google Analytics anonimizzato (statistiche aggregate). Nessun cookie di profilazione.</p>
@@ -360,32 +512,33 @@ Cambierebbe, poi, la disciplina: la <strong>giurisdizione disciplinare</strong> 
         <p style="margin-top:.8em">&copy; Elezioni101 — Basato su <a href="https://html5up.net/story" target="_blank" rel="noopener">Story</a> (CC BY 3.0).</p>
       </footer>
 
-</div>
+    </div>
 
-<nav class="bottomnav" aria-label="Navigazione rapida">
-  <div class="row">
-    <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
-    <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
-    <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
-    <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
-    <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
-  </div>
-</nav>
-<script>
-  document.querySelectorAll('nav.menu a').forEach(a =>
-    a.addEventListener('click', () =>
-      document.querySelector('nav.menu').classList.remove('show')
-    )
-  );
+    <nav class="bottomnav" aria-label="Navigazione rapida">
+      <div class="row">
+        <a href="come-funziona.html" aria-label="Come funziona"><i class="fa-solid fa-circle-info"></i><span>Come funziona</span></a>
+        <a href="perche-si.html" aria-label="Perché Sì"><i class="fa-solid fa-check"></i><span>Perché SÌ</span></a>
+        <a href="perche-no.html" aria-label="Perché No"><i class="fa-solid fa-xmark"></i><span>Perché NO</span></a>
+        <a href="chi-dice-si-chi-dice-no.html" aria-label="Chi dice Sì e No"><i class="fa-solid fa-users"></i><span>Chi</span></a>
+        <a href="situazione-attuale.html" aria-label="Situazione attuale"><i class="fa-solid fa-scale-balanced"></i><span>Oggi</span></a>
+      </div>
+    </nav>
 
-  const burger = document.querySelector('.menu-icon');
-  burger.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      document.querySelector('nav.menu').classList.toggle('show');
-    }
-  });
-</script>
+    <script>
+      document.querySelectorAll('nav.menu a').forEach(a =>
+        a.addEventListener('click', () =>
+          document.querySelector('nav.menu').classList.remove('show')
+        )
+      );
 
-</body>
+      const burger = document.querySelector('.menu-icon');
+      burger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          document.querySelector('nav.menu').classList.toggle('show');
+        }
+      });
+    </script>
+
+  </body>
 </html>
