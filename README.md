@@ -2,7 +2,7 @@
 
 **Elezioni101** è un progetto civico nato con l’obiettivo di spiegare in modo semplice, accessibile e neutrale i quesiti del referendum abrogativo dell’8-9 giugno 2025.
 
-Il sito è pensato per chi arriva all’ultimo momento e vuole capire “cosa significa votare SÌ o NO” senza perdersi in testi legislativi o analisi complicate. È ospitato su [GitHub Pages](https://gianm4rco.github.io/elezioni101/referendum2025).
+Il sito è pensato per chi arriva all’ultimo momento e vuole capire “cosa significa votare SÌ o NO” senza perdersi in testi legislativi o analisi complicate. È ospitato su [GitHub Pages](https://gianm4rco.github.io/elezioni101/referendum2026/home.html).
 
 ---
 
