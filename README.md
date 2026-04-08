@@ -1,4 +1,4 @@
-# 🗳️ Elezioni101 – Referendum 8-9 giugno 2025
+# 🗳️ Elezioni101 – Home
 
 **Elezioni101** è un progetto civico nato con l’obiettivo di spiegare in modo semplice, accessibile e neutrale i quesiti del referendum abrogativo dell’8-9 giugno 2025.
 
