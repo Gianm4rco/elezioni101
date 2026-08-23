@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#172c56">
+    <meta name="description" content="Prototipo Elezioni101 per capire cosa trovi sulla scheda alle elezioni politiche.">
+    <title>Elezioni101 — Politiche 2027</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+    <header class="site-header">
+      <button class="icon-button is-hidden" id="back-button" type="button" aria-label="Torna indietro">
+        <span aria-hidden="true">←</span>
+      </button>
+      <a class="brand" href="#" aria-label="Elezioni101, torna all'inizio">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span>elezioni<span>101</span></span>
+      </a>
+      <button class="text-button" id="help-button" type="button" aria-haspopup="dialog">Come funziona</button>
+    </header>
+
+    <main id="contenuto" tabindex="-1">
+      <div class="progress is-hidden" id="progress" aria-label="Avanzamento">
+        <span id="progress-label">Passo 1 di 4</span>
+        <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+      </div>
+
+      <section class="view view-home is-active" id="home-view" aria-labelledby="home-title">
+        <p class="eyebrow">Prototipo · Padova</p>
+        <h1 id="home-title">Chi trovi sulla tua scheda?</h1>
+        <p class="lead">Scrivi il Comune in cui voti. Ti mostriamo solo quello che ti serve.</p>
+
+        <form class="location-form" id="location-form">
+          <label for="comune">Comune</label>
+          <input id="comune" name="comune" type="text" inputmode="text" autocomplete="address-level3" list="comuni" placeholder="Per esempio: Padova" required>
+          <datalist id="comuni"><option value="Padova"></option></datalist>
+          <p class="field-hint">Per ora il prototipo funziona con Padova.</p>
+          <p class="field-error" id="location-error" role="alert"></p>
+          <button class="primary-button" type="submit">Mostrami la mia scheda</button>
+        </form>
+
+        <p class="privacy-note"><span aria-hidden="true">●</span> Non salviamo dove abiti.</p>
+      </section>
+
+      <section class="view" id="ballot-view" aria-labelledby="ballot-title">
+        <p class="eyebrow">Padova · Politiche 2027</p>
+        <h1 id="ballot-title">Ecco cosa fai in cabina</h1>
+
+        <div class="plain-card ballot-card">
+          <span class="ballot-icon" aria-hidden="true">✕</span>
+          <div>
+            <h2>Metti una X su una lista</h2>
+            <p>Il voto va anche alla coalizione di cui fa parte.</p>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <strong>Non scrivi nomi.</strong>
+          <span>I candidati sono già in ordine.</span>
+        </div>
+
+        <button class="primary-button" id="show-groups" type="button">Vedi liste e candidati</button>
+        <button class="link-button" data-open-law type="button">Perché funziona così?</button>
+      </section>
+
+      <section class="view" id="groups-view" aria-labelledby="groups-title">
+        <p class="eyebrow">La tua scheda · Camera</p>
+        <h1 id="groups-title">Da chi vuoi partire?</h1>
+        <p class="lead compact">Tocca una coalizione o una lista. Non è una scelta di voto.</p>
+        <div class="card-list" id="group-list"></div>
+      </section>
+
+      <section class="view" id="group-view" aria-labelledby="group-title">
+        <p class="eyebrow" id="group-kind">Coalizione</p>
+        <h1 id="group-title"></h1>
+        <p class="lead compact" id="group-summary"></p>
+
+        <div class="section-block">
+          <h2>Tre idee in breve</h2>
+          <ul class="idea-list" id="group-ideas"></ul>
+        </div>
+
+        <div class="section-block">
+          <h2 id="lists-heading">Le liste dentro</h2>
+          <p class="section-help">Scegline una per vedere i candidati.</p>
+          <div class="choice-list" id="party-list"></div>
+        </div>
+      </section>
+
+      <section class="view" id="candidates-view" aria-labelledby="candidates-title">
+        <p class="eyebrow" id="candidate-group"></p>
+        <h1 id="candidates-title"></h1>
+        <p class="lead compact">Scorri i nomi nell'ordine in cui compaiono nella lista.</p>
+
+        <div class="candidate-tabs" role="tablist" aria-label="Tipo di candidati">
+          <button class="candidate-tab is-active" id="ordinary-tab" role="tab" aria-selected="true" aria-controls="candidate-panel" type="button">Lista</button>
+          <button class="candidate-tab" id="bonus-tab" role="tab" aria-selected="false" aria-controls="candidate-panel" type="button">Premio</button>
+        </div>
+
+        <div id="candidate-panel" role="tabpanel">
+          <article class="candidate-card" id="candidate-card" aria-live="polite"></article>
+          <div class="candidate-controls" id="candidate-controls">
+            <button class="round-button" id="previous-candidate" type="button" aria-label="Candidato precedente">←</button>
+            <span id="candidate-count" aria-live="polite"></span>
+            <button class="round-button" id="next-candidate" type="button" aria-label="Candidato successivo">→</button>
+          </div>
+        </div>
+
+        <button class="primary-button" id="show-summary" type="button">Ora spiegami il mio voto</button>
+      </section>
+
+      <section class="view" id="summary-view" aria-labelledby="summary-title">
+        <p class="eyebrow">Lo Stabilicum in 20 secondi</p>
+        <h1 id="summary-title">Cosa succede al tuo voto</h1>
+
+        <ol class="steps-list">
+          <li><span>1</span><div><strong>Scegli una lista</strong><p>Non scegli direttamente una persona.</p></div></li>
+          <li><span>2</span><div><strong>I seggi seguono i voti</strong><p>Più voti prende una lista, più eletti può avere.</p></div></li>
+          <li><span>3</span><div><strong>Può scattare un premio</strong><p>Se una coalizione supera il 42%, ottiene seggi in più.</p></div></li>
+        </ol>
+
+        <div class="important-note">
+          <strong>Questa legge non è ancora definitiva.</strong>
+          <span>Se cambia, aggiorneremo spiegazioni e interfaccia.</span>
+        </div>
+
+        <button class="primary-button" id="restart-button" type="button">Ricomincia</button>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>Prototipo, non guida al voto.</strong> Liste e candidati sono quelli ufficiali della Camera 2022 a Padova, usati solo per provare l'interfaccia.</p>
+      <p><a href="https://www.comune.padova.it/sites/default/files/attachment/Elezioni%20politiche%202022%20-%20Manifesto%20Camera_Veneto2_P01_U03.pdf" target="_blank" rel="noreferrer">Fonte candidati: Comune di Padova ↗</a></p>
+    </footer>
+
+    <dialog id="law-dialog" aria-labelledby="law-title">
+      <div class="dialog-head">
+        <h2 id="law-title">Come funzionerebbe</h2>
+        <button class="icon-button" id="close-dialog" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <div class="dialog-body">
+        <p class="status-pill">Ipotesi Stabilicum · agosto 2026</p>
+        <h3>Tu fai una sola cosa</h3>
+        <p>Metti una X sul simbolo della lista che scegli.</p>
+        <h3>Non puoi dare preferenze</h3>
+        <p>L'ordine dei candidati è deciso prima del voto.</p>
+        <h3>Ci sono due gruppi di candidati</h3>
+        <p>Quelli della lista e quelli che entrano solo se la coalizione ottiene il premio.</p>
+        <h3>Il premio</h3>
+        <p>Se una coalizione supera il 42% dei voti, riceve seggi aggiuntivi.</p>
+        <p class="dialog-note">Il testo può ancora cambiare. Qui stiamo provando se questa spiegazione si capisce subito.</p>
+      </div>
+    </dialog>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

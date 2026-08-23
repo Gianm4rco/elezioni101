@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "place": "Padova",
+    "election": "Camera 2022",
+    "district": "Veneto 2 - P01 / U03",
+    "purpose": "Dati reali 2022 usati solo per provare l'interfaccia Stabilicum"
+  },
+  "groups": [
+    {
+      "id": "centrodestra",
+      "name": "Centrodestra",
+      "color": "#3157a4",
+      "summary": "Nel 2022 queste quattro liste si sono presentate insieme.",
+      "ideas": [
+        "Meno tasse e flat tax estesa",
+        "Più sostegni a famiglie e natalità",
+        "Presidente scelto più direttamente dagli elettori"
+      ],
+      "parties": [
+        {
+          "id": "fdi",
+          "name": "Fratelli d'Italia",
+          "candidates": [
+            { "name": "Gianmarco Mazzi", "birth": "Nato a Verona il 1 luglio 1960", "about": "Manager e autore televisivo; è stato amministratore delegato dell'Arena di Verona." },
+            { "name": "Elisabetta Gardini", "birth": "Nata a Padova il 3 giugno 1956", "about": "Attrice e politica; è stata deputata ed europarlamentare." },
+            { "name": "Gabriele Zanon", "birth": "Nato a Padova il 2 dicembre 1963", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Elisabetta Baldi", "birth": "Nata a Padova il 2 giugno 1980", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "lega",
+          "name": "Lega",
+          "candidates": [
+            { "name": "Alberto Stefani", "birth": "Nato a Camposampiero il 16 novembre 1992", "about": "Avvocato; deputato dal 2018 e già sindaco di Borgoricco." },
+            { "name": "Arianna Lazzarini", "birth": "Nata a Monselice il 6 marzo 1976", "about": "Politica veneta; è stata sindaca di Pozzonovo e consigliera regionale." },
+            { "name": "Lorenzo Viviani", "birth": "Nato a La Spezia il 3 dicembre 1982", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Federica Pietrogrande", "birth": "Nata a Padova il 30 dicembre 1976", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "fi",
+          "name": "Forza Italia",
+          "candidates": [
+            { "name": "Gregorio Fontana", "birth": "Nato a Bergamo il 9 novembre 1963", "about": "Avvocato e politico; è stato deputato per più legislature." },
+            { "name": "Luigia Modonesi", "birth": "Nata a Rovigo l'8 gennaio 1961", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Luca Callegaro", "birth": "Nato ad Arquà Petrarca il 6 marzo 1968", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Roberta Marinelli", "birth": "Nata a Lendinara il 16 settembre 1980", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "nm",
+          "name": "Noi Moderati",
+          "candidates": [
+            { "name": "Francesco Peghin", "birth": "Nato a Udine il 19 luglio 1964", "about": "Imprenditore padovano; è stato presidente di Confindustria Padova." },
+            { "name": "Cristina Turetta", "birth": "Nata a Padova il 10 luglio 1970", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Eric Pasqualon", "birth": "Nato a Cittadella il 26 dicembre 1990", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Fiorella Cappato", "birth": "Nata a Ceregnano il 24 luglio 1955", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "centrosinistra",
+      "name": "Centrosinistra",
+      "color": "#d24747",
+      "summary": "Nel 2022 queste quattro liste si sono presentate insieme.",
+      "ideas": [
+        "Salario minimo e meno precarietà",
+        "Più energie rinnovabili",
+        "Più tutele per i diritti civili"
+      ],
+      "parties": [
+        {
+          "id": "pd",
+          "name": "Partito Democratico",
+          "candidates": [
+            { "name": "Alessandro Zan", "birth": "Nato a Padova il 4 ottobre 1973", "about": "Attivista per i diritti civili e deputato dal 2013." },
+            { "name": "Nadia Romeo", "birth": "Nata a Rovigo il 23 giugno 1971", "about": "Avvocata e politica; è stata consigliera comunale a Rovigo." },
+            { "name": "Andrea Micalizzi", "birth": "Nato a Catania il 16 luglio 1976", "about": "Ingegnere e amministratore locale; è stato vicesindaco di Padova." },
+            { "name": "Laura Frigo", "birth": "Nata a Cittadella il 5 maggio 1985", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "avs",
+          "name": "Alleanza Verdi e Sinistra",
+          "candidates": [
+            { "name": "Luana Zanella", "birth": "Nata a Venezia il 4 ottobre 1950", "about": "Insegnante e politica; già deputata e assessora al Comune di Venezia." },
+            { "name": "Riccardo Fusinato", "birth": "Nato a Padova l'11 maggio 1995", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Laura Zaratin", "birth": "Nata a Vicenza il 15 luglio 1969", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Andrea Longobardi", "birth": "Nato a Padova il 16 dicembre 1977", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "europa",
+          "name": "+Europa",
+          "candidates": [
+            { "name": "Benedetto Della Vedova", "birth": "Nato a Sondrio il 3 aprile 1962", "about": "Politico; è stato sottosegretario agli Esteri e segretario di +Europa." },
+            { "name": "Anna-Lisa Nalin", "birth": "Nata a Verona il 3 settembre 1965", "about": "Avvocata e attivista per i diritti civili." },
+            { "name": "Alberto Ruggin", "birth": "Nato a Este il 29 dicembre 1986", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Elena Cacciatori", "birth": "Nata a Treviso il 29 maggio 1983", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        },
+        {
+          "id": "ic",
+          "name": "Impegno Civico",
+          "candidates": [
+            { "name": "Paolo Girotto", "birth": "Nato a Padova il 18 luglio 1961", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Anna Sautto", "birth": "Nata a Verona il 16 settembre 1972", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Moreno Ferrari", "birth": "Nato a Rovigo il 7 febbraio 1963", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Silvia Zampelli", "birth": "Nata a Benevento il 4 febbraio 1975", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "azione-iv",
+      "name": "Azione – Italia Viva",
+      "color": "#ad3a87",
+      "summary": "Nel 2022 si è presentata come lista singola, fuori dalle due coalizioni maggiori.",
+      "ideas": [
+        "Attuare il PNRR senza rallentamenti",
+        "Usare anche il nucleare per l'energia",
+        "Semplificare tasse e pubblica amministrazione"
+      ],
+      "parties": [
+        {
+          "id": "azione-iv-lista",
+          "name": "Azione – Italia Viva",
+          "candidates": [
+            { "name": "Elena Bonetti", "birth": "Nata ad Asola il 12 aprile 1974", "about": "Matematica e docente universitaria; ministra per le pari opportunità e la famiglia dal 2019 al 2022." },
+            { "name": "Davide Bendinelli", "birth": "Nato a Caprino Veronese il 19 ottobre 1974", "about": "Politico e amministratore locale; è stato sindaco di Garda e consigliere regionale." },
+            { "name": "Maria Trombetta", "birth": "Nata a Rovigo il 26 maggio 1973", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Carlo Pasqualetto", "birth": "Nato a Camposampiero il 1 giugno 1988", "about": "Imprenditore e amministratore locale padovano." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m5s",
+      "name": "Movimento 5 Stelle",
+      "color": "#d9b600",
+      "summary": "Nel 2022 si è presentato come lista singola, fuori dalle due coalizioni maggiori.",
+      "ideas": [
+        "Salario minimo e contratti più stabili",
+        "Aiuti contro il caro energia",
+        "Più investimenti nella transizione ecologica"
+      ],
+      "parties": [
+        {
+          "id": "m5s-lista",
+          "name": "Movimento 5 Stelle",
+          "candidates": [
+            { "name": "Enrico Cappelletti", "birth": "Nato a Padova il 5 febbraio 1968", "about": "Ingegnere e imprenditore; è stato senatore dal 2013 al 2018." },
+            { "name": "Elena Suman", "birth": "Nata ad Adria il 15 dicembre 1963", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Giacomo Cusumano", "birth": "Nato ad Abano Terme il 5 novembre 1986", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
+            { "name": "Silvia Schiavon", "birth": "Nata a Cittadella il 5 agosto 1997", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
+          ]
+        }
+      ]
+    }
+  ]
+}
