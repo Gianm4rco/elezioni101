@@ -127,6 +127,8 @@ main {
   font-weight: 750;
 }
 
+.progress.is-hidden, .candidate-controls.is-hidden { display: none; }
+
 .progress-track {
   height: 7px;
   overflow: hidden;
@@ -231,6 +233,7 @@ input {
 
 .primary-button:hover { transform: translateY(-2px); box-shadow: 0 9px 0 #0b1834; }
 .primary-button:active { transform: translateY(5px); box-shadow: 0 2px 0 #0b1834; }
+.primary-button:disabled { opacity: .55; cursor: wait; transform: none; box-shadow: 0 4px 0 #0b1834; }
 
 .link-button {
   display: block;

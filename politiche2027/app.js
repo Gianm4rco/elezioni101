@@ -235,7 +235,10 @@ document.querySelector("#candidate-card").addEventListener("touchend", event => 
   touchStart = null;
 }, { passive: true });
 
-loadData().catch(() => {
-  document.querySelector("#location-error").textContent = "Il prototipo non riesce a caricare i dati. Riprova tra poco.";
-  document.querySelector("#location-form button").disabled = true;
-});
+const startButton = document.querySelector("#location-form button");
+startButton.disabled = true;
+loadData()
+  .then(() => { startButton.disabled = false; })
+  .catch(() => {
+    document.querySelector("#location-error").textContent = "Il prototipo non riesce a caricare i dati. Riprova tra poco.";
+  });
