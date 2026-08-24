@@ -20,8 +20,9 @@
         {
           "id": "fdi",
           "name": "Fratelli d'Italia",
+          "logo": "../referendum2026/images/fdi.png",
           "candidates": [
-            { "name": "Gianmarco Mazzi", "birth": "Nato a Verona il 1 luglio 1960", "about": "Manager e autore televisivo; è stato amministratore delegato dell'Arena di Verona." },
+            { "name": "Gianmarco Mazzi", "birth": "Nato a Verona il 1 luglio 1960", "about": "Manager e autore televisivo; è stato amministratore delegato dell'Arena di Verona.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gianmarco_Mazzi_XIX.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Gianmarco_Mazzi_XIX.jpg", "photoCredit": "Camera dei deputati / Wikimedia Commons" },
             { "name": "Elisabetta Gardini", "birth": "Nata a Padova il 3 giugno 1956", "about": "Attrice e politica; è stata deputata ed europarlamentare." },
             { "name": "Gabriele Zanon", "birth": "Nato a Padova il 2 dicembre 1963", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Elisabetta Baldi", "birth": "Nata a Padova il 2 giugno 1980", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -30,8 +31,9 @@
         {
           "id": "lega",
           "name": "Lega",
+          "logo": "../referendum2026/images/lega.png",
           "candidates": [
-            { "name": "Alberto Stefani", "birth": "Nato a Camposampiero il 16 novembre 1992", "about": "Avvocato; deputato dal 2018 e già sindaco di Borgoricco." },
+            { "name": "Alberto Stefani", "birth": "Nato a Camposampiero il 16 novembre 1992", "about": "Avvocato; deputato dal 2018 e già sindaco di Borgoricco.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alberto_Stefani_daticamera_2018.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Alberto_Stefani_daticamera_2018.jpg", "photoCredit": "Camera dei deputati / Wikimedia Commons" },
             { "name": "Arianna Lazzarini", "birth": "Nata a Monselice il 6 marzo 1976", "about": "Politica veneta; è stata sindaca di Pozzonovo e consigliera regionale." },
             { "name": "Lorenzo Viviani", "birth": "Nato a La Spezia il 3 dicembre 1982", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Federica Pietrogrande", "birth": "Nata a Padova il 30 dicembre 1976", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -40,8 +42,9 @@
         {
           "id": "fi",
           "name": "Forza Italia",
+          "logo": "../referendum2026/images/forza-italia.png",
           "candidates": [
-            { "name": "Gregorio Fontana", "birth": "Nato a Bergamo il 9 novembre 1963", "about": "Avvocato e politico; è stato deputato per più legislature." },
+            { "name": "Gregorio Fontana", "birth": "Nato a Bergamo il 9 novembre 1963", "about": "Avvocato e politico; è stato deputato per più legislature.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gregorio_Fontana_daticamera_2018.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Gregorio_Fontana_daticamera_2018.jpg", "photoCredit": "Camera dei deputati / Wikimedia Commons" },
             { "name": "Luigia Modonesi", "birth": "Nata a Rovigo l'8 gennaio 1961", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Luca Callegaro", "birth": "Nato ad Arquà Petrarca il 6 marzo 1968", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Roberta Marinelli", "birth": "Nata a Lendinara il 16 settembre 1980", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -50,8 +53,9 @@
         {
           "id": "nm",
           "name": "Noi Moderati",
+          "logo": "../referendum2026/images/noi-moderati.png",
           "candidates": [
-            { "name": "Francesco Peghin", "birth": "Nato a Udine il 19 luglio 1964", "about": "Imprenditore padovano; è stato presidente di Confindustria Padova." },
+            { "name": "Francesco Peghin", "birth": "Nato a Udine il 19 luglio 1964", "about": "Imprenditore padovano; è stato presidente di Confindustria Padova.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Peghin2010_(1).jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Peghin2010_(1).jpg", "photoCredit": "Wikimedia Commons" },
             { "name": "Cristina Turetta", "birth": "Nata a Padova il 10 luglio 1970", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Eric Pasqualon", "birth": "Nato a Cittadella il 26 dicembre 1990", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Fiorella Cappato", "birth": "Nata a Ceregnano il 24 luglio 1955", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -73,8 +77,9 @@
         {
           "id": "pd",
           "name": "Partito Democratico",
+          "logo": "../referendum2026/images/pd.png",
           "candidates": [
-            { "name": "Alessandro Zan", "birth": "Nato a Padova il 4 ottobre 1973", "about": "Attivista per i diritti civili e deputato dal 2013." },
+            { "name": "Alessandro Zan", "birth": "Nato a Padova il 4 ottobre 1973", "about": "Attivista per i diritti civili e deputato dal 2013.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MEP_Alessandro_Zan.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:MEP_Alessandro_Zan.jpg", "photoCredit": "© European Union 2024" },
             { "name": "Nadia Romeo", "birth": "Nata a Rovigo il 23 giugno 1971", "about": "Avvocata e politica; è stata consigliera comunale a Rovigo." },
             { "name": "Andrea Micalizzi", "birth": "Nato a Catania il 16 luglio 1976", "about": "Ingegnere e amministratore locale; è stato vicesindaco di Padova." },
             { "name": "Laura Frigo", "birth": "Nata a Cittadella il 5 maggio 1985", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -83,8 +88,9 @@
         {
           "id": "avs",
           "name": "Alleanza Verdi e Sinistra",
+          "logo": "../referendum2026/images/avs.png",
           "candidates": [
-            { "name": "Luana Zanella", "birth": "Nata a Venezia il 4 ottobre 1950", "about": "Insegnante e politica; già deputata e assessora al Comune di Venezia." },
+            { "name": "Luana Zanella", "birth": "Nata a Venezia il 4 ottobre 1950", "about": "Insegnante e politica; già deputata e assessora al Comune di Venezia.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Luana_Zanella_XIX.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Luana_Zanella_XIX.jpg", "photoCredit": "Camera dei deputati / Wikimedia Commons" },
             { "name": "Riccardo Fusinato", "birth": "Nato a Padova l'11 maggio 1995", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Laura Zaratin", "birth": "Nata a Vicenza il 15 luglio 1969", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Andrea Longobardi", "birth": "Nato a Padova il 16 dicembre 1977", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -93,8 +99,9 @@
         {
           "id": "europa",
           "name": "+Europa",
+          "logo": "../referendum2026/images/piu-europa.png",
           "candidates": [
-            { "name": "Benedetto Della Vedova", "birth": "Nato a Sondrio il 3 aprile 1962", "about": "Politico; è stato sottosegretario agli Esteri e segretario di +Europa." },
+            { "name": "Benedetto Della Vedova", "birth": "Nato a Sondrio il 3 aprile 1962", "about": "Politico; è stato sottosegretario agli Esteri e segretario di +Europa.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Benedetto_Della_Vedova_datisenato_2013.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Benedetto_Della_Vedova_datisenato_2013.jpg", "photoCredit": "Senato della Repubblica / Wikimedia Commons" },
             { "name": "Anna-Lisa Nalin", "birth": "Nata a Verona il 3 settembre 1965", "about": "Avvocata e attivista per i diritti civili." },
             { "name": "Alberto Ruggin", "birth": "Nato a Este il 29 dicembre 1986", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Elena Cacciatori", "birth": "Nata a Treviso il 29 maggio 1983", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
@@ -103,6 +110,7 @@
         {
           "id": "ic",
           "name": "Impegno Civico",
+          "logo": "../referendum2026/images/logo.png",
           "candidates": [
             { "name": "Paolo Girotto", "birth": "Nato a Padova il 18 luglio 1961", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Anna Sautto", "birth": "Nata a Verona il 16 settembre 1972", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
@@ -126,8 +134,9 @@
         {
           "id": "azione-iv-lista",
           "name": "Azione – Italia Viva",
+          "logo": "../referendum2026/images/azione.svg",
           "candidates": [
-            { "name": "Elena Bonetti", "birth": "Nata ad Asola il 12 aprile 1974", "about": "Matematica e docente universitaria; ministra per le pari opportunità e la famiglia dal 2019 al 2022." },
+            { "name": "Elena Bonetti", "birth": "Nata ad Asola il 12 aprile 1974", "about": "Matematica e docente universitaria; ministra per le pari opportunità e la famiglia dal 2019 al 2022.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Elena_Bonetti_governo_2019_(cropped).jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Elena_Bonetti_governo_2019_(cropped).jpg", "photoCredit": "Presidenza del Consiglio / Wikimedia Commons" },
             { "name": "Davide Bendinelli", "birth": "Nato a Caprino Veronese il 19 ottobre 1974", "about": "Politico e amministratore locale; è stato sindaco di Garda e consigliere regionale." },
             { "name": "Maria Trombetta", "birth": "Nata a Rovigo il 26 maggio 1973", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Carlo Pasqualetto", "birth": "Nato a Camposampiero il 1 giugno 1988", "about": "Imprenditore e amministratore locale padovano." }
@@ -149,8 +158,9 @@
         {
           "id": "m5s-lista",
           "name": "Movimento 5 Stelle",
+          "logo": "../referendum2026/images/m5s.png",
           "candidates": [
-            { "name": "Enrico Cappelletti", "birth": "Nato a Padova il 5 febbraio 1968", "about": "Ingegnere e imprenditore; è stato senatore dal 2013 al 2018." },
+            { "name": "Enrico Cappelletti", "birth": "Nato a Padova il 5 febbraio 1968", "about": "Ingegnere e imprenditore; è stato senatore dal 2013 al 2018.", "photo": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enrico_Cappelletti_daticamera_2022.jpg?width=700", "photoSource": "https://commons.wikimedia.org/wiki/File:Enrico_Cappelletti_daticamera_2022.jpg", "photoCredit": "Camera dei deputati / Wikimedia Commons" },
             { "name": "Elena Suman", "birth": "Nata ad Adria il 15 dicembre 1963", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Giacomo Cusumano", "birth": "Nato ad Abano Terme il 5 novembre 1986", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Silvia Schiavon", "birth": "Nata a Cittadella il 5 agosto 1997", "about": "Profilo sintetico non ancora verificato per questo prototipo." }
