@@ -110,7 +110,7 @@
         {
           "id": "ic",
           "name": "Impegno Civico",
-          "logo": "../referendum2026/images/logo.png",
+          "logo": "https://it.wikipedia.org/wiki/Special:Redirect/file/Impegno_Civico_(Italia,_2023)_-_Logo.png?width=500",
           "candidates": [
             { "name": "Paolo Girotto", "birth": "Nato a Padova il 18 luglio 1961", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
             { "name": "Anna Sautto", "birth": "Nata a Verona il 16 settembre 1972", "about": "Profilo sintetico non ancora verificato per questo prototipo." },
